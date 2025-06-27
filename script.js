@@ -322,7 +322,15 @@ function placeOrder() {
         message += `📹: ${videoLink || 'Tidak diisi'}\n`;
     }
 
-    message += `\n📣: Pastikan ${service === 'Subscribers' ? 'channel' : 'akun'} tidak private selama proses berlangsung\n\n`;
+    message += `\n⚠️ *PERHATIAN SEBELUM MELAKUKAN PEMESANAN*\n`;
+    message += `──────────────────────────────\n`;
+    message += `🔹 Pastikan akun tidak dalam keadaan *private*.\n`;
+    message += `🔹 Jangan mengganti *username* selama proses pengerjaan masih berlangsung.\n`;
+    message += `🔹 Setiap layanan memiliki *minimum & maksimum order* yang berbeda.\n`;
+    message += `🔹 Kecepatan pengerjaan dan kualitas layanan *berbeda-beda* tergantung jenisnya.\n`;
+    message += `🔹 Umumnya, *harga lebih mahal menunjukkan kualitas lebih baik*.\n`;
+    message += `──────────────────────────────\n\n`;
+
     message += `*Grup Garansi & Layanan Lain:*\n`;
     message += `https://chat.whatsapp.com/Js1OixDAAsUA8ZqHQvP84P\n\n`;
     message += `Terima kasih telah menggunakan layanan kami!\n`;
