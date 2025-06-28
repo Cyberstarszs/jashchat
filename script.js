@@ -322,19 +322,20 @@ function placeOrder() {
         message += `📹: ${videoLink || 'Tidak diisi'}\n`;
     }
 
-    message += `\n⚠️ *PERHATIAN SEBELUM MELAKUKAN PEMESANAN*\n`;
+    message += `\n⚠️ *PERHATIAN SEBELUM MELAKUKAN PEMESANAN🔥*\n`;
     message += `──────────────────────────────\n`;
-    message += `🔹 Pastikan akun tidak dalam keadaan *private*.\n`;
-    message += `🔹 Jangan mengganti *username* selama proses pengerjaan masih berlangsung.\n`;
-    message += `🔹 Setiap layanan memiliki *minimum & maksimum order* yang berbeda.\n`;
-    message += `🔹 Kecepatan pengerjaan dan kualitas layanan *berbeda-beda* tergantung jenisnya.\n`;
-    message += `🔹 Umumnya, *harga lebih mahal menunjukkan kualitas lebih baik*.\n`;
+    message += `🔹 Akun jangan *private*.\n`;
+    message += `🔹 Jangan ganti *username* saat proses masih berjalan.\n`;
+    message += `🔹 Setiap layanan punya batas *minimum & maksimum order*.\n`;
+    message += `\n⏳ Proses followers TikTok tidak instan.\n`;
+    message += `🔹 Followers masuk bertahap agar aman dan tidak mudah hilang.\n`;
+    message += `🔹 Estimasi waktu: 30 menit – beberapa jam (tergantung antrian & kondisi akun).\n`;
     message += `──────────────────────────────\n\n`;
 
     message += `*Grup Garansi & Layanan Lain:*\n`;
     message += `https://chat.whatsapp.com/Js1OixDAAsUA8ZqHQvP84P\n\n`;
     message += `Terima kasih telah menggunakan layanan kami!\n`;
-    message += `❓ Butuh bantuan atau kendala? Silakan hubungi admin via grup garansi.`;
+    message += `❓ Kendala? Hubungi admin via grup garansi.`;
 
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`, '_blank');
