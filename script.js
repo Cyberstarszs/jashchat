@@ -1,26 +1,33 @@
+// DOM Elements
 const platformSelect = document.getElementById('platform');
 const serviceSelect = document.getElementById('service');
 const pricingOptions = document.getElementById('pricingOptions');
 const pricingGrid = document.getElementById('pricingGrid');
 const accountLinkGroup = document.getElementById('accountLinkGroup');
 const videoLinkGroup = document.getElementById('videoLinkGroup');
-const accountLinkInput = document.getElementById('account-link');
-const videoLinkInput = document.getElementById('video-link');
 const pricingDisplay = document.getElementById('pricingDisplay');
 const totalPriceElement = document.getElementById('totalPrice');
 const orderBtn = document.getElementById('orderBtn');
-
-// Order list elements
+const activeOrderList = document.getElementById('activeOrderList');
 const orderListBody = document.getElementById('orderListBody');
 const orderSearch = document.getElementById('orderSearch');
 const statusFilter = document.getElementById('statusFilter');
 const prevPageBtn = document.getElementById('prevPage');
 const nextPageBtn = document.getElementById('nextPage');
 const pageInfo = document.getElementById('pageInfo');
+const darkModeToggle = document.getElementById('darkModeToggle');
+const servicesSection = document.getElementById('servicesSection');
+const orderFormSection = document.getElementById('orderFormSection');
+const fullOrderList = document.getElementById('fullOrderList');
+const viewAllOrders = document.getElementById('viewAllOrders');
+const pageTitle = document.getElementById('pageTitle');
+const navItems = document.querySelectorAll('.nav-item');
+const promoSection = document.getElementById('promoSection');
 
+// WhatsApp number
 const WHATSAPP_NUMBER = '6281324919799';
 
-// Order data from your YAML file (converted to JSON)
+// Order data
 const orderData = [
     { id: 'jashub0001', kategori: 'Tiktok Followers', layanan: 110, tanggal: '2025-06-13 11:00:00', status: 'Success' },
     { id: 'jashub0002', kategori: 'Tiktok Followers', layanan: 120, tanggal: '2025-06-13 12:00:00', status: 'Success' },
@@ -73,13 +80,7 @@ const orderData = [
     { id: 'jashub0049', kategori: 'Instagram Followers', layanan: 100, tanggal: '2025-06-27 10:51:03', status: 'Success' }
 ];
 
-
-
-// Pagination variables
-let currentPage = 1;
-const ordersPerPage = 10;
-let filteredOrders = [...orderData];
-
+// Pricing data
 const pricingData = {
     'Instagram': {
         'Followers': [
@@ -201,21 +202,58 @@ const pricingData = {
     }
 };
 
+// Pagination variables
+let currentPage = 1;
+const ordersPerPage = 10;
+let filteredOrders = [...orderData];
+
+// Initialize the app
 function initApp() {
     setupEventListeners();
     hideLinkInputs();
     renderOrderList();
+    renderActiveOrders();
+    checkDarkModePreference();
+    setupServiceCards();
+
+    // Initialize AOS
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true
+    });
 }
 
-function hideLinkInputs() {
-    accountLinkGroup.classList.add('hidden');
-    videoLinkGroup.classList.add('hidden');
-    pricingOptions.classList.add('hidden');
-    pricingDisplay.classList.remove('active');
-    orderBtn.disabled = true;
+// Setup service card click handlers
+function setupServiceCards() {
+    document.querySelectorAll('.service-card').forEach(card => {
+        card.addEventListener('click', function() {
+            const platform = this.dataset.platform;
+            const service = this.dataset.service;
+
+            // Show order form section
+            document.getElementById('orderFormSection').classList.remove('hidden');
+            document.querySelector('.services-section').classList.add('hidden');
+            document.querySelector('.active-orders').classList.add('hidden');
+            fullOrderList.classList.add('hidden');
+            promoSection.classList.add('hidden');
+            pageTitle.textContent = 'Buat Pesanan';
+
+            // Set platform and service selections
+            platformSelect.value = platform;
+            platformSelect.dispatchEvent(new Event('change'));
+
+            setTimeout(() => {
+                serviceSelect.value = service;
+                serviceSelect.dispatchEvent(new Event('change'));
+            }, 100);
+        });
+    });
 }
 
+// Setup all event listeners
 function setupEventListeners() {
+    // Form event listeners
     platformSelect.addEventListener('change', function() {
         if (this.value) {
             serviceSelect.disabled = false;
@@ -242,8 +280,99 @@ function setupEventListeners() {
     statusFilter.addEventListener('change', filterOrders);
     prevPageBtn.addEventListener('click', goToPrevPage);
     nextPageBtn.addEventListener('click', goToNextPage);
+
+    // Navigation event listeners
+    navItems.forEach(item => {
+        item.addEventListener('click', function() {
+            navItems.forEach(nav => nav.classList.remove('active'));
+            this.classList.add('active');
+
+            const target = this.dataset.target;
+            document.querySelectorAll('.services-section, .active-orders, .order-form-section, .full-order-list, .promo-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+
+            if (target === 'home') {
+                servicesSection.classList.remove('hidden');
+                document.querySelector('.active-orders').classList.remove('hidden');
+                pageTitle.textContent = 'Pembelian Follower';
+            } else if (target === 'orders') {
+                fullOrderList.classList.remove('hidden');
+                pageTitle.textContent = 'Daftar Pesanan';
+            } else if (target === 'promo') {
+                promoSection.classList.remove('hidden');
+                pageTitle.textContent = 'Promo Spesial';
+            }
+        });
+    });
+
+    // View all orders handler
+    viewAllOrders.addEventListener('click', function(e) {
+        e.preventDefault();
+        fullOrderList.classList.remove('hidden');
+        servicesSection.classList.add('hidden');
+        document.querySelector('.active-orders').classList.add('hidden');
+        promoSection.classList.add('hidden');
+        pageTitle.textContent = 'Daftar Pesanan';
+
+        // Update navigation
+        navItems.forEach(nav => nav.classList.remove('active'));
+        document.querySelector('.nav-item[data-target="orders"]').classList.add('active');
+    });
+
+    // Dark mode toggle
+    darkModeToggle.addEventListener('click', toggleDarkMode);
+
+    // Promo order button
+    document.querySelector('.promo-order-btn').addEventListener('click', function() {
+        const message = `✅ *PESAN PROMO 15rb DAPAT 1000 FOLLOWER TIKTOK*\n\n` +
+            `❗ *SYARAT DAN KETENTUAN:*\n` +
+            `- HARUS SEDANG LIVE SAAT ORDER\n` +
+            `- TIDAK ADA REFUND/REFILL JIKA TIDAK LIVE\n\n` +
+            `🔹 *Target:* Username\n` +
+            `🔹 *Start:* 0-10 menit\n` +
+            `🔹 *Speed:* 200k/hari\n` +
+            `🔹 *Refill:* 30 Hari\n` +
+            `🔹 *Quality:* HQ Profile\n\n` +
+            `Silakan reply dengan username TikTok Anda yang sedang LIVE:`;
+
+        const encodedMessage = encodeURIComponent(message);
+        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`, '_blank');
+    });
 }
 
+// Dark mode functions
+function checkDarkModePreference() {
+    const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
+    if (isDarkMode) {
+        document.body.classList.add('dark-mode');
+        darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+}
+
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    const icon = darkModeToggle.querySelector('i');
+
+    if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', 'enabled');
+        icon.classList.replace('fa-moon', 'fa-sun');
+    } else {
+        localStorage.setItem('darkMode', 'disabled');
+        icon.classList.replace('fa-sun', 'fa-moon');
+    }
+}
+
+// Hide link inputs and pricing display
+function hideLinkInputs() {
+    accountLinkGroup.classList.add('hidden');
+    videoLinkGroup.classList.add('hidden');
+    pricingOptions.classList.add('hidden');
+    pricingDisplay.style.display = 'none';
+    orderBtn.disabled = true;
+}
+
+// Show pricing options for selected service
 function showPricingOptions(platform, service) {
     pricingOptions.classList.remove('hidden');
     pricingGrid.innerHTML = '';
@@ -254,6 +383,7 @@ function showPricingOptions(platform, service) {
         const option = document.createElement('div');
         option.className = 'pricing-option';
         option.dataset.price = pkg.price;
+        option.dataset.quantity = pkg.quantity;
         option.dataset.service = service;
         option.innerHTML = `
             <div class="quantity">${pkg.quantity.toLocaleString('id-ID')}</div>
@@ -265,7 +395,7 @@ function showPricingOptions(platform, service) {
             this.classList.add('selected');
 
             totalPriceElement.textContent = `Rp${pkg.price.toLocaleString('id-ID')}`;
-            pricingDisplay.classList.add('active');
+            pricingDisplay.style.display = 'block';
 
             accountLinkGroup.classList.add('hidden');
             videoLinkGroup.classList.add('hidden');
@@ -283,6 +413,7 @@ function showPricingOptions(platform, service) {
     });
 }
 
+// Format date to Indonesian format
 function formatIndonesianDate(date) {
     const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
     const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
@@ -291,10 +422,13 @@ function formatIndonesianDate(date) {
     const day = date.getDate();
     const month = months[date.getMonth()];
     const year = date.getFullYear();
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
 
-    return `${dayName}, ${day} ${month} ${year}`;
+    return `${dayName}, ${day} ${month} ${year} ${hours}:${minutes}`;
 }
 
+// Place order function
 function placeOrder() {
     if (!validateForm()) {
         alert('Silakan lengkapi semua data pemesanan terlebih dahulu');
@@ -305,9 +439,9 @@ function placeOrder() {
     const service = serviceSelect.options[serviceSelect.selectedIndex].text;
     const selectedOption = document.querySelector('.pricing-option.selected');
     const price = selectedOption.dataset.price;
-    const quantity = selectedOption.querySelector('.quantity').textContent;
-    const accountLink = accountLinkInput.value;
-    const videoLink = videoLinkInput.value;
+    const quantity = selectedOption.dataset.quantity;
+    const accountLink = document.getElementById('accountLinkInput').value;
+    const videoLink = document.getElementById('videoLinkInput').value;
     const currentDate = formatIndonesianDate(new Date());
 
     let message = `✅ *PENGISIAN DATA PESANAN*\n\n`;
@@ -316,7 +450,7 @@ function placeOrder() {
     message += `*Jumlah:* ${quantity}\n`;
     message += `*Total:* Rp${price}\n\n`;
     message += `*Target ${service === 'Subscribers' ? 'Channel' : 'Akun'}*:\n\n`;
-    message += `🔗: ${accountLink}\n`;
+    message += `🔗: ${accountLink || videoLink}\n`;
 
     if (service === 'Likes' || service === 'Views' || service === 'Shares') {
         message += `📹: ${videoLink || 'Tidak diisi'}\n`;
@@ -341,24 +475,95 @@ function placeOrder() {
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`, '_blank');
 }
 
+// Validate form before placing order
 function validateForm() {
-    if (!platformSelect.value || !serviceSelect.value ||
-        !document.querySelector('.pricing-option.selected')) {
+    if (!platformSelect.value || !serviceSelect.value || !document.querySelector('.pricing-option.selected')) {
         return false;
     }
 
     const service = serviceSelect.value;
+    const accountLink = document.getElementById('accountLinkInput').value;
+    const videoLink = document.getElementById('videoLinkInput').value;
 
     if (service === 'Followers' || service === 'Subscribers') {
-        return accountLinkInput.value.trim() !== '';
+        return accountLink.trim() !== '';
     } else if (service === 'Likes' || service === 'Views' || service === 'Shares') {
-        return videoLinkInput.value.trim() !== '';
+        return videoLink.trim() !== '';
     }
 
     return false;
 }
 
-// Order list functions
+// Copy to clipboard function
+function copyToClipboard(id) {
+    const input = document.getElementById(id);
+    input.select();
+    input.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(input.value);
+
+    // Show feedback
+    const copyBtn = input.nextElementSibling;
+    copyBtn.innerHTML = '<i class="fas fa-check"></i>';
+    setTimeout(() => {
+        copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
+    }, 2000);
+}
+
+// Render active orders
+function renderActiveOrders() {
+    const activeOrders = [{
+            id: 'jashub0038',
+            service: 'Tiktok Followers',
+            quantity: 1010,
+            progress: 500,
+            date: '2025-06-26'
+        },
+        {
+            id: 'jashub0039',
+            service: 'Tiktok Views',
+            quantity: 30000,
+            progress: 15000,
+            date: '2025-06-26'
+        }
+    ];
+
+    activeOrderList.innerHTML = '';
+
+    activeOrders.forEach(order => {
+        const progressPercent = Math.round((order.progress / order.quantity) * 100);
+
+        const orderEl = document.createElement('div');
+        orderEl.className = 'order-item';
+        orderEl.innerHTML = `
+            <div class="order-info">
+                <div class="service-icon">
+                    <i class="fab fa-tiktok"></i>
+                </div>
+                <div>
+                    <h4>${order.service}</h4>
+                    <p>No. Order ${order.id}</p>
+                </div>
+            </div>
+            <div class="order-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: ${progressPercent}%"></div>
+                </div>
+                <div class="progress-text">${order.progress.toLocaleString()} / ${order.quantity.toLocaleString()}</div>
+            </div>
+        `;
+
+        activeOrderList.appendChild(orderEl);
+    });
+
+    // Animate progress bars
+    setTimeout(() => {
+        document.querySelectorAll('.progress-fill').forEach(bar => {
+            bar.style.transition = 'width 1.5s ease';
+        });
+    }, 100);
+}
+
+// Filter orders based on search and status
 function filterOrders() {
     const searchTerm = orderSearch.value.toLowerCase();
     const statusFilterValue = statusFilter.value;
@@ -377,6 +582,7 @@ function filterOrders() {
     renderOrderList();
 }
 
+// Render order list with pagination
 function renderOrderList() {
     const startIndex = (currentPage - 1) * ordersPerPage;
     const endIndex = startIndex + ordersPerPage;
@@ -396,12 +602,12 @@ function renderOrderList() {
         paginatedOrders.forEach(order => {
             const row = document.createElement('tr');
             const date = new Date(order.tanggal);
-            const formattedDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()} ${date.getHours()}:${String(date.getMinutes()).padStart(2, '0')}`;
+            const formattedDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()} ${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}`;
 
             row.innerHTML = `
                 <td>${order.id}</td>
                 <td>${order.kategori}</td>
-                <td>${order.layanan}</td>
+                <td>${order.layanan.toLocaleString('id-ID')}</td>
                 <td>${formattedDate}</td>
                 <td class="${order.status === 'Success' ? 'status-success' : 'status-cancel'}">${order.status}</td>
             `;
@@ -413,6 +619,7 @@ function renderOrderList() {
     updatePaginationControls();
 }
 
+// Update pagination controls
 function updatePaginationControls() {
     const totalPages = Math.ceil(filteredOrders.length / ordersPerPage);
 
@@ -421,6 +628,7 @@ function updatePaginationControls() {
     nextPageBtn.disabled = currentPage === totalPages || totalPages === 0;
 }
 
+// Go to previous page
 function goToPrevPage() {
     if (currentPage > 1) {
         currentPage--;
@@ -428,6 +636,7 @@ function goToPrevPage() {
     }
 }
 
+// Go to next page
 function goToNextPage() {
     const totalPages = Math.ceil(filteredOrders.length / ordersPerPage);
 
@@ -437,4 +646,5 @@ function goToNextPage() {
     }
 }
 
+// Initialize the app when DOM is loaded
 document.addEventListener('DOMContentLoaded', initApp);
