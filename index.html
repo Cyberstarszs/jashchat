@@ -9,29 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
     <link rel="stylesheet" href="styles.css" />
-    <style>
-        .dark-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 999;
-            cursor: pointer;
-            background: #fff;
-            border-radius: 50%;
-            padding: 10px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-        }
-        
-        .background-video {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
-            z-index: -1;
-            opacity: 0.08;
-        }
-    </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JHQ1Y3T4LF"></script>
     <script>
@@ -41,184 +18,278 @@
             dataLayer.push(arguments);
         }
         gtag('js', new Date());
-
         gtag('config', 'G-JHQ1Y3T4LF');
     </script>
 </head>
 
 <body>
-    <video autoplay muted loop class="background-video">
-        <source src="beground.mp4" type="video/mp4" />
-    </video>
-    <div class="dark-toggle" onclick="toggleDarkMode()">
-        <i class="fas fa-moon"></i>
-    </div>
-    <header data-aos="fade-down">
-        <div class="container">
+    <div class="app-container">
+        <!-- Header Bar -->
+        <div class="header-bar">
             <div class="header-content">
-                <div class="logo-container">
+                <div class="logo-section">
                     <div class="logo-img">
                         <img src="logo.jpg" alt="JasHub Logo" style="height: 60px; width: auto; object-fit: contain; border-radius: 14px;" />
-                        <i class="fas fa-rocket"></i>
                     </div>
-                    <div class="logo-text">
+                    <div class="title-section">
                         <h1>JasHub</h1>
-                        <p>Follower, Like & Subscriber Amanah Termurah</p>
+                        <h2>Social Media Services</h2>
                     </div>
                 </div>
-                <div class="service-variants">
-                    <div class="variant-tag"><i class="fab fa-instagram instagram-icon"></i><span>Instagram</span></div>
-                    <div class="variant-tag"><i class="fab fa-tiktok tiktok-icon"></i><span>TikTok</span></div>
-                    <div class="variant-tag"><i class="fab fa-youtube youtube-icon"></i><span>YouTube</span></div>
-                    <div class="variant-tag"><i class="fas fa-thumbs-up likes-icon"></i><span>Likes</span></div>
-                    <div class="variant-tag"><i class="fas fa-eye views-icon"></i><span>Views</span></div>
-                    <div class="variant-tag"><i class="fas fa-share shares-icon"></i><span>Shares</span></div>
-                    <div class="variant-tag"><i class="fas fa-shield-alt trusted-icon"></i><span>Aman & Terpercaya</span></div>
+                <div class="header-actions">
+                    <button class="dark-toggle" id="darkModeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="page-title" id="pageTitle">Pembelian Follower</div>
+        </div>
+
+        <!-- Services Section -->
+        <!-- Services Section -->
+        <div class="services-section" id="servicesSection">
+            <h3>Layanan</h3>
+            <div class="services-grid">
+                <!-- Kolom 1 -->
+                <div class="service-column">
+                    <div class="service-card" data-platform="Instagram" data-service="Followers">
+                        <i class="fas fa-users"></i>
+                        <span>Followers Instagram</span>
+                    </div>
+                    <div class="service-card" data-platform="YouTube" data-service="Subscribers">
+                        <i class="fab fa-youtube"></i>
+                        <span>Subscribers YouTube</span>
+                    </div>
+                    <div class="service-card" data-platform="Tiktok" data-service="Likes">
+                        <i class="fas fa-thumbs-up"></i>
+                        <span>Likes TikTok</span>
+                    </div>
+                </div>
+
+                <!-- Kolom 2 -->
+                <div class="service-column">
+                    <div class="service-card" data-platform="Tiktok" data-service="Followers">
+                        <i class="fab fa-tiktok"></i>
+                        <span>Followers TikTok</span>
+                    </div>
+                    <div class="service-card" data-platform="Instagram" data-service="Likes">
+                        <i class="fas fa-thumbs-up"></i>
+                        <span>Likes Instagram</span>
+                    </div>
+                    <div class="service-card" data-platform="Instagram" data-service="Views">
+                        <i class="fas fa-eye"></i>
+                        <span>Views Instagram</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </header>
 
-    <main class="container" data-aos="fade-up">
-        <div class="card">
-            <h2 class="section-title"><i class="fas fa-shopping-cart"></i> Buat Pesanan</h2>
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="platform"><i class="fas fa-mobile-alt"></i> Platform</label>
-                    <div class="select-wrapper">
-                        <select id="platform" class="form-control">
-                            <option value="">-- Pilih Platform --</option>
-                            <option value="Instagram">Instagram</option>
-                            <option value="Tiktok">TikTok</option>
-                            <option value="YouTube">YouTube</option>
+        <!-- Active Orders -->
+        <div class="active-orders">
+            <div class="section-header">
+                <h3>Pesanan Aktif</h3>
+                <a href="#" id="viewAllOrders">Lihat semua</a>
+            </div>
+            <div class="order-list" id="activeOrderList"></div>
+        </div>
+
+        <!-- Order Form Section -->
+        <div class="order-form-section hidden" id="orderFormSection">
+            <div class="card">
+                <h2 class="section-title"><i class="fas fa-shopping-cart"></i> Buat Pesanan</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="platform"><i class="fas fa-mobile-alt"></i> Platform</label>
+                        <div class="select-wrapper">
+                            <select id="platform" class="form-control">
+                                <option value="">-- Pilih Platform --</option>
+                                <option value="Instagram">Instagram</option>
+                                <option value="Tiktok">TikTok</option>
+                                <option value="YouTube">YouTube</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="service"><i class="fas fa-concierge-bell"></i> Jenis Layanan</label>
+                        <div class="select-wrapper">
+                            <select id="service" class="form-control" disabled>
+                                <option value="">-- Pilih Layanan --</option>
+                                <option value="Followers">Followers</option>
+                                <option value="Likes">Likes</option>
+                                <option value="Views">Views</option>
+                                <option value="Subscribers">Subscribers</option>
+                                <option value="Shares">Shares</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="pricingOptions" class="hidden">
+                    <h3 class="pricing-title">Pilih Paket:</h3>
+                    <div class="pricing-grid" id="pricingGrid"></div>
+                </div>
+
+                <div class="form-group hidden" id="accountLinkGroup">
+                    <label for="accountLinkInput"><i class="fas fa-link"></i> Link Akun/Channel Target</label>
+                    <div class="input-with-button">
+                        <input type="text" id="accountLinkInput" class="form-control" placeholder="https://www.instagram.com/username" />
+                        <button class="copy-btn" onclick="copyToClipboard('accountLinkInput')">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group hidden" id="videoLinkGroup">
+                    <label for="videoLinkInput"><i class="fas fa-video"></i> Link Video (Jika Likes/Views/Shares)</label>
+                    <div class="input-with-button">
+                        <input type="text" id="videoLinkInput" class="form-control" placeholder="https://www.tiktok.com/@username/video/123456" />
+                        <button class="copy-btn" onclick="copyToClipboard('videoLinkInput')">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="pricing-display" id="pricingDisplay">
+                    <div class="price-label">Total Harga</div>
+                    <div class="price-value" id="totalPrice">Rp0</div>
+                    <p>Harga sudah termasuk biaya layanan</p>
+                </div>
+
+                <button id="orderBtn" class="btn btn-primary btn-block" disabled>
+                    <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+                </button>
+            </div>
+        </div>
+
+        <!-- Full Order List Section -->
+        <div class="full-order-list hidden" id="fullOrderList">
+            <div class="card">
+                <h2 class="section-title"><i class="fas fa-clipboard-list"></i> Daftar Order Terkini</h2>
+                <div class="order-controls">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="orderSearch" placeholder="Cari order..." />
+                    </div>
+                    <div class="filter-group">
+                        <label for="statusFilter"><i class="fas fa-filter"></i> Filter:</label>
+                        <select id="statusFilter" class="form-control">
+                            <option value="all">Semua Status</option>
+                            <option value="Success">Sukses</option>
+                            <option value="Cancel">Dibatalkan</option>
                         </select>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="service"><i class="fas fa-concierge-bell"></i> Jenis Layanan</label>
-                    <div class="select-wrapper">
-                        <select id="service" class="form-control" disabled>
-                            <option value="">-- Pilih Layanan --</option>
-                            <option value="Followers">Followers</option>
-                            <option value="Likes">Likes</option>
-                            <option value="Views">Views</option>
-                            <option value="Subscribers">Subscribers</option>
-                            <option value="Shares">Shares</option>
-                        </select>
-                    </div>
+                <div class="order-list-container">
+                    <table class="order-list">
+                        <thead>
+                            <tr>
+                                <th>ID Order</th>
+                                <th>Kategori</th>
+                                <th>Jumlah</th>
+                                <th>Tanggal</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orderListBody"></tbody>
+                    </table>
+                </div>
+                <div class="pagination">
+                    <button id="prevPage" disabled><i class="fas fa-chevron-left"></i></button>
+                    <span id="pageInfo">Halaman 1</span>
+                    <button id="nextPage"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
+        </div>
+        <!-- Promo Section -->
+        <div class="promo-section hidden" id="promoSection">
+            <div class="card">
+                <h2 class="section-title"><i class="fas fa-tag"></i> Promo Spesial</h2>
 
-            <div id="pricingOptions" class="hidden">
-                <h3 class="pricing-title">Pilih Paket:</h3>
-                <div class="pricing-grid" id="pricingGrid"></div>
-            </div>
+                <div class="promo-card">
+                    <div class="promo-badge">HOT</div>
+                    <div class="promo-header">
+                        <h3>15rb Dapat 1000 Follower TikTok</h3>
+                        <div class="promo-price">
+                            <span class="original-price">Rp37.000</span>
+                            <span class="discount-price">Rp15.000</span>
+                        </div>
+                    </div>
 
-            <div class="form-group hidden" id="accountLinkGroup">
-                <label for="account-link"><i class="fas fa-link"></i> Link Akun/Channel Target <button onclick="copyToClipboard('account-link')">Salin</button></label>
-                <input type="text" id="account-link" class="form-control" placeholder="https://www.instagram.com/username atau https://youtube.com/@channel" />
-            </div>
+                    <div class="promo-content">
+                        <div class="promo-description">
+                            <p><strong>❗❗❗ PERHATIAN ❗❗❗</strong></p>
+                            <p>LAYANAN INI KHUSUS JALUR LIVE STREAMING.</p>
+                            <ul class="promo-terms">
+                                <li>Sebelum order pastikan akun LIVE bebas (live tanpa suara juga bisa)</li>
+                                <li>Lakukan pemesanan jika sudah LIVE dan tunggu sampai pesanan masuk (jangan end live)</li>
+                                <li>Tidak ada jaminan apa pun baik refund ataupun refill jika tidak LIVE sebelum order</li>
+                            </ul>
+                        </div>
 
-            <div class="form-group hidden" id="videoLinkGroup">
-                <label for="video-link"><i class="fas fa-video"></i> Link Video (Jika Likes/Views/Shares) <button onclick="copyToClipboard('video-link')">Salin</button></label>
-                <input type="text" id="video-link" class="form-control" placeholder="https://www.tiktok.com/@username/video/123456 atau https://youtu.be/videoID" />
-            </div>
+                        <div class="promo-details">
+                            <div class="detail-item">
+                                <i class="fas fa-user"></i>
+                                <div>
+                                    <span>Target</span>
+                                    <strong>Username</strong>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <span>Start</span>
+                                    <strong>0-10 menit</strong>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <div>
+                                    <span>Speed</span>
+                                    <strong>200k/hari</strong>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-sync-alt"></i>
+                                <div>
+                                    <span>Refill</span>
+                                    <strong>30 Hari</strong>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-star"></i>
+                                <div>
+                                    <span>Quality</span>
+                                    <strong>HQ Profile</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            <div class="pricing-display" id="pricingDisplay">
-                <div class="price-label">Total Harga</div>
-                <div class="price-value" id="totalPrice">Rp0</div>
-                <p>Harga sudah termasuk biaya layanan</p>
-            </div>
-
-            <button id="orderBtn" class="btn btn-primary btn-block" disabled>
-                <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+                    <button class="btn btn-primary btn-block promo-order-btn">
+                <i class="fab fa-whatsapp"></i> Pesan Sekarang
             </button>
-        </div>
-
-        <section class="card" data-aos="fade-up">
-            <h2 class="section-title"><i class="fas fa-clipboard-list"></i> Daftar Order Terkini</h2>
-
-            <div class="order-controls">
-                <div class="search-box">
-                    <i class="fas fa-search"></i>
-                    <input type="text" id="orderSearch" placeholder="Cari order...">
-                </div>
-                <div class="filter-group">
-                    <label for="statusFilter"><i class="fas fa-filter"></i> Filter:</label>
-                    <select id="statusFilter" class="form-control">
-                        <option value="all">Semua Status</option>
-                        <option value="Success">Sukses</option>
-                        <option value="Cancel">Dibatalkan</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="order-list-container">
-                <table class="order-list">
-                    <thead>
-                        <tr>
-                            <th>ID Order</th>
-                            <th>Kategori</th>
-                            <th>Jumlah</th>
-                            <th>Tanggal</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody id="orderListBody">
-                        <!-- Data will be inserted here by JavaScript -->
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="pagination">
-                <button id="prevPage" disabled><i class="fas fa-chevron-left"></i></button>
-                <span id="pageInfo">Halaman 1</span>
-                <button id="nextPage"><i class="fas fa-chevron-right"></i></button>
-            </div>
-        </section>
-
-        <!-- Testimonials and Stats sections remain the same -->
-        <!-- ... -->
-
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <h3>JasHub - Follower, Like & Subscriber Amanah Termurah</h3>
-                <div class="contact-info">
-                    <div class="contact-item"><i class="fab fa-whatsapp"></i><span>+62 813-2491-9799</span></div>
-                    <div class="contact-item"><i class="fas fa-envelope"></i><span>jashubpremium@gmail.com</span></div>
-                </div>
-                <p>Layanan pengikut, like, subscriber, dan views untuk TikTok, Instagram & YouTube dengan harga termurah dan proses amanah</p>
-                <div class="garansi-box">
-                    <i class="fas fa-shield-alt"></i> Grup Garansi & Layanan Lain:<br />
-                    <a href="https://chat.whatsapp.com/Js1OixDAAsUA8ZqHQvP84P" target="_blank">https://chat.whatsapp.com/Js1OixDAAsUA8ZqHQvP84P</a>
-                </div>
-                <div class="copyright">
-                    &copy; 2025 JasHub. All rights reserved.
                 </div>
             </div>
         </div>
-    </footer>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <div class="nav-item active" data-target="home">
+                <i class="fas fa-home"></i>
+                <span>Beranda</span>
+            </div>
+            <div class="nav-item" data-target="orders">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Pesanan</span>
+            </div>
+            <div class="nav-item" data-target="promo">
+                <i class="fas fa-tag"></i>
+                <span>Promo</span>
+            </div>
+        </div>
+    </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
-    <script>
-        function toggleDarkMode() {
-            document.body.classList.toggle('dark-mode');
-        }
-
-        function copyToClipboard(id) {
-            const input = document.getElementById(id);
-            input.select();
-            input.setSelectionRange(0, 99999);
-            navigator.clipboard.writeText(input.value);
-            alert("Link berhasil disalin!");
-        }
-    </script>
     <script src="script.js"></script>
 </body>
 
