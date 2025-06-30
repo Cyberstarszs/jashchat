@@ -448,7 +448,7 @@ function placeOrder() {
     message += `├ Tanggal : ${currentDate}\n`;
     message += `├ Jenis   : ${service} ${platform}\n`;
     message += `├ Jumlah  : ${quantity}\n`;
-    message += `├ Total   : Rp${price}\n`;
+    message += `├ Total   : Rp${Number(price).toLocaleString('id-ID')}\n`;
     message += `╰───────────────\n\n`;
 
     message += `╭❀「 TARGET ${service === 'Subscribers' ? 'CHANNEL' : 'AKUN'} 」\n`;
