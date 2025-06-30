@@ -102,41 +102,38 @@ const pricingData = {
             { quantity: 200, price: 3000 },
             { quantity: 300, price: 4000 },
             { quantity: 400, price: 5000 },
-            { quantity: 500, price: 8000 },
+            { quantity: 500, price: 6000 },
             { quantity: 600, price: 7000 },
-            { quantity: 700, price: 9000 },
-            { quantity: 800, price: 10000 },
+            { quantity: 700, price: 8000 },
+            { quantity: 800, price: 9000 },
+            { quantity: 900, price: 10000 },
             { quantity: 1000, price: 11000 },
             { quantity: 3000, price: 15000 }
         ],
         'Views': [
-            { quantity: 1000, price: 4000 },
-            { quantity: 2000, price: 8000 },
-            { quantity: 5000, price: 15000 },
-            { quantity: 10000, price: 25000 },
-            { quantity: 15000, price: 35000 },
-            { quantity: 20000, price: 45000 },
-            { quantity: 30000, price: 65000 },
-            { quantity: 40000, price: 85000 },
-            { quantity: 50000, price: 105000 },
-            { quantity: 70000, price: 145000 },
-            { quantity: 100000, price: 207000 }
+            { quantity: 15000, price: 3000 },
+            { quantity: 20000, price: 4000 },
+            { quantity: 30000, price: 5000 },
+            { quantity: 40000, price: 6000 },
+            { quantity: 50000, price: 7000 },
+            { quantity: 70000, price: 8000 },
+            { quantity: 100000, price: 13000 }
         ]
     },
     'Tiktok': {
         'Followers': [
             { quantity: 50, price: 3000 },
-            { quantity: 100, price: 7000 },
-            { quantity: 200, price: 12000 },
-            { quantity: 300, price: 16000 },
-            { quantity: 400, price: 21000 },
-            { quantity: 500, price: 25000 },
-            { quantity: 600, price: 27000 },
-            { quantity: 700, price: 32000 },
-            { quantity: 800, price: 36000 },
-            { quantity: 900, price: 41000 },
-            { quantity: 1000, price: 46000 },
-            { quantity: 3000, price: 125000 }
+            { quantity: 100, price: 6000 },
+            { quantity: 200, price: 10000 },
+            { quantity: 300, price: 15000 },
+            { quantity: 400, price: 17000 },
+            { quantity: 500, price: 21000 },
+            { quantity: 600, price: 25000 },
+            { quantity: 700, price: 27000 },
+            { quantity: 800, price: 30000 },
+            { quantity: 900, price: 33000 },
+            { quantity: 1000, price: 37000 },
+            { quantity: 3000, price: 96000 }
         ],
         'Likes': [
             { quantity: 150, price: 2000 },
@@ -152,17 +149,13 @@ const pricingData = {
             { quantity: 3000, price: 15000 }
         ],
         'Views': [
-            { quantity: 1000, price: 2000 },
-            { quantity: 2000, price: 3000 },
-            { quantity: 5000, price: 4000 },
-            { quantity: 10000, price: 6000 },
-            { quantity: 15000, price: 7000 },
-            { quantity: 20000, price: 8000 },
-            { quantity: 30000, price: 9000 },
-            { quantity: 40000, price: 10000 },
-            { quantity: 50000, price: 11000 },
-            { quantity: 70000, price: 13000 },
-            { quantity: 100000, price: 15000 }
+            { quantity: 15000, price: 3000 },
+            { quantity: 20000, price: 4000 },
+            { quantity: 30000, price: 5000 },
+            { quantity: 40000, price: 6000 },
+            { quantity: 50000, price: 7000 },
+            { quantity: 70000, price: 8000 },
+            { quantity: 100000, price: 13000 }
         ]
     },
     'YouTube': {
@@ -451,32 +444,38 @@ function placeOrder() {
     const videoLink = document.getElementById('videoLinkInput').value;
     const currentDate = formatIndonesianDate(new Date());
 
-    let message = `✅ *PENGISIAN DATA PESANAN*\n\n`;
-    message += `${currentDate}\n\n`;
-    message += `*Jenis Pesanan:* ${service} ${platform}\n`;
-    message += `*Jumlah:* ${quantity}\n`;
-    message += `*Total:* Rp${price}\n\n`;
-    message += `*Target ${service === 'Subscribers' ? 'Channel' : 'Akun'}*:\n\n`;
-    message += `🔗: ${accountLink || videoLink}\n`;
+    let message = `╭❀「 DATA PESANAN 」\n`;
+    message += `├ Tanggal : ${currentDate}\n`;
+    message += `├ Jenis   : ${service} ${platform}\n`;
+    message += `├ Jumlah  : ${quantity}\n`;
+    message += `├ Total   : Rp${price}\n`;
+    message += `╰───────────────\n\n`;
+
+    message += `╭❀「 TARGET ${service === 'Subscribers' ? 'CHANNEL' : 'AKUN'} 」\n`;
+    message += `├ Link:\n`;
+    message += `├ ${accountLink || videoLink}\n`;
+    message += `╰───────────────\n`;
 
     if (service === 'Likes' || service === 'Views' || service === 'Shares') {
         message += `📹: ${videoLink || 'Tidak diisi'}\n`;
     }
 
-    message += `\n⚠️ *PERHATIAN SEBELUM MELAKUKAN PEMESANAN🔥*\n`;
-    message += `──────────────────────────────\n`;
-    message += `🔹 Akun jangan *private*.\n`;
-    message += `🔹 Jangan ganti *username* saat proses masih berjalan.\n`;
-    message += `🔹 Setiap layanan punya batas *minimum & maksimum order*.\n`;
-    message += `\n⏳ Proses followers TikTok tidak instan.\n`;
-    message += `🔹 Followers masuk bertahap agar aman dan tidak mudah hilang.\n`;
-    message += `🔹 Estimasi waktu: 30 menit – beberapa jam (tergantung antrian & kondisi akun).\n`;
-    message += `──────────────────────────────\n\n`;
+    message += `╭❀「 PERHATIAN 」\n`;
+    message += `├ Akun tidak boleh *private*\n`;
+    message += `├ Jangan ganti *username*\n`;
+    message += `├ Batas *min & max* berlaku\n`;
+    message += `├ Proses bertahap, ±30 menit – beberapa jam\n`;
+    message += `╰───────────────\n\n`;
 
-    message += `*Grup Garansi & Layanan Lain:*\n`;
-    message += `https://chat.whatsapp.com/Js1OixDAAsUA8ZqHQvP84P\n\n`;
-    message += `Terima kasih telah menggunakan layanan kami!\n`;
-    message += `❓ Kendala? Hubungi admin via grup garansi.`;
+    message += `╭❀「 GRUP GARANSI 」\n`;
+    message += `├ Untuk info & komplain:\n`;
+    message += `├ https://chat.whatsapp.com/Js1OixDAAsUA8ZqHQvP84P\n`;
+    message += `╰───────────────\n\n`;
+
+    message += `╭❀「 TERIMA KASIH 」\n`;
+    message += `├ Sudah order di layanan kami\n`;
+    message += `├ Butuh bantuan? Chat admin di grup\n`;
+    message += `╰───────────────\n`;
 
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`, '_blank');
