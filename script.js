@@ -80,7 +80,15 @@ const orderData = [
     { id: 'jashub0049', kategori: 'Instagram Followers', layanan: 100, tanggal: '2025-06-27 10:51:03', status: 'Success' }
 ];
 
-// Pricing data
+orderData.sort((a, b) => {
+    const numA = parseInt(a.id.replace('jashub', ''));
+    const numB = parseInt(b.id.replace('jashub', ''));
+    return numB - numA;
+});
+
+console.log(orderData);
+
+
 const pricingData = {
     'Instagram': {
         'Followers': [
