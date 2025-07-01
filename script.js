@@ -448,8 +448,8 @@ function placeOrder() {
     const selectedOption = document.querySelector('.pricing-option.selected');
     const price = selectedOption.dataset.price;
     const quantity = selectedOption.dataset.quantity;
-    const accountLink = document.getElementById('accountLinkInput').value;
-    const videoLink = document.getElementById('videoLinkInput').value;
+    const accountLink = document.getElementById('accountLinkInput').value.trim();
+    const videoLink = document.getElementById('videoLinkInput').value.trim();
     const currentDate = formatIndonesianDate(new Date());
 
     let message = `╭❀「 DATA PESANAN 」\n`;
@@ -459,10 +459,15 @@ function placeOrder() {
     message += `├ Total   : Rp${Number(price).toLocaleString('id-ID')}\n`;
     message += `╰───────────────\n\n`;
 
-    message += `╭❀「 TARGET ${service === 'Subscribers' ? 'CHANNEL' : 'AKUN'} 」\n`;
+    // Tentukan label target berdasarkan jenis layanan
+    const isAccountBased = (service === 'Followers' || service === 'Subscribers');
+    const targetLink = isAccountBased ? accountLink : videoLink;
+    const targetLabel = isAccountBased ? 'Akun' : 'Vidio';
+
+    message += `╭❀「 TARGET ${targetLabel} 」\n`;
     message += `├ Link:\n`;
-    message += `├ ${accountLink || videoLink}\n`;
-    message += `╰───────────────\n`;
+    message += `├ ${targetLink}\n`;
+    message += `╰───────────────\n\n`;
 
     message += `╭❀「 PERHATIAN 」\n`;
     message += `├ Akun tidak boleh *private*\n`;
