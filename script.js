@@ -464,10 +464,6 @@ function placeOrder() {
     message += `├ ${accountLink || videoLink}\n`;
     message += `╰───────────────\n`;
 
-    if (service === 'Likes' || service === 'Views' || service === 'Shares') {
-        message += `📹: ${videoLink || 'Tidak diisi'}\n`;
-    }
-
     message += `╭❀「 PERHATIAN 」\n`;
     message += `├ Akun tidak boleh *private*\n`;
     message += `├ Jangan ganti *username*\n`;
