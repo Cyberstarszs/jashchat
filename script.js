@@ -456,11 +456,11 @@ function placeOrder() {
     const videoLink = document.getElementById('videoLinkInput').value.trim();
     const currentDate = formatIndonesianDate(new Date());
 
-    let message = `╭❀「 DATA PESANAN 」\n`;
-    message += `├ Tanggal : ${currentDate}\n`;
-    message += `├ Jenis   : ${service} ${platform}\n`;
-    message += `├ Jumlah  : ${quantity}\n`;
-    message += `├ Total   : Rp${Number(price).toLocaleString('id-ID')}\n`;
+   let message = `╭❀「 *DATA PESANAN* 」\n`;
+    message += `├ ❖ _Tanggal_ : ${currentDate}\n`;
+    message += `├ ❖ _Jenis_   : ${service} ${platform}\n`;
+    message += `├ ❖ _Jumlah_  : ${quantity}\n`;
+    message += `├ ❖ _Total_   : Rp${Number(price).toLocaleString('id-ID')}\n`;
     message += `╰───────────────\n\n`;
 
     // Tentukan label target berdasarkan jenis layanan
@@ -468,26 +468,26 @@ function placeOrder() {
     const targetLink = isAccountBased ? accountLink : videoLink;
     const targetLabel = isAccountBased ? 'Akun' : 'Vidio';
 
-    message += `╭❀「 TARGET ${targetLabel} 」\n`;
-    message += `├ Link:\n`;
-    message += `├ ${targetLink}\n`;
+    message += `╭❀「 *TARGET ${targetLabel} 」\n`;
+    message += `├ ❖ _Link_:\n`;
+    message += `├ ❖ ${targetLink}\n`;
     message += `╰───────────────\n\n`;
 
-    message += `╭❀「 PERHATIAN 」\n`;
-    message += `├ Akun tidak boleh *private*\n`;
-    message += `├ Jangan ganti *username*\n`;
-    message += `├ Batas *min & max* berlaku\n`;
-    message += `├ Proses bertahap, ±30 menit – beberapa jam\n`;
+    message += `╭❀「 *PERHATIAN* 」\n`;
+    message += `├ ❖ _Akun tidak boleh_ *private*\n`;
+    message += `├ ❖ _Jangan ganti_ *username*\n`;
+    message += `├ ❖ _Batas_ *min & max* _berlaku_\n`;
+    message += `├ ❖ _Proses bertahap_, ±30 menit – beberapa jam\n`;
     message += `╰───────────────\n\n`;
 
-    message += `╭❀「 GRUP GARANSI 」\n`;
-    message += `├ Untuk info & komplain:\n`;
-    message += `├ https://chat.whatsapp.com/Js1OixDAAsUA8ZqHQvP84P\n`;
+    message += `╭❀「 *GRUP GARANSI* 」\n`;
+    message += `├ ❖ _Untuk info & komplain_:\n`;
+    message += `├ ❖ https://chat.whatsapp.com/Js1OixDAAsUA8ZqHQvP84P\n`;
     message += `╰───────────────\n\n`;
 
-    message += `╭❀「 TERIMA KASIH 」\n`;
-    message += `├ Sudah order di layanan kami\n`;
-    message += `├ Butuh bantuan? Chat admin di grup\n`;
+    message += `╭❀「 *TERIMA KASIH* 」\n`;
+    message += `├ ❖ _Sudah order di layanan kami_\n`;
+    message += `├ ❖ _Butuh bantuan?_ Chat admin di grup\n`;
     message += `╰───────────────\n`;
 
     const encodedMessage = encodeURIComponent(message);
