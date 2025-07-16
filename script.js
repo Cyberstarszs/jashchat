@@ -477,7 +477,7 @@ function placeOrder() {
     message += `├ ❖ _Akun tidak boleh_ *private*\n`;
     message += `├ ❖ _Jangan ganti_ *username*\n`;
     message += `├ ❖ _Batas_ *min & max* _berlaku_\n`;
-    message += `├ ❖ _Proses bertahap_, ±30 menit – beberapa jam\n`;
+    message += `├ ❖ _Proses bertahap_, ±5 menit – beberapa jam\n`;
     message += `╰───────────────\n\n`;
 
     message += `╭❀「 *GRUP GARANSI* 」\n`;
