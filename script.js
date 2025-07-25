@@ -162,6 +162,28 @@ const pricingData = {
             { quantity: 50000, price: 11000 },
             { quantity: 70000, price: 13000 },
             { quantity: 100000, price: 15000 }
+        ],
+        'Live Views': [
+            { quantity: 50, price: 4000 },
+            { quantity: 100, price: 5000 },
+            { quantity: 150, price: 6000 },
+            { quantity: 200, price: 7000 },
+            { quantity: 250, price: 8000 },
+            { quantity: 300, price: 9000 },
+            { quantity: 350, price: 10000 },
+            { quantity: 400, price: 11000 },
+            { quantity: 450, price: 12000 },
+            { quantity: 500, price: 13000 },
+            { quantity: 550, price: 14000 },
+            { quantity: 600, price: 15000 },
+            { quantity: 650, price: 16000 },
+            { quantity: 700, price: 17000 },
+            { quantity: 750, price: 18000 },
+            { quantity: 800, price: 19000 },
+            { quantity: 850, price: 20000 },
+            { quantity: 900, price: 21000 },
+            { quantity: 950, price: 22000 },
+            { quantity: 1000, price: 23000 }
         ]
     },
     'YouTube': {
@@ -204,6 +226,30 @@ const pricingData = {
             { quantity: 50000, price: 450000 },
             { quantity: 70000, price: 656000 },
             { quantity: 100000, price: 937000 }
+        ]
+    },
+    'Shopee': {
+        'Followers': [
+            { quantity: 50, price: 6000 },
+            { quantity: 100, price: 7000 },
+            { quantity: 150, price: 8000 },
+            { quantity: 200, price: 9000 },
+            { quantity: 250, price: 9500 },
+            { quantity: 300, price: 10000 },
+            { quantity: 350, price: 10500 },
+            { quantity: 400, price: 11000 },
+            { quantity: 450, price: 11500 },
+            { quantity: 500, price: 12000 },
+            { quantity: 550, price: 13000 },
+            { quantity: 600, price: 13500 },
+            { quantity: 650, price: 14000 },
+            { quantity: 700, price: 14500 },
+            { quantity: 750, price: 15000 },
+            { quantity: 800, price: 15500 },
+            { quantity: 850, price: 16000 },
+            { quantity: 900, price: 16500 },
+            { quantity: 950, price: 17000 },
+            { quantity: 1000, price: 18000 }
         ]
     },
     'Premium Apps': {
@@ -322,8 +368,6 @@ const pricingData = {
         'TikTok Followers': [
             { quantity: '100 Followers', price: 14500 }
         ],
-
-        // Yang tidak ada harga tapi tetap ditampilkan
         'Adobe Creative Cloud': [
             { quantity: 'Semua Versi', price: 'Chat admin untuk tanya harga' }
         ],
@@ -501,8 +545,6 @@ function setupEventListeners() {
         const encodedMessage = encodeURIComponent(message);
         window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`, '_blank');
     });
-
-
 }
 
 function checkDarkModePreference() {
@@ -563,7 +605,7 @@ function showPricingOptions(platform, service) {
 
             if (service === 'Followers' || service === 'Subscribers') {
                 accountLinkGroup.classList.remove('hidden');
-            } else if (service === 'Likes' || service === 'Views' || service === 'Shares') {
+            } else if (service === 'Likes' || service === 'Views' || service === 'Shares' || service === 'Live Views') {
                 videoLinkGroup.classList.remove('hidden');
             }
 
@@ -662,7 +704,7 @@ function validateForm() {
 
     if (service === 'Followers' || service === 'Subscribers') {
         return accountLink.trim() !== '';
-    } else if (service === 'Likes' || service === 'Views' || service === 'Shares') {
+    } else if (service === 'Likes' || service === 'Views' || service === 'Shares' || service === 'Live Views') {
         return videoLink.trim() !== '';
     }
 
