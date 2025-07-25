@@ -1,4 +1,3 @@
-// DOM Elements
 const platformSelect = document.getElementById('platform');
 const serviceSelect = document.getElementById('service');
 const pricingOptions = document.getElementById('pricingOptions');
@@ -24,10 +23,8 @@ const pageTitle = document.getElementById('pageTitle');
 const navItems = document.querySelectorAll('.nav-item');
 const promoSection = document.getElementById('promoSection');
 
-// WhatsApp number
 const WHATSAPP_NUMBER = '6281324919799';
 
-// Order data
 const orderData = [
     { id: 'jashub0001', kategori: 'Tiktok Followers', layanan: 110, tanggal: '2025-06-13 11:00:00', status: 'Success' },
     { id: 'jashub0002', kategori: 'Tiktok Followers', layanan: 120, tanggal: '2025-06-13 12:00:00', status: 'Success' },
@@ -85,9 +82,6 @@ orderData.sort((a, b) => {
     const numB = parseInt(b.id.replace('jashub', ''));
     return numB - numA;
 });
-
-console.log(orderData);
-
 
 const pricingData = {
     'Instagram': {
@@ -211,15 +205,171 @@ const pricingData = {
             { quantity: 70000, price: 656000 },
             { quantity: 100000, price: 937000 }
         ]
+    },
+    'Premium Apps': {
+        'ChatGPT': [
+            { quantity: '1 Bulan 5U (Sharing)', price: 18000 },
+            { quantity: '1 Minggu (Sharing)', price: 22000 },
+            { quantity: '1 Bulan 10U', price: 34000 },
+            { quantity: '1 Bulan 8U', price: 40000 }
+        ],
+        'YouTube Premium': [
+            { quantity: '1 Bulan (Famplan)', price: 8500 },
+            { quantity: '1 Bulan (Individu)', price: 11500 },
+            { quantity: '3 Bulan (Individu)', price: 26000 },
+            { quantity: '3 Bulan (Inplan Promo)', price: 23000 }
+        ],
+        'Canva Pro': [
+            { quantity: '1 Bulan', price: 3000 },
+            { quantity: '3 Bulan', price: 7000 },
+            { quantity: '1 Tahun', price: 15000 },
+            { quantity: 'EDU Lifetime', price: 22650 }
+        ],
+        'CapCut Pro': [
+            { quantity: '1 Minggu', price: 10000 },
+            { quantity: '1 Bulan (Garansi 7 hari)', price: 15000 },
+            { quantity: '1 Bulan (Full Garansi)', price: 17000 }
+        ],
+        'Spotify Premium': [
+            { quantity: '1 Bulan', price: 18000 },
+            { quantity: '2 Bulan', price: 22000 }
+        ],
+        'Vidio': [
+            { quantity: '1 Bulan (Sharing)', price: 18500 },
+            { quantity: '1 Bulan (Private All Device)', price: 28000 },
+            { quantity: '1 Tahun (Private TV Only)', price: 11725 }
+        ],
+        'Netflix Premium': [
+            { quantity: '1P1U - 1 Minggu', price: 14850 },
+            { quantity: '1P1U - 1 Bulan', price: 25000 },
+            { quantity: '1P2U - 1 Minggu', price: 13650 },
+            { quantity: '1P2U - 1 Bulan', price: 20000 },
+            { quantity: 'Private - 1 Bulan', price: 100000 }
+        ],
+        'Remini': [
+            { quantity: '1 Bulan (Web Sharing)', price: 12500 },
+            { quantity: '1 Tahun (App Android PRO)', price: 38750 }
+        ],
+        'Disney+ Hotstar': [
+            { quantity: '1 Minggu (Sharing)', price: 16000 },
+            { quantity: '1 Bulan (Sharing)', price: 23000 },
+            { quantity: '1 Bulan (Private)', price: 65000 }
+        ],
+        'IQIYI': [
+            { quantity: '1 Bulan (Sharing)', price: 10475 },
+            { quantity: '1 Bulan (Private)', price: 31000 }
+        ],
+        'Zoom Meeting Pro': [
+            { quantity: '14 Hari', price: 11250 }
+        ],
+        'WeTV VIP': [
+            { quantity: '1 Bulan (Sharing)', price: 13000 },
+            { quantity: '1 Bulan (Private)', price: 32000 }
+        ],
+        'VSCO': [
+            { quantity: '1 Tahun', price: 21250 }
+        ],
+        'VIU Premium': [
+            { quantity: '1 Tahun (Anti Limit)', price: 7000 },
+            { quantity: '150 Akun', price: 20000 }
+        ],
+        'Vision+': [
+            { quantity: '1 Bulan (Sharing)', price: 11000 },
+            { quantity: '1 Bulan (Code Redeem)', price: 10625 },
+            { quantity: '1 Bulan (Private)', price: 13000 }
+        ],
+        'RCTI+': [
+            { quantity: '1 Bulan (Sharing)', price: 17000 },
+            { quantity: '1 Bulan (Private)', price: 28000 }
+        ],
+        'Picsart': [
+            { quantity: '1 Bulan (Private)', price: 10000 }
+        ],
+        'Meitu': [
+            { quantity: '1 Bulan (Sharing)', price: 18000 },
+            { quantity: '1 Bulan (Private)', price: 33000 }
+        ],
+        'HBO': [
+            { quantity: '1 Bulan (Sharing Max)', price: 20000 },
+            { quantity: '1 Bulan (Sharing GO)', price: 16250 },
+            { quantity: '1 Bulan (Private Max)', price: 48000 }
+        ],
+        'GetContact Premium': [
+            { quantity: '1 Bulan', price: 13000 }
+        ],
+        'Amazon Prime Video': [
+            { quantity: '1 Bulan (Sharing)', price: 12000 },
+            { quantity: '1 Bulan (Private)', price: 15000 }
+        ],
+        'Apple Music': [
+            { quantity: '1 Bulan (Famplan)', price: 9700 },
+            { quantity: '2 Bulan (Famplan)', price: 12975 },
+            { quantity: '3 Bulan (Famplan)', price: 20750 },
+            { quantity: '1 Bulan (Famhead)', price: 14000 }
+        ],
+        'BStation': [
+            { quantity: '1 Bulan', price: 11100 },
+            { quantity: '3 Bulan', price: 14900 },
+            { quantity: '1 Tahun', price: 17300 }
+        ],
+        'Dramabox': [
+            { quantity: '1 Bulan', price: 12200 },
+            { quantity: '3 Bulan', price: 23500 }
+        ],
+        'Instagram Followers': [
+            { quantity: '100 Followers', price: 14500 }
+        ],
+        'TikTok Followers': [
+            { quantity: '100 Followers', price: 14500 }
+        ],
+
+        // Yang tidak ada harga tapi tetap ditampilkan
+        'Adobe Creative Cloud': [
+            { quantity: 'Semua Versi', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Microsoft 365': [
+            { quantity: 'Semua Paket', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Google One': [
+            { quantity: 'Semua Penyimpanan', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Turnitin': [
+            { quantity: 'Cek Plagiarisme', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Grammarly Premium': [
+            { quantity: 'Semua Durasi', price: 'Chat admin untuk tanya harga' }
+        ],
+        'WPS Premium': [
+            { quantity: 'Semua Versi', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Windows 10/11 Pro': [
+            { quantity: 'Lisensi Asli', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Office 2019/2021': [
+            { quantity: 'Paket Lengkap', price: 'Chat admin untuk tanya harga' }
+        ],
+        'CapCut Web Premium': [
+            { quantity: 'Unlock Template', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Alight Motion Pro': [
+            { quantity: 'Semua Fitur', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Lightroom Premium': [
+            { quantity: '1 Tahun', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Picsay Pro': [
+            { quantity: 'Unlock All', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Hosting Domain': [
+            { quantity: 'Custom Domain & Hosting', price: 'Chat admin untuk tanya harga' }
+        ]
     }
 };
 
-// Pagination variables
 let currentPage = 1;
 const ordersPerPage = 10;
 let filteredOrders = [...orderData];
 
-// Initialize the app
 function initApp() {
     setupEventListeners();
     hideLinkInputs();
@@ -227,8 +377,6 @@ function initApp() {
     renderActiveOrders();
     checkDarkModePreference();
     setupServiceCards();
-
-    // Initialize AOS
     AOS.init({
         duration: 800,
         easing: 'ease-in-out',
@@ -236,14 +384,12 @@ function initApp() {
     });
 }
 
-// Setup service card click handlers
 function setupServiceCards() {
     document.querySelectorAll('.service-card').forEach(card => {
         card.addEventListener('click', function() {
             const platform = this.dataset.platform;
             const service = this.dataset.service;
 
-            // Show order form section
             document.getElementById('orderFormSection').classList.remove('hidden');
             document.querySelector('.services-section').classList.add('hidden');
             document.querySelector('.active-orders').classList.add('hidden');
@@ -251,7 +397,6 @@ function setupServiceCards() {
             promoSection.classList.add('hidden');
             pageTitle.textContent = 'Buat Pesanan';
 
-            // Set platform and service selections
             platformSelect.value = platform;
             platformSelect.dispatchEvent(new Event('change'));
 
@@ -263,9 +408,7 @@ function setupServiceCards() {
     });
 }
 
-// Setup all event listeners
 function setupEventListeners() {
-    // Form event listeners
     platformSelect.addEventListener('change', function() {
         if (this.value) {
             serviceSelect.disabled = false;
@@ -286,14 +429,11 @@ function setupEventListeners() {
     });
 
     orderBtn.addEventListener('click', placeOrder);
-
-    // Order list event listeners
     orderSearch.addEventListener('input', filterOrders);
     statusFilter.addEventListener('change', filterOrders);
     prevPageBtn.addEventListener('click', goToPrevPage);
     nextPageBtn.addEventListener('click', goToNextPage);
 
-    // Navigation event listeners
     navItems.forEach(item => {
         item.addEventListener('click', function() {
             navItems.forEach(nav => nav.classList.remove('active'));
@@ -318,7 +458,6 @@ function setupEventListeners() {
         });
     });
 
-    // View all orders handler
     viewAllOrders.addEventListener('click', function(e) {
         e.preventDefault();
         fullOrderList.classList.remove('hidden');
@@ -326,16 +465,12 @@ function setupEventListeners() {
         document.querySelector('.active-orders').classList.add('hidden');
         promoSection.classList.add('hidden');
         pageTitle.textContent = 'Daftar Pesanan';
-
-        // Update navigation
         navItems.forEach(nav => nav.classList.remove('active'));
         document.querySelector('.nav-item[data-target="orders"]').classList.add('active');
     });
 
-    // Dark mode toggle
     darkModeToggle.addEventListener('click', toggleDarkMode);
 
-    // Promo order button
     document.querySelector('.promo-order-btn').addEventListener('click', function() {
         const message = `✅ *PESAN PROMO 15rb DAPAT 1000 FOLLOWER TIKTOK*\n\n` +
             `❗ *SYARAT DAN KETENTUAN:*\n` +
@@ -347,13 +482,11 @@ function setupEventListeners() {
             `🔹 *Refill:* 30 Hari\n` +
             `🔹 *Quality:* HQ Profile\n\n` +
             `Silakan reply dengan username TikTok Anda yang sedang LIVE:`;
-
         const encodedMessage = encodeURIComponent(message);
         window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`, '_blank');
     });
 }
 
-// Dark mode functions
 function checkDarkModePreference() {
     const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
     if (isDarkMode) {
@@ -375,7 +508,6 @@ function toggleDarkMode() {
     }
 }
 
-// Hide link inputs and pricing display
 function hideLinkInputs() {
     accountLinkGroup.classList.add('hidden');
     videoLinkGroup.classList.add('hidden');
@@ -384,7 +516,6 @@ function hideLinkInputs() {
     orderBtn.disabled = true;
 }
 
-// Show pricing options for selected service
 function showPricingOptions(platform, service) {
     pricingOptions.classList.remove('hidden');
     pricingGrid.innerHTML = '';
@@ -398,7 +529,7 @@ function showPricingOptions(platform, service) {
         option.dataset.quantity = pkg.quantity;
         option.dataset.service = service;
         option.innerHTML = `
-            <div class="quantity">${pkg.quantity.toLocaleString('id-ID')}</div>
+            <div class="quantity">${pkg.quantity}</div>
             <div class="price">Rp${pkg.price.toLocaleString('id-ID')}</div>
         `;
 
@@ -425,7 +556,6 @@ function showPricingOptions(platform, service) {
     });
 }
 
-// Format date to Indonesian format
 function formatIndonesianDate(date) {
     const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
     const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
@@ -440,7 +570,6 @@ function formatIndonesianDate(date) {
     return `${dayName}, ${day} ${month} ${year} ${hours}:${minutes}`;
 }
 
-// Place order function
 function placeOrder() {
     if (!validateForm()) {
         alert('Silakan lengkapi semua data pemesanan terlebih dahulu');
@@ -452,32 +581,37 @@ function placeOrder() {
     const selectedOption = document.querySelector('.pricing-option.selected');
     const price = selectedOption.dataset.price;
     const quantity = selectedOption.dataset.quantity;
-    const accountLink = document.getElementById('accountLinkInput').value.trim();
-    const videoLink = document.getElementById('videoLinkInput').value.trim();
     const currentDate = formatIndonesianDate(new Date());
 
-   let message = `╭❀「 *DATA PESANAN* 」\n`;
+    let message = `╭❀「 *DATA PESANAN* 」\n`;
     message += `├ ❖ _Tanggal_ : ${currentDate}\n`;
     message += `├ ❖ _Jenis_   : ${service} ${platform}\n`;
-    message += `├ ❖ _Jumlah_  : ${quantity}\n`;
+    message += `├ ❖ _Paket_   : ${quantity}\n`;
     message += `├ ❖ _Total_   : Rp${Number(price).toLocaleString('id-ID')}\n`;
     message += `╰───────────────\n\n`;
 
-    // Tentukan label target berdasarkan jenis layanan
-    const isAccountBased = (service === 'Followers' || service === 'Subscribers');
-    const targetLink = isAccountBased ? accountLink : videoLink;
-    const targetLabel = isAccountBased ? 'Akun' : 'Vidio';
+    if (platformSelect.value !== 'Premium Apps') {
+        const isAccountBased = (service === 'Followers' || service === 'Subscribers');
+        const targetLink = isAccountBased ?
+            document.getElementById('accountLinkInput').value.trim() :
+            document.getElementById('videoLinkInput').value.trim();
+        const targetLabel = isAccountBased ? 'Akun' : 'Vidio';
 
-    message += `╭❀「 *TARGET ${targetLabel} 」\n`;
-    message += `├ ❖ _Link_:\n`;
-    message += `├ ❖ ${targetLink}\n`;
-    message += `╰───────────────\n\n`;
+        message += `╭❀「 *TARGET ${targetLabel} 」\n`;
+        message += `├ ❖ _Link_:\n`;
+        message += `├ ❖ ${targetLink}\n`;
+        message += `╰───────────────\n\n`;
+    }
 
     message += `╭❀「 *PERHATIAN* 」\n`;
-    message += `├ ❖ _Akun tidak boleh_ *private*\n`;
-    message += `├ ❖ _Jangan ganti_ *username*\n`;
+    if (platformSelect.value === 'Premium Apps') {
+        message += `├ ❖ _Akun akan dikirim via WhatsApp setelah pembayaran_\n`;
+        message += `├ ❖ _Proses aktivasi 1-12 jam setelah pembayaran_\n`;
+    } else {
+        message += `├ ❖ _Akun tidak boleh_ *private*\n`;
+        message += `├ ❖ _Jangan ganti_ *username*\n`;
+    }
     message += `├ ❖ _Batas_ *min & max* _berlaku_\n`;
-    message += `├ ❖ _Proses bertahap_, ±5 menit – beberapa jam\n`;
     message += `╰───────────────\n\n`;
 
     message += `╭❀「 *GRUP GARANSI* 」\n`;
@@ -494,13 +628,17 @@ function placeOrder() {
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`, '_blank');
 }
 
-// Validate form before placing order
 function validateForm() {
     if (!platformSelect.value || !serviceSelect.value || !document.querySelector('.pricing-option.selected')) {
         return false;
     }
 
     const service = serviceSelect.value;
+
+    if (platformSelect.value === 'Premium Apps') {
+        return true;
+    }
+
     const accountLink = document.getElementById('accountLinkInput').value;
     const videoLink = document.getElementById('videoLinkInput').value;
 
@@ -513,14 +651,12 @@ function validateForm() {
     return false;
 }
 
-// Copy to clipboard function
 function copyToClipboard(id) {
     const input = document.getElementById(id);
     input.select();
     input.setSelectionRange(0, 99999);
     navigator.clipboard.writeText(input.value);
 
-    // Show feedback
     const copyBtn = input.nextElementSibling;
     copyBtn.innerHTML = '<i class="fas fa-check"></i>';
     setTimeout(() => {
@@ -528,7 +664,6 @@ function copyToClipboard(id) {
     }, 2000);
 }
 
-// Render active orders
 function renderActiveOrders() {
     const activeOrders = [{
             id: 'jashub0038',
@@ -574,7 +709,6 @@ function renderActiveOrders() {
         activeOrderList.appendChild(orderEl);
     });
 
-    // Animate progress bars
     setTimeout(() => {
         document.querySelectorAll('.progress-fill').forEach(bar => {
             bar.style.transition = 'width 1.5s ease';
@@ -582,7 +716,6 @@ function renderActiveOrders() {
     }, 100);
 }
 
-// Filter orders based on search and status
 function filterOrders() {
     const searchTerm = orderSearch.value.toLowerCase();
     const statusFilterValue = statusFilter.value;
@@ -601,7 +734,6 @@ function filterOrders() {
     renderOrderList();
 }
 
-// Render order list with pagination
 function renderOrderList() {
     const startIndex = (currentPage - 1) * ordersPerPage;
     const endIndex = startIndex + ordersPerPage;
@@ -638,7 +770,6 @@ function renderOrderList() {
     updatePaginationControls();
 }
 
-// Update pagination controls
 function updatePaginationControls() {
     const totalPages = Math.ceil(filteredOrders.length / ordersPerPage);
 
@@ -647,7 +778,6 @@ function updatePaginationControls() {
     nextPageBtn.disabled = currentPage === totalPages || totalPages === 0;
 }
 
-// Go to previous page
 function goToPrevPage() {
     if (currentPage > 1) {
         currentPage--;
@@ -655,7 +785,6 @@ function goToPrevPage() {
     }
 }
 
-// Go to next page
 function goToNextPage() {
     const totalPages = Math.ceil(filteredOrders.length / ordersPerPage);
 
@@ -665,5 +794,4 @@ function goToNextPage() {
     }
 }
 
-// Initialize the app when DOM is loaded
 document.addEventListener('DOMContentLoaded', initApp);
