@@ -472,19 +472,37 @@ function setupEventListeners() {
     darkModeToggle.addEventListener('click', toggleDarkMode);
 
     document.querySelector('.promo-order-btn').addEventListener('click', function() {
-        const message = `✅ *PESAN PROMO 15rb DAPAT 1000 FOLLOWER TIKTOK*\n\n` +
-            `❗ *SYARAT DAN KETENTUAN:*\n` +
-            `- HARUS SEDANG LIVE SAAT ORDER\n` +
-            `- TIDAK ADA REFUND/REFILL JIKA TIDAK LIVE\n\n` +
-            `🔹 *Target:* Username\n` +
-            `🔹 *Start:* 0-10 menit\n` +
-            `🔹 *Speed:* 200k/hari\n` +
-            `🔹 *Refill:* 30 Hari\n` +
-            `🔹 *Quality:* HQ Profile\n\n` +
-            `Silakan reply dengan username TikTok Anda yang sedang LIVE:`;
+        const link = document.getElementById('promoAccountLink').value.trim();
+
+        if (!link) {
+            alert('Silakan masukkan link akun Anda terlebih dahulu.');
+            return;
+        }
+
+        let message = `╭❀「 *PROMO CASHBACK* 」\n`;
+        message += `├ ❖ _Cashback Rp5.000 untuk order di atas Rp50.000_\n`;
+        message += `├ ❖ _Tanpa kode promo (otomatis)_\n`;
+        message += `├ ❖ _Saldo masuk ke akun setelah order valid_\n`;
+        message += `╰───────────────\n\n`;
+
+        message += `╭❀「 *LINK AKUN* 」\n`;
+        message += `├ ❖ ${link}\n`;
+        message += `╰───────────────\n\n`;
+
+        message += `╭❀「 *PERHATIAN* 」\n`;
+        message += `├ ❖ _Promo hanya berlaku hingga akhir bulan ini_\n`;
+        message += `├ ❖ _Cashback tidak berlaku kelipatan_\n`;
+        message += `╰───────────────\n\n`;
+
+        message += `╭❀「 *KONFIRMASI* 」\n`;
+        message += `├ ❖ _Saya ingin mengikuti promo ini dan melakukan pemesanan_\n`;
+        message += `╰───────────────`;
+
         const encodedMessage = encodeURIComponent(message);
         window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`, '_blank');
     });
+
+
 }
 
 function checkDarkModePreference() {
