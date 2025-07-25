@@ -24,6 +24,9 @@ const navItems = document.querySelectorAll('.nav-item');
 const promoSection = document.getElementById('promoSection');
 const premiumAppsSection = document.getElementById('premiumAppsSection');
 const premiumAppsGrid = document.getElementById('premiumAppsGrid');
+const notificationModal = document.getElementById('notificationModal');
+const closeModal = document.getElementById('closeModal');
+const understandBtn = document.getElementById('understandBtn');
 
 const WHATSAPP_NUMBER = '6281324919799';
 
@@ -424,6 +427,7 @@ function initApp() {
     checkDarkModePreference();
     setupServiceCards();
     renderPremiumApps();
+    showNotification();
     AOS.init({
         duration: 800,
         easing: 'ease-in-out',
@@ -725,6 +729,26 @@ function setupEventListeners() {
 
         const encodedMessage = encodeURIComponent(message);
         window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`, '_blank');
+    });
+
+    closeModal.addEventListener('click', function() {
+        notificationModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        localStorage.setItem('hasSeenNotification', 'true');
+    });
+
+    understandBtn.addEventListener('click', function() {
+        notificationModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        localStorage.setItem('hasSeenNotification', 'true');
+    });
+
+    notificationModal.addEventListener('click', function(e) {
+        if (e.target === notificationModal) {
+            notificationModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            localStorage.setItem('hasSeenNotification', 'true');
+        }
     });
 }
 
@@ -1032,6 +1056,15 @@ function goToNextPage() {
     if (currentPage < totalPages) {
         currentPage++;
         renderOrderList();
+    }
+}
+
+function showNotification() {
+    const hasSeenNotification = localStorage.getItem('hasSeenNotification');
+
+    if (!hasSeenNotification) {
+        notificationModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
     }
 }
 
