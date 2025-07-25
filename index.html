@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
     <link rel="stylesheet" href="styles.css" />
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JHQ1Y3T4LF"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -24,7 +23,6 @@
 
 <body>
     <div class="app-container">
-        <!-- Header Bar -->
         <div class="header-bar">
             <div class="header-content">
                 <div class="logo-section">
@@ -45,12 +43,9 @@
             <div class="page-title" id="pageTitle">Pembelian Follower</div>
         </div>
 
-        <!-- Services Section -->
-        <!-- Services Section -->
         <div class="services-section" id="servicesSection">
             <h3>Layanan</h3>
             <div class="services-grid">
-                <!-- Kolom 1 -->
                 <div class="service-column">
                     <div class="service-card" data-platform="Instagram" data-service="Followers">
                         <i class="fas fa-users"></i>
@@ -64,9 +59,12 @@
                         <i class="fas fa-thumbs-up"></i>
                         <span>Likes TikTok</span>
                     </div>
+                    <div class="service-card" data-platform="Premium Apps" data-service="ChatGPT">
+                        <i class="fas fa-crown"></i>
+                        <span>Aplikasi Premium</span>
+                    </div>
                 </div>
 
-                <!-- Kolom 2 -->
                 <div class="service-column">
                     <div class="service-card" data-platform="Tiktok" data-service="Followers">
                         <i class="fab fa-tiktok"></i>
@@ -84,7 +82,6 @@
             </div>
         </div>
 
-        <!-- Active Orders -->
         <div class="active-orders">
             <div class="section-header">
                 <h3>Pesanan Aktif</h3>
@@ -93,7 +90,6 @@
             <div class="order-list" id="activeOrderList"></div>
         </div>
 
-        <!-- Order Form Section -->
         <div class="order-form-section hidden" id="orderFormSection">
             <div class="card">
                 <h2 class="section-title"><i class="fas fa-shopping-cart"></i> Buat Pesanan</h2>
@@ -102,24 +98,65 @@
                         <label for="platform"><i class="fas fa-mobile-alt"></i> Platform</label>
                         <div class="select-wrapper">
                             <select id="platform" class="form-control">
-                                <option value="">-- Pilih Platform --</option>
-                                <option value="Instagram">Instagram</option>
-                                <option value="Tiktok">TikTok</option>
-                                <option value="YouTube">YouTube</option>
-                            </select>
+            <option value="">-- Pilih Platform --</option>
+            <option value="Instagram">Instagram</option>
+            <option value="Tiktok">TikTok</option>
+            <option value="YouTube">YouTube</option>
+            <option value="Premium Apps">Aplikasi Premium</option>
+          </select>
                         </div>
                     </div>
+
                     <div class="form-group">
                         <label for="service"><i class="fas fa-concierge-bell"></i> Jenis Layanan</label>
                         <div class="select-wrapper">
                             <select id="service" class="form-control" disabled>
-                                <option value="">-- Pilih Layanan --</option>
-                                <option value="Followers">Followers</option>
-                                <option value="Likes">Likes</option>
-                                <option value="Views">Views</option>
-                                <option value="Subscribers">Subscribers</option>
-                                <option value="Shares">Shares</option>
-                            </select>
+            <option value="">-- Pilih Layanan --</option>
+            <option value="Followers">Followers</option>
+            <option value="Likes">Likes</option>
+            <option value="Views">Views</option>
+            <option value="Subscribers">Subscribers</option>
+            <option value="Shares">Shares</option>
+            <option value="ChatGPT">ChatGPT</option>
+            <option value="YouTube Premium">YouTube Premium</option>
+            <option value="Canva Pro">Canva Pro</option>
+            <option value="CapCut Pro">CapCut Pro</option>
+            <option value="Spotify Premium">Spotify Premium</option>
+            <option value="Vidio">Vidio</option>
+            <option value="Netflix Premium">Netflix Premium</option>
+            <option value="Remini">Remini</option>
+            <option value="Disney+ Hotstar">Disney+ Hotstar</option>
+            <option value="IQIYI">IQIYI</option>
+            <option value="Zoom Meeting Pro">Zoom Meeting Pro</option>
+            <option value="WeTV VIP">WeTV VIP</option>
+            <option value="VSCO">VSCO</option>
+            <option value="VIU Premium">VIU Premium</option>
+            <option value="Vision+">Vision+</option>
+            <option value="RCTI+">RCTI+</option>
+            <option value="Picsart">Picsart</option>
+            <option value="Meitu">Meitu</option>
+            <option value="HBO">HBO</option>
+            <option value="GetContact Premium">GetContact Premium</option>
+            <option value="Amazon Prime Video">Amazon Prime Video</option>
+            <option value="Apple Music">Apple Music</option>
+            <option value="BStation">BStation</option>
+            <option value="Dramabox">Dramabox</option>
+            <option value="Instagram Followers">Instagram Followers</option>
+            <option value="TikTok Followers">TikTok Followers</option>
+            <option value="Adobe Creative Cloud">Adobe Creative Cloud</option>
+            <option value="Microsoft 365">Microsoft 365</option>
+            <option value="Google One">Google One</option>
+            <option value="Turnitin">Turnitin</option>
+            <option value="Grammarly Premium">Grammarly Premium</option>
+            <option value="WPS Premium">WPS Premium</option>
+            <option value="Windows 10/11 Pro">Windows 10/11 Pro</option>
+            <option value="Office 2019/2021">Office 2019/2021</option>
+            <option value="CapCut Web Premium">CapCut Web Premium</option>
+            <option value="Alight Motion Pro">Alight Motion Pro</option>
+            <option value="Lightroom Premium">Lightroom Premium</option>
+            <option value="Picsay Pro">Picsay Pro</option>
+            <option value="Hosting Domain">Hosting Domain</option>
+          </select>
                         </div>
                     </div>
                 </div>
@@ -134,8 +171,8 @@
                     <div class="input-with-button">
                         <input type="text" id="accountLinkInput" class="form-control" placeholder="https://www.instagram.com/username" />
                         <button class="copy-btn" onclick="copyToClipboard('accountLinkInput')">
-                            <i class="fas fa-copy"></i>
-                        </button>
+          <i class="fas fa-copy"></i>
+        </button>
                     </div>
                 </div>
 
@@ -144,8 +181,8 @@
                     <div class="input-with-button">
                         <input type="text" id="videoLinkInput" class="form-control" placeholder="https://www.tiktok.com/@username/video/123456" />
                         <button class="copy-btn" onclick="copyToClipboard('videoLinkInput')">
-                            <i class="fas fa-copy"></i>
-                        </button>
+          <i class="fas fa-copy"></i>
+        </button>
                     </div>
                 </div>
 
@@ -156,12 +193,12 @@
                 </div>
 
                 <button id="orderBtn" class="btn btn-primary btn-block" disabled>
-                    <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
-                </button>
+      <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+    </button>
             </div>
         </div>
 
-        <!-- Full Order List Section -->
+
         <div class="full-order-list hidden" id="fullOrderList">
             <div class="card">
                 <h2 class="section-title"><i class="fas fa-clipboard-list"></i> Daftar Order Terkini</h2>
@@ -200,11 +237,10 @@
                 </div>
             </div>
         </div>
-        <!-- Promo Section -->
+
         <div class="promo-section hidden" id="promoSection">
             <div class="card">
                 <h2 class="section-title"><i class="fas fa-tag"></i> Promo Spesial</h2>
-
                 <div class="promo-card">
                     <div class="promo-badge">HOT</div>
                     <div class="promo-header">
@@ -214,7 +250,6 @@
                             <span class="discount-price">Rp15.000</span>
                         </div>
                     </div>
-
                     <div class="promo-content">
                         <div class="promo-description">
                             <p><strong>❗❗❗ PERHATIAN ❗❗❗</strong></p>
@@ -225,7 +260,6 @@
                                 <li>Tidak ada jaminan apa pun baik refund ataupun refill jika tidak LIVE sebelum order</li>
                             </ul>
                         </div>
-
                         <div class="promo-details">
                             <div class="detail-item">
                                 <i class="fas fa-user"></i>
@@ -264,15 +298,13 @@
                             </div>
                         </div>
                     </div>
-
                     <button class="btn btn-primary btn-block promo-order-btn">
-                <i class="fab fa-whatsapp"></i> Pesan Sekarang
-            </button>
+                        <i class="fab fa-whatsapp"></i> Pesan Sekarang
+                    </button>
                 </div>
             </div>
         </div>
 
-        <!-- Bottom Navigation -->
         <div class="bottom-nav">
             <div class="nav-item active" data-target="home">
                 <i class="fas fa-home"></i>
