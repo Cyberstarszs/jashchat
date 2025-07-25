@@ -64,7 +64,6 @@
                         <span>Aplikasi Premium</span>
                     </div>
                 </div>
-
                 <div class="service-column">
                     <div class="service-card" data-platform="Tiktok" data-service="Followers">
                         <i class="fab fa-tiktok"></i>
@@ -81,6 +80,14 @@
                     <div class="service-card" data-platform="Tiktok" data-service="Views">
                         <i class="fas fa-eye"></i>
                         <span>Views TikTok</span>
+                    </div>
+                    <div class="service-card" data-platform="Tiktok" data-service="Live Views">
+                        <i class="fas fa-broadcast-tower"></i>
+                        <span>Live Views TikTok</span>
+                    </div>
+                    <div class="service-card" data-platform="Shopee" data-service="Followers">
+                        <i class="fas fa-store"></i>
+                        <span>Followers Shopee</span>
                     </div>
                 </div>
             </div>
@@ -102,12 +109,13 @@
                         <label for="platform"><i class="fas fa-mobile-alt"></i> Platform</label>
                         <div class="select-wrapper">
                             <select id="platform" class="form-control">
-            <option value="">-- Pilih Platform --</option>
-            <option value="Instagram">Instagram</option>
-            <option value="Tiktok">TikTok</option>
-            <option value="YouTube">YouTube</option>
-            <option value="Premium Apps">Aplikasi Premium</option>
-          </select>
+                                <option value="">-- Pilih Platform --</option>
+                                <option value="Instagram">Instagram</option>
+                                <option value="Tiktok">TikTok</option>
+                                <option value="YouTube">YouTube</option>
+                                <option value="Premium Apps">Aplikasi Premium</option>
+                                <option value="Shopee">Shopee</option>
+                            </select>
                         </div>
                     </div>
 
@@ -115,52 +123,54 @@
                         <label for="service"><i class="fas fa-concierge-bell"></i> Jenis Layanan</label>
                         <div class="select-wrapper">
                             <select id="service" class="form-control" disabled>
-            <option value="">-- Pilih Layanan --</option>
-            <option value="Followers">Followers</option>
-            <option value="Likes">Likes</option>
-            <option value="Views">Views</option>
-            <option value="Subscribers">Subscribers</option>
-            <option value="Shares">Shares</option>
-            <option value="ChatGPT">ChatGPT</option>
-            <option value="YouTube Premium">YouTube Premium</option>
-            <option value="Canva Pro">Canva Pro</option>
-            <option value="CapCut Pro">CapCut Pro</option>
-            <option value="Spotify Premium">Spotify Premium</option>
-            <option value="Vidio">Vidio</option>
-            <option value="Netflix Premium">Netflix Premium</option>
-            <option value="Remini">Remini</option>
-            <option value="Disney+ Hotstar">Disney+ Hotstar</option>
-            <option value="IQIYI">IQIYI</option>
-            <option value="Zoom Meeting Pro">Zoom Meeting Pro</option>
-            <option value="WeTV VIP">WeTV VIP</option>
-            <option value="VSCO">VSCO</option>
-            <option value="VIU Premium">VIU Premium</option>
-            <option value="Vision+">Vision+</option>
-            <option value="RCTI+">RCTI+</option>
-            <option value="Picsart">Picsart</option>
-            <option value="Meitu">Meitu</option>
-            <option value="HBO">HBO</option>
-            <option value="GetContact Premium">GetContact Premium</option>
-            <option value="Amazon Prime Video">Amazon Prime Video</option>
-            <option value="Apple Music">Apple Music</option>
-            <option value="BStation">BStation</option>
-            <option value="Dramabox">Dramabox</option>
-            <option value="Instagram Followers">Instagram Followers</option>
-            <option value="TikTok Followers">TikTok Followers</option>
-            <option value="Adobe Creative Cloud">Adobe Creative Cloud</option>
-            <option value="Microsoft 365">Microsoft 365</option>
-            <option value="Google One">Google One</option>
-            <option value="Turnitin">Turnitin</option>
-            <option value="Grammarly Premium">Grammarly Premium</option>
-            <option value="WPS Premium">WPS Premium</option>
-            <option value="Windows 10/11 Pro">Windows 10/11 Pro</option>
-            <option value="Office 2019/2021">Office 2019/2021</option>
-            <option value="CapCut Web Premium">CapCut Web Premium</option>
-            <option value="Alight Motion Pro">Alight Motion Pro</option>
-            <option value="Lightroom Premium">Lightroom Premium</option>
-            <option value="Picsay Pro">Picsay Pro</option>
-            <option value="Hosting Domain">Hosting Domain</option>
-          </select>
+                                <option value="">-- Pilih Layanan --</option>
+                                <option value="Followers">Followers</option>
+                                <option value="Likes">Likes</option>
+                                <option value="Views">Views</option>
+                                <option value="Subscribers">Subscribers</option>
+                                <option value="Shares">Shares</option>
+                                <option value="Live Views">Live Views</option>
+                                <option value="Shopee">Shopee</option>
+                                <option value="ChatGPT">ChatGPT</option>
+                                <option value="YouTube Premium">YouTube Premium</option>
+                                <option value="Canva Pro">Canva Pro</option>
+                                <option value="CapCut Pro">CapCut Pro</option>
+                                <option value="Spotify Premium">Spotify Premium</option>
+                                <option value="Vidio">Vidio</option>
+                                <option value="Netflix Premium">Netflix Premium</option>
+                                <option value="Remini">Remini</option>
+                                <option value="Disney+ Hotstar">Disney+ Hotstar</option>
+                                <option value="IQIYI">IQIYI</option>
+                                <option value="Zoom Meeting Pro">Zoom Meeting Pro</option>
+                                <option value="WeTV VIP">WeTV VIP</option>
+                                <option value="VSCO">VSCO</option>
+                                <option value="VIU Premium">VIU Premium</option>
+                                <option value="Vision+">Vision+</option>
+                                <option value="RCTI+">RCTI+</option>
+                                <option value="Picsart">Picsart</option>
+                                <option value="Meitu">Meitu</option>
+                                <option value="HBO">HBO</option>
+                                <option value="GetContact Premium">GetContact Premium</option>
+                                <option value="Amazon Prime Video">Amazon Prime Video</option>
+                                <option value="Apple Music">Apple Music</option>
+                                <option value="BStation">BStation</option>
+                                <option value="Dramabox">Dramabox</option>
+                                <option value="Instagram Followers">Instagram Followers</option>
+                                <option value="TikTok Followers">TikTok Followers</option>
+                                <option value="Adobe Creative Cloud">Adobe Creative Cloud</option>
+                                <option value="Microsoft 365">Microsoft 365</option>
+                                <option value="Google One">Google One</option>
+                                <option value="Turnitin">Turnitin</option>
+                                <option value="Grammarly Premium">Grammarly Premium</option>
+                                <option value="WPS Premium">WPS Premium</option>
+                                <option value="Windows 10/11 Pro">Windows 10/11 Pro</option>
+                                <option value="Office 2019/2021">Office 2019/2021</option>
+                                <option value="CapCut Web Premium">CapCut Web Premium</option>
+                                <option value="Alight Motion Pro">Alight Motion Pro</option>
+                                <option value="Lightroom Premium">Lightroom Premium</option>
+                                <option value="Picsay Pro">Picsay Pro</option>
+                                <option value="Hosting Domain">Hosting Domain</option>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -175,8 +185,8 @@
                     <div class="input-with-button">
                         <input type="text" id="accountLinkInput" class="form-control" placeholder="https://www.instagram.com/username" />
                         <button class="copy-btn" onclick="copyToClipboard('accountLinkInput')">
-          <i class="fas fa-copy"></i>
-        </button>
+                            <i class="fas fa-copy"></i>
+                        </button>
                     </div>
                 </div>
 
@@ -185,8 +195,8 @@
                     <div class="input-with-button">
                         <input type="text" id="videoLinkInput" class="form-control" placeholder="https://www.tiktok.com/@username/video/123456" />
                         <button class="copy-btn" onclick="copyToClipboard('videoLinkInput')">
-          <i class="fas fa-copy"></i>
-        </button>
+                            <i class="fas fa-copy"></i>
+                        </button>
                     </div>
                 </div>
 
@@ -197,11 +207,10 @@
                 </div>
 
                 <button id="orderBtn" class="btn btn-primary btn-block" disabled>
-      <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
-    </button>
+                    <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+                </button>
             </div>
         </div>
-
 
         <div class="full-order-list hidden" id="fullOrderList">
             <div class="card">
@@ -242,7 +251,7 @@
             </div>
         </div>
 
-        <div class="promo-section" id="promoSection">
+        <div class="promo-section hidden" id="promoSection">
             <div class="card">
                 <h2 class="section-title"><i class="fas fa-tag"></i> Promo Spesial</h2>
                 <div class="promo-card">
@@ -302,8 +311,8 @@
                     </div>
 
                     <button class="btn btn-primary btn-block promo-order-btn">
-                <i class="fas fa-bolt"></i> Mulai Belanja Sekarang
-            </button>
+                        <i class="fas fa-bolt"></i> Mulai Belanja Sekarang
+                    </button>
                 </div>
             </div>
         </div>
