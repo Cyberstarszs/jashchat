@@ -22,6 +22,8 @@ const viewAllOrders = document.getElementById('viewAllOrders');
 const pageTitle = document.getElementById('pageTitle');
 const navItems = document.querySelectorAll('.nav-item');
 const promoSection = document.getElementById('promoSection');
+const premiumAppsSection = document.getElementById('premiumAppsSection');
+const premiumAppsGrid = document.getElementById('premiumAppsGrid');
 
 const WHATSAPP_NUMBER = '6281324919799';
 
@@ -421,11 +423,185 @@ function initApp() {
     renderActiveOrders();
     checkDarkModePreference();
     setupServiceCards();
+    renderPremiumApps();
     AOS.init({
         duration: 800,
         easing: 'ease-in-out',
         once: true
     });
+}
+
+function renderPremiumApps() {
+    premiumAppsGrid.innerHTML = '';
+
+    const premiumCategories = {
+        'Streaming': ['YouTube Premium', 'Netflix Premium', 'Disney+ Hotstar', 'Vidio', 'IQIYI', 'WeTV VIP', 'VIU Premium', 'Vision+', 'RCTI+', 'HBO', 'Amazon Prime Video'],
+        'Produktivitas': ['ChatGPT', 'Canva Pro', 'Grammarly Premium', 'Turnitin', 'Microsoft 365', 'Office 2019/2021', 'WPS Premium', 'Google One', 'Adobe Creative Cloud', 'Zoom Meeting Pro'],
+        'Editing': ['CapCut Pro', 'Lightroom Premium', 'Picsart', 'VSCO', 'Meitu', 'Remini', 'Alight Motion Pro', 'Picsay Pro', 'CapCut Web Premium'],
+        'Musik': ['Spotify Premium', 'Apple Music'],
+        'Lainnya': ['Windows 10/11 Pro', 'Hosting Domain', 'GetContact Premium', 'BStation', 'Dramabox']
+    };
+
+    for (const [category, apps] of Object.entries(premiumCategories)) {
+        const categorySection = document.createElement('div');
+        categorySection.className = 'premium-category';
+        categorySection.innerHTML = `<h3 class="category-title">${category}</h3>`;
+
+        const appsContainer = document.createElement('div');
+        appsContainer.className = 'premium-apps-container';
+
+        apps.forEach(appName => {
+            const appCard = document.createElement('div');
+            appCard.className = 'premium-app-card';
+            appCard.dataset.platform = 'Premium Apps';
+            appCard.dataset.service = appName;
+
+            let iconClass = 'fas fa-crown';
+            switch (appName) {
+                case 'YouTube Premium':
+                    iconClass = 'fab fa-youtube';
+                    break;
+                case 'Netflix Premium':
+                    iconClass = 'fas fa-film';
+                    break;
+                case 'Disney+ Hotstar':
+                    iconClass = 'fas fa-hat-wizard';
+                    break;
+                case 'Vidio':
+                    iconClass = 'fas fa-tv';
+                    break;
+                case 'IQIYI':
+                    iconClass = 'fas fa-play-circle';
+                    break;
+                case 'WeTV VIP':
+                    iconClass = 'fas fa-video';
+                    break;
+                case 'VIU Premium':
+                    iconClass = 'fas fa-video-slash';
+                    break;
+                case 'Vision+':
+                    iconClass = 'fas fa-eye';
+                    break;
+                case 'RCTI+':
+                    iconClass = 'fas fa-broadcast-tower';
+                    break;
+                case 'HBO':
+                    iconClass = 'fas fa-h-square';
+                    break;
+                case 'Amazon Prime Video':
+                    iconClass = 'fab fa-amazon';
+                    break;
+                case 'ChatGPT':
+                    iconClass = 'fas fa-comment-alt';
+                    break;
+                case 'Canva Pro':
+                    iconClass = 'fas fa-palette';
+                    break;
+                case 'Grammarly Premium':
+                    iconClass = 'fas fa-spell-check';
+                    break;
+                case 'Turnitin':
+                    iconClass = 'fas fa-file-alt';
+                    break;
+                case 'Microsoft 365':
+                    iconClass = 'fab fa-microsoft';
+                    break;
+                case 'Office 2019/2021':
+                    iconClass = 'fas fa-file-word';
+                    break;
+                case 'WPS Premium':
+                    iconClass = 'fas fa-file-powerpoint';
+                    break;
+                case 'Google One':
+                    iconClass = 'fab fa-google-drive';
+                    break;
+                case 'Adobe Creative Cloud':
+                    iconClass = 'fab fa-adobe';
+                    break;
+                case 'Zoom Meeting Pro':
+                    iconClass = 'fas fa-video';
+                    break;
+                case 'CapCut Pro':
+                    iconClass = 'fas fa-cut';
+                    break;
+                case 'Lightroom Premium':
+                    iconClass = 'fas fa-camera-retro';
+                    break;
+                case 'Picsart':
+                    iconClass = 'fas fa-image';
+                    break;
+                case 'VSCO':
+                    iconClass = 'fas fa-sliders-h';
+                    break;
+                case 'Meitu':
+                    iconClass = 'fas fa-magic';
+                    break;
+                case 'Remini':
+                    iconClass = 'fas fa-image-portrait';
+                    break;
+                case 'Alight Motion Pro':
+                    iconClass = 'fas fa-film';
+                    break;
+                case 'Picsay Pro':
+                    iconClass = 'fas fa-paint-brush';
+                    break;
+                case 'CapCut Web Premium':
+                    iconClass = 'fas fa-laptop';
+                    break;
+                case 'Spotify Premium':
+                    iconClass = 'fab fa-spotify';
+                    break;
+                case 'Apple Music':
+                    iconClass = 'fab fa-apple';
+                    break;
+                case 'Windows 10/11 Pro':
+                    iconClass = 'fab fa-windows';
+                    break;
+                case 'Hosting Domain':
+                    iconClass = 'fas fa-server';
+                    break;
+                case 'GetContact Premium':
+                    iconClass = 'fas fa-address-book';
+                    break;
+                case 'BStation':
+                    iconClass = 'fas fa-bolt';
+                    break;
+                case 'Dramabox':
+                    iconClass = 'fas fa-theater-masks';
+                    break;
+            }
+
+            appCard.innerHTML = `
+                <div class="app-icon">
+                    <i class="${iconClass}"></i>
+                </div>
+                <div class="app-name">${appName}</div>
+            `;
+
+            appCard.addEventListener('click', function() {
+                document.getElementById('orderFormSection').classList.remove('hidden');
+                premiumAppsSection.classList.add('hidden');
+                servicesSection.classList.add('hidden');
+                document.querySelector('.active-orders').classList.add('hidden');
+                fullOrderList.classList.add('hidden');
+                promoSection.classList.add('hidden');
+                pageTitle.textContent = 'Buat Pesanan';
+
+                platformSelect.value = this.dataset.platform;
+                platformSelect.dispatchEvent(new Event('change'));
+
+                setTimeout(() => {
+                    serviceSelect.value = this.dataset.service;
+                    serviceSelect.dispatchEvent(new Event('change'));
+                }, 100);
+            });
+
+            appsContainer.appendChild(appCard);
+        });
+
+        categorySection.appendChild(appsContainer);
+        premiumAppsGrid.appendChild(categorySection);
+    }
 }
 
 function setupServiceCards() {
@@ -439,6 +615,7 @@ function setupServiceCards() {
             document.querySelector('.active-orders').classList.add('hidden');
             fullOrderList.classList.add('hidden');
             promoSection.classList.add('hidden');
+            premiumAppsSection.classList.add('hidden');
             pageTitle.textContent = 'Buat Pesanan';
 
             platformSelect.value = platform;
@@ -484,7 +661,7 @@ function setupEventListeners() {
             this.classList.add('active');
 
             const target = this.dataset.target;
-            document.querySelectorAll('.services-section, .active-orders, .order-form-section, .full-order-list, .promo-section').forEach(section => {
+            document.querySelectorAll('.services-section, .active-orders, .order-form-section, .full-order-list, .promo-section, .premium-apps-section').forEach(section => {
                 section.classList.add('hidden');
             });
 
@@ -498,6 +675,9 @@ function setupEventListeners() {
             } else if (target === 'promo') {
                 promoSection.classList.remove('hidden');
                 pageTitle.textContent = 'Promo Spesial';
+            } else if (target === 'premium') {
+                premiumAppsSection.classList.remove('hidden');
+                pageTitle.textContent = 'Aplikasi Premium';
             }
         });
     });
@@ -508,6 +688,7 @@ function setupEventListeners() {
         servicesSection.classList.add('hidden');
         document.querySelector('.active-orders').classList.add('hidden');
         promoSection.classList.add('hidden');
+        premiumAppsSection.classList.add('hidden');
         pageTitle.textContent = 'Daftar Pesanan';
         navItems.forEach(nav => nav.classList.remove('active'));
         document.querySelector('.nav-item[data-target="orders"]').classList.add('active');
