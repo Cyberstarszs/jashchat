@@ -115,7 +115,7 @@ const pricingData = {
             { quantity: 800, price: 9000 },
             { quantity: 900, price: 10000 },
             { quantity: 1000, price: 11000 },
-            { quantity: 3000, price: 15000 }
+            { quantity: 3000, price: 23000 }
         ],
         'Views': [
             { quantity: 15000, price: 3000 },
@@ -153,7 +153,7 @@ const pricingData = {
             { quantity: 800, price: 9000 },
             { quantity: 900, price: 10000 },
             { quantity: 1000, price: 11000 },
-            { quantity: 3000, price: 15000 }
+            { quantity: 3000, price: 23000 }
         ],
         'Views': [
             { quantity: 1000, price: 2000 },
