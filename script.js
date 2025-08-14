@@ -881,7 +881,7 @@ function placeOrder() {
 
     message += `╭❀「 *GRUP GARANSI* 」\n`;
     message += `├ ❖ _Untuk info & komplain_:\n`;
-    message += `├ ❖ https://chat.whatsapp.com/Js1OixDAAsUA8ZqHQvP84P\n`;
+    message += `├ ❖ https://chat.whatsapp.com/Jx8A9vEbI056C5phpqu7Ux?mode=ac_t\n`;
     message += `╰───────────────\n\n`;
 
     message += `╭❀「 *TERIMA KASIH* 」\n`;
@@ -1069,3 +1069,4 @@ function showNotification() {
 }
 
 document.addEventListener('DOMContentLoaded', initApp);
+
