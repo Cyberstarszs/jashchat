@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jashub - Layanan Digital Premium</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+         :root {
+            --primary: #2D5BFF;
+            --secondary: #FF6B35;
+            --dark: #1A1A2E;
+            --light: #F8F9FA;
+            --gray: #6C757D;
+            --success: #28A745;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Header & Navigation */
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #1A3AC2 100%);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        /* Hero Section */
+        
+        .hero {
+            padding: 160px 0 100px;
+            background: linear-gradient(rgba(45, 91, 255, 0.9), rgba(26, 58, 194, 0.9)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23ffffff" opacity="0.2" width="10" height="10"/></svg>');
+            background-size: cover;
+            color: white;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1.2s ease;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 14px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+            animation: fadeInUp 1.4s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.6);
+        }
+        /* Services Section */
+        
+        .services {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .service-header {
+            background: var(--primary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .service-header h3 {
+            font-size: 1.4rem;
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px dashed #eee;
+        }
+        
+        .service-item:last-child {
+            border-bottom: none;
+        }
+        
+        .service-item .amount {
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .service-item .price {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+        
+        .service-button {
+            display: block;
+            text-align: center;
+            background: var(--primary);
+            color: white;
+            padding: 12px;
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 6px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .service-button:hover {
+            background: var(--secondary);
+        }
+        /* Poster Section */
+        
+        .poster-section {
+            padding: 80px 0;
+            background: linear-gradient(to right, #f5f7fa, #e4e8f0);
+        }
+        
+        .poster-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .poster-image {
+            width: 100%;
+            display: block;
+        }
+        /* WhatsApp Float */
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            z-index: 100;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.7);
+        }
+        /* Footer */
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .footer-column p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        /* Animations */
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        /* Responsive Styles */
+        
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+            .hero p {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+                font-size: 24px;
+            }
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                background: var(--primary);
+                width: 250px;
+                height: 100vh;
+                flex-direction: column;
+                padding: 40px 20px;
+                transition: all 0.4s ease;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            }
+            .nav-links.active {
+                right: 0;
+            }
+            .nav-links li {
+                margin: 15px 0;
+            }
+            .hero {
+                padding: 140px 0 80px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1.1rem;
+            }
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">Jash<span>ub</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Layanan</a></li>
+                <li><a href="#poster">Poster</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>SEMUA LAYANAN DIGITAL DALAM SATU TEMPAT</h1>
+            <p>IG, TIKTOK, YOUTUBE, SHOPEE & APP PREMIUM</p>
+            <a href="pesanan.html" class="cta-button">Pesan Sekarang</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Layanan Kami</h2>
+            </div>
+
+            <div class="services-grid">
+                <!-- Instagram Followers -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Instagram Followers</h3>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-item">
+                            <span class="amount">50 Pengikut</span>
+                            <span class="price">Rp 3k</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="amount">100 Pengikut</span>
+                            <span class="price">Rp 6k</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="amount">200 Pengikut</span>
+                            <span class="price">Rp 9k</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="amount">300 Pengikut</span>
+                            <span class="price">Rp 12k</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="amount">500 Pengikut</span>
+                            <span class="price">Rp 18k</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="amount">1000 Pengikut</span>
+                            <span class="price">Rp 27k</span>
+                        </div>
+                        <a href="pesanan.html" class="service-button">Pesan Sekarang</a>
+                    </div>
+                </div>
+
+                <!-- TikTok Followers -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>TikTok Followers</h3>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-item">
+                            <span class="amount">50 Pengikut</span>
+                            <span class="price">Rp 3k</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="amount">100 Pengikut</span>
+                            <span class="price">Rp 7k</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="amount">200 Pengikut</span>
+                            <span class="price">Rp 12k</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="amount">300 Pengikut</span>
+                            <span class="price">Rp 15k</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="amount">500 Pengikut</span>
+                            <span class="price">Rp 27k</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="amount">1000 Pengikut</span>
+                            <span class="price">Rp 46k</span>
+                        </div>
+                        <a href="pesanan.html" class="service-button">Pesan Sekarang</a>
+                    </div>
+                </div>
+
+                <!-- YouTube Subscribers -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>YouTube Subscribers</h3>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-item">
+                            <span class="amount">50 Subscriber</span>
+                            <span class="price">Rp 6k</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="amount">100 Subscriber</span>
+                            <span class="price">Rp 16k</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="amount">200 Subscriber</span>
+                            <span class="price">Rp 24k</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="amount">300 Subscriber</span>
+                            <span class="price">Rp 32k</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="amount">500 Subscriber</span>
+                            <span class="price">Rp 48k</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="amount">1000 Subscriber</span>
+                            <span class="price">Rp 99k</span>
+                        </div>
+                        <a href="pesanan.html" class="service-button">Pesan Sekarang</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Poster Section -->
+    <section class="poster-section" id="poster">
+        <div class="container">
+            <div class="section-title">
+                <h2>Poster Layanan Lengkap</h2>
+            </div>
+            <div class="poster-container">
+                <!-- Placeholder for the poster image -->
+                <img src="poster_jashub.jpg" alt="Poster Layanan Jashub" class="poster-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/6281324919799?text=Halo%20Jashub,%20saya%20ingin%20konsultasi%20tentang%20layanan%20jashub" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Tentang Jashub</h3>
+                    <p>Penyedia layanan digital terpercaya dengan kualitas premium dan harga terjangkau. Semua layanan digital dalam satu tempat.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Kontak Kami</h3>
+                    <p><i class="fas fa-phone"></i> +62 813-2491-9799</p>
+                    <p><i class="fas fa-envelope"></i> info@jashub.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Indonesia</p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Layanan</h3>
+                    <p>Instagram Followers & Likes</p>
+                    <p>TikTok Followers & Likes</p>
+                    <p>YouTube Subscribers & Views</p>
+                    <p>Shopee Followers</p>
+                    <p>App Premium Accounts</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2023 Jashub - All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile nav when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 1s ease forwards';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe service cards for animation
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.style.opacity = '0';
+            observer.observe(card);
+        });
+    </script>
+</body>
+
+</html>
