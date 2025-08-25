@@ -862,7 +862,7 @@ function placeOrder() {
             document.getElementById('videoLinkInput').value.trim();
         const targetLabel = isAccountBased ? 'Akun' : 'Vidio';
 
-        message += `╭❀「 *TARGET ${targetLabel} 」\n`;
+        message += `╭❀「 TARGET ${targetLabel} 」\n`;
         message += `├ ❖ _Link_:\n`;
         message += `├ ❖ ${targetLink}\n`;
         message += `╰───────────────\n\n`;
@@ -1069,5 +1069,6 @@ function showNotification() {
 }
 
 document.addEventListener('DOMContentLoaded', initApp);
+
 
 
