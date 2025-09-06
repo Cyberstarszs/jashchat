@@ -822,17 +822,13 @@ function showPricingOptions(platform, service) {
 }
 
 function formatIndonesianDate(date) {
-    const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
-    const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
-
-    const dayName = days[date.getDay()];
-    const day = date.getDate();
-    const month = months[date.getMonth()];
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
     const year = date.getFullYear();
     const hours = String(date.getHours()).padStart(2, '0');
     const minutes = String(date.getMinutes()).padStart(2, '0');
 
-    return `${dayName}, ${day} ${month} ${year} ${hours}:${minutes}`;
+    return `${day}/${month}/${year} ${hours}:${minutes}`;
 }
 
 function placeOrder() {
@@ -848,46 +844,46 @@ function placeOrder() {
     const quantity = selectedOption.dataset.quantity;
     const currentDate = formatIndonesianDate(new Date());
 
-    let message = `╭❀「 *DATA PESANAN* 」\n`;
-    message += `├ ❖ _Tanggal_ : ${currentDate}\n`;
-    message += `├ ❖ _Jenis_   : ${service} ${platform}\n`;
-    message += `├ ❖ _Paket_   : ${quantity}\n`;
-    message += `├ ❖ _Total_   : Rp${Number(price).toLocaleString('id-ID')}\n`;
+let message = `╭❀「 *DATA PESANAN* 」\n`;
+message += `├ ➥ _Tanggal_ : ${currentDate}\n`;
+message += `├ ➥ _Jenis_   : ${service} ${platform}\n`;
+message += `├ ➥ _Paket_   : ${quantity}\n`;
+message += `├ ➥ _Total_   : Rp${Number(price).toLocaleString('id-ID')}\n`;
+message += `╰───────────────\n\n`;
+
+if (platformSelect.value !== 'Premium Apps') {
+    const isAccountBased = (service === 'Followers' || service === 'Subscribers');
+    const targetLink = isAccountBased ?
+        document.getElementById('accountLinkInput').value.trim() :
+        document.getElementById('videoLinkInput').value.trim();
+    const targetLabel = isAccountBased ? 'Akun' : 'Video';
+
+    message += `╭❀「 TARGET ${targetLabel} 」\n`;
+    message += `├ ➥ _Link_ : ${targetLink}\n`;
     message += `╰───────────────\n\n`;
+}
 
-    if (platformSelect.value !== 'Premium Apps') {
-        const isAccountBased = (service === 'Followers' || service === 'Subscribers');
-        const targetLink = isAccountBased ?
-            document.getElementById('accountLinkInput').value.trim() :
-            document.getElementById('videoLinkInput').value.trim();
-        const targetLabel = isAccountBased ? 'Akun' : 'Vidio';
+message += `╭❀「 *PERHATIAN* 」\n`;
+if (platformSelect.value === 'Premium Apps') {
+    message += `├ ➥ _Akun akan dikirim via WhatsApp setelah pembayaran_\n`;
+    message += `├ ➥ _Proses aktivasi 1-12 jam setelah pembayaran_\n`;
+} else {
+    message += `├ ➥ _Akun tidak boleh_ *private*\n`;
+    message += `├ ➥ _Jangan ganti_ *username*\n`;
+}
+message += `├ ➥ _Batas_ *min & max* _berlaku_\n`;
+message += `╰───────────────\n\n`;
 
-        message += `╭❀「 TARGET ${targetLabel} 」\n`;
-        message += `├ ❖ _Link_:\n`;
-        message += `├ ❖ ${targetLink}\n`;
-        message += `╰───────────────\n\n`;
-    }
+message += `╭❀「 *GRUP GARANSI* 」\n`;
+message += `├ ➥ Link Grup Garansi\n`;
+message += `├ ➥ https://chat.whatsapp.com/HB77A6rFeIDIhoF7Y96Pkj?mode=ac_t\n`;
+message += `╰───────────────\n\n`;
 
-    message += `╭❀「 *PERHATIAN* 」\n`;
-    if (platformSelect.value === 'Premium Apps') {
-        message += `├ ❖ _Akun akan dikirim via WhatsApp setelah pembayaran_\n`;
-        message += `├ ❖ _Proses aktivasi 1-12 jam setelah pembayaran_\n`;
-    } else {
-        message += `├ ❖ _Akun tidak boleh_ *private*\n`;
-        message += `├ ❖ _Jangan ganti_ *username*\n`;
-    }
-    message += `├ ❖ _Batas_ *min & max* _berlaku_\n`;
-    message += `╰───────────────\n\n`;
+message += `╭❀「 *TERIMA KASIH* 」\n`;
+message += `├ ➥ _Sudah order di layanan kami_\n`;
+message += `├ ➥ _Butuh bantuan?_ Chat admin di grup\n`;
+message += `╰───────────────\n`;
 
-    message += `╭❀「 *GRUP GARANSI* 」\n`;
-    message += `├ ❖ _Untuk info & komplain_:\n`;
-    message += `├ ❖ https://chat.whatsapp.com/HB77A6rFeIDIhoF7Y96Pkj?mode=ac_t\n`;
-    message += `╰───────────────\n\n`;
-
-    message += `╭❀「 *TERIMA KASIH* 」\n`;
-    message += `├ ❖ _Sudah order di layanan kami_\n`;
-    message += `├ ❖ _Butuh bantuan?_ Chat admin di grup\n`;
-    message += `╰───────────────\n`;
 
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`, '_blank');
@@ -1069,6 +1065,5 @@ function showNotification() {
 }
 
 document.addEventListener('DOMContentLoaded', initApp);
-
 
 
