@@ -1,396 +1,648 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JasHub - Follower TikTok, Instagram & YouTube</title>
-    <link rel="icon" href="favicon.png" type="image/png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-    <link rel="stylesheet" href="styles.css" />
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JHQ1Y3T4LF"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pesanan - Jashub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Poppins',sans-serif;color:#fff;background:#0a0a0a;overflow-x:hidden}
+    .bg{position:fixed;inset:0;z-index:-2;background:#000}
+    .bg img{width:100%;height:100%;object-fit:cover;filter:blur(15px) brightness(0.4)}
+    .vignette{position:fixed;inset:0;z-index:-1;background:radial-gradient(circle at center,rgba(255,120,40,.2)0%,rgba(0,0,0,.95)80%)}
+    header{padding:22px 60px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.05);backdrop-filter:blur(12px);position:sticky;top:0;z-index:10;border-bottom:1px solid rgba(255,255,255,.1)}
+    header.scrolled{background:rgba(0,0,0,.85)}
+    .logo{display:flex;align-items:center;gap:10px;font-size:26px;font-weight:800}
+    .logo img{height:40px;width:auto} 
+    .logo span{background:linear-gradient(90deg,#ff6a00,#ff2aa0);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .socials{display:flex;gap:15px}
+    .socials a{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:#fff;background:rgba(255,255,255,.1);transition:.3s;font-size:18px;text-decoration:none}
+    .socials a:hover{background:linear-gradient(135deg,#ff6a00,#ff2aa0);transform:scale(1.15)}
+    .menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer}
+    .menu-toggle span{width:28px;height:3px;background:#fff;border-radius:3px;transition:.3s}
+    @media(max-width:768px){
+      header{padding:18px 25px}
+      .socials{position:absolute;top:70px;right:25px;flex-direction:column;background:rgba(0,0,0,.9);padding:18px;border-radius:12px;gap:12px;display:none}
+      .socials.active{display:flex;animation:fadeIn .3s ease}
+      .menu-toggle{display:flex}
+    }
+    @keyframes fadeIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+    .menu-toggle.active span:nth-child(1){transform:rotate(45deg) translate(5px,6px)}
+    .menu-toggle.active span:nth-child(2){opacity:0}
+    .menu-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px)}
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'G-JHQ1Y3T4LF');
-    </script>
+    .form-section{min-height:80vh;display:flex;align-items:center;justify-content:center;padding:60px 20px}
+    .form-container{background:rgba(255,255,255,.08);backdrop-filter:blur(15px);padding:30px;border-radius:18px;max-width:650px;width:100%;border:1px solid rgba(255,255,255,.15);box-shadow:0 0 25px rgba(255,106,0,.3)}
+    .form-container h1{text-align:center;font-size:32px;margin-bottom:25px;background:linear-gradient(90deg,#ff6a00,#ff2aa0);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    label{display:block;margin:14px 0 6px;font-weight:600}
+    .select-wrapper{position:relative}
+    .select-wrapper i{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#ff6a00}
+    select,input{width:100%;padding:12px 14px 12px 40px;border-radius:10px;border:none;margin-bottom:15px;background:rgba(255,255,255,.1);color:#fff;appearance:none;cursor:pointer}
+    select option{background:#0a0a0a;color:#fff}
+    select:focus,input:focus{outline:2px solid #ff6a00}
+    .price-display{font-weight:700;font-size:20px;margin:15px 0;color:#ff6a00;text-align:center;text-shadow:0 0 10px rgba(255,106,0,.5)}
+    button{width:100%;padding:16px;border:none;border-radius:12px;font-weight:700;font-size:17px;background:linear-gradient(135deg,#ff6a00,#ff2aa0);color:#fff;cursor:pointer;transition:.3s;box-shadow:0 0 25px rgba(255,106,0,.5)}
+    button:hover{filter:brightness(1.1);transform:translateY(-3px)}
+
+    footer{background:#0b0b0b;padding:60px 30px 30px;color:#ccc;position:relative}
+    .footer-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px;margin-bottom:40px}
+    .footer-col h3{color:#fff;margin-bottom:15px;font-size:18px;font-weight:700}
+    .footer-col p,.footer-col li{font-size:14px;margin:6px 0}
+    .footer-col ul{list-style:none;padding:0}
+    .footer-col ul li a{color:#ccc;text-decoration:none;transition:.3s}
+    .footer-col ul li a:hover{color:#ff6a00}
+    .footer-socials{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap}
+    .footer-socials a{width:38px;height:38px;display:grid;place-items:center;background:rgba(255,255,255,.1);border-radius:50%;color:#fff;transition:.3s;font-size:16px}
+    .footer-socials a:hover{background:linear-gradient(135deg,#ff6a00,#ff2aa0);transform:scale(1.15)}
+    .newsletter{display:flex;margin-top:10px}
+    .newsletter input{flex:1;padding:10px;border:none;border-radius:6px 0 0 6px;outline:none;font-size:14px}
+    .newsletter button{background:linear-gradient(135deg,#ff6a00,#ff2aa0);border:none;padding:0 16px;border-radius:0 6px 6px 0;color:#fff;cursor:pointer;transition:.3s}
+    .newsletter button:hover{filter:brightness(1.15)}
+    .footer-bottom{text-align:center;font-size:13px;color:#777;border-top:1px solid rgba(255,255,255,.1);padding-top:20px}
+  </style>
 </head>
-
 <body>
-    <div class="app-container">
-        <div class="header-bar">
-            <div class="header-content">
-                <div class="logo-section">
-                    <div class="logo-img">
-                        <img src="logo.jpg" alt="JasHub Logo" style="height: 60px; width: auto; object-fit: contain; border-radius: 14px;" />
-                    </div>
-                    <div class="title-section">
-                        <h1>JasHub</h1>
-                        <h2>Social Media Services</h2>
-                    </div>
-                </div>
-                <div class="header-actions">
-                    <button class="dark-toggle" id="darkModeToggle">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="page-title" id="pageTitle">Pembelian Follower</div>
+  <div class="bg"><img src="jashubs.jpg" alt="background"></div>
+  <div class="vignette"></div>
+
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Jashub Logo">
+      <span>Jash<span>ub</span></span>
+    </div>
+    <div class="socials">
+      <a href="https://www.instagram.com/x.shybb" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@x.shybb" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.youtube.com/channel/UCmNI3HSnBLgbAUhMdkncAcw" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://wa.me/6281324919799" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <div class="menu-toggle" id="menu-btn">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <section class="form-section">
+    <div class="form-container">
+      <h1>Data Pemesanan</h1>
+      <label for="platform">Pilih Layanan</label>
+      <div class="select-wrapper"><i class="fas fa-layer-group"></i>
+        <select id="platform">
+          <option value="">-- Pilih Layanan --</option>
+          <option value="Instagram">Instagram</option>
+          <option value="Tiktok">TikTok</option>
+          <option value="YouTube">YouTube</option>
+          <option value="Shopee">Shopee</option>
+          <option value="Premium Apps">Premium Apps</option>
+        </select>
+      </div>
+      <label for="service">Jenis Layanan</label>
+      <div class="select-wrapper"><i class="fas fa-cogs"></i>
+        <select id="service" disabled>
+          <option value="">-- Jenis Layanan --</option>
+        </select>
+      </div>
+      <label for="package">Paket</label>
+      <div class="select-wrapper"><i class="fas fa-box"></i>
+        <select id="package" disabled>
+          <option value="">-- Pilih Paket --</option>
+        </select>
+      </div>
+      <div id="price" class="price-display"></div>
+      <div id="accountLinkGroup" style="display:none">
+        <label for="accountLinkInput">Link Akun</label>
+        <input type="text" id="accountLinkInput" placeholder="Masukkan link akun">
+      </div>
+      <div id="videoLinkGroup" style="display:none">
+        <label for="videoLinkInput">Link Video</label>
+        <input type="text" id="videoLinkInput" placeholder="Masukkan link video">
+      </div>
+      <button id="orderBtn"><i class="fab fa-whatsapp"></i> Pesan via WhatsApp</button>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col brand">
+        <h2 class="logo">Jash<span>ub</span></h2>
+        <p>Penyedia layanan digital terpercaya dengan kualitas premium, harga terjangkau, dan dukungan pelanggan 24/7.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/x.shybb" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@x.shybb" target="_blank"><i class="fab fa-tiktok"></i></a>
+          <a href="https://www.youtube.com/channel/UCmNI3HSnBLgbAUhMdkncAcw" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://wa.me/6281324919799" target="_blank"><i class="fab fa-whatsapp"></i></a>
         </div>
+      </div>
+      <div class="footer-col">
+        <h3>Layanan</h3>
+        <ul>
+          <li><a href="#instagram">Instagram</a></li>
+          <li><a href="#tiktok">TikTok</a></li>
+          <li><a href="#youtube">YouTube</a></li>
+          <li><a href="#shopee">Shopee</a></li>
+          <li><a href="#apps">App Premium</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Kontak</h3>
+        <p><i class="fas fa-phone"></i> +62 813-2491-9799</p>
+        <p><i class="fas fa-envelope"></i> jashubpremium@gmail.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> Jakarta, Indonesia</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Jashub Digital Premium. Semua Hak Dilindungi.</p>
+    </div>
+  </footer>
+  <script>
+    const pricingData = {
+      'Instagram': {
+        'Followers': [
+          { quantity: 50, price: 3000 },
+          { quantity: 100, price: 6000 },
+          { quantity: 200, price: 9000 },
+          { quantity: 300, price: 12000 },
+          { quantity: 400, price: 14000 },
+          { quantity: 500, price: 16000 },
+          { quantity: 600, price: 18000 },
+          { quantity: 700, price: 20000 },
+          { quantity: 800, price: 22000 },
+          { quantity: 900, price: 25000 },
+          { quantity: 1000, price: 27000 },
+          { quantity: 3000, price: 70000 }
+        ],
+        'Likes': [
+          { quantity: 150, price: 2000 },
+          { quantity: 200, price: 3000 },
+          { quantity: 300, price: 4000 },
+          { quantity: 400, price: 5000 },
+          { quantity: 500, price: 6000 },
+          { quantity: 600, price: 7000 },
+          { quantity: 700, price: 8000 },
+          { quantity: 800, price: 9000 },
+          { quantity: 900, price: 10000 },
+          { quantity: 1000, price: 11000 },
+          { quantity: 3000, price: 23000 }
+        ],
+        'Views': [
+          { quantity: 15000, price: 3000 },
+          { quantity: 20000, price: 4000 },
+          { quantity: 30000, price: 5000 },
+          { quantity: 40000, price: 6000 },
+          { quantity: 50000, price: 7000 },
+          { quantity: 70000, price: 8000 },
+          { quantity: 100000, price: 13000 }
+        ]
+      },
+      'Tiktok': {
+        'Followers': [
+          { quantity: 50, price: 3000 },
+          { quantity: 100, price: 7000 },
+          { quantity: 200, price: 12000 },
+          { quantity: 300, price: 16000 },
+          { quantity: 400, price: 21000 },
+          { quantity: 500, price: 25000 },
+          { quantity: 600, price: 27000 },
+          { quantity: 700, price: 32000 },
+          { quantity: 800, price: 36000 },
+          { quantity: 900, price: 41000 },
+          { quantity: 1000, price: 46000 },
+          { quantity: 3000, price: 125000 }
+        ],
+        'Likes': [
+          { quantity: 150, price: 2000 },
+          { quantity: 200, price: 3000 },
+          { quantity: 300, price: 4000 },
+          { quantity: 400, price: 5000 },
+          { quantity: 500, price: 6000 },
+          { quantity: 600, price: 7000 },
+          { quantity: 700, price: 8000 },
+          { quantity: 800, price: 9000 },
+          { quantity: 900, price: 10000 },
+          { quantity: 1000, price: 11000 },
+          { quantity: 3000, price: 23000 }
+        ],
+        'Views': [
+          { quantity: 1000, price: 2000 },
+          { quantity: 2000, price: 3000 },
+          { quantity: 5000, price: 4000 },
+          { quantity: 10000, price: 6000 },
+          { quantity: 15000, price: 7000 },
+          { quantity: 20000, price: 8000 },
+          { quantity: 30000, price: 9000 },
+          { quantity: 40000, price: 10000 },
+          { quantity: 50000, price: 11000 },
+          { quantity: 70000, price: 13000 },
+          { quantity: 100000, price: 15000 }
+        ],
+        'Live Views': [
+          { quantity: 50, price: 4000 },
+          { quantity: 100, price: 5000 },
+          { quantity: 150, price: 6000 },
+          { quantity: 200, price: 7000 },
+          { quantity: 250, price: 8000 },
+          { quantity: 300, price: 9000 },
+          { quantity: 350, price: 10000 },
+          { quantity: 400, price: 11000 },
+          { quantity: 450, price: 12000 },
+          { quantity: 500, price: 13000 },
+          { quantity: 550, price: 14000 },
+          { quantity: 600, price: 15000 },
+          { quantity: 650, price: 16000 },
+          { quantity: 700, price: 17000 },
+          { quantity: 750, price: 18000 },
+          { quantity: 800, price: 19000 },
+          { quantity: 850, price: 20000 },
+          { quantity: 900, price: 21000 },
+          { quantity: 950, price: 22000 },
+          { quantity: 1000, price: 23000 }
+        ]
+      },
+      'YouTube': {
+        'Subscribers': [
+          { quantity: 50, price: 6000 },
+          { quantity: 100, price: 16000 },
+          { quantity: 200, price: 24000 },
+          { quantity: 300, price: 32000 },
+          { quantity: 400, price: 40000 },
+          { quantity: 500, price: 48000 },
+          { quantity: 600, price: 58000 },
+          { quantity: 700, price: 69000 },
+          { quantity: 800, price: 78000 },
+          { quantity: 900, price: 85000 },
+          { quantity: 1000, price: 93000 },
+          { quantity: 3000, price: 270000 }
+        ],
+        'Shares': [
+          { quantity: 500, price: 6000 },
+          { quantity: 600, price: 7000 },
+          { quantity: 700, price: 8000 },
+          { quantity: 800, price: 9000 },
+          { quantity: 900, price: 10000 },
+          { quantity: 1000, price: 11000 },
+          { quantity: 2000, price: 13000 },
+          { quantity: 3000, price: 14000 },
+          { quantity: 4000, price: 15000 },
+          { quantity: 5000, price: 16000 },
+          { quantity: 10000, price: 20000 }
+        ],
+        'Views': [
+          { quantity: 1000, price: 14000 },
+          { quantity: 2000, price: 23000 },
+          { quantity: 5000, price: 46000 },
+          { quantity: 10000, price: 97000 },
+          { quantity: 15000, price: 139000 },
+          { quantity: 20000, price: 190000 },
+          { quantity: 30000, price: 285000 },
+          { quantity: 40000, price: 378000 },
+          { quantity: 50000, price: 450000 },
+          { quantity: 70000, price: 656000 },
+          { quantity: 100000, price: 937000 }
+        ]
+      },
+      'Shopee': {
+        'Followers': [
+          { quantity: 50, price: 6000 },
+          { quantity: 100, price: 7000 },
+          { quantity: 150, price: 8000 },
+          { quantity: 200, price: 9000 },
+          { quantity: 250, price: 9500 },
+          { quantity: 300, price: 10000 },
+          { quantity: 350, price: 10500 },
+          { quantity: 400, price: 11000 },
+          { quantity: 450, price: 11500 },
+          { quantity: 500, price: 12000 },
+          { quantity: 550, price: 13000 },
+          { quantity: 600, price: 13500 },
+          { quantity: 650, price: 14000 },
+          { quantity: 700, price: 14500 },
+          { quantity: 750, price: 15000 },
+          { quantity: 800, price: 15500 },
+          { quantity: 850, price: 16000 },
+          { quantity: 900, price: 16500 },
+          { quantity: 950, price: 17000 },
+          { quantity: 1000, price: 18000 }
+        ]
+      },
+      'Premium Apps': {
+        'ChatGPT': [
+          { quantity: '1 Bulan 5U (Sharing)', price: 18000 },
+          { quantity: '1 Minggu (Sharing)', price: 22000 },
+          { quantity: '1 Bulan 10U', price: 34000 },
+          { quantity: '1 Bulan 8U', price: 40000 }
+        ],
+        'YouTube Premium': [
+          { quantity: '1 Bulan (Famplan)', price: 8500 },
+          { quantity: '1 Bulan (Individu)', price: 11500 },
+          { quantity: '3 Bulan (Individu)', price: 26000 },
+          { quantity: '3 Bulan (Inplan Promo)', price: 23000 }
+        ],
+        'Canva Pro': [
+          { quantity: '1 Bulan', price: 3000 },
+          { quantity: '3 Bulan', price: 7000 },
+          { quantity: '1 Tahun', price: 15000 },
+          { quantity: 'EDU Lifetime', price: 22650 }
+        ],
+        'CapCut Pro': [
+          { quantity: '1 Minggu', price: 10000 },
+          { quantity: '1 Bulan (Garansi 7 hari)', price: 15000 },
+          { quantity: '1 Bulan (Full Garansi)', price: 17000 }
+        ],
+        'Spotify Premium': [
+          { quantity: '1 Bulan', price: 18000 },
+          { quantity: '2 Bulan', price: 22000 }
+        ],
+        'Vidio': [
+          { quantity: '1 Bulan (Sharing)', price: 18500 },
+          { quantity: '1 Bulan (Private All Device)', price: 28000 },
+          { quantity: '1 Tahun (Private TV Only)', price: 11725 }
+        ],
+        'Netflix Premium': [
+          { quantity: '1P1U - 1 Minggu', price: 14850 },
+          { quantity: '1P1U - 1 Bulan', price: 25000 },
+          { quantity: '1P2U - 1 Minggu', price: 13650 },
+          { quantity: '1P2U - 1 Bulan', price: 20000 },
+          { quantity: 'Private - 1 Bulan', price: 100000 }
+        ],
+        'Remini': [
+          { quantity: '1 Bulan (Web Sharing)', price: 12500 },
+          { quantity: '1 Tahun (App Android PRO)', price: 38750 }
+        ],
+        'Disney+ Hotstar': [
+          { quantity: '1 Minggu (Sharing)', price: 16000 },
+          { quantity: '1 Bulan (Sharing)', price: 23000 },
+          { quantity: '1 Bulan (Private)', price: 65000 }
+        ],
+        'IQIYI': [
+          { quantity: '1 Bulan (Sharing)', price: 10475 },
+          { quantity: '1 Bulan (Private)', price: 31000 }
+        ],
+        'Zoom Meeting Pro': [
+          { quantity: '14 Hari', price: 11250 }
+        ],
+        'WeTV VIP': [
+          { quantity: '1 Bulan (Sharing)', price: 13000 },
+          { quantity: '1 Bulan (Private)', price: 32000 }
+        ],
+        'VSCO': [
+          { quantity: '1 Tahun', price: 21250 }
+        ],
+        'VIU Premium': [
+          { quantity: '1 Tahun (Anti Limit)', price: 7000 },
+          { quantity: '150 Akun', price: 20000 }
+        ],
+        'Vision+': [
+          { quantity: '1 Bulan (Sharing)', price: 11000 },
+          { quantity: '1 Bulan (Code Redeem)', price: 10625 },
+          { quantity: '1 Bulan (Private)', price: 13000 }
+        ],
+        'RCTI+': [
+          { quantity: '1 Bulan (Sharing)', price: 17000 },
+          { quantity: '1 Bulan (Private)', price: 28000 }
+        ],
+        'Picsart': [
+          { quantity: '1 Bulan (Private)', price: 10000 }
+        ],
+        'Meitu': [
+          { quantity: '1 Bulan (Sharing)', price: 18000 },
+          { quantity: '1 Bulan (Private)', price: 33000 }
+        ],
+        'HBO': [
+          { quantity: '1 Bulan (Sharing Max)', price: 20000 },
+          { quantity: '1 Bulan (Sharing GO)', price: 16250 },
+          { quantity: '1 Bulan (Private Max)', price: 48000 }
+        ],
+        'GetContact Premium': [
+          { quantity: '1 Bulan', price: 13000 }
+        ],
+        'Amazon Prime Video': [
+          { quantity: '1 Bulan (Sharing)', price: 12000 },
+          { quantity: '1 Bulan (Private)', price: 15000 }
+        ],
+        'Apple Music': [
+          { quantity: '1 Bulan (Famplan)', price: 9700 },
+          { quantity: '2 Bulan (Famplan)', price: 12975 },
+          { quantity: '3 Bulan (Famplan)', price: 20750 },
+          { quantity: '1 Bulan (Famhead)', price: 14000 }
+        ],
+        'BStation': [
+          { quantity: '1 Bulan', price: 11100 },
+          { quantity: '3 Bulan', price: 14900 },
+          { quantity: '1 Tahun', price: 17300 }
+        ],
+        'Dramabox': [
+          { quantity: '1 Bulan', price: 12200 },
+          { quantity: '3 Bulan', price: 23500 }
+        ],
+        'Instagram Followers': [
+          { quantity: '100 Followers', price: 14500 }
+        ],
+        'TikTok Followers': [
+          { quantity: '100 Followers', price: 14500 }
+        ],
+        'Adobe Creative Cloud': [
+          { quantity: 'Semua Versi', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Microsoft 365': [
+          { quantity: 'Semua Paket', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Google One': [
+          { quantity: 'Semua Penyimpanan', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Turnitin': [
+          { quantity: 'Cek Plagiarisme', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Grammarly Premium': [
+          { quantity: 'Semua Durasi', price: 'Chat admin untuk tanya harga' }
+        ],
+        'WPS Premium': [
+          { quantity: 'Semua Versi', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Windows 10/11 Pro': [
+          { quantity: 'Lisensi Asli', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Office 2019/2021': [
+          { quantity: 'Paket Lengkap', price: 'Chat admin untuk tanya harga' }
+        ],
+        'CapCut Web Premium': [
+          { quantity: 'Unlock Template', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Alight Motion Pro': [
+          { quantity: 'Semua Fitur', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Lightroom Premium': [
+          { quantity: '1 Tahun', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Picsay Pro': [
+          { quantity: 'Unlock All', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Hosting Domain': [
+          { quantity: 'Custom Domain & Hosting', price: 'Chat admin untuk tanya harga' }
+        ]
+      }
+    };
 
-        <div class="services-section" id="servicesSection">
-            <h3>Layanan</h3>
-            <div class="services-grid">
-                <div class="service-column">
-                    <div class="service-card" data-platform="Instagram" data-service="Followers">
-                        <i class="fas fa-users"></i>
-                        <span>Followers Instagram</span>
-                    </div>
-                    <div class="service-card" data-platform="Tiktok" data-service="Followers">
-                        <i class="fab fa-tiktok"></i>
-                        <span>Followers TikTok</span>
-                    </div>
-                    <div class="service-card" data-platform="Shopee" data-service="Followers">
-                        <i class="fas fa-store"></i>
-                        <span>Followers Shopee</span>
-                    </div>
-                    <div class="service-card" data-platform="Instagram" data-service="Likes">
-                        <i class="fas fa-thumbs-up"></i>
-                        <span>Likes Instagram</span>
-                    </div>
-                    <div class="service-card" data-platform="Tiktok" data-service="Likes">
-                        <i class="fas fa-thumbs-up"></i>
-                        <span>Likes TikTok</span>
-                    </div>
-                </div>
-                <div class="service-column">
-                    <div class="service-card" data-platform="Instagram" data-service="Views">
-                        <i class="fas fa-eye"></i>
-                        <span>Views Instagram</span>
-                    </div>
-                    <div class="service-card" data-platform="Tiktok" data-service="Views">
-                        <i class="fas fa-eye"></i>
-                        <span>Views TikTok</span>
-                    </div>
-                    <div class="service-card" data-platform="Tiktok" data-service="Live Views">
-                        <i class="fas fa-broadcast-tower"></i>
-                        <span>Live Views TikTok</span>
-                    </div>
-                    <div class="service-card" data-platform="YouTube" data-service="Subscribers">
-                        <i class="fab fa-youtube"></i>
-                        <span>Subscribers YouTube</span>
-                    </div>
-                    <div class="service-card" data-platform="Premium Apps" data-service="ChatGPT">
-                        <i class="fas fa-crown"></i>
-                        <span>Aplikasi Premium</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="active-orders">
-            <div class="section-header">
-                <h3>Pesanan Aktif</h3>
-                <a href="#" id="viewAllOrders">Lihat semua</a>
-            </div>
-            <div class="order-list" id="activeOrderList"></div>
-        </div>
-
-        <div class="order-form-section hidden" id="orderFormSection">
-            <div class="card">
-                <h2 class="section-title"><i class="fas fa-shopping-cart"></i> Buat Pesanan</h2>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="platform"><i class="fas fa-mobile-alt"></i> Platform</label>
-                        <div class="select-wrapper">
-                            <select id="platform" class="form-control">
-                                <option value="">-- Pilih Platform --</option>
-                                <option value="Instagram">Instagram</option>
-                                <option value="Tiktok">TikTok</option>
-                                <option value="YouTube">YouTube</option>
-                                <option value="Premium Apps">Aplikasi Premium</option>
-                                <option value="Shopee">Shopee</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="service"><i class="fas fa-concierge-bell"></i> Jenis Layanan</label>
-                        <div class="select-wrapper">
-                            <select id="service" class="form-control" disabled>
-                                <option value="">-- Pilih Layanan --</option>
-                                <option value="Followers">Followers</option>
-                                <option value="Likes">Likes</option>
-                                <option value="Views">Views</option>
-                                <option value="Subscribers">Subscribers</option>
-                                <option value="Shares">Shares</option>
-                                <option value="Live Views">Live Views</option>
-                                <option value="Shopee">Shopee</option>
-                                <option value="ChatGPT">ChatGPT</option>
-                                <option value="YouTube Premium">YouTube Premium</option>
-                                <option value="Canva Pro">Canva Pro</option>
-                                <option value="CapCut Pro">CapCut Pro</option>
-                                <option value="Spotify Premium">Spotify Premium</option>
-                                <option value="Vidio">Vidio</option>
-                                <option value="Netflix Premium">Netflix Premium</option>
-                                <option value="Remini">Remini</option>
-                                <option value="Disney+ Hotstar">Disney+ Hotstar</option>
-                                <option value="IQIYI">IQIYI</option>
-                                <option value="Zoom Meeting Pro">Zoom Meeting Pro</option>
-                                <option value="WeTV VIP">WeTV VIP</option>
-                                <option value="VSCO">VSCO</option>
-                                <option value="VIU Premium">VIU Premium</option>
-                                <option value="Vision+">Vision+</option>
-                                <option value="RCTI+">RCTI+</option>
-                                <option value="Picsart">Picsart</option>
-                                <option value="Meitu">Meitu</option>
-                                <option value="HBO">HBO</option>
-                                <option value="GetContact Premium">GetContact Premium</option>
-                                <option value="Amazon Prime Video">Amazon Prime Video</option>
-                                <option value="Apple Music">Apple Music</option>
-                                <option value="BStation">BStation</option>
-                                <option value="Dramabox">Dramabox</option>
-                                <option value="Instagram Followers">Instagram Followers</option>
-                                <option value="TikTok Followers">TikTok Followers</option>
-                                <option value="Adobe Creative Cloud">Adobe Creative Cloud</option>
-                                <option value="Microsoft 365">Microsoft 365</option>
-                                <option value="Google One">Google One</option>
-                                <option value="Turnitin">Turnitin</option>
-                                <option value="Grammarly Premium">Grammarly Premium</option>
-                                <option value="WPS Premium">WPS Premium</option>
-                                <option value="Windows 10/11 Pro">Windows 10/11 Pro</option>
-                                <option value="Office 2019/2021">Office 2019/2021</option>
-                                <option value="CapCut Web Premium">CapCut Web Premium</option>
-                                <option value="Alight Motion Pro">Alight Motion Pro</option>
-                                <option value="Lightroom Premium">Lightroom Premium</option>
-                                <option value="Picsay Pro">Picsay Pro</option>
-                                <option value="Hosting Domain">Hosting Domain</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="pricingOptions" class="hidden">
-                    <h3 class="pricing-title">Pilih Paket:</h3>
-                    <div class="pricing-grid" id="pricingGrid"></div>
-                </div>
-
-                <div class="form-group hidden" id="accountLinkGroup">
-                    <label for="accountLinkInput"><i class="fas fa-link"></i> Link Akun/Channel Target</label>
-                    <div class="input-with-button">
-                        <input type="text" id="accountLinkInput" class="form-control" placeholder="https://www.instagram.com/username" />
-                        <button class="copy-btn" onclick="copyToClipboard('accountLinkInput')">
-                            <i class="fas fa-copy"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="form-group hidden" id="videoLinkGroup">
-                    <label for="videoLinkInput"><i class="fas fa-video"></i> Link Video (Jika Likes/Views/Shares)</label>
-                    <div class="input-with-button">
-                        <input type="text" id="videoLinkInput" class="form-control" placeholder="https://www.tiktok.com/@username/video/123456" />
-                        <button class="copy-btn" onclick="copyToClipboard('videoLinkInput')">
-                            <i class="fas fa-copy"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="pricing-display" id="pricingDisplay">
-                    <div class="price-label">Total Harga</div>
-                    <div class="price-value" id="totalPrice">Rp0</div>
-                    <p>Harga sudah termasuk biaya layanan</p>
-                </div>
-
-                <button id="orderBtn" class="btn btn-primary btn-block" disabled>
-                    <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
-                </button>
-            </div>
-        </div>
-
-        <div class="full-order-list hidden" id="fullOrderList">
-            <div class="card">
-                <h2 class="section-title"><i class="fas fa-clipboard-list"></i> Daftar Order Terkini</h2>
-                <div class="order-controls">
-                    <div class="search-box">
-                        <i class="fas fa-search"></i>
-                        <input type="text" id="orderSearch" placeholder="Cari order..." />
-                    </div>
-                    <div class="filter-group">
-                        <label for="statusFilter"><i class="fas fa-filter"></i> Filter:</label>
-                        <select id="statusFilter" class="form-control">
-                            <option value="all">Semua Status</option>
-                            <option value="Success">Sukses</option>
-                            <option value="Cancel">Dibatalkan</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="order-list-container">
-                    <table class="order-list">
-                        <thead>
-                            <tr>
-                                <th>ID Order</th>
-                                <th>Kategori</th>
-                                <th>Jumlah</th>
-                                <th>Tanggal</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody id="orderListBody"></tbody>
-                    </table>
-                </div>
-                <div class="pagination">
-                    <button id="prevPage" disabled><i class="fas fa-chevron-left"></i></button>
-                    <span id="pageInfo">Halaman 1</span>
-                    <button id="nextPage"><i class="fas fa-chevron-right"></i></button>
-                </div>
-            </div>
-        </div>
-
-        <div class="promo-section hidden" id="promoSection">
-            <div class="card">
-                <h2 class="section-title"><i class="fas fa-tag"></i> Promo Spesial</h2>
-                <div class="promo-card">
-                    <div class="promo-badge">CASHBACK</div>
-                    <div class="promo-header">
-                        <h3>Cashback Rp5.000 untuk Setiap Order di Atas Rp50.000</h3>
-                        <div class="promo-price">
-                            <span class="original-price">Tanpa Kode Promo</span>
-                            <span class="discount-price">Otomatis Masuk Saldo</span>
-                        </div>
-                    </div>
-                    <div class="promo-content">
-                        <div class="promo-description">
-                            <p><strong>🤑 Promo Cashback Otomatis</strong></p>
-                            <ul class="promo-terms">
-                                <li>Order minimal Rp50.000</li>
-                                <li>Cashback Rp5.000 langsung masuk ke saldo akun</li>
-                                <li>Tidak berlaku kelipatan</li>
-                                <li>Promo berlaku hingga <strong>akhir bulan ini</strong></li>
-                                <li>Saldo cashback bisa digunakan untuk semua layanan</li>
-                            </ul>
-                        </div>
-                        <div class="promo-details">
-                            <div class="detail-item">
-                                <i class="fas fa-wallet"></i>
-                                <div>
-                                    <span>Min. Order</span>
-                                    <strong>Rp50.000</strong>
-                                </div>
-                            </div>
-                            <div class="detail-item">
-                                <i class="fas fa-coins"></i>
-                                <div>
-                                    <span>Cashback</span>
-                                    <strong>Rp5.000</strong>
-                                </div>
-                            </div>
-                            <div class="detail-item">
-                                <i class="fas fa-calendar-alt"></i>
-                                <div>
-                                    <span>Periode</span>
-                                    <strong>Sampai Akhir Bulan</strong>
-                                </div>
-                            </div>
-                            <div class="detail-item">
-                                <i class="fas fa-percent"></i>
-                                <div>
-                                    <span>Otomatis</span>
-                                    <strong>Tanpa Kode Promo</strong>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group" style="margin: 15px 0;">
-                        <label for="promoAccountLink"><i class="fas fa-link"></i> Link Akun Anda</label>
-                        <input type="text" id="promoAccountLink" class="form-control" placeholder="https://tiktok.com/@username">
-                    </div>
-
-                    <button class="btn btn-primary btn-block promo-order-btn">
-                        <i class="fas fa-bolt"></i> Mulai Belanja Sekarang
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <div class="premium-apps-section hidden" id="premiumAppsSection">
-            <div class="card">
-                <h2 class="section-title"><i class="fas fa-crown"></i> Aplikasi Premium</h2>
-                <div class="premium-apps-grid" id="premiumAppsGrid"></div>
-            </div>
-        </div>
-
-        <div class="bottom-nav">
-            <div class="nav-item active" data-target="home">
-                <i class="fas fa-home"></i>
-                <span>Beranda</span>
-            </div>
-            <div class="nav-item" data-target="orders">
-                <i class="fas fa-shopping-cart"></i>
-                <span>Pesanan</span>
-            </div>
-            <div class="nav-item" data-target="premium">
-                <i class="fas fa-crown"></i>
-                <span>APP Premium</span>
-            </div>
-            <div class="nav-item" data-target="promo">
-                <i class="fas fa-tag"></i>
-                <span>Promo</span>
-            </div>
-            <div class="nav-item" onclick="window.location.href='index.html'">
-                <i class="fas fa-tachometer-alt"></i>
-                <span>Dasbor</span>
-            </div>
-        </div>
-
-
-        <div class="notification-modal" id="notificationModal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3><i class="fas fa-info-circle"></i> Informasi Penting</h3>
-                    <button class="close-modal" id="closeModal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div class="info-item">
-                        <i class="fas fa-shopping-cart"></i>
-                        <div>
-                            <h4>Tata Cara Order</h4>
-                            <p>1. Pilih layanan yang diinginkan<br>2. Isi link akun/video target<br>3. Pilih paket dan lakukan pembayaran<br>4. Proses akan dimulai setelah pembayaran</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <h4>Waktu Proses</h4>
-                            <p>• Followers: 1-24 jam<br>• Likes/Views: 1-12 jam<br>• Aplikasi Premium: 1-6 jam</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-exclamation-triangle"></i>
-                        <div>
-                            <h4>Perhatian</h4>
-                            <p>• Jangan ganti username selama proses<br>• Akun tidak boleh diprivate<br>• Garansi hanya berlaku di grup resmi</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-headset"></i>
-                        <div>
-                            <h4>Bantuan</h4>
-                            <p>Hubungi admin via WhatsApp jika ada masalah:<br><a href="https://wa.me/6281324919799" target="_blank">+62 813-2491-9799</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-primary" id="understandBtn">Saya Mengerti</button>
-                </div>
-            </div>
-        </div>
-
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script src="script.js"></script>
+    const platformSelect = document.getElementById('platform');
+    const serviceSelect = document.getElementById('service');
+    const packageSelect = document.getElementById('package');
+    const priceDisplay = document.getElementById('price');
+    const orderBtn = document.getElementById('orderBtn');
+    const accountLinkGroup = document.getElementById('accountLinkGroup');
+    const videoLinkGroup = document.getElementById('videoLinkGroup');
+    const accountLinkInput = document.getElementById('accountLinkInput');
+    const videoLinkInput = document.getElementById('videoLinkInput');
+    
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+    
+    const menuBtn = document.getElementById('menu-btn');
+    const socials = document.querySelector('.socials');
+    menuBtn.addEventListener('click', () => {
+      menuBtn.classList.toggle('active');
+      socials.classList.toggle('active');
+    });
+    
+    platformSelect.addEventListener('change', () => {
+      serviceSelect.innerHTML = '<option value="">-- Pilih Layanan --</option>';
+      packageSelect.innerHTML = '<option value="">-- Pilih Paket --</option>';
+      serviceSelect.disabled = true;
+      packageSelect.disabled = true;
+      priceDisplay.textContent = '';
+      accountLinkGroup.style.display = 'none';
+      videoLinkGroup.style.display = 'none';
+      
+      const platform = platformSelect.value;
+      if (!platform) return;
+      
+      if (platform === "Premium Apps") {
+        serviceSelect.disabled = true;
+        packageSelect.disabled = false;
+        
+        Object.keys(pricingData[platform]).forEach(service => {
+          let opt = document.createElement('option');
+          opt.value = service;
+          opt.textContent = service;
+          packageSelect.appendChild(opt);
+        });
+      } else {
+        serviceSelect.disabled = false;
+        
+        Object.keys(pricingData[platform]).forEach(service => {
+          let opt = document.createElement('option');
+          opt.value = service;
+          opt.textContent = service;
+          serviceSelect.appendChild(opt);
+        });
+      }
+    });
+    
+    serviceSelect.addEventListener('change', () => {
+      packageSelect.innerHTML = '<option value="">-- Pilih Paket --</option>';
+      packageSelect.disabled = true;
+      priceDisplay.textContent = '';
+      accountLinkGroup.style.display = 'none';
+      videoLinkGroup.style.display = 'none';
+      
+      const platform = platformSelect.value;
+      const service = serviceSelect.value;
+      
+      if (service) {
+        packageSelect.disabled = false;
+        
+        pricingData[platform][service].forEach(item => {
+          let opt = document.createElement('option');
+          opt.value = item.quantity;
+          opt.textContent = `${item.quantity} - Rp ${item.price.toLocaleString('id-ID')}`;
+          opt.dataset.price = item.price;
+          packageSelect.appendChild(opt);
+        });
+      }
+    });
+    
+    packageSelect.addEventListener('change', () => {
+      const platform = platformSelect.value;
+      const service = serviceSelect.value;
+      const selectedOption = packageSelect.options[packageSelect.selectedIndex];
+      const price = selectedOption.dataset.price;
+      
+      if (price) {
+        priceDisplay.textContent = "Harga: Rp " + Number(price).toLocaleString('id-ID');
+        
+        if (platform !== "Premium Apps") {
+          const isAccountBased = (service === "Followers" || service === "Subscribers");
+          accountLinkGroup.style.display = isAccountBased ? "block" : "none";
+          videoLinkGroup.style.display = !isAccountBased ? "block" : "none";
+        }
+      }
+    });
+    
+    orderBtn.addEventListener('click', () => {
+      const platform = platformSelect.value;
+      if (!platform) {
+        alert("Pilih platform dulu!");
+        return;
+      }
+      
+      let service = serviceSelect.value;
+      let quantity = packageSelect.value;
+      const selectedOption = packageSelect.options[packageSelect.selectedIndex];
+      let price = selectedOption.dataset.price;
+      
+      if (platform === "Premium Apps") {
+        service = "Premium Apps";
+        quantity = packageSelect.value;
+      } else {
+        if (!service) {
+          alert("Pilih layanan dulu!");
+          return;
+        }
+        if (!quantity) {
+          alert("Pilih paket dulu!");
+          return;
+        }
+      }
+      
+      const currentDate = new Date().toLocaleDateString('id-ID');
+      let message = `╭❀「 *DATA PESANAN* 」\n`;
+      message += `├ ➥ _Tanggal_ : ${currentDate}\n`;
+      message += `├ ➥ _Jenis_   : ${service} ${platform}\n`;
+      message += `├ ➥ _Paket_   : ${quantity}\n`;
+      message += `├ ➥ _Total_   : Rp${Number(price).toLocaleString('id-ID')}\n`;
+      message += `╰───────────────\n\n`;
+      
+      if (platform !== "Premium Apps") {
+        const isAccountBased = (service === "Followers" || service === "Subscribers");
+        const targetLink = isAccountBased ? accountLinkInput.value.trim() : videoLinkInput.value.trim();
+        const targetLabel = isAccountBased ? 'Akun' : 'Video';
+        
+        if (!targetLink) {
+          alert("Isi link target!");
+          return;
+        }
+        
+        message += `╭❀「 TARGET ${targetLabel} 」\n`;
+        message += `├ ➥ _Link_ : ${targetLink}\n`;
+        message += `╰───────────────\n\n`;
+      }
+      
+      message += `╭❀「 *PERHATIAN* 」\n`;
+      if (platform === "Premium Apps") {
+        message += `├ ➥ _Akun akan dikirim via WhatsApp setelah pembayaran_\n`;
+        message += `├ ➥ _Proses aktivasi 1-12 jam setelah pembayaran_\n`;
+      } else {
+        message += `├ ➥ _Akun tidak boleh_ *private*\n`;
+        message += `├ ➥ _Jangan ganti_ *username*\n`;
+      }
+      message += `├ ➥ _Batas_ *min & max* _berlaku_\n`;
+      message += `╰───────────────\n\n`;
+      message += `_Silakan konfirmasi pesanan ini untuk melanjutkan pembayaran_ 💳`;
+      
+      const phoneNumber = "6281324919799";
+      const encodedMessage = encodeURIComponent(message);
+      window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+    });
+  </script>
 </body>
-
 </html>
