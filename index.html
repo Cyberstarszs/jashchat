@@ -1,688 +1,562 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jashub - Layanan Digital Premium</title>
-    <link rel="icon" href="favicon.png" type="image/png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-         :root {
-            --primary: #2D5BFF;
-            --secondary: #FF6B35;
-            --dark: #1A1A2E;
-            --light: #F8F9FA;
-            --gray: #6C757D;
-            --success: #28A745;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-        
-        body {
-            background-color: #f9f9f9;
-            color: var(--dark);
-            overflow-x: hidden;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        /* Header & Navigation */
-        
-        header {
-            background: linear-gradient(135deg, var(--primary) 0%, #1A3AC2 100%);
-            color: white;
-            padding: 15px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 28px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo span {
-            color: var(--secondary);
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 30px;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-links a:hover {
-            color: var(--secondary);
-        }
-        
-        .hamburger {
-            display: none;
-            cursor: pointer;
-        }
-        /* Hero Section */
-        
-        .hero {
-            padding: 160px 0 100px;
-            background: linear-gradient(rgba(45, 91, 255, 0.9), rgba(26, 58, 194, 0.9)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23ffffff" opacity="0.2" width="10" height="10"/></svg>');
-            background-size: cover;
-            color: white;
-            text-align: center;
-        }
-        
-        .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            animation: fadeInUp 1s ease;
-        }
-        
-        .hero p {
-            font-size: 1.4rem;
-            margin-bottom: 30px;
-            animation: fadeInUp 1.2s ease;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background-color: var(--secondary);
-            color: white;
-            padding: 14px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
-            animation: fadeInUp 1.4s ease;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.6);
-        }
-        /* Services Section */
-        
-        .services {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 70px;
-            height: 4px;
-            background: var(--secondary);
-            border-radius: 2px;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .service-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
-        }
-        
-        .service-header {
-            background: var(--primary);
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .service-header h3 {
-            font-size: 1.4rem;
-        }
-        
-        .service-content {
-            padding: 25px;
-        }
-        
-        .service-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 12px 0;
-            border-bottom: 1px dashed #eee;
-        }
-        
-        .service-item:last-child {
-            border-bottom: none;
-        }
-        
-        .service-item .amount {
-            font-weight: 600;
-            color: var(--dark);
-        }
-        
-        .service-item .price {
-            color: var(--secondary);
-            font-weight: 600;
-        }
-        
-        .service-button {
-            display: block;
-            text-align: center;
-            background: var(--primary);
-            color: white;
-            padding: 12px;
-            text-decoration: none;
-            font-weight: 500;
-            border-radius: 6px;
-            margin-top: 20px;
-            transition: all 0.3s ease;
-        }
-        
-        .service-button:hover {
-            background: var(--secondary);
-        }
-        /* Poster Section */
-        
-        .poster-section {
-            padding: 80px 0;
-            background: linear-gradient(to right, #f5f7fa, #e4e8f0);
-        }
-        
-        .poster-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-            border-radius: 12px;
-            overflow: hidden;
-        }
-        
-        .poster-image {
-            width: 100%;
-            display: block;
-        }
-        /* WhatsApp Float */
-        
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
-            z-index: 100;
-            transition: all 0.3s ease;
-            animation: pulse 2s infinite;
-        }
-        
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.7);
-        }
-        /* Footer */
-        
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 60px 0 30px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-column h3 {
-            font-size: 1.4rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background: var(--secondary);
-        }
-        
-        .footer-column p {
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            transition: all 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        /* Animations */
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-            }
-        }
-        /* Responsive Styles */
-        
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 2.4rem;
-            }
-            .hero p {
-                font-size: 1.2rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-                font-size: 24px;
-            }
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                right: -100%;
-                background: var(--primary);
-                width: 250px;
-                height: 100vh;
-                flex-direction: column;
-                padding: 40px 20px;
-                transition: all 0.4s ease;
-                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-            }
-            .nav-links.active {
-                right: 0;
-            }
-            .nav-links li {
-                margin: 15px 0;
-            }
-            .hero {
-                padding: 140px 0 80px;
-            }
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .hero p {
-                font-size: 1.1rem;
-            }
-            .section-title h2 {
-                font-size: 2rem;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            .cta-button {
-                padding: 12px 25px;
-                font-size: 1rem;
-            }
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jashub — Layanan Digital Premium</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Poppins',sans-serif;color:#fff;background:#0a0a0a;overflow-x:hidden}
+    .bg{position:fixed;inset:0;z-index:-2;background:#000}
+    .bg img{width:100%;height:100%;object-fit:cover;filter:blur(15px) brightness(0.4)}
+    .vignette{position:fixed;inset:0;z-index:-1;background:radial-gradient(circle at center,rgba(255,120,40,.2)0%,rgba(0,0,0,.95)80%)}
+    header{padding:22px 60px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.05);backdrop-filter:blur(12px);position:sticky;top:0;z-index:10;border-bottom:1px solid rgba(255,255,255,.1)}
+    header.scrolled{background:rgba(0,0,0,.85)}
+    .logo{font-size:26px;font-weight:800;background:linear-gradient(90deg,#ff6a00,#ff2aa0);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .logo{display:flex;align-items:center;gap:10px;font-size:26px;font-weight:800}
+    .logo img{height:40px;width:auto} 
+    .logo span{background:linear-gradient(90deg,#ff6a00,#ff2aa0);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+
+    .socials{display:flex;gap:15px}
+    .socials a{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:#fff;background:rgba(255,255,255,.1);transition:.3s;font-size:18px;text-decoration:none}
+    .socials a:hover{background:linear-gradient(135deg,#ff6a00,#ff2aa0);transform:scale(1.15)}
+    .menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer}
+    .menu-toggle span{width:28px;height:3px;background:#fff;border-radius:3px;transition:.3s}
+    @media(max-width:768px){
+      header{padding:18px 25px}
+      .socials{position:absolute;top:70px;right:25px;flex-direction:column;background:rgba(0,0,0,.9);padding:18px;border-radius:12px;gap:12px;display:none}
+      .socials.active{display:flex;animation:fadeIn .3s ease}
+      .menu-toggle{display:flex}
+    }
+    @keyframes fadeIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+    .menu-toggle.active span:nth-child(1){transform:rotate(45deg) translate(5px,6px)}
+    .menu-toggle.active span:nth-child(2){opacity:0}
+    .menu-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px)}
+    .hero{text-align:center;padding:90px 20px 50px}
+    .title{font-size:70px;font-weight:800;background:linear-gradient(90deg,#ff6a00,#ff2aa0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 25px rgba(255,106,0,.5)}
+    .subtitle{margin-top:12px;font-size:22px;opacity:.9}
+    .cta-buttons{margin-top:35px;display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
+    .cta-buttons a{padding:14px 34px;border-radius:30px;text-decoration:none;font-weight:600;transition:.3s;font-size:16px}
+    .cta-buttons .order{background:linear-gradient(135deg,#ff6a00,#ff2aa0);color:#fff;box-shadow:0 0 25px rgba(255,106,0,.6)}
+    .cta-buttons .order:hover{filter:brightness(1.1)}
+    .cta-buttons .explore{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);color:#fff}
+    .cta-buttons .explore:hover{background:#2aa0ff;border-color:#2aa0ff}
+    .service-icons{display:flex;gap:18px;justify-content:center;margin:40px auto;flex-wrap:wrap}
+    .service-icons button{background:rgba(255,255,255,.08);border:none;padding:18px;border-radius:18px;cursor:pointer;font-size:28px;color:#fff;transition:.35s;display:flex;align-items:center;justify-content:center}
+    .service-icons button:hover{transform:translateY(-5px) scale(1.05)}
+    .service-icons button.active{box-shadow:0 0 25px rgba(255,106,0,.6)}
+    .service-content{display:none;animation:fade .6s ease forwards}
+    .service-content.active{display:block}
+    @keyframes fade{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px;padding:20px 50px 100px}
+    .card{padding:22px;border-radius:18px;background:rgba(255,255,255,.08);backdrop-filter:blur(15px);border:1px solid rgba(255,255,255,.15);transition:.4s;position:relative;overflow:hidden}
+    .card:hover{transform:translateY(-12px) scale(1.02);box-shadow:0 0 35px rgba(255,106,0,.5)}
+    .card i{font-size:44px;color:#ff6a00;margin-bottom:16px}
+    .caption{font-size:20px;font-weight:700;margin-bottom:12px}
+    .service-list{list-style:none;color:#ddd;font-size:14px;width:100%;margin-bottom:15px}
+    .service-list li{margin:6px 0;display:flex;justify-content:space-between}
+    .service-list span{color:#ff6a00;font-weight:600}
+    .order-btn{display:inline-block;background:linear-gradient(135deg,#ff6a00,#ff2aa0);color:#fff;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:600;transition:.3s}
+    .order-btn:hover{filter:brightness(1.15)}
+    .service-submenu{display:flex;gap:12px;justify-content:center;margin-bottom:20px;flex-wrap:wrap}
+    .service-submenu button{background:rgba(255,255,255,.1);border:none;padding:10px 20px;border-radius:8px;color:#fff;cursor:pointer;transition:.3s;font-weight:600}
+    .service-submenu button.active{background:linear-gradient(135deg,#ff6a00,#ff2aa0);color:#fff}
+    .sub-content{display:none}
+    .sub-content.active{display:block}
+
+    /* Footer */
+    footer{background:#0b0b0b;padding:60px 30px 30px;color:#ccc;position:relative}
+    .footer-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px;margin-bottom:40px}
+    .footer-col h3{color:#fff;margin-bottom:15px;font-size:18px;font-weight:700}
+    .footer-col p,.footer-col li{font-size:14px;margin:6px 0}
+    .footer-col ul{list-style:none;padding:0}
+    .footer-col ul li a{color:#ccc;text-decoration:none;transition:.3s}
+    .footer-col ul li a:hover{color:#ff6a00}
+    .footer-socials{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap}
+    .footer-socials a{width:38px;height:38px;display:grid;place-items:center;background:rgba(255,255,255,.1);border-radius:50%;color:#fff;transition:.3s;font-size:16px}
+    .footer-socials a:hover{background:linear-gradient(135deg,#ff6a00,#ff2aa0);transform:scale(1.15)}
+    .newsletter{display:flex;margin-top:10px}
+    .newsletter input{flex:1;padding:10px;border:none;border-radius:6px 0 0 6px;outline:none;font-size:14px}
+    .newsletter button{background:linear-gradient(135deg,#ff6a00,#ff2aa0);border:none;padding:0 16px;border-radius:0 6px 6px 0;color:#fff;cursor:pointer;transition:.3s}
+    .newsletter button:hover{filter:brightness(1.15)}
+    .footer-bottom{text-align:center;font-size:13px;color:#777;border-top:1px solid rgba(255,255,255,.1);padding-top:20px}
+  </style>
 </head>
-
 <body>
-    <!-- Header & Navigation -->
-    <header>
-        <div class="container nav-container">
-            <div class="logo">Jash<span>ub</span></div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Layanan</a></li>
-                <li><a href="#poster">Poster</a></li>
-                <li><a href="#contact">Kontak</a></li>
-            </ul>
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </header>
+  <div class="bg"><img src="jashubs.jpg" alt="background"></div>
+  <div class="vignette"></div>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <h1>SEMUA LAYANAN DIGITAL DALAM SATU TEMPAT</h1>
-            <p>IG, TIKTOK, YOUTUBE, SHOPEE & APP PREMIUM</p>
-            <a href="pesanan.html" class="cta-button">Pesan Sekarang</a>
+  <header>
+  <div class="logo">
+    <img src="logo.png" alt="Jashub Logo">
+    <span>Jash<span>ub</span></span>
+  </div>
+  <div class="socials">
+    <a href="https://www.instagram.com/x.shybb" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.tiktok.com/@x.shybb" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="https://www.youtube.com/channel/UCmNI3HSnBLgbAUhMdkncAcw" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://wa.me/6281324919799" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </div>
+  <div class="menu-toggle" id="menu-btn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
+
+  <main>
+    <section class="hero">
+      <h1 class="title">SEMUA LAYANAN DIGITAL</h1>
+      <div class="subtitle">Instagram, TikTok, YouTube, Shopee & App Premium</div>
+      <div class="cta-buttons">
+        <a href="#services" class="explore">Lihat Layanan</a>
+        <a href="pesanan.html" class="order">Pesan Sekarang</a>
+      </div>
+    <section id="services">
+      <div class="service-icons">
+        <button class="active" data-target="instagram"><i class="fab fa-instagram"></i></button>
+        <button data-target="tiktok"><i class="fab fa-tiktok"></i></button>
+        <button data-target="youtube"><i class="fab fa-youtube"></i></button>
+        <button data-target="shopee"><i class="fas fa-shopping-cart"></i></button>
+        <button data-target="apps"><i class="fas fa-robot"></i></button>
+      </div>
+
+      <!-- Instagram -->
+      <div class="service-content active" id="instagram">
+        <div class="service-submenu">
+          <button class="active" data-sub="ig-followers">Followers</button>
+          <button data-sub="ig-likes">Likes</button>
+          <button data-sub="ig-views">Views</button>
         </div>
+        <div class="services-grid">
+          <article class="card sub-content active" id="ig-followers">
+            <i class="fab fa-instagram"></i><div class="caption">Pengikut Instagram</div>
+            <ul class="service-list">
+              <li>50 Followers <span>Rp 3k</span></li>
+              <li>100 Followers <span>Rp 6k</span></li>
+              <li>200 Followers <span>Rp 9k</span></li>
+              <li>300 Followers <span>Rp 12k</span></li>
+              <li>400 Followers <span>Rp 14k</span></li>
+              <li>500 Followers <span>Rp 16k</span></li>
+              <li>600 Followers <span>Rp 18k</span></li>
+              <li>700 Followers <span>Rp 20k</span></li>
+              <li>800 Followers <span>Rp 22k</span></li>
+              <li>900 Followers <span>Rp 25k</span></li>
+              <li>1.000 Followers <span>Rp 27k</span></li>
+              <li>3.000 Followers <span>Rp 70k</span></li>
+            </ul><a href="pesanan.html" class="order-btn">Pesan Sekarang</a>
+          </article>
+          <article class="card sub-content" id="ig-likes">
+            <i class="fab fa-instagram"></i><div class="caption">Likes Instagram</div>
+            <ul class="service-list">
+              <li>150 Likes <span>Rp 2k</span></li>
+              <li>200 Likes <span>Rp 3k</span></li>
+              <li>300 Likes <span>Rp 4k</span></li>
+              <li>400 Likes <span>Rp 5k</span></li>
+              <li>500 Likes <span>Rp 6k</span></li>
+              <li>600 Likes <span>Rp 7k</span></li>
+              <li>700 Likes <span>Rp 8k</span></li>
+              <li>800 Likes <span>Rp 9k</span></li>
+              <li>900 Likes <span>Rp 10k</span></li>
+              <li>1.000 Likes <span>Rp 11k</span></li>
+              <li>3.000 Likes <span>Rp 23k</span></li>
+            </ul><a href="pesanan.html" class="order-btn">Pesan Sekarang</a>
+          </article>
+          <article class="card sub-content" id="ig-views">
+            <i class="fab fa-instagram"></i><div class="caption">Tayangan Instagram</div>
+            <ul class="service-list">
+              <li>15.000 Views <span>Rp 3k</span></li>
+              <li>20.000 Views <span>Rp 4k</span></li>
+              <li>30.000 Views <span>Rp 5k</span></li>
+              <li>40.000 Views <span>Rp 6k</span></li>
+              <li>50.000 Views <span>Rp 7k</span></li>
+              <li>70.000 Views <span>Rp 8k</span></li>
+              <li>100.000 Views <span>Rp 13k</span></li>
+            </ul><a href="pesanan.html" class="order-btn">Pesan Sekarang</a>
+          </article>
+        </div>
+      </div>
+
+      <!-- TikTok -->
+      <div class="service-content" id="tiktok">
+        <div class="service-submenu">
+          <button class="active" data-sub="tt-followers">Followers</button>
+          <button data-sub="tt-likes">Likes</button>
+          <button data-sub="tt-views">Views</button>
+          <button data-sub="tt-live">Live Views</button>
+        </div>
+        <div class="services-grid">
+          <article class="card sub-content active" id="tt-followers">
+            <i class="fab fa-tiktok"></i><div class="caption">Pengikut TikTok</div>
+            <ul class="service-list">
+              <li>50 Followers <span>Rp 3k</span></li>
+              <li>100 Followers <span>Rp 7k</span></li>
+              <li>200 Followers <span>Rp 12k</span></li>
+              <li>300 Followers <span>Rp 16k</span></li>
+              <li>400 Followers <span>Rp 21k</span></li>
+              <li>500 Followers <span>Rp 25k</span></li>
+              <li>600 Followers <span>Rp 27k</span></li>
+              <li>700 Followers <span>Rp 32k</span></li>
+              <li>800 Followers <span>Rp 36k</span></li>
+              <li>900 Followers <span>Rp 41k</span></li>
+              <li>1.000 Followers <span>Rp 46k</span></li>
+              <li>3.000 Followers <span>Rp 125k</span></li>
+            </ul><a href="pesanan.html" class="order-btn">Pesan Sekarang</a>
+          </article>
+          <article class="card sub-content" id="tt-likes">
+            <i class="fab fa-tiktok"></i><div class="caption">Likes TikTok</div>
+            <ul class="service-list">
+              <li>150 Likes <span>Rp 2k</span></li>
+              <li>200 Likes <span>Rp 3k</span></li>
+              <li>300 Likes <span>Rp 4k</span></li>
+              <li>400 Likes <span>Rp 5k</span></li>
+              <li>500 Likes <span>Rp 6k</span></li>
+              <li>600 Likes <span>Rp 7k</span></li>
+              <li>700 Likes <span>Rp 8k</span></li>
+              <li>800 Likes <span>Rp 9k</span></li>
+              <li>900 Likes <span>Rp 10k</span></li>
+              <li>1.000 Likes <span>Rp 11k</span></li>
+              <li>3.000 Likes <span>Rp 23k</span></li>
+            </ul><a href="pesanan.html" class="order-btn">Pesan Sekarang</a>
+          </article>
+          <article class="card sub-content" id="tt-views">
+            <i class="fab fa-tiktok"></i><div class="caption">Tayangan TikTok</div>
+            <ul class="service-list">
+              <li>1.000 Views <span>Rp 2k</span></li>
+              <li>2.000 Views <span>Rp 3k</span></li>
+              <li>5.000 Views <span>Rp 4k</span></li>
+              <li>10.000 Views <span>Rp 6k</span></li>
+              <li>15.000 Views <span>Rp 7k</span></li>
+              <li>20.000 Views <span>Rp 8k</span></li>
+              <li>30.000 Views <span>Rp 9k</span></li>
+              <li>40.000 Views <span>Rp 10k</span></li>
+              <li>50.000 Views <span>Rp 11k</span></li>
+              <li>70.000 Views <span>Rp 13k</span></li>
+              <li>100.000 Views <span>Rp 15k</span></li>
+            </ul><a href="pesanan.html" class="order-btn">Pesan Sekarang</a>
+          </article>
+          <article class="card sub-content" id="tt-live">
+            <i class="fab fa-tiktok"></i><div class="caption">Live TikTok</div>
+            <ul class="service-list">
+              <li>50 Penonton <span>Rp 4k</span></li>
+              <li>100 Penonton <span>Rp 5k</span></li>
+              <li>150 Penonton <span>Rp 6k</span></li>
+              <li>200 Penonton <span>Rp 7k</span></li>
+              <li>250 Penonton <span>Rp 8k</span></li>
+              <li>300 Penonton <span>Rp 9k</span></li>
+              <li>350 Penonton <span>Rp 10k</span></li>
+              <li>400 Penonton <span>Rp 11k</span></li>
+              <li>450 Penonton <span>Rp 12k</span></li>
+              <li>500 Penonton <span>Rp 13k</span></li>
+              <li>550 Penonton <span>Rp 14k</span></li>
+              <li>600 Penonton <span>Rp 15k</span></li>
+              <li>650 Penonton <span>Rp 16k</span></li>
+              <li>700 Penonton <span>Rp 17k</span></li>
+              <li>750 Penonton <span>Rp 18k</span></li>
+              <li>800 Penonton <span>Rp 19k</span></li>
+              <li>850 Penonton <span>Rp 20k</span></li>
+              <li>900 Penonton <span>Rp 21k</span></li>
+              <li>950 Penonton <span>Rp 22k</span></li>
+              <li>1.000 Penonton <span>Rp 23k</span></li>
+            </ul><a href="pesanan.html" class="order-btn">Pesan Sekarang</a>
+          </article>
+        </div>
+      </div>
+
+      <!-- YouTube -->
+      <div class="service-content" id="youtube">
+        <div class="service-submenu">
+          <button class="active" data-sub="yt-subs">Subscribers</button>
+          <button data-sub="yt-share">Shares</button>
+          <button data-sub="yt-views">Views</button>
+        </div>
+        <div class="services-grid">
+          <article class="card sub-content active" id="yt-subs">
+            <i class="fab fa-youtube"></i><div class="caption">Subscriber YouTube</div>
+            <ul class="service-list">
+              <li>50 Subs <span>Rp 6k</span></li>
+              <li>100 Subs <span>Rp 16k</span></li>
+              <li>200 Subs <span>Rp 24k</span></li>
+              <li>300 Subs <span>Rp 32k</span></li>
+              <li>400 Subs <span>Rp 40k</span></li>
+              <li>500 Subs <span>Rp 48k</span></li>
+              <li>600 Subs <span>Rp 58k</span></li>
+              <li>700 Subs <span>Rp 69k</span></li>
+              <li>800 Subs <span>Rp 78k</span></li>
+              <li>900 Subs <span>Rp 85k</span></li>
+              <li>1.000 Subs <span>Rp 93k</span></li>
+              <li>3.000 Subs <span>Rp 270k</span></li>
+            </ul><a href="pesanan.html" class="order-btn">Pesan Sekarang</a>
+          </article>
+          <article class="card sub-content" id="yt-share">
+            <i class="fab fa-youtube"></i><div class="caption">Share YouTube</div>
+            <ul class="service-list">
+              <li>500 Share <span>Rp 6k</span></li>
+              <li>600 Share <span>Rp 7k</span></li>
+              <li>700 Share <span>Rp 8k</span></li>
+              <li>800 Share <span>Rp 9k</span></li>
+              <li>900 Share <span>Rp 10k</span></li>
+              <li>1.000 Share <span>Rp 11k</span></li>
+              <li>2.000 Share <span>Rp 13k</span></li>
+              <li>3.000 Share <span>Rp 14k</span></li>
+              <li>4.000 Share <span>Rp 15k</span></li>
+              <li>5.000 Share <span>Rp 16k</span></li>
+              <li>10.000 Share <span>Rp 20k</span></li>
+            </ul><a href="pesanan.html" class="order-btn">Pesan Sekarang</a>
+          </article>
+          <article class="card sub-content" id="yt-views">
+            <i class="fab fa-youtube"></i><div class="caption">Tayangan YouTube</div>
+            <ul class="service-list">
+              <li>1.000 Views <span>Rp 14k</span></li>
+              <li>2.000 Views <span>Rp 23k</span></li>
+              <li>5.000 Views <span>Rp 46k</span></li>
+              <li>10.000 Views <span>Rp 97k</span></li>
+              <li>15.000 Views <span>Rp 139k</span></li>
+              <li>20.000 Views <span>Rp 190k</span></li>
+              <li>30.000 Views <span>Rp 285k</span></li>
+              <li>40.000 Views <span>Rp 378k</span></li>
+              <li>50.000 Views <span>Rp 450k</span></li>
+              <li>70.000 Views <span>Rp 656k</span></li>
+              <li>100.000 Views <span>Rp 937k</span></li>
+            </ul><a href="pesanan.html" class="order-btn">Pesan Sekarang</a>
+          </article>
+        </div>
+      </div>
+
+      <!-- Shopee -->
+      <div class="service-content" id="shopee">
+        <div class="services-grid">
+          <article class="card">
+            <i class="fas fa-shopping-cart"></i><div class="caption">Pengikut Shopee</div>
+            <ul class="service-list">
+              <li>50 Followers <span>Rp 6k</span></li>
+              <li>100 Followers <span>Rp 7k</span></li>
+              <li>150 Followers <span>Rp 8k</span></li>
+              <li>200 Followers <span>Rp 9k</span></li>
+              <li>250 Followers <span>Rp 9.5k</span></li>
+              <li>300 Followers <span>Rp 10k</span></li>
+              <li>350 Followers <span>Rp 10.5k</span></li>
+              <li>400 Followers <span>Rp 11k</span></li>
+              <li>450 Followers <span>Rp 11.5k</span></li>
+              <li>500 Followers <span>Rp 12k</span></li>
+              <li>550 Followers <span>Rp 13k</span></li>
+              <li>600 Followers <span>Rp 13.5k</span></li>
+              <li>650 Followers <span>Rp 14k</span></li>
+              <li>700 Followers <span>Rp 14.5k</span></li>
+              <li>750 Followers <span>Rp 15k</span></li>
+              <li>800 Followers <span>Rp 15.5k</span></li>
+              <li>850 Followers <span>Rp 16k</span></li>
+              <li>900 Followers <span>Rp 16.5k</span></li>
+              <li>950 Followers <span>Rp 17k</span></li>
+              <li>1.000 Followers <span>Rp 18k</span></li>
+            </ul><a href="pesanan.html" class="order-btn">Pesan Sekarang</a>
+          </article>
+        </div>
+      </div>
+
+      <!-- Apps -->
+      <div class="service-content" id="apps">
+        <div class="services-grid">
+          <article class="card">
+            <i class="fas fa-robot"></i><div class="caption">App Premium</div>
+            <ul class="service-list">
+              <li>ChatGPT 1 Bulan 5U (Sharing) <span>Rp 18k</span></li>
+              <li>ChatGPT 1 Minggu (Sharing) <span>Rp 22k</span></li>
+              <li>ChatGPT 1 Bulan 10U <span>Rp 34k</span></li>
+              <li>ChatGPT 1 Bulan 8U <span>Rp 40k</span></li>
+              <li>YouTube Premium 1 Bulan (Famplan) <span>Rp 8.5k</span></li>
+              <li>YouTube Premium 1 Bulan (Individu) <span>Rp 11.5k</span></li>
+              <li>YouTube Premium 3 Bulan (Individu) <span>Rp 26k</span></li>
+              <li>YouTube Premium 3 Bulan (Inplan Promo) <span>Rp 23k</span></li>
+              <li>Canva Pro 1 Bulan <span>Rp 3k</span></li>
+              <li>Canva Pro 3 Bulan <span>Rp 7k</span></li>
+              <li>Canva Pro 1 Tahun <span>Rp 15k</span></li>
+              <li>Canva Pro EDU Lifetime <span>Rp 22.65k</span></li>
+              <li>CapCut Pro 1 Minggu <span>Rp 10k</span></li>
+              <li>CapCut Pro 1 Bulan (Garansi 7 hari) <span>Rp 15k</span></li>
+              <li>CapCut Pro 1 Bulan (Full Garansi) <span>Rp 17k</span></li>
+              <li>Spotify Premium 1 Bulan <span>Rp 18k</span></li>
+              <li>Spotify Premium 2 Bulan <span>Rp 22k</span></li>
+              <li>Vidio 1 Bulan (Sharing) <span>Rp 18.5k</span></li>
+              <li>Vidio 1 Bulan (Private All Device) <span>Rp 28k</span></li>
+              <li>Vidio 1 Tahun (Private TV Only) <span>Rp 11.73k</span></li>
+              <li>Netflix 1P1U - 1 Minggu <span>Rp 14.85k</span></li>
+              <li>Netflix 1P1U - 1 Bulan <span>Rp 25k</span></li>
+              <li>Netflix 1P2U - 1 Minggu <span>Rp 13.65k</span></li>
+              <li>Netflix 1P2U - 1 Bulan <span>Rp 20k</span></li>
+              <li>Netflix Private - 1 Bulan <span>Rp 100k</span></li>
+              <li>Remini 1 Bulan (Web Sharing) <span>Rp 12.5k</span></li>
+              <li>Remini 1 Tahun (App Android PRO) <span>Rp 38.75k</span></li>
+              <li>Disney+ Hotstar 1 Minggu (Sharing) <span>Rp 16k</span></li>
+              <li>Disney+ Hotstar 1 Bulan (Sharing) <span>Rp 23k</span></li>
+              <li>Disney+ Hotstar 1 Bulan (Private) <span>Rp 65k</span></li>
+              <li>IQIYI 1 Bulan (Sharing) <span>Rp 10.48k</span></li>
+              <li>IQIYI 1 Bulan (Private) <span>Rp 31k</span></li>
+              <li>Zoom Meeting Pro 14 Hari <span>Rp 11.25k</span></li>
+              <li>WeTV VIP 1 Bulan (Sharing) <span>Rp 13k</span></li>
+              <li>WeTV VIP 1 Bulan (Private) <span>Rp 32k</span></li>
+              <li>VSCO 1 Tahun <span>Rp 21.25k</span></li>
+              <li>VIU Premium 1 Tahun (Anti Limit) <span>Rp 7k</span></li>
+              <li>VIU Premium 150 Akun <span>Rp 20k</span></li>
+              <li>Vision+ 1 Bulan (Sharing) <span>Rp 11k</span></li>
+              <li>Vision+ 1 Bulan (Code Redeem) <span>Rp 10.63k</span></li>
+              <li>Vision+ 1 Bulan (Private) <span>Rp 13k</span></li>
+              <li>RCTI+ 1 Bulan (Sharing) <span>Rp 17k</span></li>
+              <li>RCTI+ 1 Bulan (Private) <span>Rp 28k</span></li>
+              <li>Picsart 1 Bulan (Private) <span>Rp 10k</span></li>
+              <li>Meitu 1 Bulan (Sharing) <span>Rp 18k</span></li>
+              <li>Meitu 1 Bulan (Private) <span>Rp 33k</span></li>
+              <li>HBO 1 Bulan (Sharing Max) <span>Rp 20k</span></li>
+              <li>HBO 1 Bulan (Sharing GO) <span>Rp 16.25k</span></li>
+              <li>HBO 1 Bulan (Private Max) <span>Rp 48k</span></li>
+              <li>GetContact Premium 1 Bulan <span>Rp 13k</span></li>
+              <li>Amazon Prime Video 1 Bulan (Sharing) <span>Rp 12k</span></li>
+              <li>Amazon Prime Video 1 Bulan (Private) <span>Rp 15k</span></li>
+              <li>Apple Music 1 Bulan (Famplan) <span>Rp 9.7k</span></li>
+              <li>Apple Music 2 Bulan (Famplan) <span>Rp 12.98k</span></li>
+              <li>Apple Music 3 Bulan (Famplan) <span>Rp 20.75k</span></li>
+              <li>Apple Music 1 Bulan (Famhead) <span>Rp 14k</span></li>
+              <li>BStation 1 Bulan <span>Rp 11.1k</span></li>
+              <li>BStation 3 Bulan <span>Rp 14.9k</span></li>
+              <li>BStation 1 Tahun <span>Rp 17.3k</span></li>
+              <li>Dramabox 1 Bulan <span>Rp 12.2k</span></li>
+              <li>Dramabox 3 Bulan <span>Rp 23.5k</span></li>
+              <li>Instagram 100 Followers <span>Rp 14.5k</span></li>
+              <li>TikTok 100 Followers <span>Rp 14.5k</span></li>
+              <li>Adobe Creative Cloud <span>Chat admin</span></li>
+              <li>Microsoft 365 <span>Chat admin</span></li>
+              <li>Google One <span>Chat admin</span></li>
+              <li>Turnitin <span>Chat admin</span></li>
+              <li>Grammarly Premium <span>Chat admin</span></li>
+              <li>WPS Premium <span>Chat admin</span></li>
+              <li>Windows 10/11 Pro <span>Chat admin</span></li>
+              <li>Office 2019/2021 <span>Chat admin</span></li>
+              <li>CapCut Web Premium <span>Chat admin</span></li>
+              <li>Alight Motion Pro <span>Chat admin</span></li>
+              <li>Lightroom Premium <span>Chat admin</span></li>
+              <li>Picsay Pro <span>Chat admin</span></li>
+              <li>Hosting Domain <span>Chat admin</span></li>
+            </ul><a href="pesanan.html" class="order-btn">Pesan Sekarang</a>
+          </article>
+        </div>
+      </div>
     </section>
+  </main>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>Layanan Kami</h2>
-            </div>
-
-            <div class="services-grid">
-                <!-- Instagram Followers -->
-                <div class="service-card">
-                    <div class="service-header">
-                        <h3>Instagram Followers</h3>
-                    </div>
-                    <div class="service-content">
-                        <div class="service-item">
-                            <span class="amount">50 Pengikut</span>
-                            <span class="price">Rp 3k</span>
-                        </div>
-                        <div class="service-item">
-                            <span class="amount">100 Pengikut</span>
-                            <span class="price">Rp 6k</span>
-                        </div>
-                        <div class="service-item">
-                            <span class="amount">200 Pengikut</span>
-                            <span class="price">Rp 9k</span>
-                        </div>
-                        <div class="service-item">
-                            <span class="amount">300 Pengikut</span>
-                            <span class="price">Rp 12k</span>
-                        </div>
-                        <div class="service-item">
-                            <span class="amount">500 Pengikut</span>
-                            <span class="price">Rp 18k</span>
-                        </div>
-                        <div class="service-item">
-                            <span class="amount">1000 Pengikut</span>
-                            <span class="price">Rp 27k</span>
-                        </div>
-                        <a href="pesanan.html" class="service-button">Pesan Sekarang</a>
-                    </div>
-                </div>
-
-                <!-- TikTok Followers -->
-                <div class="service-card">
-                    <div class="service-header">
-                        <h3>TikTok Followers</h3>
-                    </div>
-                    <div class="service-content">
-                        <div class="service-item">
-                            <span class="amount">50 Pengikut</span>
-                            <span class="price">Rp 3k</span>
-                        </div>
-                        <div class="service-item">
-                            <span class="amount">100 Pengikut</span>
-                            <span class="price">Rp 7k</span>
-                        </div>
-                        <div class="service-item">
-                            <span class="amount">200 Pengikut</span>
-                            <span class="price">Rp 12k</span>
-                        </div>
-                        <div class="service-item">
-                            <span class="amount">300 Pengikut</span>
-                            <span class="price">Rp 15k</span>
-                        </div>
-                        <div class="service-item">
-                            <span class="amount">500 Pengikut</span>
-                            <span class="price">Rp 27k</span>
-                        </div>
-                        <div class="service-item">
-                            <span class="amount">1000 Pengikut</span>
-                            <span class="price">Rp 46k</span>
-                        </div>
-                        <a href="pesanan.html" class="service-button">Pesan Sekarang</a>
-                    </div>
-                </div>
-
-                <!-- YouTube Subscribers -->
-                <div class="service-card">
-                    <div class="service-header">
-                        <h3>YouTube Subscribers</h3>
-                    </div>
-                    <div class="service-content">
-                        <div class="service-item">
-                            <span class="amount">50 Subscriber</span>
-                            <span class="price">Rp 6k</span>
-                        </div>
-                        <div class="service-item">
-                            <span class="amount">100 Subscriber</span>
-                            <span class="price">Rp 16k</span>
-                        </div>
-                        <div class="service-item">
-                            <span class="amount">200 Subscriber</span>
-                            <span class="price">Rp 24k</span>
-                        </div>
-                        <div class="service-item">
-                            <span class="amount">300 Subscriber</span>
-                            <span class="price">Rp 32k</span>
-                        </div>
-                        <div class="service-item">
-                            <span class="amount">500 Subscriber</span>
-                            <span class="price">Rp 48k</span>
-                        </div>
-                        <div class="service-item">
-                            <span class="amount">1000 Subscriber</span>
-                            <span class="price">Rp 99k</span>
-                        </div>
-                        <a href="pesanan.html" class="service-button">Pesan Sekarang</a>
-                    </div>
-                </div>
-            </div>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Jashub</h3>
+        <p>Layanan digital premium dengan kualitas terbaik dan harga terjangkau.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/x.shybb" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@x.shybb" target="_blank"><i class="fab fa-tiktok"></i></a>
+          <a href="https://www.youtube.com/channel/UCmNI3HSnBLgbAUhMdkncAcw" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://wa.me/6281324919799" target="_blank"><i class="fab fa-whatsapp"></i></a>
         </div>
-    </section>
-
-    <!-- Poster Section -->
-    <section class="poster-section" id="poster">
-        <div class="container">
-            <div class="section-title">
-                <h2>Poster Layanan Lengkap</h2>
-            </div>
-            <div class="poster-container">
-                <!-- Placeholder for the poster image -->
-                <img src="poster_jashub.jpg" alt="Poster Layanan Jashub" class="poster-image">
-            </div>
+      </div>
+      <div class="footer-col">
+        <h3>Layanan</h3>
+        <ul>
+          <li><a href="#services">Instagram</a></li>
+          <li><a href="#services">TikTok</a></li>
+          <li><a href="#services">YouTube</a></li>
+          <li><a href="#services">Shopee</a></li>
+          <li><a href="#services">App Premium</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Bantuan</h3>
+        <ul>
+          <li><a href="https://wa.me/6281324919799">Kontak Admin</a></li>
+          <li><a href="pesanan.html">Cara Pemesanan</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Syarat & Ketentuan</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Newsletter</h3>
+        <p>Dapatkan info promo dan layanan terbaru</p>
+        <div class="newsletter">
+          <input type="email" placeholder="Email Anda">
+          <button><i class="fas fa-paper-plane"></i></button>
         </div>
-    </section>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2023 Jashub. All rights reserved.</p>
+    </div>
+  </footer>
 
-    <!-- WhatsApp Float -->
-    <a href="https://wa.me/6281324919799?text=Halo%20Jashub,%20saya%20ingin%20konsultasi%20tentang%20layanan%20jashub" class="whatsapp-float">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Tentang Jashub</h3>
-                    <p>Penyedia layanan digital terpercaya dengan kualitas premium dan harga terjangkau. Semua layanan digital dalam satu tempat.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-
-                <div class="footer-column">
-                    <h3>Kontak Kami</h3>
-                    <p><i class="fas fa-phone"></i> +62 813-2491-9799</p>
-                    <p><i class="fas fa-envelope"></i> jashubpremium@gmail.com.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Indonesia</p>
-                </div>
-
-                <div class="footer-column">
-                    <h3>Layanan</h3>
-                    <p>Instagram Followers & Likes</p>
-                    <p>TikTok Followers & Likes</p>
-                    <p>YouTube Subscribers & Views</p>
-                    <p>Shopee Followers</p>
-                    <p>App Premium Accounts</p>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2025 Jashub - All Rights Reserved</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile Navigation Toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Menu toggle
+      const menuBtn = document.getElementById('menu-btn');
+      const socials = document.querySelector('.socials');
+      
+      menuBtn.addEventListener('click', function() {
+        this.classList.toggle('active');
+        socials.classList.toggle('active');
+      });
+      
+      // Service tabs
+      const serviceButtons = document.querySelectorAll('.service-icons button');
+      const serviceContents = document.querySelectorAll('.service-content');
+      
+      serviceButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const target = button.getAttribute('data-target');
+          
+          // Update active button
+          serviceButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+          
+          // Show target content
+          serviceContents.forEach(content => {
+            content.classList.remove('active');
+            if (content.id === target) {
+              content.classList.add('active');
+            }
+          });
         });
-
-        // Close mobile nav when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
+      });
+      
+      // Submenu tabs
+      const submenuButtons = document.querySelectorAll('.service-submenu button');
+      
+      submenuButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const parent = button.closest('.service-content');
+          const target = button.getAttribute('data-sub');
+          
+          // Update active button
+          parent.querySelectorAll('.service-submenu button').forEach(btn => {
+            btn.classList.remove('active');
+          });
+          button.classList.add('active');
+          
+          // Show target content
+          parent.querySelectorAll('.sub-content').forEach(content => {
+            content.classList.remove('active');
+            if (content.id === target) {
+              content.classList.add('active');
+            }
+          });
         });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Animation on scroll
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = 'fadeInUp 1s ease forwards';
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        // Observe service cards for animation
-        document.querySelectorAll('.service-card').forEach(card => {
-            card.style.opacity = '0';
-            observer.observe(card);
-        });
-    </script>
+      });
+      
+      // Header scroll effect
+      window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+    });
+  </script>
 </body>
-
 </html>
-
