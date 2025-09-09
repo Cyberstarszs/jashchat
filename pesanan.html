@@ -3,29 +3,84 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Pesanan  Jashub</title>
+  <title>Pesanan Jashub</title>
   <link rel="icon" type="image/png" href="favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
+<style>
     *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:'Poppins',sans-serif;color:#fff;background:#0a0a0a;overflow-x:hidden}
+    :root {
+      --bg-primary: #0a0a0a;
+      --bg-secondary: rgba(255,255,255,.08);
+      --text-primary: #fff;
+      --text-secondary: #ccc;
+      --accent-gradient: linear-gradient(135deg,#ff6a00,#ff2aa0);
+      --header-bg: rgba(255,255,255,.05);
+      --border-color: rgba(255,255,255,.1);
+      --shadow-color: rgba(255,106,0,.3);
+      --input-bg: rgba(255,255,255,.1);
+      --vignette: radial-gradient(circle at center,rgba(255,120,40,.2)0%,rgba(0,0,0,.95)80%);
+    }
+    [data-theme="light"] {
+      --bg-primary: #f5f5f5;
+      --bg-secondary: rgba(255,255,255,.8);
+      --text-primary: #333;
+      --text-secondary: #555;
+      --accent-gradient: linear-gradient(135deg,#ff6a00,#ff2aa0);
+      --header-bg: rgba(255,255,255,.9);
+      --border-color: rgba(0,0,0,.1);
+      --shadow-color: rgba(255,106,0,.2);
+      --input-bg: rgba(0,0,0,.05);
+      --vignette: radial-gradient(circle at center,rgba(255,120,40,.1)0%,rgba(245,245,245,.9)80%);
+    }
+    body{font-family:'Poppins',sans-serif;color:var(--text-primary);background:var(--bg-primary);overflow-x:hidden;transition:background 0.3s ease, color 0.3s ease}
     .bg{position:fixed;inset:0;z-index:-2;background:#000}
     .bg img{width:100%;height:100%;object-fit:cover;filter:blur(15px) brightness(0.4)}
-    .vignette{position:fixed;inset:0;z-index:-1;background:radial-gradient(circle at center,rgba(255,120,40,.2)0%,rgba(0,0,0,.95)80%)}
-    header{padding:22px 60px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.05);backdrop-filter:blur(12px);position:sticky;top:0;z-index:10;border-bottom:1px solid rgba(255,255,255,.1)}
+    .vignette{position:fixed;inset:0;z-index:-1;background:var(--vignette);transition:background 0.3s ease}
+    header{padding:22px 60px;display:flex;align-items:center;justify-content:space-between;background:var(--header-bg);backdrop-filter:blur(12px);position:sticky;top:0;z-index:10;border-bottom:1px solid var(--border-color);transition:background 0.3s ease, border-color 0.3s ease}
     header.scrolled{background:rgba(0,0,0,.85)}
+    [data-theme="light"] header.scrolled{background:rgba(255,255,255,.95)}
     .logo{display:flex;align-items:center;gap:10px;font-size:26px;font-weight:800}
     .logo img{height:40px;width:auto} 
-    .logo span{background:linear-gradient(90deg,#ff6a00,#ff2aa0);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .logo span{background:var(--accent-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .header-controls{display:flex;align-items:center;gap:15px}
     .socials{display:flex;gap:15px}
-    .socials a{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:#fff;background:rgba(255,255,255,.1);transition:.3s;font-size:18px;text-decoration:none}
-    .socials a:hover{background:linear-gradient(135deg,#ff6a00,#ff2aa0);transform:scale(1.15)}
+    .socials a{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:var(--text-primary);background:rgba(255,255,255,.1);transition:.3s;font-size:18px;text-decoration:none}
+    .socials a:hover{background:var(--accent-gradient);transform:scale(1.15)}
+
+    /* tombol darkmode */
+    .theme-toggle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;              
+      align-items: center;        
+      justify-content: center;    
+      color: var(--text-primary);
+      background: rgba(255,255,255,.1);
+      transition: .3s;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+    }
+    .theme-toggle:hover {
+      background: var(--accent-gradient);
+      transform: scale(1.15);
+    }
+    .theme-toggle i {
+      font-size: 18px;            
+      line-height: 1;             
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer}
-    .menu-toggle span{width:28px;height:3px;background:#fff;border-radius:3px;transition:.3s}
+    .menu-toggle span{width:28px;height:3px;background:var(--text-primary);border-radius:3px;transition:.3s}
     @media(max-width:768px){
       header{padding:18px 25px}
-      .socials{position:absolute;top:70px;right:25px;flex-direction:column;background:rgba(0,0,0,.9);padding:18px;border-radius:12px;gap:12px;display:none}
+      .header-controls{position:relative}
+      .socials{position:absolute;top:70px;right:0;flex-direction:column;background:var(--bg-primary);padding:18px;border-radius:12px;gap:12px;display:none;border:1px solid var(--border-color);box-shadow:0 5px 15px rgba(0,0,0,.2)}
       .socials.active{display:flex;animation:fadeIn .3s ease}
       .menu-toggle{display:flex}
     }
@@ -35,34 +90,45 @@
     .menu-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px)}
 
     .form-section{min-height:80vh;display:flex;align-items:center;justify-content:center;padding:60px 20px}
-    .form-container{background:rgba(255,255,255,.08);backdrop-filter:blur(15px);padding:30px;border-radius:18px;max-width:650px;width:100%;border:1px solid rgba(255,255,255,.15);box-shadow:0 0 25px rgba(255,106,0,.3)}
-    .form-container h1{text-align:center;font-size:32px;margin-bottom:25px;background:linear-gradient(90deg,#ff6a00,#ff2aa0);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-    label{display:block;margin:14px 0 6px;font-weight:600}
+    .form-container{background:var(--bg-secondary);backdrop-filter:blur(15px);padding:30px;border-radius:18px;max-width:650px;width:100%;border:1px solid var(--border-color);box-shadow:0 0 25px var(--shadow-color);transition:background 0.3s ease, border-color 0.3s ease}
+    .form-container h1{text-align:center;font-size:32px;margin-bottom:25px;background:var(--accent-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    label{display:block;margin:14px 0 6px;font-weight:600;color:var(--text-primary)}
+    .input-group {position:relative}
+    .info-icon{position:absolute;right:10px;top:50%;transform:translateY(-50%);color:#ff6a00;cursor:pointer;z-index:5}
     .select-wrapper{position:relative}
     .select-wrapper i{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#ff6a00}
-    select,input{width:100%;padding:12px 14px 12px 40px;border-radius:10px;border:none;margin-bottom:15px;background:rgba(255,255,255,.1);color:#fff;appearance:none;cursor:pointer}
-    select option{background:#0a0a0a;color:#fff}
+    select,input{width:100%;padding:12px 14px 12px 40px;border-radius:10px;border:none;margin-bottom:15px;background:var(--input-bg);color:var(--text-primary);appearance:none;cursor:pointer;transition:background 0.3s ease}
+    select option{background:var(--bg-primary);color:var(--text-primary)}
     select:focus,input:focus{outline:2px solid #ff6a00}
     .price-display{font-weight:700;font-size:20px;margin:15px 0;color:#ff6a00;text-align:center;text-shadow:0 0 10px rgba(255,106,0,.5)}
-    button{width:100%;padding:16px;border:none;border-radius:12px;font-weight:700;font-size:17px;background:linear-gradient(135deg,#ff6a00,#ff2aa0);color:#fff;cursor:pointer;transition:.3s;box-shadow:0 0 25px rgba(255,106,0,.5)}
+    button{width:100%;padding:16px;border:none;border-radius:12px;font-weight:700;font-size:17px;background:var(--accent-gradient);color:#fff;cursor:pointer;transition:.3s;box-shadow:0 0 25px rgba(255,106,0,.5)}
     button:hover{filter:brightness(1.1);transform:translateY(-3px)}
 
-    footer{background:#0b0b0b;padding:60px 30px 30px;color:#ccc;position:relative}
+    .modal{display:none;position:fixed;z-index:100;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.7);backdrop-filter:blur(5px)}
+    .modal-content{background:var(--bg-secondary);margin:5% auto;padding:25px;border-radius:15px;width:90%;max-width:600px;max-height:80vh;overflow-y:auto;border:1px solid var(--border-color);box-shadow:0 0 30px rgba(0,0,0,.5);color:var(--text-primary)}
+    .close{color:#aaa;float:right;font-size:28px;font-weight:700;cursor:pointer}
+    .close:hover{color:#ff6a00}
+    .modal h2{color:#ff6a00;margin-bottom:20px}
+    .guide-section{margin-bottom:20px}
+    .guide-section h3{color:var(--text-primary);margin-bottom:10px;font-size:18px}
+    .guide-section p{color:var(--text-secondary);margin-bottom:10px;font-size:14px}
+
+    footer{background:var(--bg-primary);padding:60px 30px 30px;color:var(--text-secondary);position:relative;transition:background 0.3s ease}
     .footer-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px;margin-bottom:40px}
-    .footer-col h3{color:#fff;margin-bottom:15px;font-size:18px;font-weight:700}
-    .footer-col p,.footer-col li{font-size:14px;margin:6px 0}
+    .footer-col h3{color:var(--text-primary);margin-bottom:15px;font-size:18px;font-weight:700}
+    .footer-col p,.footer-col li{font-size:14px;margin:6px 0;color:var(--text-secondary)}
     .footer-col ul{list-style:none;padding:0}
-    .footer-col ul li a{color:#ccc;text-decoration:none;transition:.3s}
+    .footer-col ul li a{color:var(--text-secondary);text-decoration:none;transition:.3s}
     .footer-col ul li a:hover{color:#ff6a00}
     .footer-socials{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap}
-    .footer-socials a{width:38px;height:38px;display:grid;place-items:center;background:rgba(255,255,255,.1);border-radius:50%;color:#fff;transition:.3s;font-size:16px}
-    .footer-socials a:hover{background:linear-gradient(135deg,#ff6a00,#ff2aa0);transform:scale(1.15)}
+    .footer-socials a{width:38px;height:38px;display:grid;place-items:center;background:rgba(255,255,255,.1);border-radius:50%;color:var(--text-primary);transition:.3s;font-size:16px}
+    .footer-socials a:hover{background:var(--accent-gradient);transform:scale(1.15)}
     .newsletter{display:flex;margin-top:10px}
-    .newsletter input{flex:1;padding:10px;border:none;border-radius:6px 0 0 6px;outline:none;font-size:14px}
-    .newsletter button{background:linear-gradient(135deg,#ff6a00,#ff2aa0);border:none;padding:0 16px;border-radius:0 6px 6px 0;color:#fff;cursor:pointer;transition:.3s}
+    .newsletter input{flex:1;padding:10px;border:none;border-radius:6px 0 0 6px;outline:none;font-size:14px;background:var(--input-bg);color:var(--text-primary)}
+    .newsletter button{background:var(--accent-gradient);border:none;padding:0 16px;border-radius:0 6px 6px 0;color:#fff;cursor:pointer;transition:.3s}
     .newsletter button:hover{filter:brightness(1.15)}
-    .footer-bottom{text-align:center;font-size:13px;color:#777;border-top:1px solid rgba(255,255,255,.1);padding-top:20px}
-  </style>
+    .footer-bottom{text-align:center;font-size:13px;color:var(--text-secondary);border-top:1px solid var(--border-color);padding-top:20px}
+</style>
 </head>
 <body>
   <div class="bg"><img src="jashubs.jpg" alt="background"></div>
@@ -73,14 +139,19 @@
       <img src="logo.png" alt="Jashub Logo">
       <span>Jash<span>ub</span></span>
     </div>
-    <div class="socials">
-      <a href="https://www.instagram.com/x.shybb" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.tiktok.com/@x.shybb" target="_blank"><i class="fab fa-tiktok"></i></a>
-      <a href="https://www.youtube.com/channel/UCmNI3HSnBLgbAUhMdkncAcw" target="_blank"><i class="fab fa-youtube"></i></a>
-      <a href="https://wa.me/6281324919799" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    </div>
-    <div class="menu-toggle" id="menu-btn">
-      <span></span><span></span><span></span>
+    <div class="header-controls">
+      <div class="socials">
+        <a href="https://www.instagram.com/x.shybb" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@x.shybb" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.youtube.com/channel/UCmNI3HSnBLgbAUhMdkncAcw" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://wa.me/6281324919799" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
+      <button class="theme-toggle" id="theme-toggle">
+        <i class="fas fa-moon"></i>
+      </button>
+      <div class="menu-toggle" id="menu-btn">
+        <span></span><span></span><span></span>
+      </div>
     </div>
   </header>
 
@@ -112,16 +183,53 @@
       </div>
       <div id="price" class="price-display"></div>
       <div id="accountLinkGroup" style="display:none">
-        <label for="accountLinkInput">Link Akun</label>
-        <input type="text" id="accountLinkInput" placeholder="Masukkan link akun">
+        <div class="input-group">
+          <label for="accountLinkInput">Link Akun <small>(klik ikon info untuk panduan)</small></label>
+          <input type="text" id="accountLinkInput" placeholder="Masukkan link akun">
+          <i class="fas fa-info-circle info-icon" id="accountInfoBtn"></i>
+        </div>
       </div>
       <div id="videoLinkGroup" style="display:none">
-        <label for="videoLinkInput">Link Video</label>
-        <input type="text" id="videoLinkInput" placeholder="Masukkan link video">
+        <div class="input-group">
+          <label for="videoLinkInput">Link Video <small>(klik ikon info untuk panduan)</small></label>
+          <input type="text" id="videoLinkInput" placeholder="Masukkan link video">
+          <i class="fas fa-info-circle info-icon" id="videoInfoBtn"></i>
+        </div>
       </div>
       <button id="orderBtn"><i class="fab fa-whatsapp"></i> Pesan via WhatsApp</button>
     </div>
   </section>
+
+  <div id="infoModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Panduan Salin Link</h2>
+      
+      <div class="guide-section">
+        <h3>Instagram</h3>
+        <p><strong>Link Akun:</strong> Buka profil Instagram, ketuk tombol tiga titik di pojok kanan atas, lalu pilih "Salin URL".</p>
+        <p><strong>Link Video/Postingan:</strong> Buka postingan, ketuk tombol tiga titik di atas postingan, lalu pilih "Salin Link".</p>
+      </div>
+      
+      <div class="guide-section">
+        <h3>TikTok</h3>
+        <p><strong>Link Akun:</strong> Buka profil, ketuk tombol bagikan (panah), lalu pilih "Salin Link".</p>
+        <p><strong>Link Video:</strong> Buka video, ketuk tombol bagikan (panah), lalu pilih "Salin Link".</p>
+      </div>
+      
+      <div class="guide-section">
+        <h3>YouTube</h3>
+        <p><strong>Link Channel:</strong> Buka channel, di address bar browser salin URL lengkapnya.</p>
+        <p><strong>Link Video:</strong> Buka video, di address bar browser salin URL lengkapnya.</p>
+      </div>
+      
+      <div class="guide-section">
+        <h3>Shopee</h3>
+        <p><strong>Link Toko:</strong> Buka halaman toko, ketuk tombol bagikan, lalu pilih "Salin Link".</p>
+        <p><strong>Link Produk:</strong> Buka halaman produk, ketuk tombol bagikan, lalu pilih "Salin Link".</p>
+      </div>
+    </div>
+  </div>
 
   <footer>
     <div class="footer-container">
@@ -480,6 +588,264 @@
         ],
         'Hosting Domain': [
           { quantity: 'Custom Domain & Hosting', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Joki Tugas': [
+          { quantity: 'Semua Jenis Tugas', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Joki Skripsi': [
+          { quantity: 'Semua Bab', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Joki Coding': [
+          { quantity: 'Semua Bahasa Pemrograman', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Joki Desain': [
+          { quantity: 'Semua Jenis Desain', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Translate': [
+          { quantity: 'Semua Bahasa', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Parafrase': [
+          { quantity: 'Semua Dokumen', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Ketik': [
+          { quantity: 'Semua Format', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Edit Video': [
+          { quantity: 'Semua Jenis Video', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Edit Foto': [
+          { quantity: 'Semua Jenis Foto', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Power Point': [
+          { quantity: 'Semua Tema', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Website': [
+          { quantity: 'Custom Website', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Aplikasi': [
+          { quantity: 'Custom Aplikasi', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa BOT': [
+          { quantity: 'Custom BOT', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa SEO': [
+          { quantity: 'Optimasi Website', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Iklan': [
+          { quantity: 'Semua Platform', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Admin Media Sosial': [
+          { quantity: 'Semua Platform', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Content Creator': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Voice Over': [
+          { quantity: 'Semua Bahasa', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Dubbing': [
+          { quantity: 'Semua Bahasa', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Subtittle': [
+          { quantity: 'Semua Bahasa', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Audio Editing': [
+          { quantity: 'Semua Jenis Audio', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Shooting': [
+          { quantity: 'Semua Jenis Video', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Dokumentasi': [
+          { quantity: 'Semua Acara', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Live Streaming': [
+          { quantity: 'Semua Platform', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Profile': [
+          { quantity: 'Perusahaan/Sekolah', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Company Profile': [
+          { quantity: 'Perusahaan/Organisasi', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Iklan': [
+          { quantity: 'Semua Platform', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Tutorial': [
+          { quantity: 'Semua Topik', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Animasi': [
+          { quantity: '2D/3D', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Editing': [
+          { quantity: 'Semua Jenis Video', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Montage': [
+          { quantity: 'Semua Tema', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Wedding': [
+          { quantity: 'Full Dokumentasi', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Birthday': [
+          { quantity: 'Full Dokumentasi', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Travel': [
+          { quantity: 'Perjalanan/Liburan', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Musik': [
+          { quantity: 'Lirik/Clip', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Olahraga': [
+          { quantity: 'Semua Jenis Olahraga', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Edukasi': [
+          { quantity: 'Semua Mata Pelajaran', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Review': [
+          { quantity: 'Produk/Tempat', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Vlog': [
+          { quantity: 'Personal/Daily', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Podcast': [
+          { quantity: 'Editing/Full Production', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Youtube': [
+          { quantity: 'Semua Niche', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video TikTok': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Instagram': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Facebook': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Twitter': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video LinkedIn': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Pinterest': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Snapchat': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Telegram': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video WhatsApp': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Signal': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Line': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video WeChat': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Discord': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Zoom': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Google Meet': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Microsoft Teams': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Skype': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Viber': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video IMO': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Zalo': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video KakaoTalk': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video VK': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video QQ': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Weibo': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Douyin': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Kuaishou': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Bilibili': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Twitch': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video DLive': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Mixer': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Periscope': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Bigo Live': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Nimo TV': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Nonolive': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Uplive': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video LiveMe': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video 17 Live': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Pandalive': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Openrec.tv': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Mildom': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Mirrativ': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Showroom': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Line Live': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video Facebook Gaming': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
+        ],
+        'Jasa Video YouTube Gaming': [
+          { quantity: 'Semua Konten', price: 'Chat admin untuk tanya harga' }
         ]
       }
     };
@@ -488,162 +854,187 @@
     const serviceSelect = document.getElementById('service');
     const packageSelect = document.getElementById('package');
     const priceDisplay = document.getElementById('price');
-    const orderBtn = document.getElementById('orderBtn');
     const accountLinkGroup = document.getElementById('accountLinkGroup');
     const videoLinkGroup = document.getElementById('videoLinkGroup');
     const accountLinkInput = document.getElementById('accountLinkInput');
     const videoLinkInput = document.getElementById('videoLinkInput');
-    
-    window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', window.scrollY > 50);
-    });
-    
+    const orderBtn = document.getElementById('orderBtn');
+    const themeToggle = document.getElementById('theme-toggle');
     const menuBtn = document.getElementById('menu-btn');
     const socials = document.querySelector('.socials');
-    menuBtn.addEventListener('click', () => {
-      menuBtn.classList.toggle('active');
-      socials.classList.toggle('active');
-    });
-    
-    platformSelect.addEventListener('change', () => {
-      serviceSelect.innerHTML = '<option value="">-- Pilih Layanan --</option>';
+    const accountInfoBtn = document.getElementById('accountInfoBtn');
+    const videoInfoBtn = document.getElementById('videoInfoBtn');
+    const infoModal = document.getElementById('infoModal');
+    const closeModal = document.querySelector('.close');
+
+    function updateServiceOptions() {
+      const platform = platformSelect.value;
+      serviceSelect.innerHTML = '<option value="">-- Jenis Layanan --</option>';
       packageSelect.innerHTML = '<option value="">-- Pilih Paket --</option>';
-      serviceSelect.disabled = true;
-      packageSelect.disabled = true;
       priceDisplay.textContent = '';
       accountLinkGroup.style.display = 'none';
       videoLinkGroup.style.display = 'none';
       
-      const platform = platformSelect.value;
-      if (!platform) return;
-      
-      if (platform === "Premium Apps") {
-        serviceSelect.disabled = true;
-        packageSelect.disabled = false;
-        
+      if (platform && pricingData[platform]) {
+        serviceSelect.disabled = false;
         Object.keys(pricingData[platform]).forEach(service => {
-          let opt = document.createElement('option');
-          opt.value = service;
-          opt.textContent = service;
-          packageSelect.appendChild(opt);
+          const option = document.createElement('option');
+          option.value = service;
+          option.textContent = service;
+          serviceSelect.appendChild(option);
         });
       } else {
-        serviceSelect.disabled = false;
-        
-        Object.keys(pricingData[platform]).forEach(service => {
-          let opt = document.createElement('option');
-          opt.value = service;
-          opt.textContent = service;
-          serviceSelect.appendChild(opt);
-        });
+        serviceSelect.disabled = true;
+        packageSelect.disabled = true;
       }
-    });
-    
-    serviceSelect.addEventListener('change', () => {
+    }
+
+    function updatePackageOptions() {
+      const platform = platformSelect.value;
+      const service = serviceSelect.value;
       packageSelect.innerHTML = '<option value="">-- Pilih Paket --</option>';
-      packageSelect.disabled = true;
       priceDisplay.textContent = '';
       accountLinkGroup.style.display = 'none';
       videoLinkGroup.style.display = 'none';
       
-      const platform = platformSelect.value;
-      const service = serviceSelect.value;
-      
-      if (service) {
+      if (platform && service && pricingData[platform][service]) {
         packageSelect.disabled = false;
-        
-        pricingData[platform][service].forEach(item => {
-          let opt = document.createElement('option');
-          opt.value = item.quantity;
-          opt.textContent = `${item.quantity} - Rp ${item.price.toLocaleString('id-ID')}`;
-          opt.dataset.price = item.price;
-          packageSelect.appendChild(opt);
+        pricingData[platform][service].forEach(pkg => {
+          const option = document.createElement('option');
+          option.value = pkg.price;
+          option.textContent = typeof pkg.quantity === 'number' ? 
+            `${pkg.quantity.toLocaleString('id-ID')} ${service}` : 
+            pkg.quantity;
+          packageSelect.appendChild(option);
         });
+      } else {
+        packageSelect.disabled = true;
       }
-    });
-    
-    packageSelect.addEventListener('change', () => {
+    }
+
+    function updatePrice() {
+      const price = packageSelect.value;
+      if (price) {
+        priceDisplay.textContent = `Harga: Rp ${parseInt(price).toLocaleString('id-ID')}`;
+        
+        const platform = platformSelect.value;
+        const service = serviceSelect.value;
+        
+        if (platform === 'Premium Apps') {
+          accountLinkGroup.style.display = 'none';
+          videoLinkGroup.style.display = 'none';
+        } else {
+          if (service === 'Followers' || service === 'Subscribers') {
+            accountLinkGroup.style.display = 'block';
+            videoLinkGroup.style.display = 'none';
+          } else if (service === 'Views' || service === 'Likes' || service === 'Shares' || service === 'Live Views') {
+            accountLinkGroup.style.display = 'none';
+            videoLinkGroup.style.display = 'block';
+          } else {
+            accountLinkGroup.style.display = 'none';
+            videoLinkGroup.style.display = 'none';
+          }
+        }
+      } else {
+        priceDisplay.textContent = '';
+        accountLinkGroup.style.display = 'none';
+        videoLinkGroup.style.display = 'none';
+      }
+    }
+
+    function placeOrder() {
       const platform = platformSelect.value;
       const service = serviceSelect.value;
-      const selectedOption = packageSelect.options[packageSelect.selectedIndex];
-      const price = selectedOption.dataset.price;
+      const packageOption = packageSelect.options[packageSelect.selectedIndex];
+      const packageText = packageOption.textContent;
+      const price = packageSelect.value;
+      const accountLink = accountLinkInput.value;
+      const videoLink = videoLinkInput.value;
       
-      if (price) {
-        priceDisplay.textContent = "Harga: Rp " + Number(price).toLocaleString('id-ID');
-        
-        if (platform !== "Premium Apps") {
-          const isAccountBased = (service === "Followers" || service === "Subscribers");
-          accountLinkGroup.style.display = isAccountBased ? "block" : "none";
-          videoLinkGroup.style.display = !isAccountBased ? "block" : "none";
-        }
-      }
-    });
-    
-    orderBtn.addEventListener('click', () => {
-      const platform = platformSelect.value;
-      if (!platform) {
-        alert("Pilih platform dulu!");
+      if (!platform || !service || !price) {
+        alert('Silakan pilih platform, layanan, dan paket terlebih dahulu!');
         return;
       }
       
-      let service = serviceSelect.value;
-      let quantity = packageSelect.value;
-      const selectedOption = packageSelect.options[packageSelect.selectedIndex];
-      let price = selectedOption.dataset.price;
+      let message = `Halo, saya ingin memesan layanan ${platform} - ${service}:\n`;
+      message += `Paket: ${packageText}\n`;
+      message += `Harga: Rp ${parseInt(price).toLocaleString('id-ID')}\n\n`;
       
-      if (platform === "Premium Apps") {
-        service = "Premium Apps";
-        quantity = packageSelect.value;
+      if (accountLink) {
+        message += `Link Akun: ${accountLink}\n`;
+      }
+      
+      if (videoLink) {
+        message += `Link Video: ${videoLink}\n`;
+      }
+      
+      const whatsappURL = `https://wa.me/6281324919799?text=${encodeURIComponent(message)}`;
+      window.open(whatsappURL, '_blank');
+    }
+
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      
+      const icon = themeToggle.querySelector('i');
+      if (newTheme === 'light') {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
       } else {
-        if (!service) {
-          alert("Pilih layanan dulu!");
-          return;
-        }
-        if (!quantity) {
-          alert("Pilih paket dulu!");
-          return;
-        }
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
       }
+    }
+
+    function initTheme() {
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
       
-      const currentDate = new Date().toLocaleDateString('id-ID');
-      let message = `╭❀「 *DATA PESANAN* 」\n`;
-      message += `├ ➥ _Tanggal_ : ${currentDate}\n`;
-      message += `├ ➥ _Jenis_   : ${service} ${platform}\n`;
-      message += `├ ➥ _Paket_   : ${quantity}\n`;
-      message += `├ ➥ _Total_   : Rp${Number(price).toLocaleString('id-ID')}\n`;
-      message += `╰───────────────\n\n`;
-      
-      if (platform !== "Premium Apps") {
-        const isAccountBased = (service === "Followers" || service === "Subscribers");
-        const targetLink = isAccountBased ? accountLinkInput.value.trim() : videoLinkInput.value.trim();
-        const targetLabel = isAccountBased ? 'Akun' : 'Video';
-        
-        if (!targetLink) {
-          alert("Isi link target!");
-          return;
-        }
-        
-        message += `╭❀「 TARGET ${targetLabel} 」\n`;
-        message += `├ ➥ _Link_ : ${targetLink}\n`;
-        message += `╰───────────────\n\n`;
-      }
-      
-      message += `╭❀「 *PERHATIAN* 」\n`;
-      if (platform === "Premium Apps") {
-        message += `├ ➥ _Akun akan dikirim via WhatsApp setelah pembayaran_\n`;
-        message += `├ ➥ _Proses aktivasi 1-12 jam setelah pembayaran_\n`;
+      const icon = themeToggle.querySelector('i');
+      if (savedTheme === 'light') {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
       } else {
-        message += `├ ➥ _Akun tidak boleh_ *private*\n`;
-        message += `├ ➥ _Jangan ganti_ *username*\n`;
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
       }
-      message += `├ ➥ _Batas_ *min & max* _berlaku_\n`;
-      message += `╰───────────────\n\n`;
-      message += `_Silakan konfirmasi pesanan ini untuk melanjutkan pembayaran_ 💳`;
-      
-      const phoneNumber = "6281324919799";
-      const encodedMessage = encodeURIComponent(message);
-      window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+    }
+
+    function toggleMobileMenu() {
+      menuBtn.classList.toggle('active');
+      socials.classList.toggle('active');
+    }
+
+    function showInfoModal() {
+      infoModal.style.display = 'block';
+    }
+
+    function hideInfoModal() {
+      infoModal.style.display = 'none';
+    }
+
+    platformSelect.addEventListener('change', updateServiceOptions);
+    serviceSelect.addEventListener('change', updatePackageOptions);
+    packageSelect.addEventListener('change', updatePrice);
+    orderBtn.addEventListener('click', placeOrder);
+    themeToggle.addEventListener('click', toggleTheme);
+    menuBtn.addEventListener('click', toggleMobileMenu);
+    accountInfoBtn.addEventListener('click', showInfoModal);
+    videoInfoBtn.addEventListener('click', showInfoModal);
+    closeModal.addEventListener('click', hideInfoModal);
+    window.addEventListener('click', (e) => {
+      if (e.target === infoModal) hideInfoModal();
     });
+
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    initTheme();
   </script>
 </body>
 </html>
