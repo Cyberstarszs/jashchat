@@ -339,7 +339,7 @@ select option {
 @media(max-width:480px){
   #chatbot-window{width:100%;right:0;bottom:0;border-radius:0;max-height:100%}
 }
-
+:root { color-scheme: light dark; }
 </style>
 
 
@@ -1127,33 +1127,64 @@ select option {
 
   <script>
     // Toggle Theme
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeIcon = themeToggle.querySelector('i');
-    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    
-    // Check for saved theme or use system preference
-    const currentTheme = localStorage.getItem('theme') || (prefersDarkScheme.matches ? 'dark' : 'light');
-    if (currentTheme === 'dark') {
-      document.documentElement.setAttribute('data-theme', 'dark');
+(() => {
+  const themeToggle = document.getElementById('theme-toggle');
+  const themeIcon = themeToggle.querySelector('i');
+  const prefersDarkMq = window.matchMedia('(prefers-color-scheme: dark)');
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    if (theme === 'dark') {
       themeIcon.className = 'fas fa-sun';
+      if (metaThemeColor) metaThemeColor.content = '#0a0a0a';
     } else {
-      document.documentElement.setAttribute('data-theme', 'light');
       themeIcon.className = 'fas fa-moon';
+      if (metaThemeColor) metaThemeColor.content = '#ffffff';
     }
-    
-    // Toggle theme on button click
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = document.documentElement.getAttribute('data-theme');
-      if (currentTheme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'light');
-        themeIcon.className = 'fas fa-moon';
-        localStorage.setItem('theme', 'light');
-      } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        themeIcon.className = 'fas fa-sun';
-        localStorage.setItem('theme', 'dark');
-      }
-    });
+  }
+
+  function getSaved() {
+    try { return localStorage.getItem('theme'); } catch (e) { return null; }
+  }
+
+  function savePref(value) {
+    try {
+      if (value === null) localStorage.removeItem('theme');
+      else localStorage.setItem('theme', value);
+    } catch (e) {}
+  }
+
+  const saved = getSaved();
+  const initial = saved || (prefersDarkMq.matches ? 'dark' : 'light');
+  applyTheme(initial);
+
+  themeToggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+    savePref(next);
+  });
+
+  function systemChangeHandler(e) {
+    const savedNow = getSaved();
+    if (savedNow) return;
+    const newTheme = e.matches ? 'dark' : 'light';
+    applyTheme(newTheme);
+  }
+
+  if (typeof prefersDarkMq.addEventListener === 'function') {
+    prefersDarkMq.addEventListener('change', systemChangeHandler);
+  } else if (typeof prefersDarkMq.addListener === 'function') {
+    prefersDarkMq.addListener(systemChangeHandler);
+  }
+
+  window.clearThemeOverride = () => {
+    savePref(null);
+    applyTheme(prefersDarkMq.matches ? 'dark' : 'light');
+  };
+})();
+
     
     // Service tabs
     const serviceButtons = document.querySelectorAll('.service-icons button');
