@@ -124,11 +124,13 @@ footer{background:var(--bg-primary);padding:60px 30px 30px;color:var(--text-seco
     </div>
     <div class="header-controls">
       <div class="socials">
-        <a href="https://www.instagram.com/x.shybb" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.tiktok.com/@x.shybb" target="_blank"><i class="fab fa-tiktok"></i></a>
-        <a href="https://www.youtube.com/channel/UCmNI3HSnBLgbAUhMdkncAcw" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a href="https://wa.me/6281324919799" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      </div>
+  <a href="index.html"><i class="fas fa-home"></i></a>
+  <a href="https://www.instagram.com/x.shybb" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.tiktok.com/@x.shybb" target="_blank"><i class="fab fa-tiktok"></i></a>
+  <a href="https://www.youtube.com/channel/UCmNI3HSnBLgbAUhMdkncAcw" target="_blank"><i class="fab fa-youtube"></i></a>
+  <a href="https://wa.me/6281324919799" target="_blank"><i class="fab fa-whatsapp"></i></a>
+</div>
+
       <button class="theme-toggle" id="theme-toggle">
         <i class="fas fa-moon"></i>
       </button>
@@ -248,175 +250,128 @@ footer{background:var(--bg-primary);padding:60px 30px 30px;color:var(--text-seco
     </div>
   </footer>
   <script>
-    const pricingData = {
-      'Instagram': {
-        'Followers': [
-          { quantity: 50, price: 3000 },
-          { quantity: 100, price: 6000 },
-          { quantity: 200, price: 9000 },
-          { quantity: 300, price: 12000 },
-          { quantity: 400, price: 14000 },
-          { quantity: 500, price: 16000 },
-          { quantity: 600, price: 18000 },
-          { quantity: 700, price: 20000 },
-          { quantity: 800, price: 22000 },
-          { quantity: 900, price: 25000 },
-          { quantity: 1000, price: 27000 },
-          { quantity: 3000, price: 70000 }
-        ],
-        'Likes': [
-          { quantity: 150, price: 2000 },
-          { quantity: 200, price: 3000 },
-          { quantity: 300, price: 4000 },
-          { quantity: 400, price: 5000 },
-          { quantity: 500, price: 6000 },
-          { quantity: 600, price: 7000 },
-          { quantity: 700, price: 8000 },
-          { quantity: 800, price: 9000 },
-          { quantity: 900, price: 10000 },
-          { quantity: 1000, price: 11000 },
-          { quantity: 3000, price: 23000 }
-        ],
-        'Views': [
-          { quantity: 15000, price: 3000 },
-          { quantity: 20000, price: 4000 },
-          { quantity: 30000, price: 5000 },
-          { quantity: 40000, price: 6000 },
-          { quantity: 50000, price: 7000 },
-          { quantity: 70000, price: 8000 },
-          { quantity: 100000, price: 13000 }
-        ]
-      },
-      'Tiktok': {
-        'Followers': [
-          { quantity: 50, price: 3000 },
-          { quantity: 100, price: 7000 },
-          { quantity: 200, price: 12000 },
-          { quantity: 300, price: 16000 },
-          { quantity: 400, price: 21000 },
-          { quantity: 500, price: 25000 },
-          { quantity: 600, price: 27000 },
-          { quantity: 700, price: 32000 },
-          { quantity: 800, price: 36000 },
-          { quantity: 900, price: 41000 },
-          { quantity: 1000, price: 46000 },
-          { quantity: 3000, price: 125000 }
-        ],
-        'Likes': [
-          { quantity: 150, price: 2000 },
-          { quantity: 200, price: 3000 },
-          { quantity: 300, price: 4000 },
-          { quantity: 400, price: 5000 },
-          { quantity: 500, price: 6000 },
-          { quantity: 600, price: 7000 },
-          { quantity: 700, price: 8000 },
-          { quantity: 800, price: 9000 },
-          { quantity: 900, price: 10000 },
-          { quantity: 1000, price: 11000 },
-          { quantity: 3000, price: 23000 }
-        ],
-        'Views': [
-          { quantity: 1000, price: 2000 },
-          { quantity: 2000, price: 3000 },
-          { quantity: 5000, price: 4000 },
-          { quantity: 10000, price: 6000 },
-          { quantity: 15000, price: 7000 },
-          { quantity: 20000, price: 8000 },
-          { quantity: 30000, price: 9000 },
-          { quantity: 40000, price: 10000 },
-          { quantity: 50000, price: 11000 },
-          { quantity: 70000, price: 13000 },
-          { quantity: 100000, price: 15000 }
-        ],
-        'Live Views': [
-          { quantity: 50, price: 4000 },
-          { quantity: 100, price: 5000 },
-          { quantity: 150, price: 6000 },
-          { quantity: 200, price: 7000 },
-          { quantity: 250, price: 8000 },
-          { quantity: 300, price: 9000 },
-          { quantity: 350, price: 10000 },
-          { quantity: 400, price: 11000 },
-          { quantity: 450, price: 12000 },
-          { quantity: 500, price: 13000 },
-          { quantity: 550, price: 14000 },
-          { quantity: 600, price: 15000 },
-          { quantity: 650, price: 16000 },
-          { quantity: 700, price: 17000 },
-          { quantity: 750, price: 18000 },
-          { quantity: 800, price: 19000 },
-          { quantity: 850, price: 20000 },
-          { quantity: 900, price: 21000 },
-          { quantity: 950, price: 22000 },
-          { quantity: 1000, price: 23000 }
-        ]
-      },
-      'YouTube': {
-        'Subscribers': [
-          { quantity: 50, price: 6000 },
-          { quantity: 100, price: 16000 },
-          { quantity: 200, price: 24000 },
-          { quantity: 300, price: 32000 },
-          { quantity: 400, price: 40000 },
-          { quantity: 500, price: 48000 },
-          { quantity: 600, price: 58000 },
-          { quantity: 700, price: 69000 },
-          { quantity: 800, price: 78000 },
-          { quantity: 900, price: 85000 },
-          { quantity: 1000, price: 93000 },
-          { quantity: 3000, price: 270000 }
-        ],
-        'Shares': [
-          { quantity: 500, price: 6000 },
-          { quantity: 600, price: 7000 },
-          { quantity: 700, price: 8000 },
-          { quantity: 800, price: 9000 },
-          { quantity: 900, price: 10000 },
-          { quantity: 1000, price: 11000 },
-          { quantity: 2000, price: 13000 },
-          { quantity: 3000, price: 14000 },
-          { quantity: 4000, price: 15000 },
-          { quantity: 5000, price: 16000 },
-          { quantity: 10000, price: 20000 }
-        ],
-        'Views': [
-          { quantity: 1000, price: 14000 },
-          { quantity: 2000, price: 23000 },
-          { quantity: 5000, price: 46000 },
-          { quantity: 10000, price: 97000 },
-          { quantity: 15000, price: 139000 },
-          { quantity: 20000, price: 190000 },
-          { quantity: 30000, price: 285000 },
-          { quantity: 40000, price: 378000 },
-          { quantity: 50000, price: 450000 },
-          { quantity: 70000, price: 656000 },
-          { quantity: 100000, price: 937000 }
-        ]
-      },
-      'Shopee': {
-        'Followers': [
-          { quantity: 50, price: 6000 },
-          { quantity: 100, price: 7000 },
-          { quantity: 150, price: 8000 },
-          { quantity: 200, price: 9000 },
-          { quantity: 250, price: 9500 },
-          { quantity: 300, price: 10000 },
-          { quantity: 350, price: 10500 },
-          { quantity: 400, price: 11000 },
-          { quantity: 450, price: 11500 },
-          { quantity: 500, price: 12000 },
-          { quantity: 550, price: 13000 },
-          { quantity: 600, price: 13500 },
-          { quantity: 650, price: 14000 },
-          { quantity: 700, price: 14500 },
-          { quantity: 750, price: 15000 },
-          { quantity: 800, price: 15500 },
-          { quantity: 850, price: 16000 },
-          { quantity: 900, price: 16500 },
-          { quantity: 950, price: 17000 },
-          { quantity: 1000, price: 18000 }
-        ]
-      },
+const pricingData = {
+  'Instagram': {
+    'Followers': [
+      { quantity: 50, price: 4000 },
+      { quantity: 100, price: 8000 },
+      { quantity: 200, price: 15000 },
+      { quantity: 300, price: 22000 },
+      { quantity: 400, price: 29000 },
+      { quantity: 500, price: 35000 },
+      { quantity: 1000, price: 55000 },
+      { quantity: 3000, price: 150000 }
+    ],
+    'Likes': [
+      { quantity: 150, price: 4000 },
+      { quantity: 200, price: 5000 },
+      { quantity: 300, price: 6000 },
+      { quantity: 400, price: 7000 },
+      { quantity: 500, price: 9000 },
+      { quantity: 700, price: 11000 },
+      { quantity: 1000, price: 12000 },
+      { quantity: 3000, price: 29000 }
+    ],
+    'Views': [
+      { quantity: 1000, price: 2000 },
+      { quantity: 2000, price: 3000 },
+      { quantity: 5000, price: 4000 },
+      { quantity: 10000, price: 6000 },
+      { quantity: 15000, price: 7000 },
+      { quantity: 20000, price: 8000 },
+      { quantity: 30000, price: 9000 },
+      { quantity: 50000, price: 12000 },
+      { quantity: 100000, price: 15000 }
+    ]
+  },
+  'Tiktok': {
+    'Followers': [
+      { quantity: 50, price: 3000 },
+      { quantity: 100, price: 7000 },
+      { quantity: 200, price: 12000 },
+      { quantity: 300, price: 15000 },
+      { quantity: 400, price: 21000 },
+      { quantity: 500, price: 27000 },
+      { quantity: 1000, price: 46000 },
+      { quantity: 3000, price: 125000 }
+    ],
+    'Likes': [
+      { quantity: 150, price: 2000 },
+      { quantity: 200, price: 3000 },
+      { quantity: 300, price: 4000 },
+      { quantity: 400, price: 5000 },
+      { quantity: 500, price: 6000 },
+      { quantity: 700, price: 9000 },
+      { quantity: 1000, price: 11000 },
+      { quantity: 3000, price: 23000 }
+    ],
+    'Views': [
+      { quantity: 1000, price: 2000 },
+      { quantity: 2000, price: 3000 },
+      { quantity: 5000, price: 4000 },
+      { quantity: 10000, price: 6000 },
+      { quantity: 15000, price: 7000 },
+      { quantity: 20000, price: 8000 },
+      { quantity: 30000, price: 9000 },
+      { quantity: 50000, price: 12000 },
+      { quantity: 100000, price: 15000 }
+    ],
+    'Live Views': [
+      { quantity: 50, price: 4000 },
+      { quantity: 100, price: 5000 },
+      { quantity: 200, price: 7000 },
+      { quantity: 300, price: 9000 },
+      { quantity: 400, price: 11000 },
+      { quantity: 500, price: 13000 },
+      { quantity: 1000, price: 23000 },
+      { quantity: 3000, price: 30000 }
+    ]
+  },
+  'YouTube': {
+    'Subscribers': [
+      { quantity: 50, price: 6000 },
+      { quantity: 100, price: 16000 },
+      { quantity: 200, price: 24000 },
+      { quantity: 300, price: 32000 },
+      { quantity: 400, price: 39000 },
+      { quantity: 500, price: 48000 },
+      { quantity: 1000, price: 99000 },
+      { quantity: 3000, price: 270000 }
+    ],
+    'Shares': [
+      { quantity: 150, price: 6000 },
+      { quantity: 200, price: 7000 },
+      { quantity: 300, price: 8000 },
+      { quantity: 400, price: 9000 },
+      { quantity: 500, price: 10000 },
+      { quantity: 700, price: 11000 },
+      { quantity: 1000, price: 13000 },
+      { quantity: 3000, price: 27000 }
+    ],
+    'Views': [
+      { quantity: 1000, price: 14000 },
+      { quantity: 2000, price: 23000 },
+      { quantity: 5000, price: 46000 },
+      { quantity: 10000, price: 97000 },
+      { quantity: 15000, price: 139000 },
+      { quantity: 20000, price: 190000 },
+      { quantity: 30000, price: 285000 },
+      { quantity: 50000, price: 350000 },
+      { quantity: 100000, price: 400000 }
+    ]
+  },
+  'Shopee': {
+    'Followers': [
+      { quantity: 50, price: 6000 },
+      { quantity: 100, price: 7000 },
+      { quantity: 200, price: 9000 },
+      { quantity: 300, price: 10000 },
+      { quantity: 400, price: 11000 },
+      { quantity: 500, price: 12000 },
+      { quantity: 1000, price: 18000 },
+      { quantity: 3000, price: 50000 }
+    ]
+  },
       'Premium Apps': {
         'ChatGPT': [
           { quantity: '1 Bulan 5U (Sharing)', price: 18000 },
