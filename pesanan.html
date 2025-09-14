@@ -604,7 +604,7 @@ footer {
         <h3>Kontak Kami</h3>
         <ul>
           <li><a href="https://wa.me/6281324919799" target="_blank"><i class="fab fa-whatsapp"></i> +62 813-2491-9799</a></li>
-          <li><a href="mailto:jashub.id@gmail.com"><i class="far fa-envelope"></i> jashub.id@gmail.com</a></li>
+          <li><a href="mailto:jashubpremium@gmail.com"><i class="far fa-envelope"></i> jashubpremium@gmail.com</a></li>
         </ul>
       </div>
     </div>
@@ -1142,7 +1142,200 @@ window.addEventListener("click", (e) => {
     infoModal.style.display = "none";
   }
 });
+// Fungsi untuk memilih layanan secara otomatis berdasarkan data yang disimpan
+function autoSelectService() {
+  const savedService = sessionStorage.getItem('selectedService');
+  if (!savedService) return;
+  
+  const serviceData = JSON.parse(savedService);
+  
+  // Bersihkan storage setelah digunakan
+  sessionStorage.removeItem('selectedService');
+  
+  // Temukan platform yang sesuai dan klik
+  const platformCards = document.querySelectorAll('#service-platforms .option-card');
+  for (const card of platformCards) {
+    if (card.textContent.toLowerCase().includes(serviceData.platform.toLowerCase())) {
+      card.click();
+      break;
+    }
+  }
+  
+  // Set timeout untuk menunggu render jenis layanan
+  setTimeout(() => {
+    // Temukan jenis layanan yang sesuai dan klik
+    const typeCards = document.querySelectorAll('#service-types .option-card');
+    for (const card of typeCards) {
+      if (card.textContent.toLowerCase().includes(serviceData.serviceType.toLowerCase())) {
+        card.click();
+        break;
+      }
+    }
+    
+    // Set timeout untuk menunggu render paket
+    setTimeout(() => {
+      // Temukan paket yang sesuai dan klik (jika ada item)
+      if (serviceData.items && serviceData.items.length > 0) {
+        const packageCards = document.querySelectorAll('#service-packages .option-card');
+        for (const card of packageCards) {
+          const cardText = card.textContent.toLowerCase();
+          if (cardText.includes(serviceData.items[0].text.toLowerCase()) || 
+              cardText.includes(serviceData.items[0].price.toLowerCase())) {
+            card.click();
+            break;
+          }
+        }
+      }
+    }, 300);
+  }, 300);
+}
 
+// Panggil fungsi autoSelectService saat halaman dimuat
+document.addEventListener('DOMContentLoaded', autoSelectService);
+function autoSelectService() {
+  const savedService = sessionStorage.getItem('selectedService');
+  if (!savedService) return;
+  
+  const serviceData = JSON.parse(savedService);
+  sessionStorage.removeItem('selectedService'); // hapus setelah dipakai
+  
+  // Mapping platform
+  const platformMap = {
+    'instagram': 'Instagram',
+    'tiktok': 'Tiktok',
+    'youtube': 'YouTube',
+    'shopee': 'Shopee',
+    'apps': 'Premium Apps'
+  };
+  
+  const targetPlatform = platformMap[serviceData.platform] || serviceData.platform;
+  
+  // Klik platform yang sesuai
+  const platformCards = document.querySelectorAll('#service-platforms .option-card');
+  for (const card of platformCards) {
+    if (card.textContent.toLowerCase().includes(targetPlatform.toLowerCase())) {
+      card.click();
+      break;
+    }
+  }
+  
+  setTimeout(() => {
+    // Mapping jenis layanan lengkap
+    const typeMap = {
+      // ================= INSTAGRAM =================
+      'ig-followers': 'Followers',
+      'ig-likes': 'Likes',
+      'ig-views': 'Views',
+      'ig-comments': 'Comments',
+      'ig-reels': 'Reels Views',
+      'ig-story': 'Story Views',
+      'ig-live': 'Live Views',
+      // ================= TIKTOK =================
+      'tt-followers': 'Followers',
+      'tt-likes': 'Likes',
+      'tt-views': 'Views',
+      'tt-comments': 'Comments',
+      'tt-live': 'Live Views',
+      'tt-shares': 'Shares',
+      'tt-save': 'Saves',
+      // ================= YOUTUBE =================
+      'yt-subs': 'Subscribers',
+      'yt-views': 'Views',
+      'yt-likes': 'Likes',
+      'yt-comments': 'Comments',
+      'yt-shares': 'Shares',
+      'yt-shorts': 'Shorts Views',
+      'yt-watchtime': 'Watchtime Hours',
+      // ================= SHOPEE =================
+      'shopee-followers': 'Followers',
+      'shopee-likes': 'Likes Produk',
+      'shopee-views': 'Views Produk',
+      'shopee-reviews': 'Reviews',
+      'shopee-sales': 'Sales Boost',
+      // ================= PREMIUM APPS =================
+      'capcut': 'CapCut',
+      'canva': 'Canva',
+      'netflix': 'Netflix',
+      'spotify': 'Spotify',
+      'prime': 'Amazon Prime',
+      'disney': 'Disney+',
+      'viu': 'Viu',
+      'iqiyi': 'iQIYI',
+      'wetv': 'WeTV',
+      'apple-music': 'Apple Music',
+      'youtube-premium': 'YouTube Premium',
+      'hbo': 'HBO Max',
+      'vidio': 'Vidio',
+      'joox': 'Joox',
+      'grammarly': 'Grammarly',
+      'canva-pro': 'Canva Pro',
+      'capcut-pro': 'CapCut Pro'
+    };
+    
+    let targetType = '';
+    
+    // Kalau ada subType → langsung ambil dari mapping
+    if (serviceData.subType && typeMap[serviceData.subType]) {
+      targetType = typeMap[serviceData.subType];
+    } else {
+      // fallback: cocokin dari serviceType (caption card)
+      const st = serviceData.serviceType.toLowerCase();
+      if (st.includes('follower') || st.includes('pengikut')) targetType = 'Followers';
+      else if (st.includes('like')) targetType = 'Likes';
+      else if (st.includes('view') || st.includes('tayangan')) targetType = 'Views';
+      else if (st.includes('comment') || st.includes('komentar')) targetType = 'Comments';
+      else if (st.includes('share') || st.includes('bagikan')) targetType = 'Shares';
+      else if (st.includes('story')) targetType = 'Story Views';
+      else if (st.includes('reel')) targetType = 'Reels Views';
+      else if (st.includes('live')) targetType = 'Live Views';
+      else if (st.includes('subscriber')) targetType = 'Subscribers';
+      else if (st.includes('watchtime') || st.includes('jam tonton')) targetType = 'Watchtime Hours';
+      else if (st.includes('review')) targetType = 'Reviews';
+      else if (st.includes('sale') || st.includes('penjualan')) targetType = 'Sales Boost';
+      // Premium Apps (fallback dari nama)
+      else if (st.includes('capcut')) targetType = 'CapCut';
+      else if (st.includes('canva')) targetType = 'Canva';
+      else if (st.includes('netflix')) targetType = 'Netflix';
+      else if (st.includes('spotify')) targetType = 'Spotify';
+      else if (st.includes('prime')) targetType = 'Amazon Prime';
+      else if (st.includes('disney')) targetType = 'Disney+';
+      else if (st.includes('viu')) targetType = 'Viu';
+      else if (st.includes('iqiyi')) targetType = 'iQIYI';
+      else if (st.includes('wetv')) targetType = 'WeTV';
+      else if (st.includes('apple')) targetType = 'Apple Music';
+      else if (st.includes('yt premium') || st.includes('youtube premium')) targetType = 'YouTube Premium';
+      else if (st.includes('hbo')) targetType = 'HBO Max';
+      else if (st.includes('vidio')) targetType = 'Vidio';
+      else if (st.includes('joox')) targetType = 'Joox';
+      else if (st.includes('grammarly')) targetType = 'Grammarly';
+    }
+    
+    if (targetType) {
+      const typeCards = document.querySelectorAll('#service-types .option-card');
+      for (const card of typeCards) {
+        if (card.textContent.toLowerCase().includes(targetType.toLowerCase())) {
+          card.click();
+          break;
+        }
+      }
+    }
+    
+    // Klik paket sesuai item
+    setTimeout(() => {
+      if (serviceData.items && serviceData.items.length > 0) {
+        const packageCards = document.querySelectorAll('#service-packages .option-card');
+        const firstItemText = serviceData.items[0].text.toLowerCase();
+        for (const card of packageCards) {
+          if (card.textContent.toLowerCase().includes(firstItemText)) {
+            card.click();
+            break;
+          }
+        }
+      }
+    }, 300);
+  }, 300);
+}
   </script>
+  
 </body>
 </html>
