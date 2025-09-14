@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html lang="id" data-theme="dark">
+<html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Data Pemesanan</title>
+  <meta name="theme-color" content="#1a73e8">
+  <meta name="msapplication-navbutton-color" content="#1a73e8">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons-font@v10/font/simple-icons.min.css">
   <style>
@@ -1083,19 +1086,40 @@ function placeOrder() {
 orderBtn.addEventListener("click", placeOrder);
 renderPlatforms();
 
-const themeToggleBtn = document.getElementById("theme-toggle");
-const htmlElement = document.documentElement;
-
-themeToggleBtn.addEventListener("click", () => {
-  let currentTheme = htmlElement.getAttribute("data-theme");
-  if (currentTheme === "dark") {
-    htmlElement.setAttribute("data-theme", "light");
-    themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
-  } else {
-    htmlElement.setAttribute("data-theme", "dark");
-    themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+(() => {
+  const btn = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+  const meta = document.querySelector('meta[name="theme-color"]');
+  function setIcon(theme){
+    if(!btn) return;
+    btn.innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
   }
-});
+  function apply(t){
+    html.setAttribute('data-theme', t);
+    if(meta) meta.content = t === 'dark' ? '#0a0a0a' : '#ffffff';
+    setIcon(t);
+  }
+  function saved(){ try{ return localStorage.getItem('theme'); }catch(e){return null} }
+  function save(v){ try{ if(v===null) localStorage.removeItem('theme'); else localStorage.setItem('theme', v); }catch(e){} }
+  const init = saved() || (prefersDark.matches ? 'dark' : 'light');
+  apply(init);
+  if(btn){
+    btn.addEventListener('click', () => {
+      const cur = html.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      const next = cur === 'dark' ? 'light' : 'dark';
+      apply(next);
+      save(next);
+    });
+  }
+  function sysChange(e){
+    if(saved()) return;
+    apply(e.matches ? 'dark' : 'light');
+  }
+  if(typeof prefersDark.addEventListener === 'function') prefersDark.addEventListener('change', sysChange);
+  else if(typeof prefersDark.addListener === 'function') prefersDark.addListener(sysChange);
+  window.clearThemeOverride = () => { save(null); apply(prefersDark.matches ? 'dark' : 'light'); };
+})();
 
 const infoModal = document.getElementById("infoModal");
 const closeBtn = document.querySelector(".modal .close");
