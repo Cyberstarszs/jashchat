@@ -156,6 +156,170 @@ footer{background:var(--footer-bg);padding:60px 30px 30px;color:var(--footer-tex
   .service-content .sub-content.active{display:block!important}
 }
 .no-results{padding:12px 16px;text-align:center;color:var(--text-secondary);font-size:14px;display:none}
+/* Tambahan khusus dropdown agar ikut gelap/terang */
+select, input {
+  background: var(--input-bg) !important;
+  color: var(--text-primary) !important;
+}
+
+select option {
+  background: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+/* FAQ */
+.faq-section { padding: 50px 20px; }
+.faq-wrapper { max-width:1100px; margin:0 auto; }
+.faq-section h2 { font-size:24px; margin-bottom:18px; font-weight:800;
+  background:linear-gradient(90deg,var(--accent-primary),var(--accent-secondary));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.accordion .item { border-radius:12px; margin-bottom:10px; overflow:hidden; border:1px solid var(--card-border); background:var(--card-bg); }
+.accordion-btn { width:100%; padding:16px; text-align:left; font-weight:700; display:flex; justify-content:space-between; align-items:center; background:transparent; border:none; cursor:pointer; color:var(--text-primary); }
+.accordion-btn .icon { width:28px; height:28px; border-radius:8px; display:grid; place-items:center; font-weight:700; }
+.panel { max-height:0; overflow:hidden; transition:max-height .28s ease; padding:0 16px; color:var(--text-secondary); font-size:14px; }
+.panel p { padding:12px 0; margin:0; }
+
+/* Order modal */
+.modal-order { position:fixed; inset:0; display:none; align-items:center; justify-content:center; z-index:1000; background: rgba(0,0,0,0.45); }
+.modal-order.open { display:flex; }
+.modal-inner { width:100%; max-width:720px; background:var(--card-bg); border-radius:12px; padding:20px; box-shadow:0 20px 60px rgba(0,0,0,0.3); border:1px solid var(--card-border); position:relative; }
+.modal-inner .close { position:absolute; right:12px; top:8px; background:none;border:none;font-size:22px; cursor:pointer; color:var(--text-secondary); }
+
+/* progress */
+.progress { margin-bottom:14px; }
+.steps { display:flex; gap:8px; justify-content:space-between; margin-bottom:8px; }
+.step { flex:1; padding:8px 10px; text-align:center; border-radius:8px; font-size:13px; background:var(--button-secondary-bg); color:var(--text-primary); font-weight:700; }
+.step.active { background: linear-gradient(135deg,var(--accent-primary),var(--accent-secondary)); color:#fff; box-shadow:0 6px 18px rgba(0,0,0,0.08); }
+.bar { height:6px; background:var(--button-secondary-bg); border-radius:6px; overflow:hidden; }
+.bar-fill { height:100%; width:0; background:linear-gradient(90deg,var(--accent-primary),var(--accent-secondary)); transition:width .35s ease; }
+
+/* step contents */
+.step-content { display:none; }
+.step-content.active { display:block; }
+.modal-row { display:flex; gap:12px; }
+.modal-row .col { flex:1; }
+.modal-field { width:100%; padding:10px; border-radius:8px; border:1px solid var(--card-border); background:var(--bg-secondary); color:var(--text-primary); outline:none; }
+
+/* actions */
+.modal-actions { display:flex; gap:8px; justify-content:flex-end; margin-top:14px; }
+.btn { padding:10px 14px; border-radius:8px; border:none; cursor:pointer; font-weight:700; }
+.btn.secondary { background:var(--button-secondary-bg); border:1px solid var(--button-secondary-border); color:var(--text-primary); }
+.btn.primary { background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary)); color:#fff; }
+
+/* success */
+.order-success { text-align:center; padding:18px 12px; }
+
+/* responsive */
+@media(max-width:560px){ .modal-row{flex-direction:column;} .modal-inner{padding:16px;} .steps{gap:6px;} }
+#chatbot-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1a73e8, #0059c9);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  z-index: 9999;
+}
+
+#chatbot-window {
+  position: fixed;
+  bottom: 96px;
+  right: 20px;
+  width: 360px;
+  max-width: calc(100% - 40px);
+  max-height: 520px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.35);
+  overflow: hidden;
+  z-index: 9999;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+}
+
+#chatbot-header {
+  background: linear-gradient(135deg, #1a73e8, #0059c9);
+  color: #fff;
+  padding: 14px;
+  font-weight: 700;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#chatbot-header .subtitle {
+  font-weight: 400;
+  font-size: 12px;
+  opacity: .95;
+}
+
+#chatbot-messages {
+  flex: 1;
+  padding: 14px;
+  overflow-y: auto;
+  font-size: 14px;
+  background: #fafafa;
+}
+
+.chat-msg {
+  margin-bottom: 12px;
+  display: inline-block;
+  clear: both;
+  max-width: 80%;
+  word-wrap: break-word;
+  padding: 10px 14px;
+  border-radius: 12px;
+  line-height: 1.4;
+}
+.chat-msg.bot {
+  background: #f1f3f4;
+  color: #222;
+  float: left;
+}
+.chat-msg.user {
+  background: #1a73e8;
+  color: #fff;
+  float: right;
+  text-align: right;
+}
+
+#chatbot-input {
+  display: flex;
+  padding: 10px;
+  gap: 8px;
+  border-top: 1px solid #eee;
+  background: #fff;
+}
+#chatbot-input input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+  background: #fff;
+  color: #222;
+}
+#chatbot-input button {
+  background: linear-gradient(135deg, #1a73e8, #0059c9);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
 
 </style>
 
@@ -860,7 +1024,45 @@ footer{background:var(--footer-bg);padding:60px 30px 30px;color:var(--footer-tex
 
     </section>
   </main>
+<section id="faq" class="faq-section">
+  <div class="faq-wrapper">
+    <h2>FAQ — Pertanyaan Umum</h2>
+    <div class="accordion" role="tablist">
+      <div class="item">
+        <button class="accordion-btn" aria-expanded="false">Berapa lama proses pesanan? <span class="icon">+</span></button>
+        <div class="panel"><p>Waktu pengerjaan bervariasi tergantung layanan. Untuk layanan sederhana biasanya selesai dalam beberapa menit sampai beberapa jam; untuk layanan yang butuh verifikasi atau setup bisa sampai satu hari kerja. Estimasi final akan muncul saat konfirmasi pesanan.</p></div>
+      </div>
+      <div class="item">
+        <button class="accordion-btn" aria-expanded="false">Apakah aman? <span class="icon">+</span></button>
+        <div class="panel"><p>Kami menjaga privasi dan keamanan data pelanggan. Untuk layanan yang membutuhkan akses pihak ketiga (contoh: sharing akun) harap baca ketentuan layanan. Bila ragu, hubungi admin sebelum memesan.</p></div>
+      </div>
+      <div class="item">
+        <button class="accordion-btn" aria-expanded="false">Metode pembayaran apa saja? <span class="icon">+</span></button>
+        <div class="panel"><p>Saat ini kami mendukung transfer bank, e-wallet (OVO, GoPay, Dana) dan dapat menambahkan QRIS. Instruksi pembayaran diberikan setelah konfirmasi order atau via chat admin.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div id="chatbot-btn" title="Tanya Harga"><i class="fas fa-robot"></i></div>
 
+<div id="chatbot-window" role="dialog" aria-label="Chatbot Jashub">
+  <div id="chatbot-header">
+    <div>
+      Jashub Bot
+      <div class="subtitle">Tanyakan harga layanan (contoh: "100 followers tiktok")</div>
+    </div>
+    <div style="font-size:16px;cursor:pointer" id="chatbot-close" title="Tutup">✕</div>
+  </div>
+
+  <div id="chatbot-messages">
+    <div class="chat-msg bot">Halo! Tanyakan harga layanan. Contoh: <em>100 followers tiktok</em> atau <em>spotify 1 bulan</em></div>
+  </div>
+
+  <div id="chatbot-input">
+    <input id="chatbot-text" placeholder="Tanyakan (mis: 300 likes ig)..." aria-label="Tanya harga">
+    <button id="chatbot-send" title="Kirim"><i class="fas fa-paper-plane"></i></button>
+  </div>
+</div>
   <footer>
     <div class="footer-container">
       <div class="footer-col">
@@ -891,13 +1093,13 @@ footer{background:var(--footer-bg);padding:60px 30px 30px;color:var(--footer-tex
         </ul>
       </div>
       <div class="footer-col">
-        <h3>Newsletter</h3>
-        <p>Dapatkan penawaran dan promo terbaru dari kami</p>
-        <div class="newsletter">
-          <input type="email" placeholder="Masukkan email Anda">
-          <button><i class="fas fa-paper-plane"></i></button>
-        </div>
-      </div>
+  <h3>Kirim Email</h3>
+  <p>Kirim pertanyaan atau pesanan langsung via Gmail ke kami</p>
+  <form class="newsletter" onsubmit="sendToGmail(event)">
+    <input type="email" id="userEmail" placeholder="Masukkan Gmail Anda" required>
+    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+  </form>
+</div>
     </div>
     <div class="footer-bottom">
       <p>&copy; 2023 Jashub. All Rights Reserved.</p>
@@ -1066,6 +1268,513 @@ serviceButtons.forEach(button => {
     applySearch();          // tampilkan normal sesuai icon
   });
 });
+function sendToGmail(event) {
+  event.preventDefault();
+  const userEmail = document.getElementById("userEmail").value;
+  if (!userEmail.endsWith("@gmail.com")) {
+    alert("Harap masukkan alamat Gmail yang valid!");
+    return;
+  }
+  const subject = encodeURIComponent("Pesan dari Pengunjung Website");
+  const body = encodeURIComponent("Halo Jashub Premium,\n\nSaya ingin menghubungi Anda.\n\nDari: " + userEmail);
+  window.location.href = `https://mail.google.com/mail/?view=cm&fs=1&to=jashubpremium@gmail.com&su=${subject}&body=${body}`;
+}
+document.addEventListener('DOMContentLoaded', () => {
+  // Accordion
+  document.querySelectorAll('.accordion .item').forEach(item => {
+    const btn = item.querySelector('.accordion-btn');
+    const panel = item.querySelector('.panel');
+    btn.addEventListener('click', () => {
+      const opened = btn.getAttribute('aria-expanded') === 'true';
+      document.querySelectorAll('.accordion .item .accordion-btn').forEach(b => b.setAttribute('aria-expanded','false'));
+      document.querySelectorAll('.accordion .item .panel').forEach(p => p.style.maxHeight = null);
+      if (!opened) {
+        btn.setAttribute('aria-expanded','true');
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+      } else {
+        btn.setAttribute('aria-expanded','false');
+        panel.style.maxHeight = null;
+      }
+    });
+});
+
+  // Order modal logic
+  const adminWa = '6281324919799';
+  const adminEmail = 'jashubpremium@gmail.com';
+
+  const modal = document.getElementById('order-modal');
+  const closeBtn = document.getElementById('order-close');
+  const steps = Array.from(document.querySelectorAll('.step'));
+  const barFill = document.querySelector('.bar-fill');
+  const stepContents = Array.from(document.querySelectorAll('.step-content'));
+  const nextBtn = document.getElementById('order-next');
+  const prevBtn = document.getElementById('order-prev');
+  const sendWA = document.getElementById('send-wa');
+  const sendMail = document.getElementById('send-mail');
+  const orderForm = document.getElementById('order-form');
+  const orderResult = document.getElementById('order-result');
+  let currentStep = 1;
+  const totalSteps = stepContents.length;
+
+  function openModal(prefill={service:'', variants:[]}) {
+    document.getElementById('order-service').value = prefill.service || '';
+    const variantSelect = document.getElementById('order-variant');
+    variantSelect.innerHTML = '';
+    if(prefill.variants && prefill.variants.length){
+      prefill.variants.forEach(v => {
+        const opt = document.createElement('option'); opt.value = v; opt.textContent = v; variantSelect.appendChild(opt);
+      });
+    } else {
+      const opt = document.createElement('option'); opt.value='Standar'; opt.textContent='Standar'; variantSelect.appendChild(opt);
+    }
+    currentStep = 1;
+    updateStepUI();
+    orderForm.style.display = 'block';
+    orderResult.style.display = 'none';
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+  }
+
+  function closeModal() {
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden','true');
+  }
+
+  function updateStepUI(){
+    steps.forEach((s,i) => s.classList.toggle('active', i < currentStep));
+    const percent = ((currentStep-1)/(totalSteps-1))*100;
+    barFill.style.width = percent + '%';
+    stepContents.forEach(sc => sc.classList.remove('active'));
+    const active = document.querySelector('.step-content[data-step="'+currentStep+'"]');
+    if(active) active.classList.add('active');
+    prevBtn.style.display = currentStep === 1 ? 'none' : 'inline-block';
+    nextBtn.style.display = currentStep === totalSteps ? 'none' : 'inline-block';
+  }
+
+  nextBtn.addEventListener('click', () => {
+    if (currentStep === 1) {
+      const qty = parseInt(document.getElementById('order-quantity').value) || 0;
+      if (qty < 1) { alert('Masukkan jumlah minimal satu.'); return; }
+    }
+    if (currentStep === 2) {
+      const name = document.getElementById('cust-name').value.trim();
+      const email = document.getElementById('cust-email').value.trim();
+      const wa = document.getElementById('cust-wa').value.trim();
+      if (!name || !validateEmail(email) || !wa) { alert('Lengkapi nama, email valid, dan nomor WA.'); return; }
+      populateSummary();
+    }
+    if (currentStep < totalSteps) currentStep++;
+    updateStepUI();
+  });
+
+  prevBtn.addEventListener('click', () => { if (currentStep > 1) currentStep--; updateStepUI(); });
+
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+  function validateEmail(email){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); }
+
+  function populateSummary(){
+    const svc = document.getElementById('order-service').value;
+    const variant = document.getElementById('order-variant').value;
+    const qty = document.getElementById('order-quantity').value;
+    const price = document.getElementById('order-price').value;
+    const name = document.getElementById('cust-name').value;
+    const email = document.getElementById('cust-email').value;
+    const wa = document.getElementById('cust-wa').value;
+    const username = document.getElementById('target-username').value;
+    const note = document.getElementById('order-note').value;
+
+    const summaryEl = document.getElementById('order-summary');
+    summaryEl.innerHTML = `
+      <p><strong>Layanan:</strong> ${svc}</p>
+      <p><strong>Paket / Varian:</strong> ${variant}</p>
+      <p><strong>Jumlah:</strong> ${qty} ${price ? ' - '+price : ''}</p>
+      <p><strong>Nama:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>WA:</strong> ${wa}</p>
+      ${username ? `<p><strong>Target:</strong> ${username}</p>` : ''}
+      ${note ? `<p><strong>Catatan:</strong> ${note}</p>` : ''}
+    `;
+  }
+
+  function buildMessageText(){
+    const svc = document.getElementById('order-service').value;
+    const variant = document.getElementById('order-variant').value;
+    const qty = document.getElementById('order-quantity').value;
+    const price = document.getElementById('order-price').value;
+    const name = document.getElementById('cust-name').value;
+    const email = document.getElementById('cust-email').value;
+    const wa = document.getElementById('cust-wa').value;
+    const username = document.getElementById('target-username').value;
+    const note = document.getElementById('order-note').value;
+    let txt = `Pesanan baru dari website Jashub\n\n`;
+    txt += `Layanan: ${svc}\n`;
+    txt += `Varian: ${variant}\n`;
+    txt += `Jumlah: ${qty} ${price ? ' - '+price : ''}\n`;
+    txt += `Nama: ${name}\nEmail: ${email}\nWA: ${wa}\n`;
+    if(username) txt += `Target: ${username}\n`;
+    if(note) txt += `Catatan: ${note}\n`;
+    txt += `\n---\nSilakan follow up via chat.`;
+    return txt;
+  }
+
+  sendWA.addEventListener('click', () => {
+    const summaryText = buildMessageText();
+    const url = `https://wa.me/${adminWa}?text=${encodeURIComponent(summaryText)}`;
+    window.open(url, '_blank');
+    showResult('Pesanan Anda sedang diproses. Chat WhatsApp dibuat, harap lanjutkan pembayaran jika diminta oleh admin.');
+  });
+
+  sendMail.addEventListener('click', () => {
+    const summaryText = buildMessageText();
+    const subj = 'Pesanan dari Website';
+    const url = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(adminEmail)}&su=${encodeURIComponent(subj)}&body=${encodeURIComponent(summaryText)}`;
+    window.open(url, '_blank');
+    showResult('Tab Gmail terbuka. Silakan kirim email untuk menyelesaikan pesanan.');
+  });
+
+  function showResult(message){
+    orderForm.style.display = 'none';
+    orderResult.style.display = 'block';
+    const id = 'JSH' + Date.now().toString().slice(-6);
+    orderResult.innerHTML = `<h4>Terima kasih!</h4><p style="color:var(--text-secondary)">${message}</p><p style="color:var(--text-secondary);font-size:13px;margin-top:8px">ID Pesanan: <strong>${id}</strong></p><div style="margin-top:12px"><button class="btn secondary" id="order-close-2">Tutup</button></div>`;
+    document.getElementById('order-close-2').addEventListener('click', () => {
+      orderForm.style.display = 'block';
+      orderResult.style.display = 'none';
+      closeModal();
+    });
+  }
+
+  // Open modal when any "Pesan Sekarang" button clicked
+  document.querySelectorAll('.order-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const card = btn.closest('.card');
+      const service = card?.querySelector('.caption')?.innerText?.trim() || '';
+      const variants = Array.from(card.querySelectorAll('.service-list li')).map(li => li.innerText.trim());
+      openModal({service, variants});
+    });
+  });
+
+});
+function normalizeStr(s) {
+  if (!s) return '';
+  // lowercase, remove diacritics, punctuation (keep numbers and k)
+  s = s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  s = s.replace(/[®™••,\/#!$%\^&\*;:{}=\_`~()?"'|<>+\[\]]/g, ' ');
+  s = s.replace(/\s+/g, ' ').trim();
+  return s;
+}
+
+function levenshtein(a,b){
+  if(a===b) return 0;
+  if(!a.length) return b.length;
+  if(!b.length) return a.length;
+  let v0 = new Array(b.length+1), v1 = new Array(b.length+1);
+  for(let i=0;i<v0.length;i++) v0[i]=i;
+  for(let i=0;i<a.length;i++){
+    v1[0]=i+1;
+    for(let j=0;j<b.length;j++){
+      let cost = a[i]===b[j] ? 0 : 1;
+      v1[j+1] = Math.min(v1[j]+1, v0[j+1]+1, v0[j]+cost);
+    }
+    for(let j=0;j<v0.length;j++) v0[j]=v1[j];
+  }
+  return v1[b.length];
+}
+function similarity(a,b){
+  if(!a || !b) return 0;
+  a = normalizeStr(a); b = normalizeStr(b);
+  const maxLen = Math.max(a.length, b.length);
+  if(maxLen === 0) return 1;
+  const dist = levenshtein(a,b);
+  return 1 - (dist / maxLen);
+}
+
+/* Convert "1.000", "1k", "1.5k", "50" to number (1000, 1500, 50) */
+function parseNumberToken(tok){
+  if(!tok) return null;
+  tok = tok.toLowerCase().replace(/\s/g,'');
+  // if contains 'k'
+  if(tok.includes('k')) {
+    let num = parseFloat(tok.replace('k','').replace(',','.').replace(/\./g,''));
+    if(isNaN(num)) return null;
+    return Math.round(num * 1000);
+  }
+  // remove thousand separators dots and commas
+  let cleaned = tok.replace(/[.,]/g,'');
+  let n = parseInt(cleaned,10);
+  return isNaN(n) ? null : n;
+}
+
+/* canonical unit mapping */
+const UNIT_MAP = {
+  followers: ['follower','followers','pengikut','follow','folowers','followes'],
+  likes: ['like','likes','suka','likes'],
+  views: ['view','views','tayangan','tonton','tayang','tayangan','views'],
+  subscribers: ['subscriber','subscribers','subs','sub'],
+  penonton: ['penonton'],
+  paket: ['paket','varian'],
+  duration: ['bulan','minggu','hari','tahun','month','week']
+};
+function detectUnitFromText(s){
+  s = normalizeStr(s);
+  for(const [key,arr] of Object.entries(UNIT_MAP)){
+    for(const k of arr){
+      if(s.includes(k)) return key;
+    }
+  }
+  return null;
+}
+
+/* platform synonyms */
+const PLATFORM_MAP = {
+  'Instagram': ['instagram','ig','insta'],
+  'TikTok': ['tiktok','tt','tik tok','tik-tok','tik_tok','titkok'],
+  'YouTube': ['youtube','yt','yutub','you tube'],
+  'Shopee': ['shopee'],
+  'Spotify': ['spotify'],
+  'Netflix': ['netflix'],
+  // add more as needed...
+};
+function detectPlatformFromTokens(tokens){
+  // exact or synonym match first
+  for(const t of tokens){
+    for(const [plat,arr] of Object.entries(PLATFORM_MAP)){
+      if(arr.includes(t)) return {platform:plat, score:1};
+    }
+  }
+  // fuzzy match
+  let best = {platform:null, score:0};
+  for(const t of tokens){
+    for(const [plat,arr] of Object.entries(PLATFORM_MAP)){
+      for(const variant of arr){
+        const sim = similarity(t, variant);
+        if(sim > best.score){
+          best = {platform: plat, score: sim};
+        }
+      }
+    }
+  }
+  // require reasonable similarity
+  if(best.score >= 0.6) return best;
+  return {platform: null, score: 0};
+}
+
+/* ===== Parse DOM services into structured data ===== */
+function getServices(){
+  const services = [];
+  document.querySelectorAll('.card').forEach(card => {
+    const platformCaption = card.querySelector('.caption')?.innerText?.trim() || '';
+    card.querySelectorAll('.service-list li').forEach(li => {
+      const full = li.innerText.trim();
+      // price extraction
+      const priceMatch = full.match(/Rp\s*[\d\.,kK]+/i);
+      const price = priceMatch ? priceMatch[0].replace(/\s+/g,' ') : '';
+      // name part (before Rp) or full if no price
+      const namePart = priceMatch ? full.slice(0, priceMatch.index).trim() : full;
+      // try to find numeric token
+      const numMatch = namePart.match(/(\d+[.,]?\d*\s*[kK]?)/);
+      const qty = numMatch ? parseNumberToken(numMatch[0]) : null;
+      // detect unit (likes/followers/views/duration/etc) from namePart
+      const unit = detectUnitFromText(namePart) || detectUnitFromText(platformCaption) || null;
+      // store
+      services.push({
+        platform: platformCaption,
+        raw: full,
+        name: namePart,
+        qty: qty,
+        unit: unit,
+        price: price,
+        textLower: normalizeStr(namePart + ' ' + platformCaption + ' ' + full)
+      });
+    });
+  });
+  return services;
+}
+
+/* ===== Build dataset at runtime ===== */
+let SERVICE_DATA = getServices();
+
+/* ===== Chat UI handlers ===== */
+const btn = document.getElementById('chatbot-btn');
+const win = document.getElementById('chatbot-window');
+const closeBtn = document.getElementById('chatbot-close');
+const messages = document.getElementById('chatbot-messages');
+const input = document.getElementById('chatbot-text');
+const sendBtn = document.getElementById('chatbot-send');
+
+btn.addEventListener('click', () => {
+  if(win.style.display === 'flex'){ win.style.display = 'none'; }
+  else { win.style.display = 'flex'; input.focus(); scrollBottom(); }
+});
+closeBtn.addEventListener('click', () => { win.style.display = 'none'; });
+
+function addMessage(text, who='bot') {
+  const d = document.createElement('div');
+  d.className = 'chat-msg ' + (who === 'bot' ? 'bot' : 'user');
+  d.innerText = text;
+  messages.appendChild(d);
+  scrollBottom();
+}
+function scrollBottom(){ messages.scrollTop = messages.scrollHeight; }
+
+/* ===== Query parser + matcher logic ===== */
+function parseQuery(text){
+  const raw = text || '';
+  const norm = normalizeStr(raw);
+  // tokens keep words and numeric tokens separately
+  const tokens = norm.split(' ').filter(t => t.trim().length);
+  const numToken = tokens.find(t => /\d/.test(t));
+  const qty = numToken ? parseNumberToken(numToken) : null;
+  const platformDet = detectPlatformFromTokens(tokens);
+  const platform = platformDet.platform;
+  // detect unit words (likes/followers/views/duration)
+  let unit = detectUnitFromText(norm);
+  // also check tokens for duration words like 'bulan', 'minggu'
+  const durationRegex = /(bulan|minggu|tahun|hari)/;
+  const durationMatch = norm.match(durationRegex);
+  if(durationMatch) unit = 'duration';
+  return {raw, norm, tokens, qty, platform, unit, platformScore: platformDet.score};
+}
+
+function findMatches(parsed){
+  const results = [];
+  const q = parsed;
+  // if no dataset, refresh
+  if(!SERVICE_DATA || SERVICE_DATA.length === 0) SERVICE_DATA = getServices();
+
+  SERVICE_DATA.forEach(item => {
+    // score components
+    let platformScore = 0;
+    if(q.platform){
+      platformScore = (normalizeStr(item.platform).includes(normalizeStr(q.platform)) || similarity(item.platform, q.platform) > 0.75) ? 1 : similarity(item.platform, q.platform);
+    } else {
+      // try to infer platform by similarity between item text and tokens
+      platformScore = Math.max(...q.tokens.map(t => similarity(t, item.platform)));
+    }
+
+    let unitScore = 0;
+    if(q.unit && item.unit){
+      unitScore = (q.unit === item.unit) ? 1 : similarity(q.unit, item.unit);
+    } else {
+      // try token-based match with item.name
+      unitScore = Math.max(...q.tokens.map(t => similarity(t, item.name) ));
+    }
+
+    let nameScore = similarity(q.norm, item.textLower);
+
+    let qtyScore = 0;
+    if(q.qty && item.qty){
+      const diff = Math.abs(item.qty - q.qty) / Math.max(1, q.qty);
+      qtyScore = 1 - Math.min(diff, 1); // 1 = exact, 0 = very far
+    } else if(q.qty && !item.qty){
+      qtyScore = 0.2; // small credit
+    } else if(!q.qty && item.qty){
+      qtyScore = 0.4;
+    } else {
+      qtyScore = 0.25;
+    }
+
+    // weight combine
+    // platform & unit are most important
+    const score = (platformScore * 3) + (unitScore * 3) + (nameScore * 2) + (qtyScore * 2);
+    // normalize to 0..1 (max possible = 10)
+    const normScore = score / 10;
+    results.push({item, score: normScore, platformScore, unitScore, nameScore, qtyScore});
+  });
+
+  // sort descending
+  results.sort((a,b) => b.score - a.score);
+  return results;
+}
+
+/* Decide response based on parsed query + matches */
+function respondToQuery(text){
+  const p = parseQuery(text);
+  const matches = findMatches(p);
+
+  // if user asked only platform + unit (no qty) -> list available variants
+  if(p.platform && p.unit && !p.qty){
+    const options = SERVICE_DATA.filter(it => similarity(it.platform, p.platform) > 0.6 && (it.unit === p.unit || similarity(it.unit || '', p.unit || '') > 0.6));
+    if(options.length){
+      // aggregate unique name -> price
+      const list = [];
+      options.forEach(o => {
+        const display = `${o.name} — ${o.price || 'Harga tdk tercantum'}`;
+        if(!list.includes(display)) list.push(display);
+      });
+      return `Pilihan ${p.platform} (${p.unit}):\n• ` + list.slice(0,10).join('\n• ');
+    }
+  }
+
+  // if qty given, try to find exact/nearest match
+  if(p.qty){
+    // try top match with decent score
+    const top = matches[0];
+    if(top && top.score >= 0.55){
+      // prefer exact quantity if exists
+      if(top.item.qty && top.item.qty === p.qty){
+        return `${top.item.name} ${top.item.platform} = ${top.item.price}`;
+      } else if(top.item.qty){
+        // nearest but show suggestion/options
+        // find other close ones
+        const samePlat = SERVICE_DATA.filter(it => it.platform === top.item.platform && it.unit === top.item.unit && it.qty);
+        samePlat.sort((a,b) => Math.abs(a.qty - p.qty) - Math.abs(b.qty - p.qty));
+        const best = samePlat.slice(0,3).map(it => `${it.name} — ${it.price}`).join('\n• ');
+        return `Tidak ada paket yang persis ${p.qty} pada ${top.item.platform} ${top.item.unit}. Pilihan terdekat:\n• ${best}`;
+      } else {
+        // no qty stored for top
+        return `${top.item.name} ${top.item.platform} = ${top.item.price}`;
+      }
+    } else {
+      // fallback: search by qty across platforms for that unit if unit known
+      const cross = SERVICE_DATA.filter(it => it.qty && Math.abs(it.qty - p.qty) <= Math.max(1, Math.round(p.qty * 0.4)));
+      if(cross.length){
+        const best = cross.slice(0,6).map(it => `${it.name} (${it.platform}) — ${it.price}`).join('\n• ');
+        return `Saya tidak menemukan kecocokan pasti, tapi ini beberapa paket mirip:\n• ${best}`;
+      }
+      return "Maaf, saya tidak menemukan harga yang cocok. Coba sebutkan platform (mis. tiktok/ig/youtube) atau periksa penulisan.";
+    }
+  }
+
+  // if no qty and fuzzy match good -> show top match summary
+  if(matches.length && matches[0].score >= 0.5){
+    const top = matches[0].item;
+    // show some variants for that platform & unit
+    const group = SERVICE_DATA.filter(it => it.platform === top.platform && (it.unit === top.unit || similarity(it.unit||'', top.unit||'')>0.6));
+    if(group.length > 1){
+      const list = group.slice(0,6).map(g => `${g.name} — ${g.price}`).join('\n• ');
+      return `Mungkin yang kamu maksud tentang ${top.platform}:\n• ${list}`;
+    } else {
+      return `${top.name} ${top.platform} — ${top.price}`;
+    }
+  }
+
+  return "Maaf, saya tidak menemukan harga untuk itu. Coba sebutkan platform (mis: ig, tiktok, youtube) dan jumlah atau durasi (mis: 100 followers, 1 bulan).";
+}
+
+/* ===== UI: send handler ===== */
+function handleSend(){
+  const txt = input.value.trim();
+  if(!txt) return;
+  addMessage(txt, 'user');
+  input.value = '';
+  // update dataset in case admin edited page
+  SERVICE_DATA = getServices();
+  setTimeout(() => {
+    const answer = respondToQuery(txt);
+    addMessage(answer, 'bot');
+  }, 250); // small delay to simulate thinking
+}
+
+sendBtn.addEventListener('click', handleSend);
+input.addEventListener('keydown', (e) => { if(e.key === 'Enter') handleSend(); });
+
+/* helper: refresh dataset every time page visible (in case admin edited DOM) */
+document.addEventListener('visibilitychange', () => { if(!document.hidden) SERVICE_DATA = getServices(); });
 
   </script>
 </body>
