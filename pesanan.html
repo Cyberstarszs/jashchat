@@ -1096,10 +1096,11 @@ renderPlatforms();
     btn.innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
   }
   function apply(t){
-    html.setAttribute('data-theme', t);
-    if(meta) meta.content = t === 'dark' ? '#0a0a0a' : '#ffffff';
-    setIcon(t);
-  }
+  html.setAttribute('data-theme', t);
+  if(meta) meta.content = '#1a73e8';
+  setIcon(t);
+}
+
   function saved(){ try{ return localStorage.getItem('theme'); }catch(e){return null} }
   function save(v){ try{ if(v===null) localStorage.removeItem('theme'); else localStorage.setItem('theme', v); }catch(e){} }
   const init = saved() || (prefersDark.matches ? 'dark' : 'light');
