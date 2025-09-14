@@ -340,6 +340,7 @@ select option {
   #chatbot-window{width:100%;right:0;bottom:0;border-radius:0;max-height:100%}
 }
 :root { color-scheme: light dark; }
+
 </style>
 
 
@@ -1826,8 +1827,70 @@ input.addEventListener('keydown', (e) => { if(e.key === 'Enter') handleSend(); }
 
 /* helper: refresh dataset every time page visible (in case admin edited DOM) */
 document.addEventListener('visibilitychange', () => { if(!document.hidden) SERVICE_DATA = getServices(); });
+// Fungsi untuk menangani klik tombol pesan
+function handleOrderButtonClick(e) {
+  e.preventDefault();
+  
+  const card = this.closest('.card');
+  if (!card) return;
+  
+  // Ambil data layanan dari card
+  const platform = card.closest('.service-content').id;
+  const serviceType = card.querySelector('.caption').innerText;
+  const serviceItems = Array.from(card.querySelectorAll('.service-list li')).map(li => {
+    const text = li.innerText;
+    const price = li.querySelector('span').innerText;
+    return { text, price };
+  });
+  
+  // Simpan data di sessionStorage untuk dibaca di pesanan.html
+  sessionStorage.setItem('selectedService', JSON.stringify({
+    platform,
+    serviceType,
+    items: serviceItems
+  }));
+  
+  // Redirect ke halaman pesanan
+  window.location.href = 'pesanan.html';
+}
 
+// Terapkan event listener ke semua tombol pesan
+document.querySelectorAll('.order-btn').forEach(btn => {
+  btn.addEventListener('click', handleOrderButtonClick);
+});
+function handleOrderButtonClick(e) {
+  e.preventDefault();
+  
+  const card = this.closest('.card');
+  if (!card) return;
+  
+  // Ambil data layanan dari card
+  const platform = card.closest('.service-content').id;
+  const serviceType = card.querySelector('.caption').innerText;
+  const serviceItems = Array.from(card.querySelectorAll('.service-list li')).map(li => {
+    const text = li.innerText;
+    const price = li.querySelector('span').innerText;
+    return { text, price };
+  });
+  
+  // Dapatkan jenis layanan aktif (untuk Instagram, TikTok, YouTube)
+  let subType = '';
+  const activeSubButton = card.closest('.service-content').querySelector('.service-submenu button.active');
+  if (activeSubButton) {
+    subType = activeSubButton.getAttribute('data-sub');
+  }
+  
+  // Simpan data di sessionStorage untuk dibaca di pesanan.html
+  sessionStorage.setItem('selectedService', JSON.stringify({
+    platform,
+    serviceType,
+    subType,
+    items: serviceItems
+  }));
+  
+  // Redirect ke halaman pesanan
+  window.location.href = 'pesanan.html';
+}
   </script>
 </body>
 </html>
-
