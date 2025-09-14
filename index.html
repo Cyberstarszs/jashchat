@@ -225,8 +225,8 @@ select option {
 @media(max-width:560px){ .modal-row{flex-direction:column;} .modal-inner{padding:16px;} .steps{gap:6px;} }
 #chatbot-btn {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 80px;   /* naik lebih ke atas */
+  right: 24px;
   width: 64px;
   height: 64px;
   border-radius: 50%;
@@ -237,28 +237,74 @@ select option {
   justify-content: center;
   font-size: 30px;
   cursor: pointer;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.25);
   z-index: 9999;
-  transition: background .3s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
+}
+#chatbot-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.35);
+}
+@media(max-width:768px){
+  #chatbot-btn {
+    bottom: 70px;
+    right: 20px;
+    width: 58px;
+    height: 58px;
+    font-size: 26px;
+  }
+}
+@media(max-width:480px){
+  #chatbot-btn {
+    bottom: 60px;
+    right: 18px;
+    width: 52px;
+    height: 52px;
+    font-size: 24px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+  }
+}
+
+#chatbot-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 9998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+#chatbot-overlay.active {
+  opacity: 1;
+  pointer-events: all;
 }
 #chatbot-window {
   position: fixed;
   bottom: 96px;
-  right: 20px;
+  right: 24px;
   width: 360px;
   max-width: calc(100% - 40px);
   max-height: 520px;
-  background: var(--card-bg);
+  background: rgba(255, 255, 255, 0.85);
   border: 1px solid var(--card-border);
-  border-radius: 14px;
-  display: none;
+  border-radius: 22px;
+  display: flex;
   flex-direction: column;
   box-shadow: 0 12px 36px rgba(0,0,0,0.35);
   overflow: hidden;
   z-index: 9999;
   font-family: 'Poppins', sans-serif;
   color: var(--text-primary);
-  transition: background .3s ease,color .3s ease,border .3s ease;
+  backdrop-filter: blur(18px);
+  transform: translateY(30px);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease-in-out;
+}
+#chatbot-window.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
 }
 #chatbot-header {
   background: var(--chat-header-bg);
@@ -337,10 +383,77 @@ select option {
   filter: brightness(1.1);
 }
 @media(max-width:480px){
-  #chatbot-window{width:100%;right:0;bottom:0;border-radius:0;max-height:100%}
+  #chatbot-window {
+    left: 15px;
+    right: 15px;
+    bottom: 10px;
+    width: auto;
+    max-height: 85%;
+    border-radius: 20px;
+  }
 }
-:root { color-scheme: light dark; }
+ /* Tambahan style untuk tooltip */
+  .service-icons {
+    position: relative;
+  }
 
+  .service-tooltip {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-primary);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    z-index: 20;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .service-tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid var(--accent-primary);
+  }
+
+  .service-tooltip.visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-10px);
+  }
+
+  /* Efek ripple pada tombol */
+  .service-icons button {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ripple {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+  }
+
+  @keyframes ripple {
+    to {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
 </style>
 
 
@@ -1049,6 +1162,20 @@ select option {
     <h2>FAQ — Pertanyaan Umum</h2>
     <div class="accordion" role="tablist">
       <div class="item">
+  <button class="accordion-btn" aria-expanded="false">
+    Bagaimana cara memesan? <span class="icon">+</span>
+  </button>
+  <div class="panel">
+    <ol class="order-steps">
+      <li>Pencet tombol <strong>Pesan Sekarang</strong></li>
+      <li>Pilih <strong>Layanan</strong> (Instagram, TikTok, dll.)</li>
+      <li>Pilih <strong>Jenis Layanan</strong> (Followers, Likes, Views, dll.)</li>
+      <li>Pilih <strong>Paket</strong> sesuai kebutuhan</li>
+      <li>Konfirmasi & bayar melalui <strong>WhatsApp</strong></li>
+    </ol>
+  </div>
+</div>
+      <div class="item">
         <button class="accordion-btn" aria-expanded="false">Berapa lama proses pesanan? <span class="icon">+</span></button>
         <div class="panel"><p>Waktu pengerjaan bervariasi tergantung layanan. Untuk layanan sederhana biasanya selesai dalam beberapa menit sampai beberapa jam; untuk layanan yang butuh verifikasi atau setup bisa sampai satu hari kerja. Estimasi final akan muncul saat konfirmasi pesanan.</p></div>
       </div>
@@ -1058,7 +1185,34 @@ select option {
       </div>
       <div class="item">
         <button class="accordion-btn" aria-expanded="false">Metode pembayaran apa saja? <span class="icon">+</span></button>
-        <div class="panel"><p>Saat ini kami mendukung transfer bank, e-wallet (OVO, GoPay, Dana) dan dapat menambahkan QRIS. Instruksi pembayaran diberikan setelah konfirmasi order atau via chat admin.</p></div>
+        <div class="panel"><p>Saat ini kami mendukung transfer bank, e-wallet (Shopeepey, Dana) dan dapat menambahkan QRIS. Instruksi pembayaran diberikan setelah konfirmasi order atau via chat admin.</p></div>
+      </div>
+       <div class="item">
+        <button class="accordion-btn" aria-expanded="false">Apakah ada garansi layanan? <span class="icon">+</span></button>
+        <div class="panel">
+          <p>Beberapa layanan tertentu (misalnya followers atau premium apps) memiliki garansi sesuai paket yang dipilih. Detail garansi akan dijelaskan pada saat pemesanan.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <button class="accordion-btn" aria-expanded="false">Bagaimana cara memesan? <span class="icon">+</span></button>
+        <div class="panel">
+          <p>Cukup pilih layanan, masukkan link akun atau video sesuai kebutuhan, pilih paket, lalu klik tombol <strong>Pesan via WhatsApp</strong>. Admin kami akan memproses pesanan Anda secepatnya.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <button class="accordion-btn" aria-expanded="false">Apakah bisa custom order? <span class="icon">+</span></button>
+        <div class="panel">
+          <p>Bisa, silakan hubungi admin melalui WhatsApp untuk request paket khusus di luar daftar layanan yang tersedia di website.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <button class="accordion-btn" aria-expanded="false">Bagaimana jika pesanan tidak masuk? <span class="icon">+</span></button>
+        <div class="panel">
+          <p>Jika pesanan tidak masuk dalam waktu yang ditentukan, silakan hubungi admin untuk pengecekan. Kami akan memberikan solusi atau refund sesuai kebijakan yang berlaku.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -1109,7 +1263,7 @@ select option {
         <h3>Kontak Kami</h3>
         <ul>
           <li><a href="https://wa.me/6281324919799" target="_blank"><i class="fab fa-whatsapp"></i> +62 813-2491-9799</a></li>
-          <li><a href="mailto:jashubpremium@gmail.com"><i class="far fa-envelope"></i> jashubpremium@gmail.com</a></li>
+          <li><a href="mailto:jashub.id@gmail.com"><i class="far fa-envelope"></i> jashub.id@gmail.com</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -1125,7 +1279,10 @@ select option {
       <p>&copy; 2025 Jashub. All Rights Reserved.</p>
     </div>
   </footer>
-
+<!-- Tambahkan di dalam body, sebelum script -->
+<div id="service-tooltip" class="service-tooltip">
+  <span id="tooltip-text"></span>
+</div>
   <script>
     // Toggle Theme
 (() => {
@@ -1891,7 +2048,115 @@ function handleOrderButtonClick(e) {
   // Redirect ke halaman pesanan
   window.location.href = 'pesanan.html';
 }
+document.addEventListener("DOMContentLoaded", () => {
+  const chatBtn = document.getElementById("chatbot-btn");
+  const chatWindow = document.getElementById("chatbot-window");
+  const chatClose = document.getElementById("chatbot-close");
+  const menuBtn = document.getElementById("menu-btn");
+
+  chatBtn.addEventListener("click", () => {
+    chatWindow.classList.add("open");
+  });
+
+  chatClose.addEventListener("click", () => {
+    chatWindow.classList.remove("open");
+  });
+
+  // Tutup otomatis ketika menu dibuka
+  if (menuBtn) {
+    menuBtn.addEventListener("click", () => {
+      chatWindow.classList.remove("open");
+    });
+  }
+});
+// Fungsi untuk menampilkan tooltip
+  function showTooltip(button, text) {
+    // Hapus tooltip yang mungkin masih ada
+    const existingTooltip = document.getElementById('service-tooltip');
+    if (existingTooltip) {
+      existingTooltip.remove();
+    }
+
+    // Buat tooltip baru
+    const tooltip = document.createElement('div');
+    tooltip.id = 'service-tooltip';
+    tooltip.className = 'service-tooltip';
+    tooltip.textContent = text;
+    
+    // Tambahkan ke DOM
+    document.body.appendChild(tooltip);
+    
+    // Posisikan tooltip di atas tombol
+    const rect = button.getBoundingClientRect();
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    tooltip.style.top = (rect.top + scrollTop - 45) + 'px';
+    tooltip.style.left = (rect.left + rect.width / 2) + 'px';
+    
+    // Trigger animasi
+    setTimeout(() => {
+      tooltip.classList.add('visible');
+    }, 10);
+    
+    // Hapus tooltip setelah 2 detik
+    setTimeout(() => {
+      if (tooltip.parentNode) {
+        tooltip.classList.remove('visible');
+        setTimeout(() => {
+          if (tooltip.parentNode) {
+            tooltip.remove();
+          }
+        }, 300);
+      }
+    }, 2000);
+  }
+
+  // Fungsi untuk membuat efek ripple
+  function createRipple(event) {
+    const button = event.currentTarget;
+    const circle = document.createElement('span');
+    const diameter = Math.max(button.clientWidth, button.clientHeight);
+    const radius = diameter / 2;
+    
+    circle.style.width = circle.style.height = `${diameter}px`;
+    circle.style.left = `${event.clientX - button.getBoundingClientRect().left - radius}px`;
+    circle.style.top = `${event.clientY - button.getBoundingClientRect().top - radius}px`;
+    circle.classList.add('ripple');
+    
+    const ripple = button.getElementsByClassName('ripple')[0];
+    if (ripple) {
+      ripple.remove();
+    }
+    
+    button.appendChild(circle);
+  }
+
+  // Tambahkan event listener untuk setiap tombol layanan
+  document.addEventListener('DOMContentLoaded', function() {
+    const serviceButtons = document.querySelectorAll('.service-icons button');
+    
+    // Mapping nama layanan
+    const serviceNames = {
+      'instagram': 'Instagram',
+      'tiktok': 'TikTok',
+      'youtube': 'YouTube',
+      'shopee': 'Shopee',
+      'apps': 'Aplikasi Premium'
+    };
+    
+    // Tambahkan event listener untuk setiap tombol
+    serviceButtons.forEach(button => {
+      const target = button.getAttribute('data-target');
+      const serviceName = serviceNames[target] || target;
+      
+      button.addEventListener('click', function(e) {
+        // Efek ripple
+        createRipple(e);
+        
+        // Tampilkan tooltip
+        showTooltip(this, serviceName);
+      });
+    });
+  });
   </script>
 </body>
 </html>
-
