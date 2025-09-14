@@ -1,129 +1,537 @@
-<!doctype html>
-<html lang="id">
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Pesanan Jashub</title>
-  <meta name="theme-color" content="#1a73e8">
-  <meta name="msapplication-navbutton-color" content="#1a73e8">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0a0f1f" media="(prefers-color-scheme: dark)">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Pemesanan</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons-font@v10/font/simple-icons.min.css">
+  <style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   --bg-primary: #0a0f1f;
-  --bg-secondary: rgba(255,255,255,.08);
+  --bg-secondary: rgba(255, 255, 255, .08);
   --text-primary: #fff;
   --text-secondary: #cfd8e3;
-  --accent-gradient: linear-gradient(135deg,#007bff,#00c6ff);
-  --header-bg: rgba(255,255,255,.05);
-  --border-color: rgba(255,255,255,.1);
-  --shadow-color: rgba(0,123,255,.3);
-  --input-bg: rgba(255,255,255,.1);
-  --vignette: radial-gradient(circle at center,rgba(0,123,255,.15)0%,rgba(0,0,0,.95)80%);
+  --accent-gradient: linear-gradient(135deg, #007bff, #00c6ff);
+  --header-bg: rgba(255, 255, 255, .05);
+  --border-color: rgba(255, 255, 255, .1);
+  --shadow-color: rgba(0, 123, 255, .3);
+  --input-bg: rgba(255, 255, 255, .1);
+  --vignette: radial-gradient(circle at center, rgba(0, 123, 255, .15) 0%, rgba(0, 0, 0, .95) 80%);
 }
+
 [data-theme="light"] {
   --bg-primary: #ffffff;
-  --bg-secondary: rgba(0,123,255,.05);
+  --bg-secondary: rgba(0, 123, 255, .05);
   --text-primary: #1e293b;
   --text-secondary: #475569;
-  --accent-gradient: linear-gradient(135deg,#007bff,#00c6ff);
-  --header-bg: rgba(255,255,255,.95);
-  --border-color: rgba(0,0,0,.1);
-  --shadow-color: rgba(0,123,255,.2);
-  --input-bg: rgba(0,0,0,.05);
+  --accent-gradient: linear-gradient(135deg, #007bff, #00c6ff);
+  --header-bg: rgba(255, 255, 255, .95);
+  --border-color: rgba(0, 0, 0, .1);
+  --shadow-color: rgba(0, 123, 255, .2);
+  --input-bg: rgba(0, 0, 0, .05);
   --vignette: #ffffff;
 }
-body{font-family:'Poppins',sans-serif;color:var(--text-primary);background:var(--bg-primary);overflow-x:hidden;transition:background 0.3s ease, color 0.3s ease}
-.bg{position:fixed;inset:0;z-index:-2;background:#000}
-.bg img{width:100%;height:100%;object-fit:cover;filter:blur(15px) brightness(0.4)}
-.vignette{position:fixed;inset:0;z-index:-1;background:var(--vignette);transition:background 0.3s ease}
-header{padding:22px 60px;display:flex;align-items:center;justify-content:space-between;background:var(--header-bg);backdrop-filter:blur(12px);position:sticky;top:0;z-index:10;border-bottom:1px solid var(--border-color);transition:background 0.3s ease, border-color 0.3s ease}
-header.scrolled{background:rgba(0,0,0,.85)}
-[data-theme="light"] header.scrolled{background:rgba(255,255,255,.95)}
-.logo{display:flex;align-items:center;gap:10px;font-size:26px;font-weight:800}
-.logo img{height:40px;width:auto} 
-.logo span{background:var(--accent-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.header-controls{display:flex;align-items:center;gap:15px}
-.socials{display:flex;gap:15px}
-.socials a{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:var(--text-primary);background:rgba(255,255,255,.1);transition:.3s;font-size:18px;text-decoration:none}
-.socials a:hover{background:var(--accent-gradient);transform:scale(1.15)}
 
-.theme-toggle{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--text-primary);background:rgba(255,255,255,.1);transition:.3s;font-size:18px;cursor:pointer;border:none}
-.theme-toggle:hover{background:var(--accent-gradient);transform:scale(1.15)}
-.theme-toggle i{font-size:18px;line-height:1;display:flex;align-items:center;justify-content:center}
-
-.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer}
-.menu-toggle span{width:28px;height:3px;background:var(--text-primary);border-radius:3px;transition:.3s}
-@media(max-width:768px){
-  header{padding:18px 25px}
-  .header-controls{position:relative}
-  .socials{position:absolute;top:70px;right:0;flex-direction:column;background:var(--bg-primary);padding:18px;border-radius:12px;gap:12px;display:none;border:1px solid var(--border-color);box-shadow:0 5px 15px rgba(0,0,0,.2)}
-  .socials.active{display:flex;animation:fadeIn .3s ease}
-  .menu-toggle{display:flex}
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
 }
-@keyframes fadeIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
-.menu-toggle.active span:nth-child(1){transform:rotate(45deg) translate(5px,6px)}
-.menu-toggle.active span:nth-child(2){opacity:0}
-.menu-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px)}
 
-.form-section{min-height:80vh;display:flex;align-items:center;justify-content:center;padding:60px 20px}
-.form-container{background:var(--bg-secondary);backdrop-filter:blur(15px);padding:30px;border-radius:18px;max-width:650px;width:100%;border:1px solid var(--border-color);box-shadow:0 0 25px var(--shadow-color);transition:background 0.3s ease, border-color 0.3s ease}
-.form-container h1{text-align:center;font-size:32px;margin-bottom:25px;background:var(--accent-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-label{display:block;margin:14px 0 6px;font-weight:600;color:var(--text-primary)}
-.input-group{position:relative}
-.info-icon{position:absolute;right:10px;top:50%;transform:translateY(-50%);color:#007bff;cursor:pointer;z-index:5}
-.select-wrapper{position:relative}
-.select-wrapper i{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#007bff}
-select,input{width:100%;padding:12px 14px 12px 40px;border-radius:10px;border:none;margin-bottom:15px;background:var(--input-bg);color:var(--text-primary);appearance:none;cursor:pointer;transition:background 0.3s ease}
-select option{background:var(--bg-primary);color:var(--text-primary)}
-select:focus,input:focus{outline:2px solid #007bff}
-.price-display{font-weight:700;font-size:20px;margin:15px 0;color:#007bff;text-align:center;text-shadow:0 0 10px rgba(0,123,255,.5)}
-button{width:100%;padding:16px;border:none;border-radius:12px;font-weight:700;font-size:17px;background:var(--accent-gradient);color:#fff;cursor:pointer;transition:.3s;box-shadow:0 0 25px rgba(0,123,255,.4)}
-button:hover{filter:brightness(1.1);transform:translateY(-3px)}
+header {
+  padding: 22px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--header-bg);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid var(--border-color);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
 
-.modal{display:none;position:fixed;z-index:100;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.7);backdrop-filter:blur(5px)}
-.modal-content{background:var(--bg-secondary);margin:5% auto;padding:25px;border-radius:15px;width:90%;max-width:600px;max-height:80vh;overflow-y:auto;border:1px solid var(--border-color);box-shadow:0 0 30px rgba(0,0,0,.5);color:var(--text-primary)}
-.close{color:#aaa;float:right;font-size:28px;font-weight:700;cursor:pointer}
-.close:hover{color:#007bff}
-.modal h2{color:#007bff;margin-bottom:20px}
-.guide-section{margin-bottom:20px}
-.guide-section h3{color:var(--text-primary);margin-bottom:10px;font-size:18px}
-.guide-section p{color:var(--text-secondary);margin-bottom:10px;font-size:14px}
+header.scrolled {
+  background: rgba(0, 0, 0, .85);
+}
 
-footer{background:var(--bg-primary);padding:60px 30px 30px;color:var(--text-secondary);position:relative;transition:background 0.3s ease}
-.footer-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px;margin-bottom:40px}
-.footer-col h3{color:var(--text-primary);margin-bottom:15px;font-size:18px;font-weight:700}
-.footer-col p,.footer-col li{font-size:14px;margin:6px 0;color:var(--text-secondary)}
-.footer-col ul{list-style:none;padding:0}
-.footer-col ul li a{color:var(--text-secondary);text-decoration:none;transition:.3s}
-.footer-col ul li a:hover{color:#007bff}
-.footer-socials{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap}
-.footer-socials a{width:38px;height:38px;display:grid;place-items:center;background:rgba(255,255,255,.1);border-radius:50%;color:var(--text-primary);transition:.3s;font-size:16px}
-.footer-socials a:hover{background:var(--accent-gradient);transform:scale(1.15)}
-.newsletter{display:flex;margin-top:10px}
-.newsletter input{flex:1;padding:10px;border:none;border-radius:6px 0 0 6px;outline:none;font-size:14px;background:var(--input-bg);color:var(--text-primary)}
-.newsletter button{background:var(--accent-gradient);border:none;padding:0 16px;border-radius:0 6px 6px 0;color:#fff;cursor:pointer;transition:.3s}
-.newsletter button:hover{filter:brightness(1.15)}
-.footer-bottom{text-align:center;font-size:13px;color:var(--text-secondary);border-top:1px solid var(--border-color);padding-top:20px}
+[data-theme="light"] header.scrolled {
+  background: rgba(255, 255, 255, .95);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.logo span {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo img {
+  height: 32px;
+  width: auto;
+}
+
+.logo i {
+  font-size: 28px;
+  color: var(--text-primary);
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.socials {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  position: static;
+  background: none;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+
+
+.socials a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, .1);
+  transition: .3s;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.socials a:hover {
+  background: var(--accent-gradient);
+  transform: scale(1.15);
+}
+
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, .1);
+  transition: .3s;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+}
+
+.theme-toggle:hover {
+  background: var(--accent-gradient);
+  transform: scale(1.15);
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 28px;
+  height: 3px;
+  background: var(--text-primary);
+  border-radius: 3px;
+  transition: .3s;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+@media(max-width:768px) {
+  header {
+    padding: 18px 25px;
+  }
+  .header-controls {
+    position: relative;
+  }
+  .socials.active {
+    display: flex;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+.form-section {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.form-container {
+  background: var(--bg-secondary);
+  backdrop-filter: blur(15px);
+  padding: 30px;
+  border-radius: 18px;
+  max-width: 650px;
+  width: 100%;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 0 25px var(--shadow-color);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.form-container h1 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 25px;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.option-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 12px;
+  margin: 15px 0;
+}
+
+.option-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+  cursor: pointer;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, .2);
+}
+
+.option-card i {
+  font-size: 20px;
+  margin-bottom: 6px;
+  color: #007bff;
+  display: block;
+}
+
+.option-card:hover {
+  transform: translateY(-5px);
+  background: var(--accent-gradient);
+  color: #fff;
+  box-shadow: 0 5px 16px rgba(0, 123, 255, .5);
+}
+
+.option-card.active {
+  background: var(--accent-gradient);
+  color: #fff;
+  border-color: #007bff;
+}
+
+@media(max-width:600px) {
+  .option-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .option-card {
+    font-size: 12px;
+    padding: 8px;
+  }
+  .option-card i {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+}
+
+@media(max-width:360px) {
+  .option-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.price-display {
+  font-weight: 700;
+  font-size: 20px;
+  margin: 15px 0;
+  color: #007bff;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0, 123, 255, .5);
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin: 10px 0 6px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: none;
+  background: var(--input-bg);
+  color: var(--text-primary);
+}
+
+.info-label {
+  margin-left: 8px;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 17px;
+  background: var(--accent-gradient);
+  color: #fff;
+  cursor: pointer;
+  transition: .3s;
+  box-shadow: 0 0 25px rgba(0, 123, 255, .4);
+}
+
+button:hover {
+  filter: brightness(1.1);
+  transform: translateY(-3px);
+}
+
+footer {
+  background: var(--bg-primary);
+  padding: 60px 30px 30px;
+  color: var(--text-secondary);
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-col h3 {
+  color: var(--text-primary);
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.footer-col p,
+.footer-col li {
+  font-size: 14px;
+  margin: 6px 0;
+  color: var(--text-secondary);
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: .3s;
+}
+
+.footer-col ul li a:hover {
+  color: #007bff;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.footer-socials a {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, .1);
+  border-radius: 50%;
+  color: var(--text-primary);
+  transition: .3s;
+  font-size: 16px;
+}
+
+.footer-socials a:hover {
+  background: var(--accent-gradient);
+  transform: scale(1.15);
+}
+
+.newsletter {
+  display: flex;
+  margin-top: 10px;
+}
+
+.newsletter input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 6px 0 0 6px;
+  outline: none;
+  font-size: 14px;
+  background: var(--input-bg);
+  color: var(--text-primary);
+}
+
+.newsletter button {
+  background: var(--accent-gradient);
+  border: none;
+  padding: 0 16px;
+  border-radius: 0 6px 6px 0;
+  color: #fff;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.newsletter button:hover {
+  filter: brightness(1.15);
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border-color);
+  padding-top: 20px;
+}
+@media(max-width:768px) {
+  .socials {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    flex-direction: column;
+    background: var(--bg-primary);
+    padding: 18px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 5px 15px rgba(0,0,0,.2);
+  }
+  .socials.active {
+    display: flex;
+  }
+}
+.modal {
+  display: none; /* defaultnya sembunyi */
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  align-items: center;
+  justify-content: center;
+}
+
+
+.modal-content {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content h2 {
+  margin-bottom: 15px;
+  font-size: 22px;
+  text-align: center;
+  color: #007bff;
+}
+
+.modal-content h3 {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #007bff;
+}
+
+.modal-content p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 5px 0;
+}
+
+.close {
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--text-primary);
+}
+
+.close:hover {
+  color: #007bff;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 </style>
-
+  </style>
 </head>
 <body>
-  <div class="bg"><img src="jashubs.jpg" alt="background"></div>
-  <div class="vignette"></div>
-
   <header>
-    <div class="logo">
-      <img src="logo.png" alt="Jashub Logo">
-      <span>Jash<span>ub</span></span>
-    </div>
+   <div class="logo">
+  <img src="logo.png" alt="Logo JasHub" style="height:32px;">
+  <span>JasHub</span>
+</div>
+
     <div class="header-controls">
-      <div class="socials">
+     <div class="socials">
   <a href="index.html"><i class="fas fa-home"></i></a>
   <a href="https://www.instagram.com/x.shybb" target="_blank"><i class="fab fa-instagram"></i></a>
   <a href="https://www.tiktok.com/@x.shybb" target="_blank"><i class="fab fa-tiktok"></i></a>
@@ -131,96 +539,47 @@ footer{background:var(--bg-primary);padding:60px 30px 30px;color:var(--text-seco
   <a href="https://wa.me/6281324919799" target="_blank"><i class="fab fa-whatsapp"></i></a>
 </div>
 
-      <button class="theme-toggle" id="theme-toggle">
-        <i class="fas fa-moon"></i>
-      </button>
-      <div class="menu-toggle" id="menu-btn">
-        <span></span><span></span><span></span>
-      </div>
+      <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+      <div id="menu-btn" class="menu-toggle"><span></span><span></span><span></span></div>
     </div>
   </header>
 
   <section class="form-section">
     <div class="form-container">
       <h1>Data Pemesanan</h1>
-      <label for="platform">Pilih Layanan</label>
-      <div class="select-wrapper"><i class="fas fa-layer-group"></i>
-        <select id="platform">
-          <option value="">-- Pilih Layanan --</option>
-          <option value="Instagram">Instagram</option>
-          <option value="Tiktok">TikTok</option>
-          <option value="YouTube">YouTube</option>
-          <option value="Shopee">Shopee</option>
-          <option value="Premium Apps">Premium Apps</option>
-        </select>
-      </div>
-      <label for="service">Jenis Layanan</label>
-      <div class="select-wrapper"><i class="fas fa-cogs"></i>
-        <select id="service" disabled>
-          <option value="">-- Jenis Layanan --</option>
-        </select>
-      </div>
-      <label for="package">Paket</label>
-      <div class="select-wrapper"><i class="fas fa-box"></i>
-        <select id="package" disabled>
-          <option value="">-- Pilih Paket --</option>
-        </select>
-      </div>
+
+      <h3>Pilih Layanan</h3>
+      <div class="option-grid" id="service-platforms"></div>
+
+      <h3>Jenis Layanan</h3>
+      <div class="option-grid" id="service-types"></div>
+
+      <h3>Paket</h3>
+      <div class="option-grid" id="service-packages"></div>
       <div id="price" class="price-display"></div>
+
       <div id="accountLinkGroup" style="display:none">
         <div class="input-group">
-          <label for="accountLinkInput">Link Akun <small>(klik ikon info untuk panduan)</small></label>
-          <input type="text" id="accountLinkInput" placeholder="Masukkan link akun/video">
-          <i class="fas fa-info-circle info-icon" id="accountInfoBtn"></i>
+          <label for="accountLinkInput">Link Akun <i class="fas fa-info-circle info-label" id="accountInfoBtn"></i></label>
+          <input type="text" id="accountLinkInput" placeholder="Masukkan link akun">
         </div>
       </div>
+
       <div id="videoLinkGroup" style="display:none">
         <div class="input-group">
-          <label for="videoLinkInput">Link Video <small>(klik ikon info untuk panduan)</small></label>
+          <label for="videoLinkInput">Link Video <i class="fas fa-info-circle info-label" id="videoInfoBtn"></i></label>
           <input type="text" id="videoLinkInput" placeholder="Masukkan link video">
-          <i class="fas fa-info-circle info-icon" id="videoInfoBtn"></i>
         </div>
       </div>
+
       <button id="orderBtn"><i class="fab fa-whatsapp"></i> Pesan via WhatsApp</button>
     </div>
   </section>
-
-  <div id="infoModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Panduan Salin Link</h2>
-      
-      <div class="guide-section">
-        <h3>Instagram</h3>
-        <p><strong>Link Akun:</strong> Buka profil Instagram, ketuk tombol tiga titik di pojok kanan atas, lalu pilih "Salin URL".</p>
-        <p><strong>Link Video/Postingan:</strong> Buka postingan, ketuk tombol tiga titik di atas postingan, lalu pilih "Salin Link".</p>
-      </div>
-      
-      <div class="guide-section">
-        <h3>TikTok</h3>
-        <p><strong>Link Akun:</strong> Buka profil, ketuk tombol bagikan (panah), lalu pilih "Salin Link".</p>
-        <p><strong>Link Video:</strong> Buka video, ketuk tombol bagikan (panah), lalu pilih "Salin Link".</p>
-      </div>
-      
-      <div class="guide-section">
-        <h3>YouTube</h3>
-        <p><strong>Link Channel:</strong> Buka channel, di address bar browser salin URL lengkapnya.</p>
-        <p><strong>Link Video:</strong> Buka video, di address bar browser salin URL lengkapnya.</p>
-      </div>
-      
-      <div class="guide-section">
-        <h3>Shopee</h3>
-        <p><strong>Link Toko:</strong> Buka halaman toko, ketuk tombol bagikan, lalu pilih "Salin Link".</p>
-        <p><strong>Link Produk:</strong> Buka halaman produk, ketuk tombol bagikan, lalu pilih "Salin Link".</p>
-      </div>
-    </div>
-  </div>
-
   <footer>
     <div class="footer-container">
-      <div class="footer-col brand">
-        <h2 class="logo">Jash<span>ub</span></h2>
-        <p>Penyedia layanan digital terpercaya dengan kualitas premium, harga terjangkau, dan dukungan pelanggan 24/7.</p>
+      <div class="footer-col">
+        <h3>Jashub</h3>
+        <p>Layanan digital premium untuk meningkatkan kehadiran online Anda dengan cepat dan mudah.</p>
         <div class="footer-socials">
           <a href="https://www.instagram.com/x.shybb" target="_blank"><i class="fab fa-instagram"></i></a>
           <a href="https://www.tiktok.com/@x.shybb" target="_blank"><i class="fab fa-tiktok"></i></a>
@@ -229,26 +588,58 @@ footer{background:var(--bg-primary);padding:60px 30px 30px;color:var(--text-seco
         </div>
       </div>
       <div class="footer-col">
-        <h3>Layanan</h3>
+        <h3>Layanan Kami</h3>
         <ul>
-          <li><a href="#instagram">Instagram</a></li>
-          <li><a href="#tiktok">TikTok</a></li>
-          <li><a href="#youtube">YouTube</a></li>
-          <li><a href="#shopee">Shopee</a></li>
-          <li><a href="#apps">App Premium</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">TikTok</a></li>
+          <li><a href="#">YouTube</a></li>
+          <li><a href="#">Shopee</a></li>
+          <li><a href="#">App Premium</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h3>Kontak</h3>
-        <p><i class="fas fa-phone"></i> +62 813-2491-9799</p>
-        <p><i class="fas fa-envelope"></i> jashubpremium@gmail.com</p>
-        <p><i class="fas fa-map-marker-alt"></i> Madura, Indonesia</p>
+        <h3>Kontak Kami</h3>
+        <ul>
+          <li><a href="https://wa.me/6281324919799" target="_blank"><i class="fab fa-whatsapp"></i> +62 813-2491-9799</a></li>
+          <li><a href="mailto:jashub.id@gmail.com"><i class="far fa-envelope"></i> jashub.id@gmail.com</a></li>
+        </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 Jashub Digital Premium. Semua Hak Dilindungi.</p>
+      <p>&copy; 2023 Jashub. All Rights Reserved.</p>
     </div>
   </footer>
+  <div id="infoModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Panduan Salin Link</h2>
+    
+    <div class="guide-section">
+      <h3>Instagram</h3>
+      <p><strong>Link Akun:</strong> Buka profil Instagram, ketuk tombol tiga titik di pojok kanan atas, lalu pilih "Salin URL".</p>
+      <p><strong>Link Video/Postingan:</strong> Buka postingan, ketuk tombol tiga titik di atas postingan, lalu pilih "Salin Link".</p>
+    </div>
+    
+    <div class="guide-section">
+      <h3>TikTok</h3>
+      <p><strong>Link Akun:</strong> Buka profil, ketuk tombol bagikan (panah), lalu pilih "Salin Link".</p>
+      <p><strong>Link Video:</strong> Buka video, ketuk tombol bagikan (panah), lalu pilih "Salin Link".</p>
+    </div>
+    
+    <div class="guide-section">
+      <h3>YouTube</h3>
+      <p><strong>Link Channel:</strong> Buka channel, di address bar browser salin URL lengkapnya.</p>
+      <p><strong>Link Video:</strong> Buka video, di address bar browser salin URL lengkapnya.</p>
+    </div>
+    
+    <div class="guide-section">
+      <h3>Shopee</h3>
+      <p><strong>Link Toko:</strong> Buka halaman toko, ketuk tombol bagikan, lalu pilih "Salin Link".</p>
+      <p><strong>Link Produk:</strong> Buka halaman produk, ketuk tombol bagikan, lalu pilih "Salin Link".</p>
+    </div>
+  </div>
+</div>
+
   <script>
 const pricingData = {
   'Instagram': {
@@ -530,136 +921,149 @@ const pricingData = {
       }
     };
 
-    const platformSelect = document.getElementById('platform');
-    const serviceSelect = document.getElementById('service');
-    const packageSelect = document.getElementById('package');
-    const priceDisplay = document.getElementById('price');
-    const accountLinkGroup = document.getElementById('accountLinkGroup');
-    const videoLinkGroup = document.getElementById('videoLinkGroup');
-    const accountLinkInput = document.getElementById('accountLinkInput');
-    const videoLinkInput = document.getElementById('videoLinkInput');
-    const orderBtn = document.getElementById('orderBtn');
-    const themeToggle = document.getElementById('theme-toggle');
-    const menuBtn = document.getElementById('menu-btn');
-    const socials = document.querySelector('.socials');
-    const accountInfoBtn = document.getElementById('accountInfoBtn');
-    const videoInfoBtn = document.getElementById('videoInfoBtn');
-    const infoModal = document.getElementById('infoModal');
-    const closeModal = document.querySelector('.close');
+const platformGrid = document.getElementById("service-platforms");
+const typeGrid = document.getElementById("service-types");
+const packageGrid = document.getElementById("service-packages");
+const priceDisplay = document.getElementById("price");
+const accountLinkGroup = document.getElementById("accountLinkGroup");
+const videoLinkGroup = document.getElementById("videoLinkGroup");
+const accountLinkInput = document.getElementById("accountLinkInput");
+const videoLinkInput = document.getElementById("videoLinkInput");
+const orderBtn = document.getElementById("orderBtn");
 
-    function updateServiceOptions() {
-      const platform = platformSelect.value;
-      serviceSelect.innerHTML = '<option value="">-- Jenis Layanan --</option>';
-      packageSelect.innerHTML = '<option value="">-- Pilih Paket --</option>';
-      priceDisplay.textContent = '';
-      accountLinkGroup.style.display = 'none';
-      videoLinkGroup.style.display = 'none';
-      
-      if (platform && pricingData[platform]) {
-        serviceSelect.disabled = false;
-        Object.keys(pricingData[platform]).forEach(service => {
-          const option = document.createElement('option');
-          option.value = service;
-          option.textContent = service;
-          serviceSelect.appendChild(option);
-        });
+let selectedPlatform = null;
+let selectedType = null;
+let selectedPackage = null;
+
+const platformIcons = {
+  "Instagram": "fab fa-instagram",
+  "Tiktok": "fab fa-tiktok",
+  "YouTube": "fab fa-youtube",
+  "Shopee": "fas fa-shopping-cart",
+  "Premium Apps": "fas fa-robot"
+};
+
+function renderPlatforms() {
+  platformGrid.innerHTML = "";
+  Object.keys(pricingData).forEach(platform => {
+    const card = document.createElement("div");
+    card.className = "option-card";
+    const iconClass = platformIcons[platform] || "fas fa-layer-group";
+    card.innerHTML = `
+      <i class="${iconClass}" style="color:#007bff;"></i>
+      <span>${platform}</span>
+    `;
+    card.onclick = () => {
+      selectedPlatform = platform;
+      selectedType = null;
+      selectedPackage = null;
+      highlightSelection(platformGrid, card);
+      renderTypes();
+      packageGrid.innerHTML = "";
+      priceDisplay.textContent = "";
+      accountLinkGroup.style.display = "none";
+      videoLinkGroup.style.display = "none";
+    };
+    platformGrid.appendChild(card);
+  });
+}
+
+const menuBtn = document.getElementById("menu-btn");
+const socials = document.querySelector(".socials");
+
+menuBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  menuBtn.classList.toggle("active");
+  socials.classList.toggle("active");
+});
+
+function renderTypes() {
+  typeGrid.innerHTML = "";
+  if (!selectedPlatform) return;
+  Object.keys(pricingData[selectedPlatform]).forEach(type => {
+    const card = document.createElement("div");
+    card.className = "option-card";
+    card.innerHTML = `<span>${type}</span>`;
+    card.onclick = () => {
+      selectedType = type;
+      selectedPackage = null;
+      highlightSelection(typeGrid, card);
+      renderPackages();
+      priceDisplay.textContent = "";
+      accountLinkGroup.style.display = "none";
+      videoLinkGroup.style.display = "none";
+    };
+    typeGrid.appendChild(card);
+  });
+}
+
+function renderPackages() {
+  packageGrid.innerHTML = "";
+  if (!selectedPlatform || !selectedType) return;
+  pricingData[selectedPlatform][selectedType].forEach(pkg => {
+    const card = document.createElement("div");
+    card.className = "option-card";
+    card.innerHTML = `
+      <span>${typeof pkg.quantity === 'number' ? pkg.quantity.toLocaleString("id-ID") + " " + selectedType : pkg.quantity}</span>
+      <div style="margin-top:6px;font-weight:700;color:#00c6ff;">Rp ${parseInt(pkg.price).toLocaleString("id-ID")}</div>
+    `;
+    card.onclick = () => {
+      selectedPackage = pkg;
+      highlightSelection(packageGrid, card);
+      priceDisplay.textContent = `Harga: Rp ${parseInt(pkg.price).toLocaleString("id-ID")}`;
+      if (selectedPlatform === "PremiumApps") {
+        accountLinkGroup.style.display = "none";
+        videoLinkGroup.style.display = "none";
       } else {
-        serviceSelect.disabled = true;
-        packageSelect.disabled = true;
-      }
-    }
-
-    function updatePackageOptions() {
-      const platform = platformSelect.value;
-      const service = serviceSelect.value;
-      packageSelect.innerHTML = '<option value="">-- Pilih Paket --</option>';
-      priceDisplay.textContent = '';
-      accountLinkGroup.style.display = 'none';
-      videoLinkGroup.style.display = 'none';
-      
-      if (platform && service && pricingData[platform][service]) {
-        packageSelect.disabled = false;
-        pricingData[platform][service].forEach(pkg => {
-          const option = document.createElement('option');
-          option.value = pkg.price;
-          option.textContent = typeof pkg.quantity === 'number' ? 
-            `${pkg.quantity.toLocaleString('id-ID')} ${service}` : 
-            pkg.quantity;
-          packageSelect.appendChild(option);
-        });
-      } else {
-        packageSelect.disabled = true;
-      }
-    }
-
-    function updatePrice() {
-      const price = packageSelect.value;
-      if (price) {
-        priceDisplay.textContent = `Harga: Rp ${parseInt(price).toLocaleString('id-ID')}`;
-        
-        const platform = platformSelect.value;
-        const service = serviceSelect.value;
-        
-        if (platform === 'Premium Apps') {
-          accountLinkGroup.style.display = 'none';
-          videoLinkGroup.style.display = 'none';
+        if (selectedType === "Followers" || selectedType === "Subscribers") {
+          accountLinkGroup.style.display = "block";
+          videoLinkGroup.style.display = "none";
+        } else if (["Views","Likes","Shares","Live Views"].includes(selectedType)) {
+          accountLinkGroup.style.display = "none";
+          videoLinkGroup.style.display = "block";
         } else {
-          if (service === 'Followers' || service === 'Subscribers') {
-            accountLinkGroup.style.display = 'block';
-            videoLinkGroup.style.display = 'none';
-          } else if (service === 'Views' || service === 'Likes' || service === 'Shares' || service === 'Live Views') {
-            accountLinkGroup.style.display = 'none';
-            videoLinkGroup.style.display = 'block';
-          } else {
-            accountLinkGroup.style.display = 'none';
-            videoLinkGroup.style.display = 'none';
-          }
+          accountLinkGroup.style.display = "none";
+          videoLinkGroup.style.display = "none";
         }
-      } else {
-        priceDisplay.textContent = '';
-        accountLinkGroup.style.display = 'none';
-        videoLinkGroup.style.display = 'none';
       }
-    }
-function placeOrder() {
-  const platform = platformSelect.value;
-  const service = serviceSelect.value;
-  const packageOption = packageSelect.options[packageSelect.selectedIndex];
-  const packageText = packageOption.textContent;
-  const price = packageSelect.value;
-  const accountLink = accountLinkInput.value.trim();
-  const videoLink = videoLinkInput.value.trim();
+    };
+    packageGrid.appendChild(card);
+  });
+}
 
-  if (!platform || !service || !price) {
-    alert('Silakan pilih platform, layanan, dan paket terlebih dahulu!');
+function highlightSelection(container, selectedCard) {
+  [...container.children].forEach(c => c.classList.remove("active"));
+  selectedCard.classList.add("active");
+}
+
+function placeOrder() {
+  if (!selectedPlatform || !selectedType || !selectedPackage) {
+    alert("Silakan pilih platform, jenis layanan, dan paket terlebih dahulu!");
     return;
   }
-
   const currentDate = new Date().toLocaleDateString('id-ID');
   let message = `╭❀「 *DATA PESANAN* 」\n`;
   message += `├ ➥ _Tanggal_ : ${currentDate}\n`;
-  message += `├ ➥ _Jenis_   : ${service} ${platform}\n`;
-  message += `├ ➥ _Paket_   : ${packageText}\n`;
-  message += `├ ➥ _Total_   : Rp${Number(price).toLocaleString('id-ID')}\n`;
+  message += `├ ➥ _Jenis_   : ${selectedType} ${selectedPlatform}\n`;
+  message += `├ ➥ _Paket_   : ${typeof selectedPackage.quantity === "number" ? selectedPackage.quantity.toLocaleString("id-ID") : selectedPackage.quantity}\n`;
+  message += `├ ➥ _Total_   : Rp${Number(selectedPackage.price).toLocaleString("id-ID")}\n`;
   message += `╰───────────────\n\n`;
 
-  if (platform !== "Premium Apps") {
-    const isAccountBased = (service === "Followers" || service === "Subscribers");
-    const targetLink = isAccountBased ? accountLink : videoLink;
-    const targetLabel = isAccountBased ? 'Akun' : 'Video';
-
+  if (selectedPlatform !== "Premium Apps") {
+    const isAccountBased = (selectedType === "Followers" || selectedType === "Subscribers");
+    const targetLink = isAccountBased ? accountLinkInput.value.trim() : videoLinkInput.value.trim();
+    const targetLabel = isAccountBased ? "Akun" : "Video";
     if (!targetLink) {
       alert("Isi link target!");
       return;
     }
-
     message += `╭❀「 TARGET ${targetLabel} 」\n`;
     message += `├ ➥ _Link_ : ${targetLink}\n`;
     message += `╰───────────────\n\n`;
   }
 
   message += `╭❀「 *PERHATIAN* 」\n`;
-  if (platform === "Premium Apps") {
+  if (selectedPlatform === "Premium Apps") {
     message += `├ ➥ _Akun akan dikirim via WhatsApp setelah pembayaran_\n`;
     message += `├ ➥ _Proses aktivasi 1-12 jam setelah pembayaran_\n`;
   } else {
@@ -676,69 +1080,44 @@ function placeOrder() {
 }
 
 
-    function toggleTheme() {
-      const currentTheme = document.documentElement.getAttribute('data-theme');
-      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-      
-      document.documentElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      
-      const icon = themeToggle.querySelector('i');
-      if (newTheme === 'light') {
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
-      } else {
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
-      }
-    }
+orderBtn.addEventListener("click", placeOrder);
+renderPlatforms();
 
-    function initTheme() {
-      const savedTheme = localStorage.getItem('theme') || 'dark';
-      document.documentElement.setAttribute('data-theme', savedTheme);
-      
-      const icon = themeToggle.querySelector('i');
-      if (savedTheme === 'light') {
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
-      } else {
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
-      }
-    }
+const themeToggleBtn = document.getElementById("theme-toggle");
+const htmlElement = document.documentElement;
 
-    function toggleMobileMenu() {
-      menuBtn.classList.toggle('active');
-      socials.classList.toggle('active');
-    }
+themeToggleBtn.addEventListener("click", () => {
+  let currentTheme = htmlElement.getAttribute("data-theme");
+  if (currentTheme === "dark") {
+    htmlElement.setAttribute("data-theme", "light");
+    themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+  } else {
+    htmlElement.setAttribute("data-theme", "dark");
+    themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+  }
+});
 
-    function showInfoModal() {
-      infoModal.style.display = 'block';
-    }
+const infoModal = document.getElementById("infoModal");
+const closeBtn = document.querySelector(".modal .close");
 
-    function hideInfoModal() {
-      infoModal.style.display = 'none';
-    }
+document.getElementById("accountInfoBtn").addEventListener("click", () => {
+  infoModal.style.display = "flex";
+});
 
-    platformSelect.addEventListener('change', updateServiceOptions);
-    serviceSelect.addEventListener('change', updatePackageOptions);
-    packageSelect.addEventListener('change', updatePrice);
-    orderBtn.addEventListener('click', placeOrder);
-    themeToggle.addEventListener('click', toggleTheme);
-    menuBtn.addEventListener('click', toggleMobileMenu);
-    accountInfoBtn.addEventListener('click', showInfoModal);
-    videoInfoBtn.addEventListener('click', showInfoModal);
-    closeModal.addEventListener('click', hideInfoModal);
-    window.addEventListener('click', (e) => {
-      if (e.target === infoModal) hideInfoModal();
-    });
+document.getElementById("videoInfoBtn").addEventListener("click", () => {
+  infoModal.style.display = "flex";
+});
 
-    window.addEventListener('scroll', () => {
-      const header = document.querySelector('header');
-      header.classList.toggle('scrolled', window.scrollY > 50);
-    });
+closeBtn.addEventListener("click", () => {
+  infoModal.style.display = "none";
+});
 
-    initTheme();
+window.addEventListener("click", (e) => {
+  if (e.target === infoModal) {
+    infoModal.style.display = "none";
+  }
+});
+
   </script>
 </body>
 </html>
