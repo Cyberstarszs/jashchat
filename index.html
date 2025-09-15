@@ -481,6 +481,161 @@ select option {
     text-align: center;
   }
 }
+.footer-section {
+  background: linear-gradient(135deg, var(--footer-bg), var(--bg-secondary));
+  padding: 60px 20px 20px;
+  border-top: 1px solid var(--card-border);
+}
+
+.footer-wrapper {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.footer-brand img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.footer-brand h3 {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer-links h3,
+.footer-contact h3,
+.footer-newsletter h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.footer-links h3::after,
+.footer-contact h3::after,
+.footer-newsletter h3::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+}
+
+.footer-links ul,
+.footer-contact ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li,
+.footer-contact ul li {
+  margin: 8px 0;
+  font-size: 14px;
+  color: var(--footer-text);
+}
+
+.footer-links ul li a {
+  color: var(--footer-text);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-links ul li a:hover {
+  color: var(--accent-primary);
+  padding-left: 5px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.footer-socials a {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--social-bg);
+  color: var(--social-color);
+  transition: 0.3s ease;
+}
+
+.footer-socials a:hover {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  color: #fff;
+  transform: scale(1.15) rotate(6deg);
+}
+
+.newsletter {
+  display: flex;
+  margin-top: 10px;
+}
+
+.newsletter input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid var(--card-border);
+  border-radius: 8px 0 0 8px;
+  outline: none;
+  background: var(--card-bg);
+  color: var(--text-primary);
+}
+
+.newsletter button {
+  border: none;
+  padding: 0 18px;
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.newsletter button:hover {
+  filter: brightness(1.15);
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 40px;
+  padding-top: 15px;
+  border-top: 1px solid var(--card-border);
+  color: var(--footer-text);
+}
+
+/* Responsif Mobile */
+@media (max-width: 768px) {
+  .footer-wrapper {
+    text-align: center;
+    grid-template-columns: 1fr;
+  }
+  .footer-links h3::after,
+  .footer-contact h3::after,
+  .footer-newsletter h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .footer-socials {
+    justify-content: center;
+  }
+  .newsletter {
+    justify-content: center;
+  }
+}
+
 </style>
 
 
@@ -770,11 +925,11 @@ select option {
       <i class="fab fa-youtube"></i>
       <div class="caption">YouTube Premium</div>
       <ul class="service-list">
-        <li>1 Bulan (Famplan) <span>Rp 8.5k</span></li>
-        <li>1 Bulan (Individu) <span>Rp 11.5k</span></li>
-        <li>3 Bulan (Individu) <span>Rp 26k</span></li>
-        <li>3 Bulan (Inplan Promo) <span>Rp 23k</span></li>
-      </ul>
+    <li>1 Bulan (Sharing, 5 Pengguna) <span>Rp 18.000</span></li>
+    <li>1 Minggu (Sharing, 1 Pengguna) <span>Rp 22.000</span></li>
+    <li>1 Bulan (Sharing, 10 Pengguna) <span>Rp 34.000</span></li>
+    <li>1 Bulan (Sharing, 8 Pengguna) <span>Rp 40.000</span></li>
+  </ul>
       <a href="pesanan.html" class="order-btn">Pesan Sekarang</a>
     </article>
 
@@ -1290,7 +1445,7 @@ select option {
         <h3>Kontak Kami</h3>
         <ul>
           <li><a href="https://wa.me/6281324919799" target="_blank"><i class="fab fa-whatsapp"></i> +62 813-2491-9799</a></li>
-          <li><a href="mailto:jashubpremium@gmail.com"><i class="far fa-envelope"></i></a></li>
+          <li><a href="mailto:jashubpremium@gmail.com"><i class="far fa-envelope"></i> jashubpremium@gmail.com</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -2187,5 +2342,3 @@ document.addEventListener("DOMContentLoaded", () => {
   </script>
 </body>
 </html>
-
-
