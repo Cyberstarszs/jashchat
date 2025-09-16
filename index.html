@@ -635,6 +635,258 @@ select option {
     justify-content: center;
   }
 }
+.orders-section {
+  padding: 50px 20px;
+}
+.orders-wrapper {
+  max-width: 1200px;
+  margin: auto;
+}
+.orders-section h2 {
+  font-size: 24px;
+  margin-bottom: 18px;
+  font-weight: 800;
+  background: linear-gradient(90deg,var(--accent-primary),var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.table-container {
+  overflow-x: auto;
+}
+#orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+#orders-table th, #orders-table td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--card-border);
+  font-size: 14px;
+}
+#orders-table th {
+  background: linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));
+  color: #fff;
+  font-weight: 700;
+}
+#orders-table tr:hover {
+  background: rgba(26,115,232,0.08);
+}
+@media(max-width:768px){
+  #orders-table th, #orders-table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
+.pagination {
+  margin-top: 15px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.pagination button {
+  padding: 6px 12px;
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  background: var(--button-secondary-bg);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.pagination button:hover {
+  background: linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));
+  color: #fff;
+}
+.pagination span {
+  align-self: center;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+.search-container {
+  margin-bottom: 14px;
+  text-align: left; /* ➝ sekarang selalu kiri */
+}
+.search-container input {
+  padding: 10px 14px;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  width: 280px;
+  max-width: 100%;
+  font-size: 14px;
+  background: var(--card-bg);
+  color: var(--text-primary);
+  outline: none;
+}
+@media(max-width:768px){
+  .search-container {
+    text-align: left; /* tetap kiri di mobile */
+  }
+  .search-container input {
+    width: 100%; /* biar full di HP */
+  }
+}
+.hero .hero-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap; /* biar responsif */
+  margin-top: 10px;
+}
+
+.hero .subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+  flex: 1;
+}
+
+.hero .stats-wrapper {
+  display: flex;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.hero .stat-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  min-width: 110px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.hero .stat-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  background: linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 4px;
+}
+
+.hero .stat-card p {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Responsif */
+@media(max-width:768px){
+  .hero .hero-flex {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero .stats-wrapper {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .hero .stat-card {
+    min-width: 100px;
+  }
+}
+.hero {
+  text-align: center;
+  padding: 60px 20px 30px;
+}
+
+.hero .hero-box {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 20px;
+  border-radius: 18px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.hero .title {
+  font-size: clamp(26px, 6vw, 42px);
+  font-weight: 800;
+  background: linear-gradient(90deg,var(--accent-primary),var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+.hero .subtitle {
+  font-size: clamp(14px, 3vw, 18px);
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.hero .stats-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+.hero .stat-card {
+  flex: 1 1 130px;
+  max-width: 160px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 14px 10px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hero .stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.hero .stat-card i {
+  font-size: 20px;
+  color: var(--accent-primary);
+  margin-bottom: 6px;
+}
+
+.hero .stat-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  background: linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero .stat-card p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Responsif HP */
+@media (max-width: 600px) {
+  .hero {
+    padding: 40px 15px 20px;
+  }
+  .hero .title {
+    font-size: 24px;
+  }
+  .hero .subtitle {
+    font-size: 14px;
+    text-align: center;
+  }
+  .hero .stats-wrapper {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .hero .stat-card {
+    flex: 1 1 45%;
+    max-width: none;
+  }
+}
+
 
 </style>
 
@@ -671,9 +923,22 @@ select option {
   <section class="hero">
   <div class="hero-box">
     <h1 class="title">LAYANAN DIGITAL</h1>
-    <div class="subtitle">Instagram, TikTok, YouTube, Shopee & App Premium</div>
+    <p class="subtitle">Instagram, TikTok, YouTube, Shopee & App Premium</p>
+    <div class="stats-wrapper">
+      <div class="stat-card">
+        <i class="fas fa-shopping-cart"></i>
+        <h3 id="totalOrders">0</h3>
+        <p>Total Pesanan</p>
+      </div>
+      <div class="stat-card">
+        <i class="fas fa-star"></i>
+        <h3 id="kepuasan">0</h3>
+        <p>Kepuasan</p>
+      </div>
+    </div>
   </div>
 </section>
+
 
       <div class="service-icons">
         <button class="active" data-target="instagram"><i class="fab fa-instagram"></i></button>
@@ -1336,8 +1601,36 @@ select option {
 
   </div>
 </div>
+<section class="orders-section">
+  <div class="orders-wrapper">
+    <h2>Data Pesanan</h2>
+    <div class="search-container">
+  <input type="text" id="searchInput" placeholder="Cari berdasarkan ID atau Layanan...">
+</div>
 
-    </section>
+    <div class="table-container">
+      <table id="orders-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Waktu</th>
+            <th>Layanan</th>
+            <th>Jumlah</th>
+            <th>Harga</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="pagination">
+      <button id="prevPage">« Prev</button>
+      <span id="pageInfo"></span>
+      <button id="nextPage">Next »</button>
+    </div>
+  </div>
+</section>
+
   </main>
 <section id="faq" class="faq-section">
   <div class="faq-wrapper">
@@ -2339,6 +2632,244 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
+  
+  const monthNames = [
+    "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+    "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+  ];
+
+ function parseTanggal(raw) {
+  if (!raw) return { display: "-", sortKey: new Date(0) };
+
+  raw = raw.replace(/^[:\s]+/, "").trim();
+  const monthNames = [
+    "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+    "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+  ];
+
+  // 1. Format DD/MM/YYYY
+  if (/^\d{1,2}\/\d{1,2}\/\d{4}/.test(raw)) {
+    let [d, m, y] = raw.split(/[\/\s]/);
+    let bulan = monthNames[parseInt(m) - 1] || m;
+    return {
+      display: `${d} ${bulan} ${y}`,
+      sortKey: new Date(`${y}-${m.padStart(2,"0")}-${d.padStart(2,"0")}`)
+    };
+  }
+
+  // 2. Format "Rabu, 27 Agustus 2025 10:45"
+  let parts = raw.replace(",", "").split(" ");
+  let onlyDate = parts.filter(p => !p.includes(":"));
+  if (onlyDate.length >= 3) {
+    if (isNaN(onlyDate[0])) onlyDate.shift(); // buang hari
+    let [d, bulan, y] = onlyDate.slice(0, 3);
+    let monthIndex = monthNames.indexOf(bulan);
+    if (monthIndex >= 0) {
+      return {
+        display: `${d} ${bulan} ${y}`,
+        sortKey: new Date(`${y}-${(monthIndex+1).toString().padStart(2,"0")}-${d.padStart(2,"0")}`)
+      };
+    }
+  }
+
+  // 3. fallback → tampilkan raw
+  return { display: raw, sortKey: new Date(0) };
+}
+
+
+  function formatRupiah(num) {
+    if (!num || isNaN(num)) return "-";
+    return "Rp " + parseInt(num).toLocaleString("id-ID");
+  }
+
+  let orders = [];
+  let currentPage = 1;
+  const rowsPerPage = 10;
+
+async function loadOrders() {
+  try {
+    const res = await fetch("hasil_transaksi.json");
+    let data = await res.json();
+
+    // Normalisasi data
+    orders = data.map(item => ({
+      ID: String(item.ID).padStart(3, "0"),
+      Waktu: formatTanggal(item.Tanggal),
+      Layanan: (item.Jenis || "-").replace(/^[:\s]+/, "").trim(),
+      Jumlah: (item.Paket || "-").toString().replace(/[^0-9]/g, "") || "-",
+      Harga: formatRupiah(item.Total),
+      Status: "Selesai"
+    }));
+
+    // Urutkan dari ID terbesar ke kecil
+    orders.sort((a, b) => parseInt(b.ID) - parseInt(a.ID));
+
+    renderTable();
+  } catch (e) {
+    console.error("Gagal load data:", e);
+  }
+}
+
+
+  function renderTable() {
+    const tbody = document.querySelector("#orders-table tbody");
+    tbody.innerHTML = "";
+
+    let start = (currentPage - 1) * rowsPerPage;
+    let end = start + rowsPerPage;
+    let pageData = orders.slice(start, end);
+
+    pageData.forEach(row => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${row.ID}</td>
+        <td>${row.Waktu}</td>
+        <td>${row.Layanan}</td>
+        <td>${row.Jumlah}</td>
+        <td>${row.Harga}</td>
+        <td>${row.Status}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+
+    document.getElementById("pageInfo").textContent =
+      `Halaman ${currentPage} dari ${Math.ceil(orders.length / rowsPerPage)}`;
+  }
+
+  document.getElementById("prevPage").addEventListener("click", () => {
+    if (currentPage > 1) {
+      currentPage--;
+      renderTable();
+    }
+  });
+
+  document.getElementById("nextPage").addEventListener("click", () => {
+    if (currentPage < Math.ceil(orders.length / rowsPerPage)) {
+      currentPage++;
+      renderTable();
+    }
+  });
+
+  loadOrders();
+   let filteredOrders = [];
+
+async function loadOrders() {
+  try {
+    const res = await fetch("hasil_transaksi.json");
+    let data = await res.json();
+
+    // Normalisasi data + parsing tanggal
+    let tempOrders = data.map(item => {
+      let layanan = (item.Jenis || "-").replace(/^[:\s]+/, "").trim();
+      let jumlah = (item.Paket || "-").toString().replace(/[^0-9]/g, "");
+
+      // Filter jumlah jika layanan ada "+"
+      if (layanan.includes("+") && jumlah.length >= 5) {
+        let left = jumlah.slice(0, jumlah.length - 4);
+        let right = jumlah.slice(jumlah.length - 4);
+        jumlah = left + "+" + right;
+      }
+
+      let tgl = parseTanggal(item.Tanggal);
+
+      return {
+        oldID: item.ID, // simpan ID asli kalau perlu
+        Waktu: tgl.display,
+        sortDate: isNaN(tgl.sortKey.getTime()) ? new Date(0) : tgl.sortKey,
+        Layanan: layanan,
+        Jumlah: jumlah,
+        Harga: formatRupiah(item.Total),
+        Status: "Selesai"
+      };
+    });
+
+    // Urutkan dari tanggal lama → baru
+    tempOrders.sort((a, b) => a.sortDate - b.sortDate);
+
+    // Assign ID baru mulai dari 0001
+    orders = tempOrders.map((o, i) => ({
+      ...o,
+      ID: String(i + 1).padStart(4, "0") // format 0001, 0002, dst
+    }));
+
+    // Balik urutannya supaya ID paling besar tampil paling atas
+    orders.reverse();
+
+    filteredOrders = [...orders];
+    currentPage = 1;
+    renderTable();
+  } catch (e) {
+    console.error("Gagal load data:", e);
+  }
+}
+
+
+
+  function renderTable() {
+    const tbody = document.querySelector("#orders-table tbody");
+    tbody.innerHTML = "";
+
+    let start = (currentPage - 1) * rowsPerPage;
+    let end = start + rowsPerPage;
+    let pageData = filteredOrders.slice(start, end);
+
+    pageData.forEach(row => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${row.ID}</td>
+        <td>${row.Waktu}</td>
+        <td>${row.Layanan}</td>
+        <td>${row.Jumlah}</td>
+        <td>${row.Harga}</td>
+        <td>${row.Status}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+
+    document.getElementById("pageInfo").textContent =
+      `Halaman ${currentPage} dari ${Math.ceil(filteredOrders.length / rowsPerPage)}`;
+  }
+
+  // 🔍 Event pencarian
+  document.getElementById("searchInput").addEventListener("input", e => {
+    const keyword = e.target.value.toLowerCase();
+    filteredOrders = orders.filter(o =>
+      o.ID.toLowerCase().includes(keyword) ||
+      o.Layanan.toLowerCase().includes(keyword)
+    );
+    currentPage = 1;
+    renderTable();
+  });
+
+  loadOrders();
+  function animateCounter(element, target, duration = 2000) {
+  let start = 0;
+  let stepTime = Math.max(Math.floor(duration / target), 20);
+  let timer = setInterval(() => {
+    start++;
+    element.textContent = start.toLocaleString("id-ID");
+    if (start >= target) clearInterval(timer);
+  }, stepTime);
+}
+
+async function loadStats() {
+  try {
+    const res = await fetch("hasil_transaksi.json");
+    let data = await res.json();
+
+    let totalOrders = data.length;
+    let kepuasan = Math.max(0, totalOrders - Math.floor(Math.random() * 5 + 3));
+
+    animateCounter(document.getElementById("totalOrders"), totalOrders);
+    animateCounter(document.getElementById("kepuasan"), kepuasan);
+  } catch (err) {
+    console.error("Gagal memuat statistik:", err);
+  }
+}
+
+loadStats();
+
   </script>
+  
 </body>
 </html>
