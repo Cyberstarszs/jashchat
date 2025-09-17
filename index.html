@@ -1,0 +1,1949 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Campus AI - Universitas Madura</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root {
+  --primary: #2563eb;
+  --primary-light: #3b82f6;
+  --primary-dark: #1e40af;
+  --secondary: #8b5cf6;
+  --accent: #06b6d4;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  
+  --bg-dark: #0f172a;
+  --bg-dark-lighter: #1e293b;
+  --text-dark: #f1f5f9;
+  --text-dark-secondary: #cbd5e1;
+  --panel-dark: #1e293b;
+  --border-dark: #334155;
+  --card-dark: #334155;
+  
+  --bg-light: #ffffff;
+  --bg-light-darker: #f8fafc;
+  --text-light: #1e293b;
+  --text-light-secondary: #64748b;
+  --panel-light: #ffffff;
+  --border-light: #e2e8f0;
+  --card-light: #f1f5f9;
+  
+  --radius: 16px;
+  --radius-sm: 8px;
+  --shadow: 0 10px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+  --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+  --transition: .3s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: background var(--transition), color var(--transition);
+  line-height: 1.6;
+}
+
+body.light {
+  background: var(--bg-light);
+  color: var(--text-light);
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: var(--panel-dark);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--border-dark);
+}
+
+body.light header {
+  background: var(--panel-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  color: var(--primary-light);
+}
+
+.logo-icon {
+  font-size: 24px;
+  color: var(--primary);
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.logo-subtitle {
+  font-size: 12px;
+  color: var(--text-dark-secondary);
+  font-weight: 400;
+}
+
+body.light .logo-subtitle {
+  color: var(--text-light-secondary);
+}
+
+.header-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.header-btn {
+  padding: 10px 16px;
+  border-radius: var(--radius);
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background var(--transition), transform 0.1s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.header-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.header-btn:active {
+  transform: translateY(0);
+}
+
+.header-btn.secondary {
+  background: transparent;
+  color: var(--text-dark);
+  border: 1px solid var(--border-dark);
+}
+
+body.light .header-btn.secondary {
+  color: var(--text-light);
+  border: 1px solid var(--border-light);
+}
+
+.header-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+body.light .header-btn.secondary:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.container {
+  display: flex;
+  flex: 1;
+  gap: 24px;
+  padding: 24px;
+  flex-wrap: wrap;
+  max-width: 1600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.sidebar {
+  flex: 0 0 320px;
+  background: var(--panel-dark);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  position: relative;
+  border: 1px solid var(--border-dark);
+}
+
+body.light .sidebar {
+  background: var(--panel-light);
+  border: 1px solid var(--border-light);
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0.85;
+  margin-bottom: 6px;
+  color: var(--text-dark-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+body.light .section-title {
+  color: var(--text-light-secondary);
+}
+
+.small {
+  font-size: 12px;
+  color: var(--text-dark-secondary);
+  margin-top: 4px;
+}
+
+body.light .small {
+  color: var(--text-light-secondary);
+}
+
+.history-list, .suggestions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.history-item, .sugg-btn, .suggest-pill {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 14px;
+  color: #ffffff;
+  border: none;
+  text-align: left;
+  transition: background var(--transition), transform 0.1s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.history-item:hover, .sugg-btn:hover, .suggest-pill:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(2px);
+}
+
+body.light .history-item,
+body.light .sugg-btn,
+body.light .suggest-pill {
+  color: var(--text-light);
+  background: var(--card-light);
+}
+
+body.light .history-item:hover,
+body.light .sugg-btn:hover,
+body.light .suggest-pill:hover {
+  background: #e2e8f0;
+}
+
+.history-item i {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.suggest-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.suggest-pill {
+  padding: 8px 12px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: var(--panel-dark);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 0;
+  overflow: hidden;
+  min-width: 0;
+  border: 1px solid var(--border-dark);
+}
+
+body.light .main {
+  background: var(--panel-light);
+  border: 1px solid var(--border-light);
+}
+
+.chat-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-dark);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--panel-dark);
+}
+
+body.light .chat-header {
+  border-bottom: 1px solid var(--border-light);
+  background: var(--panel-light);
+}
+
+.chat-title {
+  font-weight: 600;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chat-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.chat-action-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-dark-secondary);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  transition: background var(--transition);
+}
+
+.chat-action-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-dark);
+}
+
+body.light .chat-action-btn {
+  color: var(--text-light-secondary);
+}
+
+body.light .chat-action-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--text-light);
+}
+
+.chat-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 0; /* Required for proper scrolling */
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  scroll-behavior: smooth;
+}
+
+.msg {
+  max-width: 85%;
+  padding: 16px 20px;
+  border-radius: var(--radius);
+  font-size: 15px;
+  line-height: 1.5;
+  animation: fade 0.3s ease-in;
+  position: relative;
+}
+
+.msg.user {
+  align-self: flex-end;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+
+.msg.bot {
+  align-self: flex-start;
+  background: var(--card-dark);
+  color: var(--text-dark);
+  border-bottom-left-radius: 4px;
+}
+
+body.light .msg.bot {
+  background: var(--card-light);
+  color: var(--text-light);
+}
+
+.msg-time {
+  font-size: 11px;
+  opacity: 0.7;
+  margin-top: 4px;
+  text-align: right;
+}
+
+.msg-actions {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.msg:hover .msg-actions {
+  opacity: 1;
+}
+
+.msg-action {
+  background: rgba(0, 0, 0, 0.2);
+  border: none;
+  color: inherit;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background 0.2s;
+}
+
+.msg-action:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 20px;
+  background: var(--card-dark);
+  border-radius: var(--radius);
+  align-self: flex-start;
+  margin-bottom: 8px;
+  border-bottom-left-radius: 4px;
+  color: var(--text-dark-secondary);
+  font-size: 14px;
+}
+
+body.light .typing-indicator {
+  background: var(--card-light);
+  color: var(--text-light-secondary);
+}
+
+.typing-dots {
+  display: flex;
+  gap: 4px;
+}
+
+.typing-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.6;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+
+.input-area {
+  display: flex;
+  gap: 12px;
+  padding: 16px 20px;
+  border-top: 1px solid var(--border-dark);
+  background: var(--panel-dark);
+  position: sticky;
+  bottom: 0;
+}
+
+body.light .input-area {
+  background: var(--panel-light);
+  border-top: 1px solid var(--border-light);
+}
+
+.input-wrapper {
+  flex: 1;
+  position: relative;
+}
+
+.input-area input {
+  width: 100%;
+  padding: 14px 16px;
+  padding-right: 40px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-dark);
+  background: var(--card-dark);
+  color: inherit;
+  font-family: inherit;
+  font-size: 15px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+body.light .input-area input {
+  border: 1px solid var(--border-light);
+  background: var(--card-light);
+}
+
+.input-area input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.voice-btn {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--text-dark-secondary);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: color var(--transition);
+}
+
+.voice-btn:hover {
+  color: var(--primary);
+}
+
+body.light .voice-btn {
+  color: var(--text-light-secondary);
+}
+
+.send-btn {
+  background: var(--primary);
+  border: none;
+  color: #fff;
+  padding: 0 20px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition), transform 0.1s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.send-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.send-btn:active {
+  transform: translateY(0);
+}
+
+.send-btn:disabled {
+  background: var(--border-dark);
+  cursor: not-allowed;
+  transform: none;
+}
+
+body.light .send-btn:disabled {
+  background: var(--border-light);
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--text-dark-secondary);
+}
+
+body.light .empty-state {
+  color: var(--text-light-secondary);
+}
+
+.empty-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.empty-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+}
+
+body.light .empty-title {
+  color: var(--text-light);
+}
+
+.empty-desc {
+  font-size: 14px;
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
+.confidence-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-left: 8px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+body.light .confidence-badge {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.high-confidence {
+  background-color: var(--success);
+  color: white;
+}
+
+.medium-confidence {
+  background-color: var(--warning);
+  color: white;
+}
+
+.low-confidence {
+  background-color: var(--error);
+  color: white;
+}
+
+.suggested-questions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+  justify-content: center;
+}
+
+.suggestion-chip {
+  background: var(--card-dark);
+  border: 1px solid var(--border-dark);
+  border-radius: 16px;
+  padding: 6px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.suggestion-chip:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+body.light .suggestion-chip {
+  background: var(--card-light);
+  border: 1px solid var(--border-light);
+}
+
+.footer {
+  padding: 16px 24px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-dark-secondary);
+  border-top: 1px solid var(--border-dark);
+  background: var(--panel-dark);
+}
+
+body.light .footer {
+  color: var(--text-light-secondary);
+  border-top: 1px solid var(--border-light);
+  background: var(--panel-light);
+}
+
+.footer a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    padding: 16px;
+  }
+  
+  .sidebar {
+    flex: 0 0 auto;
+    width: 100%;
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 12px 16px;
+  }
+  
+  .header-btn span {
+    display: none;
+  }
+  
+  .header-btn {
+    padding: 10px;
+  }
+  
+  .logo-text {
+    font-size: 14px;
+  }
+  
+  .msg {
+    max-width: 90%;
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+  
+  .input-area {
+    padding: 12px 16px;
+  }
+  
+  .input-area input {
+    padding: 12px 14px;
+    padding-right: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 12px;
+    gap: 16px;
+  }
+  
+  .sidebar {
+    border-radius: 12px;
+  }
+  
+  .main {
+    border-radius: 12px;
+  }
+  
+  .messages {
+    padding: 16px;
+    gap: 12px;
+  }
+  
+  .msg {
+    max-width: 95%;
+  }
+  
+  .suggested-questions {
+    flex-direction: column;
+  }
+  
+  .suggestion-chip {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.sidebar.collapsed {
+  transform: translateX(-100%);
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+
+.overlay.active {
+  display: block;
+}
+
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--card-dark);
+  transition: .4s;
+  border-radius: 24px;
+}
+
+body.light .slider {
+  background-color: var(--card-light);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--primary);
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+.slider-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: white;
+}
+
+.slider-icon.sun {
+  left: 6px;
+}
+
+.slider-icon.moon {
+  right: 6px;
+}
+
+.help-tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: help;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: 200px;
+  background-color: var(--panel-dark);
+  color: var(--text-dark);
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 12px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-dark);
+}
+
+body.light .tooltip-text {
+  background-color: var(--panel-light);
+  color: var(--text-light);
+  border: 1px solid var(--border-light);
+}
+
+.help-tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.rate-response {
+  display: flex;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.rate-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-dark-secondary);
+  cursor: pointer;
+  font-size: 14px;
+  padding: 4px;
+  transition: color 0.2s;
+}
+
+.rate-btn:hover {
+  color: var(--warning);
+}
+
+.rate-btn.active {
+  color: var(--warning);
+}
+
+body.light .rate-btn {
+  color: var(--text-light-secondary);
+}
+
+.source-info {
+  font-size: 12px;
+  margin-top: 8px;
+  opacity: 0.7;
+  font-style: italic;
+}
+
+.usage-stats {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-dark);
+}
+
+body.light .usage-stats {
+  border-top: 1px solid var(--border-light);
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.loading-bar {
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--accent), var(--secondary));
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite linear;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.quick-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.quick-action-btn {
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: var(--text-dark);
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.quick-action-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+body.light .quick-action-btn {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--text-light);
+}
+
+body.light .quick-action-btn:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 1024px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    max-height: none;
+    width: 280px;
+    transform: translateX(-100%);
+    z-index: 1000;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+}
+.empty-state {
+  max-height: 40vh; /* biar nggak makan seluruh layar */
+  overflow-y: auto;
+  padding: 20px;
+}
+/* Sidebar default tersembunyi di semua mode */
+.sidebar {
+  transform: translateX(-100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  max-height: none;
+  width: 280px;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+/* Kalau open, tampil */
+.sidebar.open {
+  transform: translateX(0);
+}
+
+/* Biar ada background gelap di belakang sidebar */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+}
+
+.overlay.active {
+  display: block;
+}
+.empty-state {
+  max-height: 30vh; /* ringkas, tidak makan layar penuh */
+  overflow-y: auto;
+}
+.sidebar {
+  transform: translateX(-100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 280px;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+/* Biar isi sidebar bisa scroll */
+.sidebar {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* biar enak di HP */
+}
+
+</style>
+</head>
+<body>
+<div class="app-container">
+  <header>
+    <div class="logo">
+      <i class="fas fa-graduation-cap logo-icon"></i>
+      <div class="logo-text">
+        <span>Campus AI</span>
+        <span class="logo-subtitle">Universitas Madura</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <label class="theme-switch" title="Toggle dark/light mode">
+        <input type="checkbox" id="theme-toggle">
+        <span class="slider"></span>
+        <i class="fas fa-sun slider-icon sun"></i>
+        <i class="fas fa-moon slider-icon moon"></i>
+      </label>
+      <button id="menu-toggle" class="header-btn secondary" title="Toggle sidebar">
+        <i class="fas fa-bars"></i>
+        <span>Menu</span>
+      </button>
+      <button id="reset" class="header-btn" title="Start new conversation">
+        <i class="fas fa-plus"></i>
+        <span>Baru</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="overlay" id="overlay"></div>
+    <aside class="sidebar" id="sidebar">
+      <div class="loading-bar" id="sidebar-loader"></div>
+      <div class="sidebar-header">
+        <div>
+          <div class="section-title">Riwayat Percakapan</div>
+          <div class="small">Klik untuk melanjutkan percakapan</div>
+        </div>
+        <div class="controls">
+          <button id="clear-history" class="header-btn secondary" title="Clear history">
+            <i class="fas fa-trash"></i>
+          </button>
+        </div>
+      </div>
+      <div class="history-list" id="history-list"></div>
+      
+      <div>
+        <div class="section-title">Pertanyaan Populer</div>
+        <div class="suggestions" id="popular-list"></div>
+      </div>
+      
+      <div>
+        <div class="section-title">Saran Cepat</div>
+        <div class="suggest-row" id="quick-suggestions"></div>
+      </div>
+      
+      <div class="usage-stats">
+        <div class="stat-item">
+          <i class="fas fa-database"></i>
+          <span id="kb-count">0</span> data
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-message"></i>
+          <span id="chat-count">0</span> pesan
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="chat-header">
+        <div class="chat-title">
+          <i class="fas fa-robot"></i>
+          <span>Asisten AI Universitas Madura</span>
+        </div>
+        <div class="chat-actions">
+          <button class="chat-action-btn" id="export-chat" title="Export conversation">
+            <i class="fas fa-download"></i>
+          </button>
+          <button class="chat-action-btn" id="settings-btn" title="Settings">
+            <i class="fas fa-cog"></i>
+          </button>
+        </div>
+      </div>
+      
+      <div class="chat-window">
+        <div class="messages" id="messages">
+          <div class="empty-state" id="empty-state">
+            <i class="fas fa-comments empty-icon"></i>
+            <div class="empty-title">Selamat datang di Campus AI</div>
+            <div class="empty-desc">Saya asisten virtual Universitas Madura. Silakan tanyakan tentang kampus, program studi, atau informasi lainnya.</div>
+            <div class="suggested-questions" id="welcome-suggestions"></div>
+          </div>
+        </div>
+        
+        <div class="input-area" role="group" aria-label="Chat input">
+          <div class="input-wrapper">
+            <input id="chat-input" type="text" placeholder="Tanyakan tentang Universitas Madura..." autocomplete="off" />
+            <button class="voice-btn" id="voice-btn" title="Voice input">
+              <i class="fas fa-microphone"></i>
+            </button>
+          </div>
+          <button id="send" class="send-btn">
+            <i class="fas fa-paper-plane"></i>
+            <span>Kirim</span>
+          </button>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script>
+// Global variables
+let kb = [];
+let history = [];
+let currentSession = [];
+let isListening = false;
+let recognition = null;
+
+// DOM elements
+const messagesEl = document.getElementById('messages');
+const inputEl = document.getElementById('chat-input');
+const sendBtn = document.getElementById('send');
+const historyList = document.getElementById('history-list');
+const popularList = document.getElementById('popular-list');
+const quickSuggestions = document.getElementById('quick-suggestions');
+const welcomeSuggestions = document.getElementById('welcome-suggestions');
+const emptyState = document.getElementById('empty-state');
+const sidebar = document.getElementById('sidebar');
+const menuBtn = document.getElementById('menu-toggle');
+const overlay = document.getElementById('overlay');
+const themeToggle = document.getElementById('theme-toggle');
+const clearHistoryBtn = document.getElementById('clear-history');
+const resetBtn = document.getElementById('reset');
+const voiceBtn = document.getElementById('voice-btn');
+const exportBtn = document.getElementById('export-chat');
+const kbCountEl = document.getElementById('kb-count');
+const chatCountEl = document.getElementById('chat-count');
+
+// Initialize the application
+function init() {
+  loadKB();
+  loadHistory();
+  setupEventListeners();
+  applySavedTheme();
+  showWelcomeMessage();
+}
+
+// Enhanced normalization with Indonesian language support
+function normalize(text) {
+  return text.toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // Remove accents
+    .replace(/[^\w\s\u00C0-\u024F'-]/g, ' ') // Replace special chars with space
+    .replace(/\s+/g, ' ') // Collapse multiple spaces
+    .trim();
+}
+
+// Advanced tokenization with stopword removal
+function tokenize(text) {
+  const tokens = normalize(text).split(' ').filter(Boolean);
+  
+  // Indonesian stopwords
+  const stopwords = new Set([
+    'yang', 'dan', 'di', 'ke', 'dari', 'ini', 'itu', 'saya', 'kamu', 'kami', 
+    'mereka', 'ada', 'adalah', 'atau', 'pada', 'untuk', 'dengan', 'tentang',
+    'dalam', 'oleh', 'karena', 'jika', 'akan', 'sebuah', 'the', 'a', 'an', 'is',
+    'am', 'are', 'was', 'were', 'be', 'being', 'been', 'have', 'has', 'had',
+    'do', 'does', 'did', 'apa', 'siapa', 'bagaimana', 'kapan', 'dimana', 'mengapa'
+  ]);
+  
+  return tokens.filter(token => !stopwords.has(token) && token.length > 1);
+}
+
+// Calculate similarity using Jaccard index and Levenshtein distance
+function calculateSimilarity(a, b) {
+  const tokensA = new Set(tokenize(a));
+  const tokensB = new Set(tokenize(b));
+  
+  if (tokensA.size === 0 || tokensB.size === 0) return 0;
+  
+  // Jaccard similarity
+  const intersection = new Set([...tokensA].filter(x => tokensB.has(x)));
+  const union = new Set([...tokensA, ...tokensB]);
+  const jaccard = intersection.size / union.size;
+  
+  // String similarity (Levenshtein-based)
+  const strSimilarity = stringSimilarity(a, b);
+  
+  // Weighted combination
+  return (jaccard * 0.7) + (strSimilarity * 0.3);
+}
+
+// Levenshtein distance-based similarity
+function stringSimilarity(a, b) {
+  const longer = a.length > b.length ? a : b;
+  const shorter = a.length <= b.length ? a : b;
+  
+  if (longer.length === 0) return 1.0;
+  
+  const distance = levenshteinDistance(longer, shorter);
+  return (longer.length - distance) / parseFloat(longer.length);
+}
+
+// Levenshtein distance calculation
+function levenshteinDistance(a, b) {
+  const matrix = Array(b.length + 1).fill(null).map(() => Array(a.length + 1).fill(null));
+  
+  for (let i = 0; i <= a.length; i++) matrix[0][i] = i;
+  for (let j = 0; j <= b.length; j++) matrix[j][0] = j;
+  
+  for (let j = 1; j <= b.length; j++) {
+    for (let i = 1; i <= a.length; i++) {
+      const substitutionCost = a[i - 1] === b[j - 1] ? 0 : 1;
+      matrix[j][i] = Math.min(
+        matrix[j][i - 1] + 1,
+        matrix[j - 1][i] + 1,
+        matrix[j - 1][i - 1] + substitutionCost
+      );
+    }
+  }
+  
+  return matrix[b.length][a.length];
+}
+
+// Find best matches with confidence scoring
+function findBestMatches(query, limit = 5) {
+  const scored = [];
+  const normalizedQuery = normalize(query);
+  
+  for (const item of kb) {
+    let bestScore = 0;
+    let bestExample = '';
+    
+    for (const ex of item.examples) {
+      const score = calculateSimilarity(normalizedQuery, normalize(ex));
+      if (score > bestScore) {
+        bestScore = score;
+        bestExample = ex;
+      }
+    }
+    
+    if (bestScore > 0.2) {
+      scored.push({
+        score: bestScore,
+        answer: item.answer,
+        example: bestExample,
+        source: item.source || 'knowledge base'
+      });
+    }
+  }
+  
+  scored.sort((a, b) => b.score - a.score);
+  
+  // Remove duplicates and limit results
+  const uniqueAnswers = [];
+  const seenAnswers = new Set();
+  
+  for (const match of scored) {
+    if (!seenAnswers.has(match.answer)) {
+      seenAnswers.add(match.answer);
+      uniqueAnswers.push(match);
+      if (uniqueAnswers.length >= limit) break;
+    }
+  }
+  
+  return uniqueAnswers;
+}
+
+// Display message with advanced features
+function showMessage(text, sender, options = {}) {
+  const msgDiv = document.createElement('div');
+  msgDiv.className = `msg ${sender}`;
+  
+  // Add message content
+  if (options.html) {
+    msgDiv.innerHTML = text;
+  } else {
+    const textNode = document.createElement('div');
+    textNode.textContent = text;
+    msgDiv.appendChild(textNode);
+  }
+  
+  // Add timestamp
+  const timeSpan = document.createElement('div');
+  timeSpan.className = 'msg-time';
+  timeSpan.textContent = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  msgDiv.appendChild(timeSpan);
+  
+  // Add message actions
+  if (sender === 'bot') {
+    const actionsDiv = document.createElement('div');
+    actionsDiv.className = 'msg-actions';
+    
+    const copyBtn = document.createElement('button');
+    copyBtn.className = 'msg-action';
+    copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
+    copyBtn.title = 'Salin jawaban';
+    copyBtn.onclick = () => copyToClipboard(text);
+    actionsDiv.appendChild(copyBtn);
+    
+    const speakBtn = document.createElement('button');
+    speakBtn.className = 'msg-action';
+    speakBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+    speakBtn.title = 'Dengarkan jawaban';
+    speakBtn.onclick = () => speakText(text);
+    actionsDiv.appendChild(speakBtn);
+    
+    msgDiv.appendChild(actionsDiv);
+    
+    // Add confidence badge if available
+    if (options.confidence) {
+      const confidenceSpan = document.createElement('span');
+      confidenceSpan.className = `confidence-badge ${getConfidenceClass(options.confidence)}`;
+      confidenceSpan.textContent = `${Math.round(options.confidence * 100)}%`;
+      msgDiv.querySelector('div').appendChild(confidenceSpan);
+    }
+    
+    // Add source info if available
+    if (options.source) {
+      const sourceDiv = document.createElement('div');
+      sourceDiv.className = 'source-info';
+      sourceDiv.textContent = `Sumber: ${options.source}`;
+      msgDiv.appendChild(sourceDiv);
+    }
+    
+    // Add rating buttons
+    const ratingDiv = document.createElement('div');
+    ratingDiv.className = 'rate-response';
+    ratingDiv.innerHTML = `
+      <span class="small">Beri nilai: </span>
+      <button class="rate-btn" data-rating="1"><i class="fas fa-star"></i></button>
+      <button class="rate-btn" data-rating="2"><i class="fas fa-star"></i></button>
+      <button class="rate-btn" data-rating="3"><i class="fas fa-star"></i></button>
+      <button class="rate-btn" data-rating="4"><i class="fas fa-star"></i></button>
+      <button class="rate-btn" data-rating="5"><i class="fas fa-star"></i></button>
+    `;
+    msgDiv.appendChild(ratingDiv);
+  }
+  
+  messagesEl.appendChild(msgDiv);
+  messagesEl.scrollTop = messagesEl.scrollHeight;
+  emptyState.style.display = 'none';
+  
+  // Update chat count
+  updateChatCount();
+}
+
+// Show typing indicator
+function showTyping() {
+  const typingDiv = document.createElement('div');
+  typingDiv.className = 'typing-indicator';
+  typingDiv.id = 'typing-indicator';
+  typingDiv.innerHTML = `
+    <div class="typing-dots">
+      <div class="typing-dot"></div>
+      <div class="typing-dot"></div>
+      <div class="typing-dot"></div>
+    </div>
+    <div>Campus AI sedang mengetik...</div>
+  `;
+  messagesEl.appendChild(typingDiv);
+  messagesEl.scrollTop = messagesEl.scrollHeight;
+}
+
+// Remove typing indicator
+function removeTyping() {
+  const typingEl = document.getElementById('typing-indicator');
+  if (typingEl) typingEl.remove();
+}
+
+// Load knowledge base
+function loadKB() {
+  fetch('data.json')
+    .then(response => {
+      if (!response.ok) throw new Error('Failed to load knowledge base');
+      return response.json();
+    })
+    .then(data => {
+      kb = data.map(item => ({
+        examples: item.examples || [],
+        answer: item.answer || '',
+        source: item.source || 'knowledge base'
+      }));
+      
+      kbCountEl.textContent = kb.length;
+      populateSuggestions();
+      createWelcomeSuggestions();
+    })
+    .catch(error => {
+      console.error('Error loading knowledge base:', error);
+      popularList.innerHTML = '<div class="small">Gagal memuat basis pengetahuan</div>';
+    });
+}
+
+// Populate suggestion lists
+function populateSuggestions() {
+  popularList.innerHTML = '';
+  quickSuggestions.innerHTML = '';
+  
+  const sampleQuestions = [];
+  const seenQuestions = new Set();
+  
+  // Get unique questions from KB
+  for (const item of kb) {
+    for (const ex of item.examples) {
+      if (!seenQuestions.has(ex)) {
+        seenQuestions.add(ex);
+        sampleQuestions.push({ ex, ans: item.answer });
+        if (sampleQuestions.length >= 10) break;
+      }
+    }
+    if (sampleQuestions.length >= 10) break;
+  }
+  
+  // Add to popular list
+  for (const question of sampleQuestions.slice(0, 5)) {
+    const button = document.createElement('button');
+    button.className = 'sugg-btn';
+    button.innerHTML = `<i class="fas fa-comment"></i> ${question.ex}`;
+    button.onclick = () => send(question.ex);
+    popularList.appendChild(button);
+  }
+  
+  // Add to quick suggestions
+  for (const question of sampleQuestions.slice(5, 10)) {
+    const pill = document.createElement('button');
+    pill.className = 'suggest-pill';
+    pill.textContent = question.ex;
+    pill.onclick = () => send(question.ex);
+    quickSuggestions.appendChild(pill);
+  }
+}
+
+// Create welcome suggestions
+function createWelcomeSuggestions() {
+  welcomeSuggestions.innerHTML = '';
+  
+  const welcomeQuestions = [
+    "Siapa Rektor Universitas Madura?",
+    "Apa saja program studi di UNIRA?",
+    "Bagaimana visi misi Universitas Madura?",
+    "Apa akreditasi UNIRA?"
+  ];
+  
+  for (const question of welcomeQuestions) {
+    const chip = document.createElement('div');
+    chip.className = 'suggestion-chip';
+    chip.textContent = question;
+    chip.onclick = () => send(question);
+    welcomeSuggestions.appendChild(chip);
+  }
+}
+
+// Show welcome message
+function showWelcomeMessage() {
+  const welcomeText = "Halo! Saya Campus AI, asisten virtual Universitas Madura. Saya siap menjawab pertanyaan Anda tentang kampus, program studi, fakultas, dan informasi lainnya.";
+  showMessage(welcomeText, 'bot');
+}
+
+// Update history list
+function updateHistoryList() {
+  historyList.innerHTML = '';
+  
+  if (history.length === 0) {
+    historyList.innerHTML = '<div class="small">Belum ada riwayat percakapan</div>';
+    return;
+  }
+  
+  for (let i = history.length - 1; i >= 0; i--) {
+    const item = document.createElement('div');
+    item.className = 'history-item';
+    item.innerHTML = `<i class="fas fa-history"></i> ${history[i].user}`;
+    item.onclick = () => {
+      inputEl.value = history[i].user;
+      inputEl.focus();
+      
+      if (window.innerWidth <= 1024) {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('active');
+      }
+    };
+    historyList.appendChild(item);
+  }
+}
+
+// Save conversation to history
+function remember(user, bot) {
+  history.push({ user, bot, timestamp: new Date().toISOString() });
+  if (history.length > 50) history.shift();
+  saveHistory();
+  updateHistoryList();
+}
+
+// Process query and generate response
+function answerQuery(query) {
+  const matches = findBestMatches(query, 3);
+  
+  if (matches.length > 0 && matches[0].score >= 0.7) {
+    return {
+      type: 'answer',
+      text: matches[0].answer,
+      confidence: matches[0].score,
+      source: matches[0].source
+    };
+  } else if (matches.length > 0) {
+    const suggestions = matches.map(m => ({
+      q: m.example,
+      score: m.score
+    }));
+    
+    return {
+      type: 'suggest',
+      text: matches[0].answer,
+      suggestions: suggestions,
+      confidence: matches[0].score,
+      source: matches[0].source
+    };
+  } else {
+    return {
+      type: 'unknown',
+      text: 'Maaf, saya belum memiliki informasi yang cukup untuk pertanyaan tersebut. Coba tanyakan hal lain atau pilih dari pertanyaan populer di sidebar.'
+    };
+  }
+}
+
+// Send message
+function send(text) {
+  const query = text.trim();
+  if (!query) return;
+  
+  // Add to current session
+  currentSession.push({
+    type: 'user',
+    content: query,
+    timestamp: new Date().toISOString()
+  });
+  
+  showMessage(query, 'user');
+  inputEl.value = '';
+  sendBtn.disabled = true;
+  
+  showTyping();
+  
+  setTimeout(() => {
+    const response = answerQuery(query);
+    removeTyping();
+    
+    // Add to current session
+    currentSession.push({
+      type: 'bot',
+      content: response.text,
+      confidence: response.confidence,
+      timestamp: new Date().toISOString()
+    });
+    
+    if (response.type === 'answer') {
+      showMessage(response.text, 'bot', { 
+        confidence: response.confidence,
+        source: response.source
+      });
+      remember(query, response.text);
+    } else if (response.type === 'suggest') {
+      let html = response.text;
+      
+      if (response.confidence < 0.7) {
+        html += '<div style="margin-top:8px" class="small">Saya tidak yakin sepenuhnya, mungkin maksud Anda:</div>';
+      } else {
+        html += '<div style="margin-top:8px" class="small">Pertanyaan terkait:</div>';
+      }
+      
+      let listHtml = '<div style="margin-top:6px;display:flex;gap:8px;flex-wrap:wrap">';
+      for (const suggestion of response.suggestions) {
+        listHtml += `<button class="suggest-pill" onclick="send('${escapeHtml(suggestion.q)}')">${escapeHtml(suggestion.q)}</button>`;
+      }
+      listHtml += '</div>';
+      
+      showMessage(html + listHtml, 'bot', { 
+        html: true,
+        confidence: response.confidence,
+        source: response.source
+      });
+      remember(query, response.text);
+    } else {
+      showMessage(response.text, 'bot');
+      remember(query, response.text);
+    }
+    
+    sendBtn.disabled = false;
+  }, 800 + Math.random() * 400);
+}
+
+// Utility function to escape HTML
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+// Copy text to clipboard
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => {
+    showNotification('Teks disalin ke clipboard');
+  }).catch(err => {
+    console.error('Failed to copy: ', err);
+  });
+}
+
+// Text-to-speech function
+function speakText(text) {
+  if ('speechSynthesis' in window) {
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'id-ID';
+    utterance.rate = 0.9;
+    speechSynthesis.speak(utterance);
+  } else {
+    showNotification('Browser tidak mendukung text-to-speech');
+  }
+}
+
+// Show notification
+function showNotification(message) {
+  const notification = document.createElement('div');
+  notification.style.cssText = `
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary);
+    color: white;
+    padding: 12px 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 1000;
+    font-size: 14px;
+    animation: fadeIn 0.3s, fadeOut 0.3s 2.7s forwards;
+  `;
+  notification.textContent = message;
+  document.body.appendChild(notification);
+  
+  setTimeout(() => {
+    if (document.body.contains(notification)) {
+      document.body.removeChild(notification);
+    }
+  }, 3000);
+}
+
+// Get confidence class for styling
+function getConfidenceClass(confidence) {
+  if (confidence >= 0.8) return 'high-confidence';
+  if (confidence >= 0.5) return 'medium-confidence';
+  return 'low-confidence';
+}
+
+// Update chat count
+function updateChatCount() {
+  const messageCount = document.querySelectorAll('.msg').length;
+  chatCountEl.textContent = messageCount;
+}
+
+// Save history to localStorage
+function saveHistory() {
+  localStorage.setItem('chatHistory', JSON.stringify(history));
+  localStorage.setItem('chatSession', JSON.stringify(currentSession));
+}
+
+// Load history from localStorage
+function loadHistory() {
+  const savedHistory = localStorage.getItem('chatHistory');
+  const savedSession = localStorage.getItem('chatSession');
+  
+  if (savedHistory) {
+    history = JSON.parse(savedHistory);
+    updateHistoryList();
+  }
+  
+  if (savedSession) {
+    currentSession = JSON.parse(savedSession);
+    
+    // Restore session messages
+    for (const msg of currentSession) {
+      if (msg.type === 'user') {
+        showMessage(msg.content, 'user');
+      } else {
+        showMessage(msg.content, 'bot', { 
+          confidence: msg.confidence,
+          source: msg.source
+        });
+      }
+    }
+  }
+}
+
+// Export chat to text file
+function exportChat() {
+  let exportText = 'Percakapan dengan Campus AI - Universitas Madura\n';
+  exportText += `Ekspor pada: ${new Date().toLocaleString('id-ID')}\n\n`;
+  
+  for (const msg of currentSession) {
+    const sender = msg.type === 'user' ? 'Anda' : 'Campus AI';
+    const time = new Date(msg.timestamp).toLocaleTimeString('id-ID');
+    exportText += `[${time}] ${sender}: ${msg.content}\n\n`;
+  }
+  
+  const blob = new Blob([exportText], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `chat-export-${new Date().toISOString().slice(0, 10)}.txt`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+// Setup voice recognition
+function setupVoiceRecognition() {
+  if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+    recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+    recognition.continuous = false;
+    recognition.interimResults = false;
+    recognition.lang = 'id-ID';
+    
+    recognition.onstart = () => {
+      isListening = true;
+      voiceBtn.innerHTML = '<i class="fas fa-microphone-slash"></i>';
+      voiceBtn.style.color = 'var(--error)';
+      showNotification('Mendengarkan...');
+    };
+    
+    recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      inputEl.value = transcript;
+      isListening = false;
+      voiceBtn.innerHTML = '<i class="fas fa-microphone"></i>';
+      voiceBtn.style.color = '';
+    };
+    
+    recognition.onerror = (event) => {
+      console.error('Speech recognition error', event.error);
+      isListening = false;
+      voiceBtn.innerHTML = '<i class="fas fa-microphone"></i>';
+      voiceBtn.style.color = '';
+      showNotification('Error pengenalan suara: ' + event.error);
+    };
+    
+    recognition.onend = () => {
+      isListening = false;
+      voiceBtn.innerHTML = '<i class="fas fa-microphone"></i>';
+      voiceBtn.style.color = '';
+    };
+    
+    voiceBtn.onclick = () => {
+      if (isListening) {
+        recognition.stop();
+      } else {
+        recognition.start();
+      }
+    };
+  } else {
+    voiceBtn.style.display = 'none';
+  }
+}
+
+// Toggle theme
+function toggleTheme() {
+  const isDark = document.body.classList.toggle('light');
+  localStorage.setItem('theme', isDark ? 'light' : 'dark');
+}
+
+// Apply saved theme
+function applySavedTheme() {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'light') {
+    document.body.classList.add('light');
+    themeToggle.checked = true;
+  } else {
+    document.body.classList.remove('light');
+    themeToggle.checked = false;
+  }
+}
+
+// Setup event listeners
+function setupEventListeners() {
+  sendBtn.addEventListener('click', () => send(inputEl.value));
+  
+  inputEl.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      send(inputEl.value);
+    }
+  });
+  
+  inputEl.addEventListener('input', () => {
+    sendBtn.disabled = inputEl.value.trim() === '';
+  });
+  
+  resetBtn.addEventListener('click', () => {
+    messagesEl.innerHTML = '';
+    currentSession = [];
+    saveHistory();
+    emptyState.style.display = 'flex';
+    showWelcomeMessage();
+  });
+  
+  clearHistoryBtn.addEventListener('click', () => {
+    history = [];
+    updateHistoryList();
+    saveHistory();
+  });
+  
+  menuBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('open');
+    overlay.classList.toggle('active');
+  });
+  
+  overlay.addEventListener('click', () => {
+    sidebar.classList.remove('open');
+    overlay.classList.remove('active');
+  });
+  
+  themeToggle.addEventListener('change', toggleTheme);
+  
+  exportBtn.addEventListener('click', exportChat);
+  
+  // Initialize voice recognition
+  setupVoiceRecognition();
+}
+
+// Initialize the app when DOM is loaded
+document.addEventListener('DOMContentLoaded', init);
+function init() {
+  loadKB();
+  loadHistory();
+  setupEventListeners();
+  applySavedTheme();
+  showWelcomeMessage();
+  
+  // Scroll langsung ke input saat buka
+  inputEl.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+function init() {
+  loadKB();
+  loadHistory();
+  setupEventListeners();
+  applySavedTheme();
+  showWelcomeMessage();
+
+  // Pastikan input langsung terlihat
+  setTimeout(() => {
+    inputEl.scrollIntoView({ behavior: "smooth", block: "end" });
+  }, 100);
+}
+
+</script>
+</body>
+</html>

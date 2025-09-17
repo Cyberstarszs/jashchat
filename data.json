@@ -1,0 +1,243 @@
+[
+  {
+    "examples": ["Siapa Rektor Universitas Madura?", "Rektor Universitas Madura siapa", "Siapa yang jadi rektor UNIRA"],
+    "answer": "Rektor Universitas Madura adalah Dr. Drs. Ec. H. Gazali, M.M."
+  },
+  {
+    "examples": ["Siapa Wakil Rektor I Universitas Madura?", "Wakil Rektor 1 siapa", "Siapa WR1 UNIRA"],
+    "answer": "Wakil Rektor I adalah Dra. Sri Harini, M.M."
+  },
+  {
+    "examples": ["Siapa Wakil Rektor II Universitas Madura?", "Wakil Rektor 2 siapa", "Siapa WR2 UNIRA"],
+    "answer": "Wakil Rektor II adalah Dr. Win Yuli Wardani, SH., M.Hum."
+  },
+  {
+    "examples": ["Siapa Wakil Rektor III Universitas Madura?", "Wakil Rektor 3 siapa", "Siapa WR3 UNIRA"],
+    "answer": "Wakil Rektor III adalah Dr. Moh. Zali, S.Pt., M.Agr."
+  },
+  {
+    "examples": ["Siapa Ketua Badan Penjaminan Mutu Universitas Madura?", "Ketua BPM siapa", "Badan Penjaminan Mutu UNIRA siapa"],
+    "answer": "Ketua BPM adalah Rahmad, M.Pd."
+  },
+  {
+    "examples": ["Siapa Sekretaris Badan Penjaminan Mutu Universitas Madura?", "Sekretaris BPM siapa"],
+    "answer": "Sekretaris BPM adalah Sri Indriati Hasanah, S.Si., M.Pd."
+  },
+  {
+    "examples": ["Siapa Ketua SPI UNIRA?", "Ketua Dewan Kode Etik siapa", "Ketua SPI/DKE siapa"],
+    "answer": "Ketua SPI/DKE adalah Drs. H. Abu Bakar Basyarahil, M.Si."
+  },
+  {
+    "examples": ["Siapa Sekretaris SPI UNIRA?", "Sekretaris Dewan Kode Etik siapa", "Sekretaris SPI/DKE siapa"],
+    "answer": "Sekretaris SPI/DKE adalah Drs.Ec. H. Isnaini Bustaram, M.M."
+  },
+  {
+    "examples": ["Siapa Ketua LPPM Universitas Madura?", "Ketua LPPM siapa"],
+    "answer": "Ketua LPPM adalah Dr. Ukhti Raudlatul Jannah, M.Pd."
+  },
+  {
+    "examples": ["Siapa Dekan Fakultas Hukum?", "Dekan FH siapa"],
+    "answer": "Dekan Fakultas Hukum adalah Dr. Nadir, S.H., M.H."
+  },
+  {
+    "examples": ["Siapa Ketua Program Studi Hukum S1?", "Kaprogdi Hukum S1 siapa"],
+    "answer": "Ketua Program Studi Hukum (S1) adalah Suhaimi, M.HI"
+  },
+  {
+    "examples": ["Siapa Ketua Program Studi Magister Hukum?", "Kaprogdi S2 Hukum siapa"],
+    "answer": "Ketua Program Studi Magister Hukum (S2) adalah Dr. Adriana Pakendek, S.H., M.H."
+  },
+  {
+    "examples": ["Siapa Dekan Fakultas Ekonomi dan Bisnis?", "Dekan FEB siapa"],
+    "answer": "Dekan Fakultas Ekonomi dan Bisnis adalah Dr. Zef Risal, S.E., M.M."
+  },
+  {
+    "examples": ["Siapa Ketua Program Studi Manajemen?", "Kaprogdi Manajemen siapa"],
+    "answer": "Ketua Program Studi Manajemen adalah Mohammad Amir Furqon, S.E., M.M."
+  },
+  {
+    "examples": ["Siapa Ketua Program Studi Akuntansi?", "Kaprogdi Akuntansi siapa"],
+    "answer": "Ketua Program Studi Akuntansi adalah Rika Syahadatina, S.E., M.Ak."
+  },
+  {
+    "examples": ["Siapa Dekan Fakultas Ilmu Administrasi?", "Dekan FIA siapa"],
+    "answer": "Dekan Fakultas Ilmu Administrasi adalah Dr. Fajar Surahman, S.Sos., M.Si."
+  },
+  {
+    "examples": ["Siapa Ketua Program Studi Administrasi Publik?", "Kaprogdi Administrasi Publik siapa"],
+    "answer": "Ketua Program Studi Administrasi Publik adalah Sukron Makmun, S.Sos., M.PSDM."
+  },
+  {
+    "examples": ["Siapa Dekan FKIP?", "Dekan Fakultas Keguruan dan Ilmu Pendidikan siapa"],
+    "answer": "Dekan FKIP adalah Dra. Hj. Yanti Linarsih, M.Pd."
+  },
+  {
+    "examples": ["Siapa Ketua Program Studi Pendidikan Bahasa Indonesia?", "Kaprogdi Pendidikan Bahasa Indonesia siapa"],
+    "answer": "Ketua Program Studi Pendidikan Bahasa Indonesia adalah Dr. Harsono, M.Pd."
+  },
+  {
+    "examples": ["Siapa Ketua Program Studi Pendidikan Matematika?", "Kaprogdi Pendidikan Matematika siapa"],
+    "answer": "Ketua Program Studi Pendidikan Matematika adalah Chairul Fajar Tafrilyanto, M.Pd."
+  },
+  {
+    "examples": ["Siapa Ketua Program Studi Pendidikan Bahasa Inggris?", "Kaprogdi Pendidikan Bahasa Inggris siapa"],
+    "answer": "Ketua Program Studi Pendidikan Bahasa Inggris adalah Evha Nazalatus Sa'adiyah, SY., M.Pd."
+  },
+  {
+    "examples": ["Siapa Dekan Fakultas Pertanian?", "Dekan FP siapa"],
+    "answer": "Dekan Fakultas Pertanian adalah Ir. H. Joko Purdiyanto, M.P."
+  },
+  {
+    "examples": ["Siapa Ketua Program Studi Peternakan?", "Kaprogdi Peternakan siapa"],
+    "answer": "Ketua Program Studi Peternakan adalah Selvia Nurlaila, S.Pt., M.Agr."
+  },
+  {
+    "examples": ["Siapa Dekan Fakultas Teknik?", "Dekan FT siapa"],
+    "answer": "Dekan Fakultas Teknik adalah H. Taurina J. Irwanto, S.T., M.T."
+  },
+  {
+    "examples": ["Siapa Ketua Program Studi Teknik Sipil?", "Kaprogdi Sipil siapa"],
+    "answer": "Ketua Program Studi Teknik Sipil adalah Dedy Asmaroni, S.T., M.T."
+  },
+  {
+    "examples": ["Siapa Ketua Program Studi Informatika?", "Kaprogdi Informatika siapa"],
+    "answer": "Ketua Program Studi Informatika adalah Sholeh Rachmatullah, M.Kom."
+  },
+  {
+    "examples": ["Siapa Ketua Program Studi Teknik Industri?", "Kaprogdi Teknik Industri siapa"],
+    "answer": "Ketua Program Studi Teknik Industri adalah Imron Rosyadi NR., S.TP., M.T."
+  },
+  {
+    "examples": ["Siapa Kepala Biro Administrasi Akademik?", "Kepala BAA siapa"],
+    "answer": "Kepala BAA adalah Badar Said, M.Kom."
+  },
+  {
+    "examples": ["Siapa Kepala Biro Administrasi Umum?", "Kepala BAU siapa"],
+    "answer": "Kepala BAU adalah Bambang Kurniadi, S.Pt., M.P."
+  },
+  {
+    "examples": ["Siapa Kepala PUSDATIK?", "Kepala Pusdatik siapa"],
+    "answer": "Kepala PUSDATIK adalah Achmarul Fajar, S.E., M.M."
+  },
+  {
+    "examples": ["Siapa Kepala Perpustakaan?", "Kepala Perpustakaan siapa"],
+    "answer": "Kepala Perpustakaan adalah Muhammad Tauhed Supratman, S.Pd.,M.Pd."
+  },
+  {
+    "examples": ["Siapa Kepala UPT Komputer?", "Kepala UPT Komputer siapa"],
+    "answer": "Kepala UPT Komputer adalah Ubaidi, M.Kom"
+  },
+  {
+    "examples": ["Siapa Kepala LDK?", "Kepala Lembaga Dakwah Kampus siapa"],
+    "answer": "Kepala LDK adalah Marsum, M.Pd.I"
+  },
+  {
+    "examples": ["Apa saja program studi di Fakultas Hukum?", "Prodi Fakultas Hukum apa saja"],
+    "answer": "Fakultas Hukum memiliki Program Studi Hukum (S1) dan Program Studi Magister Hukum (S2)"
+  },
+  {
+    "examples": ["Apa saja program studi di Fakultas Ekonomi dan Bisnis?", "Prodi FEB apa saja"],
+    "answer": "FEB memiliki Program Studi Manajemen, Akuntansi, Bisnis Digital, dan Magister Manajemen (S2)"
+  },
+
+  {
+    "examples": ["Siapa Rektor Universitas Madura?", "Rektor Universitas Madura siapa", "Siapa yang jadi rektor UNIRA", "Pimpinan UNIRA siapa?"],
+    "answer": "Rektor Universitas Madura (Unira) adalah Dr. Drs. Ec. H. Gazali, M.M. (periode 2025-2029)."
+  },
+  {
+    "examples": ["Siapa Wakil Rektor I Universitas Madura?", "Wakil Rektor 1 siapa", "Siapa WR1 UNIRA", "Wakil Rektor Bidang Akademik"],
+    "answer": "Wakil Rektor I Bidang Akademik adalah Dra. Sri Harini, M.M."
+  },
+  {
+    "examples": ["Siapa Wakil Rektor II Universitas Madura?", "Wakil Rektor 2 siapa", "Siapa WR2 UNIRA", "Wakil Rektor Bidang Administrasi"],
+    "answer": "Wakil Rektor II Bidang Administrasi dan Keuangan adalah Dr. Win Yuli Wardani, S.H., M.Hum."
+  },
+  {
+    "examples": ["Apa visi Universitas Madura?", "Visi UNIRA apa?", "Visi misi Unira"],
+    "answer": "Visi Universitas Madura: Menjadi Perguruan Tinggi bereputasi Nasional pada akhir Tahun 2036 dalam pengembangan sumber daya manusia yang berbasis ilmu pengetahuan, teknologi, dan humaniora."
+  },
+  {
+    "examples": ["Apa misi Universitas Madura?", "Misi UNIRA apa?", "Apa saja misi Unira?"],
+    "answer": "Misi Universitas Madura: 1) Menyelenggarakan pendidikan berbasis standarisasi nasional, 2) Mengembangkan riset unggulan, 3) Menyelenggarakan pengabdian masyarakat berbasis riset, 4) Menyelenggarakan tata kelola yang baik, 5) Menjalin kerja sama kemitraan."
+  },
+  {
+    "examples": ["Fakultas apa saja di UNIRA?", "Daftar fakultas di Universitas Madura", "Jurusan di Unira"],
+    "answer": "Universitas Madura memiliki 6 fakultas: 1) Hukum, 2) Ekonomi, 3) Teknik, 4) Ilmu Administrasi, 5) Keguruan dan Ilmu Pendidikan (FKIP), 6) Pertanian."
+  },
+  {
+    "examples": ["Program studi apa saja di UNIRA?", "Daftar jurusan S1 Unira", "Prodi di Universitas Madura"],
+    "answer": "Program studi di UNIRA: Ilmu Hukum (S1), Magister Hukum (S2), Manajemen (S1), Akuntansi (S1), Bisnis Digital (S1), Teknik Sipil (S1), Teknik Industri (S1), Informatika (S1), Ilmu Administrasi Publik (S1), Pendidikan Matematika (S1), Pendidikan Bahasa dan Sastra Indonesia (S1), Agribisnis (S1)."
+  },
+  {
+    "examples": ["Apa akreditasi UNIRA?", "Akreditasi institusi Unira", "Peringkat akreditasi Universitas Madura"],
+    "answer": "Universitas Madura terakreditasi B oleh BAN-PT (Badan Akreditasi Nasional Perguruan Tinggi) pada tahun 2022."
+  },
+  {
+    "examples": ["Dimana lokasi kampus UNIRA?", "Alamat Universitas Madura", "Lokasi kampus Unira di Pamekasan"],
+    "answer": "Kampus Universitas Madura berlokasi di Jl. Raya Panglegur KM 3,5, Pamekasan, Jawa Timur, Indonesia."
+  },
+  {
+    "examples": ["Apa fasilitas yang ada di UNIRA?", "Fasilitas kampus Unira", "Infrastruktur Universitas Madura"],
+    "answer": "Fasilitas UNIRA: Aula, Perpustakaan (100.000+ koleksi), Rusunawa, Klinik Kesehatan, 12 Laboratorium, Lapangan Olahraga (futsal, basket, voli, wall climbing), Kantin, Akses Internet gratis, Masjid Kampus, dan Gedung Kemahasiswaan."
+  },
+  {
+    "examples": ["Apa saja UKM di UNIRA?", "Unit Kegiatan Mahasiswa Unira", "Organisasi mahasiswa di Universitas Madura"],
+    "answer": "UKM di UNIRA: Mahapala (Pecinta Alam), KSR PMI (Palang Merah Indonesia), BEM (Badan Eksekutif Mahasiswa), dan Himpunan Mahasiswa Program Studi (HMP)."
+  },
+  {
+    "examples": ["Apa beasiswa yang tersedia di UNIRA?", "Beasiswa KIP-K di Unira", "Bantuan biaya pendidikan di Universitas Madura"],
+    "answer": "UNIRA menyediakan Beasiswa KIP-K (Kartu Indonesia Pintar Kuliah) dari pemerintah yang membebaskan biaya pendidikan dan memberikan bantuan hidup, serta berbagai beasiswa lainnya."
+  },
+  {
+    "examples": ["Apa prestasi terbaru UNIRA?", "Penghargaan Universitas Madura", "Prestasi mahasiswa Unira"],
+    "answer": "Prestasi terbaru: 1) Pendanaan Program Mahasiswa Berdampak 2025, 2) Juara 2 dan 3 Lomba Karya Tulis Koperasi, 3) Partisipasi dalam KKN Kebangsaan, 4) Prestasi di Porprov IX Jatim 2025, 5) Proposal dosen lolos hibah BIMA 2025."
+  },
+  {
+    "examples": ["Apa kerjasama UNIRA?", "MoU Universitas Madura", "Kemitraan Unira dengan instansi lain"],
+    "answer": "UNIRA bekerjasama dengan: Pemkab Pamekasan, Dinas Dukcapil, PT Pegadaian, Universiti Teknologi Malaysia, bank syariah lokal, dan berbagai institusi lainnya untuk program MBKM dan pengabdian masyarakat."
+  },
+  {
+    "examples": ["Bagaimana sistem akademik di UNIRA?", "SIAKAD Unira", "Proses belajar di Universitas Madura"],
+    "answer": "UNIRA menggunakan sistem kredit semester (SKS) dan platform digital seperti SIAKAD (Sistem Informasi Akademik) dan e-learning untuk mendukung perkuliahan blended learning."
+  },
+  {
+    "examples": ["Apa yang khusus dari budaya kampus UNIRA?", "Keunikan Universitas Madura", "Ciri khas Unira"],
+    "answer": "UNIRA memiliki karakteristik: 1) Integrasi nilai-nilai Islam dan budaya Madura, 2) Pusat Studi Madura untuk pelestarian kearifan lokal, 3) Inkubator bisnis untuk kewirausahaan, 4) Program pengabdian masyarakat yang kuat."
+  },
+  {
+    "examples": ["Kapan UNIRA didirikan?", "Sejarah berdirinya Universitas Madura", "Tahun berdiri Unira"],
+    "answer": "Universitas Madura didirikan pada tanggal 2 Mei 1978 oleh Yayasan Universitas Madura (YUM). Awalnya bernama UNMAD, kemudian berganti menjadi UNIRA pada 8 Juli 1985."
+  },
+  {
+    "examples": ["Berapa jumlah mahasiswa UNIRA?", "Total mahasiswa Unira", "Populasi mahasiswa Universitas Madura"],
+    "answer": "UNIRA memiliki lebih dari 3.000 mahasiswa aktif yang tersebar di 10 program studi S1 dan 2 program studi S2."
+  },
+    {
+    "examples": ["Sekarang mata kuliah apa?", "Apa mata kuliah sekarang?", "Mata kuliah jam ini apa?", "Kuliah sekarang apa?"],
+    "answer": "Saya tidak tahu hari dan jam berapa sekarang. Namun, berikut jadwal kuliah berdasarkan hari: SENIN - Kecerdasan Buatan (12:00-14:30), SELASA - Data Warehouse (09:30-12:00) & Analisis Desain PL (12:00-14:30), RABU - Technopreneurship (12:00-13:40), KAMIS - Manajemen Proyek TI (09:30-12:00) & HCI (14:30-17:00), JUMAT - Pemrograman Berbasis Platform (07:00-10:20) & Metodologi Penelitian (09:30-12:00)"
+  },
+  {
+    "examples": ["Jadwal hari Senin", "Mata kuliah hari Senin apa saja?", "Kuliah Senin jam berapa?"],
+    "answer": "Hari SENIN: Kecerdasan Buatan (12:00-14:30) di Ruang A5 dengan dosen ABD WAHAB SYAHRONI, S.Kom, M.Kom"
+  },
+  {
+    "examples": ["Jadwal hari Selasa", "Mata kuliah hari Selasa apa saja?", "Kuliah Selasa jam berapa?"],
+    "answer": "Hari SELASA: Data Warehouse dan ETL (09:30-12:00) di Ruang A5 dengan dosen NINDIAN PUSPA DEWI, M.Kom. dan Analisis dan Desain Perangkat Lunak (12:00-14:30) di Ruang FT3 dengan dosen IRWAN DARMAWAN, M.Kom"
+  },
+  {
+    "examples": ["Jadwal hari Rabu", "Mata kuliah hari Rabu apa saja?", "Kuliah Rabu jam berapa?"],
+    "answer": "Hari RABU: Technopreneurship (12:00-13:40) di Ruang FT3 dengan dosen Dr. RIA KASANOVA, M.Pd. Juga ada praktikum Data Warehouse dan ETL (09:30-11:00) di Lab Jaringan dan praktikum Pemrograman Berbasis Platform (14:30-16:00) di Lab Multimedia"
+  },
+  {
+    "examples": ["Jadwal hari Kamis", "Mata kuliah hari Kamis apa saja?", "Kuliah Kamis jam berapa?"],
+    "answer": "Hari KAMIS: Manajemen Proyek Teknologi Informasi (09:30-12:00) di Ruang FT4 dengan dosen JAMILATUL BADRIYAH, S.Kom., M.Tr.Kom. dan Human-Computer Interaction (14:30-17:00) di Ruang FT3 dengan dosen H. NILAM RAMADHANI, S.Kom.,M.Kom."
+  },
+  {
+    "examples": ["Jadwal hari Jumat", "Mata kuliah hari Jumat apa saja?", "Kuliah Jumat jam berapa?"],
+    "answer": "Hari JUMAT: Pemrograman Berbasis Platform (07:00-10:20) di Ruang FT3 dengan dosen MOHAMMAD NAZIR ARIFIN, M.Kom dan Metodologi Penelitian (09:30-12:00) di Ruang FT5 dengan dosen BADAR SAID, S.Kom.,M.Kom."
+  },
+  {
+    "examples": ["Jadwal praktikum", "Praktikum apa saja yang ada?", "Kapan jadwal praktikum?"],
+    "answer": "Jadwal praktikum: 1) Data Warehouse dan ETL - RABU 09:30-11:00 di Lab Jaringan dengan dosen VINA ALVIONITA, S.Kom, 2) Pemrograman Berbasis Platform - RABU 14:30-16:00 di Lab Multimedia dengan dosen MUHAMMAD UMAR MANSYUR, S.Kom"
+  }
+]
