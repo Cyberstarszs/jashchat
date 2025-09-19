@@ -614,20 +614,20 @@
     "Tanggal": "07 Juli 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "3000",
-    "Total": 5609,
+    "Total": 5610,
     "Link": "https://vt.tiktok.com/ZSBfjuf69/",
     "Supply": 2256,
-    "Untung": 3353
+    "Untung": 3354
   },
   {
     "ID": "0063",
     "Tanggal": "07 Juli 2025",
-    "Jenis": "View Tiktok",
+    "Jenis": "View",
     "Paket": "100000",
-    "Total": 24391,
+    "Total": 24390,
     "Link": "https://vt.tiktok.com/ZSBfjuf69/",
-    "Supply": 28000,
-    "Untung": -3609
+    "Supply": 0,
+    "Untung": 24390
   },
   {
     "ID": "0064",
@@ -641,16 +641,6 @@
   },
   {
     "ID": "0065",
-    "Tanggal": "07 Juli 2025",
-    "Jenis": "View",
-    "Paket": "100000",
-    "Total": 24390,
-    "Link": "https://vt.tiktok.com/ZSBfjuf69/",
-    "Supply": 0,
-    "Untung": 24390
-  },
-  {
-    "ID": "0066",
     "Tanggal": "08 Juli 2025",
     "Jenis": "Followers Instagram",
     "Paket": "1000",
@@ -658,6 +648,16 @@
     "Link": "https://www.instagram.com/a.dipratama?igsh=cjlhcWluYmMyNzRv",
     "Supply": 34320,
     "Untung": -7320
+  },
+  {
+    "ID": "0066",
+    "Tanggal": "08 Juli 2025",
+    "Jenis": "Likes Tiktok",
+    "Paket": "6000",
+    "Total": 30000,
+    "Link": "https://vt.tiktok.com/ZSB5LTNN4/",
+    "Supply": 4512,
+    "Untung": 25488
   },
   {
     "ID": "0067",
@@ -671,16 +671,6 @@
   },
   {
     "ID": "0068",
-    "Tanggal": "08 Juli 2025",
-    "Jenis": "Likes Tiktok",
-    "Paket": "6000",
-    "Total": 30000,
-    "Link": "https://vt.tiktok.com/ZSB5LTNN4/",
-    "Supply": 4512,
-    "Untung": 25488
-  },
-  {
-    "ID": "0069",
     "Tanggal": "09 Juli 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "200",
@@ -690,7 +680,7 @@
     "Untung": 8225
   },
   {
-    "ID": "0070",
+    "ID": "0069",
     "Tanggal": "09 Juli 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "200",
@@ -700,7 +690,7 @@
     "Untung": 2850
   },
   {
-    "ID": "0071",
+    "ID": "0070",
     "Tanggal": "10 Juli 2025",
     "Jenis": "Views Tiktok",
     "Paket": "40000",
@@ -710,7 +700,7 @@
     "Untung": -1200
   },
   {
-    "ID": "0072",
+    "ID": "0071",
     "Tanggal": "10 Juli 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "3000",
@@ -720,7 +710,7 @@
     "Untung": 12744
   },
   {
-    "ID": "0073",
+    "ID": "0072",
     "Tanggal": "10 Juli 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "3000",
@@ -730,7 +720,7 @@
     "Untung": 12744
   },
   {
-    "ID": "0074",
+    "ID": "0073",
     "Tanggal": "10 Juli 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "3000",
@@ -740,7 +730,7 @@
     "Untung": 12744
   },
   {
-    "ID": "0075",
+    "ID": "0074",
     "Tanggal": "11 Juli 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "150",
@@ -750,7 +740,7 @@
     "Untung": 1888
   },
   {
-    "ID": "0076",
+    "ID": "0075",
     "Tanggal": "11 Juli 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "300",
@@ -760,7 +750,7 @@
     "Untung": 3775
   },
   {
-    "ID": "0077",
+    "ID": "0076",
     "Tanggal": "11 Juli 2025",
     "Jenis": "Followers Instagram",
     "Paket": "700",
@@ -770,7 +760,7 @@
     "Untung": -4024
   },
   {
-    "ID": "0078",
+    "ID": "0077",
     "Tanggal": "11 Juli 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "500",
@@ -780,7 +770,7 @@
     "Untung": 15562
   },
   {
-    "ID": "0079",
+    "ID": "0078",
     "Tanggal": "11 Juli 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "500",
@@ -790,7 +780,7 @@
     "Untung": 15562
   },
   {
-    "ID": "0080",
+    "ID": "0079",
     "Tanggal": "11 Juli 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "300",
@@ -800,7 +790,7 @@
     "Untung": 10338
   },
   {
-    "ID": "0081",
+    "ID": "0080",
     "Tanggal": "11 Juli 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "400",
@@ -810,7 +800,7 @@
     "Untung": 12450
   },
   {
-    "ID": "0082",
+    "ID": "0081",
     "Tanggal": "12 Juli 2025",
     "Jenis": "Followers Instagram",
     "Paket": "400",
@@ -820,7 +810,7 @@
     "Untung": 272
   },
   {
-    "ID": "0083",
+    "ID": "0082",
     "Tanggal": "12 Juli 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "200",
@@ -830,7 +820,7 @@
     "Untung": 8225
   },
   {
-    "ID": "0084",
+    "ID": "0083",
     "Tanggal": "12 Juli 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "200",
@@ -840,7 +830,7 @@
     "Untung": 2850
   },
   {
-    "ID": "0085",
+    "ID": "0084",
     "Tanggal": "12 Juli 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "300",
@@ -850,24 +840,34 @@
     "Untung": 3775
   },
   {
-    "ID": "0086",
+    "ID": "0085",
     "Tanggal": "13 Juli 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "3800",
-    "Total": 20910,
+    "Total": 8261,
     "Link": "https://vt.tiktok.com/ZSB44F85C/",
     "Supply": 2857,
-    "Untung": 18053
+    "Untung": 5404
+  },
+  {
+    "ID": "0086",
+    "Tanggal": "13 Juli 2025",
+    "Jenis": "View",
+    "Paket": "10000",
+    "Total": 21739,
+    "Link": "https://vt.tiktok.com/ZSB44F85C/",
+    "Supply": 0,
+    "Untung": 21739
   },
   {
     "ID": "0087",
     "Tanggal": "13 Juli 2025",
-    "Jenis": "View Tiktok",
-    "Paket": "10000",
-    "Total": 9090,
-    "Link": "https://vt.tiktok.com/ZSB44F85C/",
-    "Supply": 2800,
-    "Untung": 6290
+    "Jenis": "Followers Tiktok",
+    "Paket": "300",
+    "Total": 16000,
+    "Link": "https://www.tiktok.com/@senn_xxy?_t=ZS-8xzxT1wdBzQ&_r=1",
+    "Supply": 5662,
+    "Untung": 10338
   },
   {
     "ID": "0088",
@@ -882,16 +882,6 @@
   {
     "ID": "0089",
     "Tanggal": "13 Juli 2025",
-    "Jenis": "Followers Tiktok",
-    "Paket": "300",
-    "Total": 16000,
-    "Link": "https://www.tiktok.com/@senn_xxy?_t=ZS-8xzxT1wdBzQ&_r=1",
-    "Supply": 5662,
-    "Untung": 10338
-  },
-  {
-    "ID": "0090",
-    "Tanggal": "13 Juli 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "3000",
     "Total": 15000,
@@ -900,7 +890,7 @@
     "Untung": 12744
   },
   {
-    "ID": "0091",
+    "ID": "0090",
     "Tanggal": "13 Juli 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "3000",
@@ -910,7 +900,7 @@
     "Untung": 12744
   },
   {
-    "ID": "0092",
+    "ID": "0091",
     "Tanggal": "13 Juli 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "3000",
@@ -920,17 +910,7 @@
     "Untung": 12744
   },
   {
-    "ID": "0093",
-    "Tanggal": "13 Juli 2025",
-    "Jenis": "View",
-    "Paket": "10000",
-    "Total": 21739,
-    "Link": "https://vt.tiktok.com/ZSB44F85C/",
-    "Supply": 0,
-    "Untung": 21739
-  },
-  {
-    "ID": "0094",
+    "ID": "0092",
     "Tanggal": "14 Juli 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "50",
@@ -940,7 +920,7 @@
     "Untung": 2057
   },
   {
-    "ID": "0095",
+    "ID": "0093",
     "Tanggal": "14 Juli 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "50",
@@ -950,7 +930,7 @@
     "Untung": 2057
   },
   {
-    "ID": "0096",
+    "ID": "0094",
     "Tanggal": "14 Juli 2025",
     "Jenis": "Followers Instagram",
     "Paket": "700",
@@ -960,27 +940,27 @@
     "Untung": -4024
   },
   {
-    "ID": "0097",
+    "ID": "0095",
     "Tanggal": "14 Juli 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "300",
-    "Total": 2857,
+    "Total": 2858,
     "Link": "https://vt.tiktok.com/ZSBbJbufE/",
     "Supply": 225,
-    "Untung": 2632
+    "Untung": 2633
   },
   {
-    "ID": "0098",
+    "ID": "0096",
     "Tanggal": "14 Juli 2025",
-    "Jenis": "View Tiktok",
+    "Jenis": "View",
     "Paket": "10000",
-    "Total": 7143,
+    "Total": 7142,
     "Link": "https://vt.tiktok.com/ZSBbJbufE/",
-    "Supply": 2800,
-    "Untung": 4343
+    "Supply": 0,
+    "Untung": 7142
   },
   {
-    "ID": "0099",
+    "ID": "0097",
     "Tanggal": "14 Juli 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "200",
@@ -990,27 +970,17 @@
     "Untung": 8225
   },
   {
-    "ID": "0100",
+    "ID": "0098",
     "Tanggal": "14 Juli 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "300",
-    "Total": 2857,
+    "Total": 2858,
     "Link": "https://vt.tiktok.com/ZSBbJbufE/",
     "Supply": 225,
-    "Untung": 2632
+    "Untung": 2633
   },
   {
-    "ID": "0101",
-    "Tanggal": "14 Juli 2025",
-    "Jenis": "View Tiktok",
-    "Paket": "10000",
-    "Total": 7143,
-    "Link": "https://vt.tiktok.com/ZSBbJbufE/",
-    "Supply": 2800,
-    "Untung": 4343
-  },
-  {
-    "ID": "0102",
+    "ID": "0099",
     "Tanggal": "14 Juli 2025",
     "Jenis": "View",
     "Paket": "10000",
@@ -1020,7 +990,7 @@
     "Untung": 7142
   },
   {
-    "ID": "0103",
+    "ID": "0100",
     "Tanggal": "16 Juli 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "1000",
@@ -1030,7 +1000,7 @@
     "Untung": 27124
   },
   {
-    "ID": "0104",
+    "ID": "0101",
     "Tanggal": "16 Juli 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "80",
@@ -1040,7 +1010,7 @@
     "Untung": 3490
   },
   {
-    "ID": "0105",
+    "ID": "0102",
     "Tanggal": "16 Juli 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "200",
@@ -1050,7 +1020,7 @@
     "Untung": 2850
   },
   {
-    "ID": "0106",
+    "ID": "0103",
     "Tanggal": "17 Juli 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "1000",
@@ -1060,7 +1030,7 @@
     "Untung": 27124
   },
   {
-    "ID": "0107",
+    "ID": "0104",
     "Tanggal": "18 Juli 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "700",
@@ -1070,7 +1040,7 @@
     "Untung": 18787
   },
   {
-    "ID": "0108",
+    "ID": "0105",
     "Tanggal": "19 Juli 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "500",
@@ -1080,7 +1050,7 @@
     "Untung": 15562
   },
   {
-    "ID": "0109",
+    "ID": "0106",
     "Tanggal": "19 Juli 2025",
     "Jenis": "Followers Instagram",
     "Paket": "100",
@@ -1090,7 +1060,7 @@
     "Untung": 2568
   },
   {
-    "ID": "0110",
+    "ID": "0107",
     "Tanggal": "20 Juli 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "500",
@@ -1100,7 +1070,7 @@
     "Untung": 5624
   },
   {
-    "ID": "0111",
+    "ID": "0108",
     "Tanggal": "20 Juli 2025",
     "Jenis": "Views Tiktok",
     "Paket": "5000",
@@ -1110,27 +1080,7 @@
     "Untung": 2600
   },
   {
-    "ID": "0112",
-    "Tanggal": "20 Juli 2025",
-    "Jenis": "Like Tiktok",
-    "Paket": "500",
-    "Total": 444,
-    "Link": "https://vt.tiktok.com/ZSB3kEyMf/",
-    "Supply": 376,
-    "Untung": 68
-  },
-  {
-    "ID": "0113",
-    "Tanggal": "20 Juli 2025",
-    "Jenis": "Views Tiktok",
-    "Paket": "5000",
-    "Total": 3556,
-    "Link": "https://vt.tiktok.com/ZSB3kEyMf/",
-    "Supply": 1400,
-    "Untung": 2156
-  },
-  {
-    "ID": "0114",
+    "ID": "0109",
     "Tanggal": "20 Juli 2025",
     "Jenis": "Like",
     "Paket": "500",
@@ -1140,7 +1090,17 @@
     "Untung": 445
   },
   {
-    "ID": "0115",
+    "ID": "0110",
+    "Tanggal": "20 Juli 2025",
+    "Jenis": "Views Tiktok",
+    "Paket": "5000",
+    "Total": 3555,
+    "Link": "https://vt.tiktok.com/ZSB3kEyMf/",
+    "Supply": 1400,
+    "Untung": 2155
+  },
+  {
+    "ID": "0111",
     "Tanggal": "22 Juli 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "500",
@@ -1150,7 +1110,7 @@
     "Untung": 15562
   },
   {
-    "ID": "0116",
+    "ID": "0112",
     "Tanggal": "23 Juli 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "600",
@@ -1160,7 +1120,7 @@
     "Untung": 15675
   },
   {
-    "ID": "0117",
+    "ID": "0113",
     "Tanggal": "24 Juli 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "300",
@@ -1170,7 +1130,7 @@
     "Untung": 10338
   },
   {
-    "ID": "0118",
+    "ID": "0114",
     "Tanggal": "25 Juli 2025",
     "Jenis": "Followers Tiktok Live",
     "Paket": "1000",
@@ -1180,7 +1140,7 @@
     "Untung": -3876
   },
   {
-    "ID": "0119",
+    "ID": "0115",
     "Tanggal": "25 Juli 2025",
     "Jenis": "Followers Instagram",
     "Paket": "50",
@@ -1190,7 +1150,7 @@
     "Untung": 1284
   },
   {
-    "ID": "0120",
+    "ID": "0116",
     "Tanggal": "25 Juli 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "300",
@@ -1200,77 +1160,17 @@
     "Untung": 10338
   },
   {
-    "ID": "0121",
+    "ID": "0117",
     "Tanggal": "25 Juli 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "1000",
-    "Total": 4529,
+    "Total": 4530,
     "Link": "https://vt.tiktok.com/ZSSRdQg69/",
     "Supply": 752,
-    "Untung": 3777
+    "Untung": 3778
   },
   {
-    "ID": "0122",
-    "Tanggal": "25 Juli 2025",
-    "Jenis": "View Tiktok",
-    "Paket": "40000",
-    "Total": 16471,
-    "Link": "https://vt.tiktok.com/ZSSRdQg69/",
-    "Supply": 11200,
-    "Untung": 5271
-  },
-  {
-    "ID": "0123",
-    "Tanggal": "25 Juli 2025",
-    "Jenis": "Likes Tiktok",
-    "Paket": "300",
-    "Total": 2857,
-    "Link": "https://vt.tiktok.com/ZSSRVaKQ7/",
-    "Supply": 225,
-    "Untung": 2632
-  },
-  {
-    "ID": "0124",
-    "Tanggal": "25 Juli 2025",
-    "Jenis": "View Tiktok",
-    "Paket": "10000",
-    "Total": 7143,
-    "Link": "https://vt.tiktok.com/ZSSRVaKQ7/",
-    "Supply": 2800,
-    "Untung": 4343
-  },
-  {
-    "ID": "0125",
-    "Tanggal": "25 Juli 2025",
-    "Jenis": "Likes Tiktok",
-    "Paket": "1000",
-    "Total": 4529,
-    "Link": "https://vt.tiktok.com/ZSSRdQg69/",
-    "Supply": 752,
-    "Untung": 3777
-  },
-  {
-    "ID": "0126",
-    "Tanggal": "25 Juli 2025",
-    "Jenis": "View Tiktok",
-    "Paket": "40000",
-    "Total": 16471,
-    "Link": "https://vt.tiktok.com/ZSSRdQg69/",
-    "Supply": 11200,
-    "Untung": 5271
-  },
-  {
-    "ID": "0127",
-    "Tanggal": "25 Juli 2025",
-    "Jenis": "Followers Tiktok",
-    "Paket": "300",
-    "Total": 16000,
-    "Link": "https://www.tiktok.com/@in.yaa_?_t=ZS-8yJ3YUkH5cd&_r=1",
-    "Supply": 5662,
-    "Untung": 10338
-  },
-  {
-    "ID": "0128",
+    "ID": "0118",
     "Tanggal": "25 Juli 2025",
     "Jenis": "View",
     "Paket": "40000",
@@ -1280,7 +1180,17 @@
     "Untung": 16470
   },
   {
-    "ID": "0129",
+    "ID": "0119",
+    "Tanggal": "25 Juli 2025",
+    "Jenis": "Likes Tiktok",
+    "Paket": "300",
+    "Total": 2858,
+    "Link": "https://vt.tiktok.com/ZSSRVaKQ7/",
+    "Supply": 225,
+    "Untung": 2633
+  },
+  {
+    "ID": "0120",
     "Tanggal": "25 Juli 2025",
     "Jenis": "View",
     "Paket": "10000",
@@ -1290,7 +1200,37 @@
     "Untung": 7142
   },
   {
-    "ID": "0130",
+    "ID": "0121",
+    "Tanggal": "25 Juli 2025",
+    "Jenis": "Likes Tiktok",
+    "Paket": "1000",
+    "Total": 4530,
+    "Link": "https://vt.tiktok.com/ZSSRdQg69/",
+    "Supply": 752,
+    "Untung": 3778
+  },
+  {
+    "ID": "0122",
+    "Tanggal": "25 Juli 2025",
+    "Jenis": "View",
+    "Paket": "40000",
+    "Total": 16470,
+    "Link": "https://vt.tiktok.com/ZSSRdQg69/",
+    "Supply": 0,
+    "Untung": 16470
+  },
+  {
+    "ID": "0123",
+    "Tanggal": "25 Juli 2025",
+    "Jenis": "Followers Tiktok",
+    "Paket": "300",
+    "Total": 16000,
+    "Link": "https://www.tiktok.com/@in.yaa_?_t=ZS-8yJ3YUkH5cd&_r=1",
+    "Supply": 5662,
+    "Untung": 10338
+  },
+  {
+    "ID": "0124",
     "Tanggal": "26 Juli 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "800",
@@ -1300,7 +1240,7 @@
     "Untung": 20900
   },
   {
-    "ID": "0131",
+    "ID": "0125",
     "Tanggal": "26 Juli 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "800",
@@ -1310,7 +1250,7 @@
     "Untung": 20900
   },
   {
-    "ID": "0132",
+    "ID": "0126",
     "Tanggal": "26 Juli 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "100",
@@ -1320,7 +1260,7 @@
     "Untung": 5113
   },
   {
-    "ID": "0133",
+    "ID": "0127",
     "Tanggal": "26 Juli 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "150",
@@ -1330,7 +1270,7 @@
     "Untung": 1888
   },
   {
-    "ID": "0134",
+    "ID": "0128",
     "Tanggal": "26 Juli 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "300",
@@ -1340,7 +1280,7 @@
     "Untung": 10338
   },
   {
-    "ID": "0135",
+    "ID": "0129",
     "Tanggal": "26 Juli 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "100",
@@ -1350,7 +1290,7 @@
     "Untung": 5113
   },
   {
-    "ID": "0136",
+    "ID": "0130",
     "Tanggal": "26 Juli 2025",
     "Jenis": "Views Tiktok",
     "Paket": "15000",
@@ -1360,7 +1300,7 @@
     "Untung": 2800
   },
   {
-    "ID": "0137",
+    "ID": "0131",
     "Tanggal": "26 Juli 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "400",
@@ -1370,7 +1310,7 @@
     "Untung": 4700
   },
   {
-    "ID": "0138",
+    "ID": "0132",
     "Tanggal": "27 Juli 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "100",
@@ -1380,7 +1320,7 @@
     "Untung": 5113
   },
   {
-    "ID": "0139",
+    "ID": "0133",
     "Tanggal": "27 Juli 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "150",
@@ -1390,7 +1330,7 @@
     "Untung": 1888
   },
   {
-    "ID": "0140",
+    "ID": "0134",
     "Tanggal": "27 Juli 2025",
     "Jenis": "Views Tiktok",
     "Paket": "5000",
@@ -1400,7 +1340,7 @@
     "Untung": 2600
   },
   {
-    "ID": "0141",
+    "ID": "0135",
     "Tanggal": "27 Juli 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "300",
@@ -1410,7 +1350,7 @@
     "Untung": 3775
   },
   {
-    "ID": "0142",
+    "ID": "0136",
     "Tanggal": "27 Juli 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "6000",
@@ -1420,7 +1360,7 @@
     "Untung": 50488
   },
   {
-    "ID": "0143",
+    "ID": "0137",
     "Tanggal": "27 Juli 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "400",
@@ -1430,7 +1370,7 @@
     "Untung": 4700
   },
   {
-    "ID": "0144",
+    "ID": "0138",
     "Tanggal": "27 Juli 2025",
     "Jenis": "Likes Tiktok + View",
     "Paket": "700",
@@ -1440,7 +1380,7 @@
     "Untung": 13474
   },
   {
-    "ID": "0145",
+    "ID": "0139",
     "Tanggal": "28 Juli 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "100",
@@ -1450,7 +1390,7 @@
     "Untung": 5113
   },
   {
-    "ID": "0146",
+    "ID": "0140",
     "Tanggal": "28 Juli 2025",
     "Jenis": "Followers Instagram",
     "Paket": "400",
@@ -1460,7 +1400,7 @@
     "Untung": 272
   },
   {
-    "ID": "0147",
+    "ID": "0141",
     "Tanggal": "28 Juli 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "3000",
@@ -1470,7 +1410,7 @@
     "Untung": 20744
   },
   {
-    "ID": "0148",
+    "ID": "0142",
     "Tanggal": "28 Juli 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "150",
@@ -1480,37 +1420,7 @@
     "Untung": 2388
   },
   {
-    "ID": "0149",
-    "Tanggal": "28 Juli 2025",
-    "Jenis": "View Tiktok",
-    "Paket": "2000",
-    "Total": 2500,
-    "Link": "https://vt.tiktok.com/ZSS2f9hEA/",
-    "Supply": 560,
-    "Untung": 1940
-  },
-  {
-    "ID": "0150",
-    "Tanggal": "28 Juli 2025",
-    "Jenis": "Likes Tiktok",
-    "Paket": "150",
-    "Total": 2500,
-    "Link": "https://vt.tiktok.com/ZSS2f9hEA/",
-    "Supply": 112,
-    "Untung": 2388
-  },
-  {
-    "ID": "0151",
-    "Tanggal": "28 Juli 2025",
-    "Jenis": "View Tiktok",
-    "Paket": "2000",
-    "Total": 2500,
-    "Link": "https://vt.tiktok.com/ZSS2f9hEA/",
-    "Supply": 560,
-    "Untung": 1940
-  },
-  {
-    "ID": "0152",
+    "ID": "0143",
     "Tanggal": "28 Juli 2025",
     "Jenis": "View",
     "Paket": "2000",
@@ -1520,7 +1430,27 @@
     "Untung": 2500
   },
   {
-    "ID": "0153",
+    "ID": "0144",
+    "Tanggal": "28 Juli 2025",
+    "Jenis": "Likes Tiktok",
+    "Paket": "150",
+    "Total": 2500,
+    "Link": "https://vt.tiktok.com/ZSS2f9hEA/",
+    "Supply": 112,
+    "Untung": 2388
+  },
+  {
+    "ID": "0145",
+    "Tanggal": "28 Juli 2025",
+    "Jenis": "View",
+    "Paket": "2000",
+    "Total": 2500,
+    "Link": "https://vt.tiktok.com/ZSS2f9hEA/",
+    "Supply": 0,
+    "Untung": 2500
+  },
+  {
+    "ID": "0146",
     "Tanggal": "29 Juli 2025",
     "Jenis": "Views Tiktok",
     "Paket": "30000",
@@ -1530,7 +1460,7 @@
     "Untung": 600
   },
   {
-    "ID": "0154",
+    "ID": "0147",
     "Tanggal": "29 Juli 2025",
     "Jenis": "Views Tiktok",
     "Paket": "2000",
@@ -1540,7 +1470,7 @@
     "Untung": 2440
   },
   {
-    "ID": "0155",
+    "ID": "0148",
     "Tanggal": "29 Juli 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "1000",
@@ -1550,7 +1480,7 @@
     "Untung": 10248
   },
   {
-    "ID": "0156",
+    "ID": "0149",
     "Tanggal": "29 Juli 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "400",
@@ -1560,7 +1490,7 @@
     "Untung": 4700
   },
   {
-    "ID": "0157",
+    "ID": "0150",
     "Tanggal": "30 Juli 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "150",
@@ -1570,7 +1500,7 @@
     "Untung": 1888
   },
   {
-    "ID": "0158",
+    "ID": "0151",
     "Tanggal": "30 Juli 2025",
     "Jenis": "Views Tiktok",
     "Paket": "2000",
@@ -1580,67 +1510,7 @@
     "Untung": 4202
   },
   {
-    "ID": "0159",
-    "Tanggal": "30 Juli 2025",
-    "Jenis": "Like Tiktok",
-    "Paket": "150",
-    "Total": 238,
-    "Link": "https://vt.tiktok.com/ZSHp4RwH5y78K-lN5Gr/",
-    "Supply": 112,
-    "Untung": 126
-  },
-  {
-    "ID": "0160",
-    "Tanggal": "30 Juli 2025",
-    "Jenis": "Followers Tiktok",
-    "Paket": "300",
-    "Total": 16000,
-    "Link": "https://www.tiktok.com/@zam_boyy39?_t=ZS-8ySX47W2Hbz&_r=1",
-    "Supply": 5662,
-    "Untung": 10338
-  },
-  {
-    "ID": "0161",
-    "Tanggal": "30 Juli 2025",
-    "Jenis": "Followers Tiktok",
-    "Paket": "50",
-    "Total": 3000,
-    "Link": "https://www.tiktok.com/@farhan.farhan3815?is_from_webapp=1&sender_device=pc",
-    "Supply": 943,
-    "Untung": 2057
-  },
-  {
-    "ID": "0162",
-    "Tanggal": "30 Juli 2025",
-    "Jenis": "Views Tiktok",
-    "Paket": "5000",
-    "Total": 4000,
-    "Link": "https://vt.tiktok.com/ZSSrwqSST/",
-    "Supply": 1400,
-    "Untung": 2600
-  },
-  {
-    "ID": "0163",
-    "Tanggal": "30 Juli 2025",
-    "Jenis": "Likes Tiktok",
-    "Paket": "1000",
-    "Total": 11000,
-    "Link": "https://vt.tiktok.com/ZSSrwqSST/",
-    "Supply": 752,
-    "Untung": 10248
-  },
-  {
-    "ID": "0164",
-    "Tanggal": "30 Juli 2025",
-    "Jenis": "Likes Tiktok",
-    "Paket": "700",
-    "Total": 8000,
-    "Link": "https://vt.tiktok.com/ZSShg2NgH/",
-    "Supply": 526,
-    "Untung": 7474
-  },
-  {
-    "ID": "0165",
+    "ID": "0152",
     "Tanggal": "30 Juli 2025",
     "Jenis": "Like",
     "Paket": "150",
@@ -1650,7 +1520,57 @@
     "Untung": 238
   },
   {
-    "ID": "0166",
+    "ID": "0153",
+    "Tanggal": "30 Juli 2025",
+    "Jenis": "Followers Tiktok",
+    "Paket": "300",
+    "Total": 16000,
+    "Link": "https://www.tiktok.com/@zam_boyy39?_t=ZS-8ySX47W2Hbz&_r=1",
+    "Supply": 5662,
+    "Untung": 10338
+  },
+  {
+    "ID": "0154",
+    "Tanggal": "30 Juli 2025",
+    "Jenis": "Followers Tiktok",
+    "Paket": "50",
+    "Total": 3000,
+    "Link": "https://www.tiktok.com/@farhan.farhan3815?is_from_webapp=1&sender_device=pc",
+    "Supply": 943,
+    "Untung": 2057
+  },
+  {
+    "ID": "0155",
+    "Tanggal": "30 Juli 2025",
+    "Jenis": "Views Tiktok",
+    "Paket": "5000",
+    "Total": 4000,
+    "Link": "https://vt.tiktok.com/ZSSrwqSST/",
+    "Supply": 1400,
+    "Untung": 2600
+  },
+  {
+    "ID": "0156",
+    "Tanggal": "30 Juli 2025",
+    "Jenis": "Likes Tiktok",
+    "Paket": "1000",
+    "Total": 11000,
+    "Link": "https://vt.tiktok.com/ZSSrwqSST/",
+    "Supply": 752,
+    "Untung": 10248
+  },
+  {
+    "ID": "0157",
+    "Tanggal": "30 Juli 2025",
+    "Jenis": "Likes Tiktok",
+    "Paket": "700",
+    "Total": 8000,
+    "Link": "https://vt.tiktok.com/ZSShg2NgH/",
+    "Supply": 526,
+    "Untung": 7474
+  },
+  {
+    "ID": "0158",
     "Tanggal": "01 Agustus 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "900",
@@ -1660,7 +1580,7 @@
     "Untung": 9324
   },
   {
-    "ID": "0167",
+    "ID": "0159",
     "Tanggal": "02 Agustus 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "300",
@@ -1670,7 +1590,7 @@
     "Untung": 10338
   },
   {
-    "ID": "0168",
+    "ID": "0160",
     "Tanggal": "02 Agustus 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "50",
@@ -1680,7 +1600,7 @@
     "Untung": 2057
   },
   {
-    "ID": "0169",
+    "ID": "0161",
     "Tanggal": "02 Agustus 2025",
     "Jenis": "Followers Instagram",
     "Paket": "200",
@@ -1690,7 +1610,7 @@
     "Untung": 2136
   },
   {
-    "ID": "0170",
+    "ID": "0162",
     "Tanggal": "02 Agustus 2025",
     "Jenis": "Followers Instagram",
     "Paket": "200",
@@ -1700,7 +1620,7 @@
     "Untung": 2136
   },
   {
-    "ID": "0171",
+    "ID": "0163",
     "Tanggal": "03 Agustus 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "150",
@@ -1710,7 +1630,7 @@
     "Untung": 1888
   },
   {
-    "ID": "0172",
+    "ID": "0164",
     "Tanggal": "03 Agustus 2025",
     "Jenis": "Followers Instagram",
     "Paket": "50",
@@ -1720,7 +1640,7 @@
     "Untung": 1284
   },
   {
-    "ID": "0173",
+    "ID": "0165",
     "Tanggal": "03 Agustus 2025",
     "Jenis": "Views Tiktok",
     "Paket": "2000",
@@ -1730,7 +1650,7 @@
     "Untung": 2440
   },
   {
-    "ID": "0174",
+    "ID": "0166",
     "Tanggal": "04 Agustus 2025",
     "Jenis": "Likes Instagram",
     "Paket": "300",
@@ -1740,7 +1660,7 @@
     "Untung": 3876
   },
   {
-    "ID": "0175",
+    "ID": "0167",
     "Tanggal": "04 Agustus 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "1200",
@@ -1750,7 +1670,7 @@
     "Untung": 12098
   },
   {
-    "ID": "0176",
+    "ID": "0168",
     "Tanggal": "04 Agustus 2025",
     "Jenis": "Views Tiktok",
     "Paket": "1000",
@@ -1760,7 +1680,7 @@
     "Untung": 1720
   },
   {
-    "ID": "0177",
+    "ID": "0169",
     "Tanggal": "05 Agustus 2025",
     "Jenis": "Followers Instagram",
     "Paket": "200",
@@ -1770,7 +1690,7 @@
     "Untung": 2136
   },
   {
-    "ID": "0178",
+    "ID": "0170",
     "Tanggal": "05 Agustus 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "1000",
@@ -1780,7 +1700,7 @@
     "Untung": 10248
   },
   {
-    "ID": "0179",
+    "ID": "0171",
     "Tanggal": "05 Agustus 2025",
     "Jenis": "Views Tiktok",
     "Paket": "10000",
@@ -1790,7 +1710,7 @@
     "Untung": 3200
   },
   {
-    "ID": "0180",
+    "ID": "0172",
     "Tanggal": "05 Agustus 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "1500",
@@ -1800,7 +1720,7 @@
     "Untung": 14872
   },
   {
-    "ID": "0181",
+    "ID": "0173",
     "Tanggal": "05 Agustus 2025",
     "Jenis": "Views Tiktok",
     "Paket": "10000",
@@ -1810,7 +1730,7 @@
     "Untung": 3200
   },
   {
-    "ID": "0182",
+    "ID": "0174",
     "Tanggal": "05 Agustus 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "600",
@@ -1820,67 +1740,17 @@
     "Untung": 15675
   },
   {
-    "ID": "0183",
+    "ID": "0175",
     "Tanggal": "05 Agustus 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "300",
-    "Total": 3555,
+    "Total": 3556,
     "Link": "https://vt.tiktok.com/ZSSHykPBU/",
     "Supply": 225,
-    "Untung": 3330
+    "Untung": 3331
   },
   {
-    "ID": "0184",
-    "Tanggal": "05 Agustus 2025",
-    "Jenis": "View Tiktok",
-    "Paket": "5000",
-    "Total": 4445,
-    "Link": "https://vt.tiktok.com/ZSSHykPBU/",
-    "Supply": 1400,
-    "Untung": 3045
-  },
-  {
-    "ID": "0185",
-    "Tanggal": "05 Agustus 2025",
-    "Jenis": "Views Tiktok",
-    "Paket": "10000",
-    "Total": 6000,
-    "Link": "https://vt.tiktok.com/ZSSHykPBU/",
-    "Supply": 2800,
-    "Untung": 3200
-  },
-  {
-    "ID": "0186",
-    "Tanggal": "05 Agustus 2025",
-    "Jenis": "Views Tiktok",
-    "Paket": "10000",
-    "Total": 6000,
-    "Link": "https://vt.tiktok.com/ZSSHykPBU/",
-    "Supply": 2800,
-    "Untung": 3200
-  },
-  {
-    "ID": "0187",
-    "Tanggal": "05 Agustus 2025",
-    "Jenis": "Likes Tiktok",
-    "Paket": "400",
-    "Total": 4500,
-    "Link": "https://vt.tiktok.com/ZSS9BF4kf/",
-    "Supply": 300,
-    "Untung": 4200
-  },
-  {
-    "ID": "0188",
-    "Tanggal": "05 Agustus 2025",
-    "Jenis": "View Tiktok",
-    "Paket": "5000",
-    "Total": 4500,
-    "Link": "https://vt.tiktok.com/ZSS9BF4kf/",
-    "Supply": 1400,
-    "Untung": 3100
-  },
-  {
-    "ID": "0189",
+    "ID": "0176",
     "Tanggal": "05 Agustus 2025",
     "Jenis": "View",
     "Paket": "5000",
@@ -1890,7 +1760,37 @@
     "Untung": 4444
   },
   {
-    "ID": "0190",
+    "ID": "0177",
+    "Tanggal": "05 Agustus 2025",
+    "Jenis": "Views Tiktok",
+    "Paket": "10000",
+    "Total": 6000,
+    "Link": "https://vt.tiktok.com/ZSSHykPBU/",
+    "Supply": 2800,
+    "Untung": 3200
+  },
+  {
+    "ID": "0178",
+    "Tanggal": "05 Agustus 2025",
+    "Jenis": "Views Tiktok",
+    "Paket": "10000",
+    "Total": 6000,
+    "Link": "https://vt.tiktok.com/ZSSHykPBU/",
+    "Supply": 2800,
+    "Untung": 3200
+  },
+  {
+    "ID": "0179",
+    "Tanggal": "05 Agustus 2025",
+    "Jenis": "Likes Tiktok",
+    "Paket": "400",
+    "Total": 4500,
+    "Link": "https://vt.tiktok.com/ZSS9BF4kf/",
+    "Supply": 300,
+    "Untung": 4200
+  },
+  {
+    "ID": "0180",
     "Tanggal": "05 Agustus 2025",
     "Jenis": "View",
     "Paket": "5000",
@@ -1900,7 +1800,7 @@
     "Untung": 4500
   },
   {
-    "ID": "0191",
+    "ID": "0181",
     "Tanggal": "06 Agustus 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "200",
@@ -1910,7 +1810,7 @@
     "Untung": 8225
   },
   {
-    "ID": "0192",
+    "ID": "0182",
     "Tanggal": "06 Agustus 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "500",
@@ -1920,17 +1820,7 @@
     "Untung": 5079
   },
   {
-    "ID": "0193",
-    "Tanggal": "06 Agustus 2025",
-    "Jenis": "View Tiktok",
-    "Paket": "5000",
-    "Total": 4545,
-    "Link": "https://vt.tiktok.com/ZSSxHaLwg/",
-    "Supply": 1400,
-    "Untung": 3145
-  },
-  {
-    "ID": "0194",
+    "ID": "0183",
     "Tanggal": "06 Agustus 2025",
     "Jenis": "View",
     "Paket": "5000",
@@ -1940,7 +1830,7 @@
     "Untung": 4545
   },
   {
-    "ID": "0195",
+    "ID": "0184",
     "Tanggal": "07 Agustus 2025",
     "Jenis": "Followers Instagram",
     "Paket": "200",
@@ -1950,7 +1840,7 @@
     "Untung": 2136
   },
   {
-    "ID": "0196",
+    "ID": "0185",
     "Tanggal": "07 Agustus 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "900",
@@ -1960,7 +1850,7 @@
     "Untung": 9324
   },
   {
-    "ID": "0197",
+    "ID": "0186",
     "Tanggal": "11 Agustus 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "500",
@@ -1970,7 +1860,7 @@
     "Untung": 15562
   },
   {
-    "ID": "0198",
+    "ID": "0187",
     "Tanggal": "11 Agustus 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "600",
@@ -1980,27 +1870,17 @@
     "Untung": 15675
   },
   {
-    "ID": "0199",
+    "ID": "0188",
     "Tanggal": "14 Agustus 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "1000",
-    "Total": 5365,
+    "Total": 5366,
     "Link": "https://vt.tiktok.com/ZSSTwFynY/",
     "Supply": 752,
-    "Untung": 4613
+    "Untung": 4614
   },
   {
-    "ID": "0200",
-    "Tanggal": "14 Agustus 2025",
-    "Jenis": "View Tiktok",
-    "Paket": "30000",
-    "Total": 14635,
-    "Link": "https://vt.tiktok.com/ZSSTwFynY/",
-    "Supply": 8400,
-    "Untung": 6235
-  },
-  {
-    "ID": "0201",
+    "ID": "0189",
     "Tanggal": "14 Agustus 2025",
     "Jenis": "View",
     "Paket": "30000",
@@ -2010,7 +1890,7 @@
     "Untung": 14634
   },
   {
-    "ID": "0202",
+    "ID": "0190",
     "Tanggal": "19 Agustus 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "500",
@@ -2020,7 +1900,7 @@
     "Untung": 15562
   },
   {
-    "ID": "0203",
+    "ID": "0191",
     "Tanggal": "19 Agustus 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "1000",
@@ -2030,7 +1910,7 @@
     "Untung": 10248
   },
   {
-    "ID": "0204",
+    "ID": "0192",
     "Tanggal": "19 Agustus 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "150",
@@ -2040,7 +1920,7 @@
     "Untung": 1888
   },
   {
-    "ID": "0205",
+    "ID": "0193",
     "Tanggal": "19 Agustus 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "120",
@@ -2050,7 +1930,7 @@
     "Untung": 5735
   },
   {
-    "ID": "0206",
+    "ID": "0194",
     "Tanggal": "19 Agustus 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "500",
@@ -2060,7 +1940,7 @@
     "Untung": 5624
   },
   {
-    "ID": "0207",
+    "ID": "0195",
     "Tanggal": "19 Agustus 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "300",
@@ -2070,7 +1950,7 @@
     "Untung": 10338
   },
   {
-    "ID": "0208",
+    "ID": "0196",
     "Tanggal": "20 Agustus 2025",
     "Jenis": "Views Tiktok",
     "Paket": "1000",
@@ -2080,7 +1960,7 @@
     "Untung": 1720
   },
   {
-    "ID": "0209",
+    "ID": "0197",
     "Tanggal": "20 Agustus 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "150",
@@ -2090,7 +1970,7 @@
     "Untung": 1888
   },
   {
-    "ID": "0210",
+    "ID": "0198",
     "Tanggal": "20 Agustus 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "50",
@@ -2100,7 +1980,7 @@
     "Untung": 2057
   },
   {
-    "ID": "0211",
+    "ID": "0199",
     "Tanggal": "20 Agustus 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "150",
@@ -2110,17 +1990,17 @@
     "Untung": 2555
   },
   {
-    "ID": "0212",
+    "ID": "0200",
     "Tanggal": "20 Agustus 2025",
-    "Jenis": "View Tiktok",
+    "Jenis": "View",
     "Paket": "1000",
     "Total": 1333,
     "Link": "https://vt.tiktok.com/ZSAFK3A61/",
-    "Supply": 280,
-    "Untung": 1053
+    "Supply": 0,
+    "Untung": 1333
   },
   {
-    "ID": "0213",
+    "ID": "0201",
     "Tanggal": "20 Agustus 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "150",
@@ -2130,7 +2010,7 @@
     "Untung": 5169
   },
   {
-    "ID": "0214",
+    "ID": "0202",
     "Tanggal": "20 Agustus 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "500",
@@ -2140,37 +2020,7 @@
     "Untung": 5079
   },
   {
-    "ID": "0215",
-    "Tanggal": "20 Agustus 2025",
-    "Jenis": "View Tiktok",
-    "Paket": "5000",
-    "Total": 4545,
-    "Link": "https://vt.tiktok.com/ZSAYMsSnx/",
-    "Supply": 1400,
-    "Untung": 3145
-  },
-  {
-    "ID": "0216",
-    "Tanggal": "20 Agustus 2025",
-    "Jenis": "Views Tiktok",
-    "Paket": "1000",
-    "Total": 2000,
-    "Link": "https://vt.tiktok.com/ZSHGBMobKx8pj-hTSmt/",
-    "Supply": 280,
-    "Untung": 1720
-  },
-  {
-    "ID": "0217",
-    "Tanggal": "20 Agustus 2025",
-    "Jenis": "View",
-    "Paket": "1000",
-    "Total": 1333,
-    "Link": "https://vt.tiktok.com/ZSAFK3A61/",
-    "Supply": 0,
-    "Untung": 1333
-  },
-  {
-    "ID": "0218",
+    "ID": "0203",
     "Tanggal": "20 Agustus 2025",
     "Jenis": "View",
     "Paket": "5000",
@@ -2180,7 +2030,17 @@
     "Untung": 4545
   },
   {
-    "ID": "0219",
+    "ID": "0204",
+    "Tanggal": "20 Agustus 2025",
+    "Jenis": "Views Tiktok",
+    "Paket": "1000",
+    "Total": 2000,
+    "Link": "https://vt.tiktok.com/ZSHGBMobKx8pj-hTSmt/",
+    "Supply": 280,
+    "Untung": 1720
+  },
+  {
+    "ID": "0205",
     "Tanggal": "21 Agustus 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "300",
@@ -2190,7 +2050,7 @@
     "Untung": 10338
   },
   {
-    "ID": "0220",
+    "ID": "0206",
     "Tanggal": "21 Agustus 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "300",
@@ -2200,7 +2060,7 @@
     "Untung": 10338
   },
   {
-    "ID": "0221",
+    "ID": "0207",
     "Tanggal": "21 Agustus 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "700",
@@ -2210,17 +2070,7 @@
     "Untung": 8474
   },
   {
-    "ID": "0222",
-    "Tanggal": "21 Agustus 2025",
-    "Jenis": "View Tiktok",
-    "Paket": "1000",
-    "Total": 1000,
-    "Link": "https://vt.tiktok.com/ZSA6kV2xx/",
-    "Supply": 280,
-    "Untung": 720
-  },
-  {
-    "ID": "0223",
+    "ID": "0208",
     "Tanggal": "21 Agustus 2025",
     "Jenis": "View",
     "Paket": "1000",
@@ -2230,7 +2080,7 @@
     "Untung": 1000
   },
   {
-    "ID": "0224",
+    "ID": "0209",
     "Tanggal": "22 Agustus 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "500",
@@ -2240,7 +2090,7 @@
     "Untung": 15562
   },
   {
-    "ID": "0225",
+    "ID": "0210",
     "Tanggal": "22 Agustus 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "1000",
@@ -2250,7 +2100,7 @@
     "Untung": 27124
   },
   {
-    "ID": "0226",
+    "ID": "0211",
     "Tanggal": "22 Agustus 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "700",
@@ -2260,7 +2110,7 @@
     "Untung": 7474
   },
   {
-    "ID": "0227",
+    "ID": "0212",
     "Tanggal": "22 Agustus 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "150",
@@ -2270,7 +2120,7 @@
     "Untung": 1888
   },
   {
-    "ID": "0228",
+    "ID": "0213",
     "Tanggal": "22 Agustus 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "150",
@@ -2280,7 +2130,7 @@
     "Untung": 1888
   },
   {
-    "ID": "0229",
+    "ID": "0214",
     "Tanggal": "23 Agustus 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "200",
@@ -2290,7 +2140,7 @@
     "Untung": 8225
   },
   {
-    "ID": "0230",
+    "ID": "0215",
     "Tanggal": "23 Agustus 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "200",
@@ -2300,7 +2150,7 @@
     "Untung": 2850
   },
   {
-    "ID": "0231",
+    "ID": "0216",
     "Tanggal": "23 Agustus 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "400",
@@ -2310,7 +2160,7 @@
     "Untung": 4700
   },
   {
-    "ID": "0232",
+    "ID": "0217",
     "Tanggal": "24 Agustus 2025",
     "Jenis": "Views Tiktok",
     "Paket": "1000",
@@ -2320,7 +2170,7 @@
     "Untung": 1720
   },
   {
-    "ID": "0233",
+    "ID": "0218",
     "Tanggal": "24 Agustus 2025",
     "Jenis": "Views Tiktok",
     "Paket": "100000",
@@ -2330,7 +2180,7 @@
     "Untung": -13000
   },
   {
-    "ID": "0234",
+    "ID": "0219",
     "Tanggal": "24 Agustus 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "100",
@@ -2340,7 +2190,7 @@
     "Untung": 5113
   },
   {
-    "ID": "0235",
+    "ID": "0220",
     "Tanggal": "24 Agustus 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "50",
@@ -2350,7 +2200,7 @@
     "Untung": 2057
   },
   {
-    "ID": "0236",
+    "ID": "0221",
     "Tanggal": "24 Agustus 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "400",
@@ -2360,7 +2210,7 @@
     "Untung": 13450
   },
   {
-    "ID": "0237",
+    "ID": "0222",
     "Tanggal": "24 Agustus 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "300",
@@ -2370,7 +2220,7 @@
     "Untung": 3775
   },
   {
-    "ID": "0238",
+    "ID": "0223",
     "Tanggal": "24 Agustus 2025",
     "Jenis": "Views Tiktok",
     "Paket": "1000",
@@ -2380,7 +2230,17 @@
     "Untung": 1720
   },
   {
-    "ID": "0239",
+    "ID": "0224",
+    "Tanggal": "24 Agustus 2025",
+    "Jenis": "Views Tiktok",
+    "Paket": "100000",
+    "Total": 15000,
+    "Link": "https://vt.tiktok.com/ZSAAHnhKo/",
+    "Supply": 28000,
+    "Untung": -13000
+  },
+  {
+    "ID": "0225",
     "Tanggal": "25 Agustus 2025",
     "Jenis": "Views Tiktok",
     "Paket": "10000",
@@ -2390,7 +2250,7 @@
     "Untung": 3200
   },
   {
-    "ID": "0240",
+    "ID": "0226",
     "Tanggal": "25 Agustus 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "1000",
@@ -2400,7 +2260,7 @@
     "Untung": 10248
   },
   {
-    "ID": "0241",
+    "ID": "0227",
     "Tanggal": "26 Agustus 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "200",
@@ -2410,7 +2270,7 @@
     "Untung": 8225
   },
   {
-    "ID": "0242",
+    "ID": "0228",
     "Tanggal": "26 Agustus 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "400",
@@ -2420,7 +2280,7 @@
     "Untung": 4700
   },
   {
-    "ID": "0243",
+    "ID": "0229",
     "Tanggal": "26 Agustus 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "150",
@@ -2430,57 +2290,7 @@
     "Untung": 2555
   },
   {
-    "ID": "0244",
-    "Tanggal": "26 Agustus 2025",
-    "Jenis": "View Tiktok",
-    "Paket": "1000",
-    "Total": 1333,
-    "Link": "https://vt.tiktok.com/ZSAPrmtKK/",
-    "Supply": 280,
-    "Untung": 1053
-  },
-  {
-    "ID": "0245",
-    "Tanggal": "26 Agustus 2025",
-    "Jenis": "Likes Tiktok",
-    "Paket": "1000",
-    "Total": 11847,
-    "Link": "https://vt.tiktok.com/ZSAfrfbSV/",
-    "Supply": 752,
-    "Untung": 11095
-  },
-  {
-    "ID": "0246",
-    "Tanggal": "26 Agustus 2025",
-    "Jenis": "View Tiktok",
-    "Paket": "2000",
-    "Total": 2153,
-    "Link": "https://vt.tiktok.com/ZSAfrfbSV/",
-    "Supply": 560,
-    "Untung": 1593
-  },
-  {
-    "ID": "0247",
-    "Tanggal": "26 Agustus 2025",
-    "Jenis": "Views Tiktok",
-    "Paket": "1000",
-    "Total": 2000,
-    "Link": "https://vt.tiktok.com/ZSAfYsq1U/",
-    "Supply": 280,
-    "Untung": 1720
-  },
-  {
-    "ID": "0248",
-    "Tanggal": "26 Agustus 2025",
-    "Jenis": "Views Tiktok",
-    "Paket": "1000",
-    "Total": 2000,
-    "Link": "https://vt.tiktok.com/ZSAfYsq1U/",
-    "Supply": 280,
-    "Untung": 1720
-  },
-  {
-    "ID": "0249",
+    "ID": "0230",
     "Tanggal": "26 Agustus 2025",
     "Jenis": "View",
     "Paket": "1000",
@@ -2490,7 +2300,17 @@
     "Untung": 1333
   },
   {
-    "ID": "0250",
+    "ID": "0231",
+    "Tanggal": "26 Agustus 2025",
+    "Jenis": "Likes Tiktok",
+    "Paket": "1000",
+    "Total": 11847,
+    "Link": "https://vt.tiktok.com/ZSAfrfbSV/",
+    "Supply": 752,
+    "Untung": 11095
+  },
+  {
+    "ID": "0232",
     "Tanggal": "26 Agustus 2025",
     "Jenis": "View",
     "Paket": "2000",
@@ -2500,7 +2320,27 @@
     "Untung": 2153
   },
   {
-    "ID": "0251",
+    "ID": "0233",
+    "Tanggal": "26 Agustus 2025",
+    "Jenis": "Views Tiktok",
+    "Paket": "1000",
+    "Total": 2000,
+    "Link": "https://vt.tiktok.com/ZSAfYsq1U/",
+    "Supply": 280,
+    "Untung": 1720
+  },
+  {
+    "ID": "0234",
+    "Tanggal": "26 Agustus 2025",
+    "Jenis": "Views Tiktok",
+    "Paket": "1000",
+    "Total": 2000,
+    "Link": "https://vt.tiktok.com/ZSAfYsq1U/",
+    "Supply": 280,
+    "Untung": 1720
+  },
+  {
+    "ID": "0235",
     "Tanggal": "27 Agustus 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "500",
@@ -2510,7 +2350,7 @@
     "Untung": 15562
   },
   {
-    "ID": "0252",
+    "ID": "0236",
     "Tanggal": "27 Agustus 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "500",
@@ -2520,7 +2360,7 @@
     "Untung": 15562
   },
   {
-    "ID": "0253",
+    "ID": "0237",
     "Tanggal": "27 Agustus 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "150",
@@ -2530,7 +2370,7 @@
     "Untung": 1888
   },
   {
-    "ID": "0254",
+    "ID": "0238",
     "Tanggal": "27 Agustus 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "1000",
@@ -2540,7 +2380,7 @@
     "Untung": 10248
   },
   {
-    "ID": "0255",
+    "ID": "0239",
     "Tanggal": "28 Agustus 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "900",
@@ -2550,7 +2390,7 @@
     "Untung": 9324
   },
   {
-    "ID": "0256",
+    "ID": "0240",
     "Tanggal": "30 Agustus 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "50",
@@ -2560,7 +2400,7 @@
     "Untung": 2057
   },
   {
-    "ID": "0257",
+    "ID": "0241",
     "Tanggal": "30 Agustus 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "1000",
@@ -2570,7 +2410,7 @@
     "Untung": 10248
   },
   {
-    "ID": "0258",
+    "ID": "0242",
     "Tanggal": "30 Agustus 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "500",
@@ -2580,7 +2420,7 @@
     "Untung": 5624
   },
   {
-    "ID": "0259",
+    "ID": "0243",
     "Tanggal": "31 Agustus 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "500",
@@ -2590,7 +2430,7 @@
     "Untung": 5624
   },
   {
-    "ID": "0260",
+    "ID": "0244",
     "Tanggal": "31 Agustus 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "500",
@@ -2600,7 +2440,7 @@
     "Untung": 4624
   },
   {
-    "ID": "0261",
+    "ID": "0245",
     "Tanggal": "31 Agustus 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "1000",
@@ -2610,7 +2450,7 @@
     "Untung": 27124
   },
   {
-    "ID": "0262",
+    "ID": "0246",
     "Tanggal": "01 September 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "500",
@@ -2620,7 +2460,7 @@
     "Untung": 5624
   },
   {
-    "ID": "0263",
+    "ID": "0247",
     "Tanggal": "01 September 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "150",
@@ -2630,27 +2470,7 @@
     "Untung": 1888
   },
   {
-    "ID": "0264",
-    "Tanggal": "01 September 2025",
-    "Jenis": "View Tiktok",
-    "Paket": "2000",
-    "Total": 2000,
-    "Link": "https://vt.tiktok.com/ZSAbSXSq7/",
-    "Supply": 560,
-    "Untung": 1440
-  },
-  {
-    "ID": "0265",
-    "Tanggal": "01 September 2025",
-    "Jenis": "Followers Tiktok",
-    "Paket": "50",
-    "Total": 3000,
-    "Link": "https://www.tiktok.com/@dimsoffic?_t=ZS-8zMU54R7bXt&_r=1",
-    "Supply": 943,
-    "Untung": 2057
-  },
-  {
-    "ID": "0266",
+    "ID": "0248",
     "Tanggal": "01 September 2025",
     "Jenis": "View",
     "Paket": "2000",
@@ -2660,7 +2480,17 @@
     "Untung": 2000
   },
   {
-    "ID": "0267",
+    "ID": "0249",
+    "Tanggal": "01 September 2025",
+    "Jenis": "Followers Tiktok",
+    "Paket": "50",
+    "Total": 3000,
+    "Link": "https://www.tiktok.com/@dimsoffic?_t=ZS-8zMU54R7bXt&_r=1",
+    "Supply": 943,
+    "Untung": 2057
+  },
+  {
+    "ID": "0250",
     "Tanggal": "02 September 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "400",
@@ -2670,7 +2500,7 @@
     "Untung": 13450
   },
   {
-    "ID": "0268",
+    "ID": "0251",
     "Tanggal": "02 September 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "200",
@@ -2680,7 +2510,7 @@
     "Untung": 2850
   },
   {
-    "ID": "0269",
+    "ID": "0252",
     "Tanggal": "02 September 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "150",
@@ -2690,7 +2520,7 @@
     "Untung": 2888
   },
   {
-    "ID": "0270",
+    "ID": "0253",
     "Tanggal": "04 September 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "300",
@@ -2700,7 +2530,7 @@
     "Untung": 10338
   },
   {
-    "ID": "0271",
+    "ID": "0254",
     "Tanggal": "05 September 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "300",
@@ -2710,7 +2540,7 @@
     "Untung": 10338
   },
   {
-    "ID": "0272",
+    "ID": "0255",
     "Tanggal": "05 September 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "600",
@@ -2720,7 +2550,7 @@
     "Untung": 15675
   },
   {
-    "ID": "0273",
+    "ID": "0256",
     "Tanggal": "05 September 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "500",
@@ -2730,17 +2560,7 @@
     "Untung": 6374
   },
   {
-    "ID": "0274",
-    "Tanggal": "05 September 2025",
-    "Jenis": "View Tiktok",
-    "Paket": "2000",
-    "Total": 2250,
-    "Link": "https://vt.tiktok.com/ZSAv2V4uy/",
-    "Supply": 560,
-    "Untung": 1690
-  },
-  {
-    "ID": "0275",
+    "ID": "0257",
     "Tanggal": "05 September 2025",
     "Jenis": "View",
     "Paket": "2000",
@@ -2750,7 +2570,7 @@
     "Untung": 2250
   },
   {
-    "ID": "0276",
+    "ID": "0258",
     "Tanggal": "06 September 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "400",
@@ -2760,7 +2580,7 @@
     "Untung": 13450
   },
   {
-    "ID": "0277",
+    "ID": "0259",
     "Tanggal": "06 September 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "400",
@@ -2770,7 +2590,7 @@
     "Untung": 13450
   },
   {
-    "ID": "0278",
+    "ID": "0260",
     "Tanggal": "06 September 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "200",
@@ -2780,7 +2600,7 @@
     "Untung": 8225
   },
   {
-    "ID": "0279",
+    "ID": "0261",
     "Tanggal": "06 September 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "400",
@@ -2790,7 +2610,7 @@
     "Untung": 4700
   },
   {
-    "ID": "0280",
+    "ID": "0262",
     "Tanggal": "06 September 2025",
     "Jenis": "Views Tiktok",
     "Paket": "2000",
@@ -2800,7 +2620,7 @@
     "Untung": 2440
   },
   {
-    "ID": "0281",
+    "ID": "0263",
     "Tanggal": "07 September 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "300",
@@ -2810,7 +2630,7 @@
     "Untung": 10338
   },
   {
-    "ID": "0282",
+    "ID": "0264",
     "Tanggal": "08 September 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "50",
@@ -2820,7 +2640,7 @@
     "Untung": 2057
   },
   {
-    "ID": "0283",
+    "ID": "0265",
     "Tanggal": "09 September 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "200",
@@ -2830,17 +2650,7 @@
     "Untung": 3600
   },
   {
-    "ID": "0284",
-    "Tanggal": "09 September 2025",
-    "Jenis": "View Tiktok",
-    "Paket": "1000",
-    "Total": 1250,
-    "Link": "https://vt.tiktok.com/ZSD12JHur/",
-    "Supply": 280,
-    "Untung": 970
-  },
-  {
-    "ID": "0285",
+    "ID": "0266",
     "Tanggal": "09 September 2025",
     "Jenis": "View",
     "Paket": "1000",
@@ -2850,7 +2660,7 @@
     "Untung": 1250
   },
   {
-    "ID": "0286",
+    "ID": "0267",
     "Tanggal": "14 September 2025",
     "Jenis": "Likes Instagram",
     "Paket": "400",
@@ -2860,7 +2670,7 @@
     "Untung": 4834
   },
   {
-    "ID": "0287",
+    "ID": "0268",
     "Tanggal": "14 September 2025",
     "Jenis": "Followers Instagram",
     "Paket": "50",
@@ -2870,7 +2680,7 @@
     "Untung": 1284
   },
   {
-    "ID": "0288",
+    "ID": "0269",
     "Tanggal": "14 September 2025",
     "Jenis": "Likes Instagram",
     "Paket": "400",
@@ -2880,7 +2690,7 @@
     "Untung": 4834
   },
   {
-    "ID": "0289",
+    "ID": "0270",
     "Tanggal": "15 September 2025",
     "Jenis": "Views Tiktok",
     "Paket": "100000",
@@ -2890,7 +2700,7 @@
     "Untung": -13000
   },
   {
-    "ID": "0290",
+    "ID": "0271",
     "Tanggal": "15 September 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "1000",
@@ -2900,7 +2710,7 @@
     "Untung": 10248
   },
   {
-    "ID": "0291",
+    "ID": "0272",
     "Tanggal": "16 September 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "1000",
@@ -2910,7 +2720,7 @@
     "Untung": 27124
   },
   {
-    "ID": "0292",
+    "ID": "0273",
     "Tanggal": "19 September 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "300",
@@ -2920,7 +2730,7 @@
     "Untung": 9338
   },
   {
-    "ID": "0293",
+    "ID": "0274",
     "Tanggal": "19 September 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "150",
@@ -2930,17 +2740,7 @@
     "Untung": 1888
   },
   {
-    "ID": "0294",
-    "Tanggal": "19 September 2025",
-    "Jenis": "Likes Instagram",
-    "Paket": "6000",
-    "Total": 35000,
-    "Link": "https://vt.tiktok.com/ZSHGqjuMoSjm6-X4Tmg/",
-    "Supply": 2490,
-    "Untung": 32510
-  },
-  {
-    "ID": "0295",
+    "ID": "0275",
     "Tanggal": "19 September 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "100",
@@ -2950,7 +2750,7 @@
     "Untung": 5113
   },
   {
-    "ID": "0296",
+    "ID": "0276",
     "Tanggal": "19 September 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "150",
@@ -2960,7 +2760,7 @@
     "Untung": 1888
   },
   {
-    "ID": "0297",
+    "ID": "0277",
     "Tanggal": "19 September 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "200",
@@ -2970,17 +2770,17 @@
     "Untung": 2850
   },
   {
-    "ID": "0298",
+    "ID": "0278",
     "Tanggal": "19 September 2025",
     "Jenis": "Likes Tiktok",
-    "Paket": "150",
-    "Total": 2000,
-    "Link": "https://www.tiktok.com/@petiksemangat.ru/video/7540528614085774599?is_from_webapp=1&sender_device=pc",
-    "Supply": 112,
-    "Untung": 1888
+    "Paket": "200",
+    "Total": 3000,
+    "Link": "https://www.tiktok.com/@fauzicuuy/video/7542093318012947718",
+    "Supply": 150,
+    "Untung": 2850
   },
   {
-    "ID": "0299",
+    "ID": "0279",
     "Tanggal": "19 September 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "200",
