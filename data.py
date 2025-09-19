@@ -271,46 +271,29 @@ for tgl,jenis,paket,total,link,supply in new:
         seen.add(k)
 
 existing_sorted=sorted(existing,key=lambda x:parse_tanggal_id(x["Tanggal"]))
-# parse semua data dari data.txt
-new = parse_file("data.txt")
-
-# urutkan berdasarkan tanggal
-new_sorted = sorted(new, key=lambda x: x[0])
-
-# buat ulang data final dengan ID berurutan
-final = []
-for i, (tgl, jenis, paket, total, link, supply) in enumerate(new_sorted, 1):
+final=[]
+for i,h in enumerate(existing_sorted,1):
     final.append({
-        "ID": f"{i:04d}",
-        "Tanggal": format_date(tgl),
-        "Jenis": jenis,
-        "Paket": paket,
-        "Total": total,
-        "Link": link,
-        "Supply": supply,
-        "Untung": total - supply
+        "ID":f"{i:04d}",
+        "Tanggal":h["Tanggal"],
+        "Jenis":h["Jenis"],
+        "Paket":h["Paket"],
+        "Total":h["Total"],
+        "Link":h["Link"],
+        "Supply":h["Supply"],
+        "Untung":h["Untung"]
     })
+after_count=len(final)
 
-before_count = 0
-if os.path.exists("transaksi.json"):
-    with open("transaksi.json", encoding="utf-8") as f:
-        before_count = len(json.load(f))
+with open("transaksi.json","w",encoding="utf-8") as f:
+    json.dump(final,f,ensure_ascii=False,indent=2)
 
-after_count = len(final)
-
-# timpa file transaksi.json dengan data terbaru
-with open("transaksi.json", "w", encoding="utf-8") as f:
-    json.dump(final, f, ensure_ascii=False, indent=2)
-
-# copy ke hasil_transaksi.json untuk GitHub
 repo_path = r"D:\data"
 src = os.path.join(repo_path, "transaksi.json")
 dst = os.path.join(repo_path, "hasil_transaksi.json")
-shutil.copy(src, dst)
+shutil.copy(src,dst)
+subprocess.run(["git","-C",repo_path,"add","-A"],check=True)
+subprocess.run(["git","-C",repo_path,"commit","-m","Update hasil_transaksi.json"],check=True)
+subprocess.run(["git","-C",repo_path,"push","origin","main"],check=True)
 
-# git add, commit, push
-subprocess.run(["git", "-C", repo_path, "add", "-A"], check=True)
-subprocess.run(["git", "-C", repo_path, "commit", "-m", "Update hasil_transaksi.json"], check=True)
-subprocess.run(["git", "-C", repo_path, "push", "origin", "main"], check=True)
-
-print(f"Selesai. Data awal: {before_count}, setelah update: {after_count}, berubah: {after_count - before_count}")
+print(f"Selesai. Data awal: {before_count}, setelah update: {after_count}, bertambah: {after_count-before_count}")
