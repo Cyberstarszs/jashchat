@@ -292,7 +292,7 @@ repo_path = r"D:\data"
 src = os.path.join(repo_path, "transaksi.json")
 dst = os.path.join(repo_path, "hasil_transaksi.json")
 shutil.copy(src,dst)
-subprocess.run(["git","-C",repo_path,"add",dst],check=True)
+subprocess.run(["git","-C",repo_path,"add","-A"],check=True)
 subprocess.run(["git","-C",repo_path,"commit","-m","Update hasil_transaksi.json"],check=True)
 subprocess.run(["git","-C",repo_path,"push","origin","main"],check=True)
 
