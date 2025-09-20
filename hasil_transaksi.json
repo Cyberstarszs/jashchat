@@ -3188,5 +3188,27 @@
     "Supply": 150,
     "Untung": 2850,
     "keterangan": "proses"
+  },
+  {
+    "ID": "0291",
+    "Tanggal": "20 September 2025",
+    "Jenis": "Likes Tiktok",
+    "Paket": "150",
+    "Total": 2400,
+    "Link": "https://vt.tiktok.com/ZSDP35YMm/",
+    "Supply": 112,
+    "Untung": 2288,
+    "keterangan": "proses"
+  },
+  {
+    "ID": "0292",
+    "Tanggal": "20 September 2025",
+    "Jenis": "View",
+    "Paket": "500",
+    "Total": 600,
+    "Link": "https://vt.tiktok.com/ZSDP35YMm/",
+    "Supply": 0,
+    "Untung": 600,
+    "keterangan": "proses"
   }
 ]
