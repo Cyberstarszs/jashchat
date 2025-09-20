@@ -1,5 +1,6 @@
 import re, json, os, shutil, subprocess
 from datetime import datetime
+import sys, time
 
 supplier = {
     "followers tiktok": 18876,
@@ -296,4 +297,22 @@ subprocess.run(["git","-C",repo_path,"add","-A"],check=True)
 subprocess.run(["git","-C",repo_path,"commit","-m","Update hasil_transaksi.json"],check=True)
 subprocess.run(["git","-C",repo_path,"push","origin","main"],check=True)
 
-print(f"Selesai. Data awal: {before_count}, setelah update: {after_count}, bertambah: {after_count-before_count}")
+def progress_bar(total=20, delay=0.05):
+    for i in range(total+1):
+        bar = "█" * i + "-" * (total - i)
+        sys.stdout.write(f"\r⏳ Memproses data... {bar} {int((i/total)*100)}%")
+        sys.stdout.flush()
+        time.sleep(delay)
+    print()  # newline
+
+print("="*40)
+print(" Proses Update Transaksi")
+print("="*40)
+
+progress_bar()
+
+print("\n✔️ Selesai")
+print(f"Data awal     : {before_count}")
+print(f"Setelah update: {after_count}")
+print(f"Bertambah     : {after_count-before_count}")
+print("="*40)
