@@ -3610,5 +3610,16 @@
     "Untung": 10248,
     "keterangan": "selesai",
     "ID_Pesanan": "Auto_20250920142044_0"
+  },
+  {
+    "ID": "0302",
+    "Tanggal": "20 September 2025",
+    "Jenis": "Likes Tiktok",
+    "Paket": "3000",
+    "Total": 23000,
+    "Link": "https://www.tiktok.com/@sulipoop/video/7532685251164851462",
+    "Supply": 2256,
+    "Untung": 20744,
+    "keterangan": "selesai"
   }
 ]
