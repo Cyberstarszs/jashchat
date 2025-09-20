@@ -3598,5 +3598,17 @@
     "Untung": 10475,
     "keterangan": "selesai",
     "ID_Pesanan": "0293"
+  },
+  {
+    "ID": "0301",
+    "Tanggal": "20 September 2025",
+    "Jenis": "Likes Tiktok",
+    "Paket": "1000",
+    "Total": 11000,
+    "Link": "https://www.tiktok.com/@almulk72/video/7547613105186934072",
+    "Supply": 752,
+    "Untung": 10248,
+    "keterangan": "selesai",
+    "ID_Pesanan": "Auto_20250920142044_0"
   }
 ]
