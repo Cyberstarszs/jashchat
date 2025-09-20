@@ -3626,11 +3626,34 @@
     "ID": "0303",
     "Tanggal": "21 September 2025",
     "Jenis": "Likes Tiktok",
-    "Paket": "400",
+    "Paket": "500",
     "Total": 5000,
     "Link": "https://vt.tiktok.com/ZSDayJy2P/",
     "Supply": 300,
     "Untung": 4700,
     "keterangan": "proses"
+  },
+  {
+    "ID": "0304",
+    "Tanggal": "21 September 2025",
+    "Jenis": "Likes Tiktok",
+    "Paket": "5000",
+    "Total": 6000,
+    "Link": "https://vt.tiktok.com/ZSDayJy2P/",
+    "Supply": 3760,
+    "Untung": 2240,
+    "keterangan": "proses"
+  },
+  {
+    "ID": "0305",
+    "Tanggal": "21 September 2025",
+    "Jenis": "Views Tiktok",
+    "Paket": "10000",
+    "Total": 6000,
+    "Link": "https://vt.tiktok.com/ZSDayJy2P/",
+    "Supply": 2800,
+    "Untung": 3200,
+    "keterangan": "proses",
+    "ID_Pesanan": "0303"
   }
 ]
