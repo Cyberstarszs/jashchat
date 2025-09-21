@@ -3636,18 +3636,6 @@
   },
   {
     "ID": "0304",
-    "Tanggal": "20 September 2025",
-    "Jenis": "Vidio Premium Apps",
-    "Paket": "1",
-    "Total": 28000,
-    "Link": "",
-    "Supply": 0,
-    "Untung": 28000,
-    "keterangan": "selesai",
-    "Durasi": "1 Bulan (Private All Device)"
-  },
-  {
-    "ID": "0305",
     "Tanggal": "21 September 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "500",
@@ -3658,7 +3646,7 @@
     "keterangan": "selesai"
   },
   {
-    "ID": "0306",
+    "ID": "0305",
     "Tanggal": "21 September 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "5000",
@@ -3669,7 +3657,7 @@
     "keterangan": "selesai"
   },
   {
-    "ID": "0307",
+    "ID": "0306",
     "Tanggal": "21 September 2025",
     "Jenis": "Views Tiktok",
     "Paket": "10000",
@@ -3681,7 +3669,7 @@
     "ID_Pesanan": "0303"
   },
   {
-    "ID": "0308",
+    "ID": "0307",
     "Tanggal": "21 September 2025",
     "Jenis": "Followers Instagram",
     "Paket": "1500",
