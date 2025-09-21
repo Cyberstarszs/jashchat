@@ -3679,29 +3679,5 @@
     "Untung": 18520,
     "keterangan": "selesai",
     "ID_Pesanan": "0307"
-  },
-  {
-    "ID": "0308",
-    "Tanggal": "21 September 2025",
-    "Jenis": "Youtube Premium Premium Apps",
-    "Paket": "1",
-    "Total": 11500,
-    "Link": "",
-    "Supply": 0,
-    "Untung": 11500,
-    "keterangan": "selesai",
-    "Durasi": "1 Bulan (Individu)"
-  },
-  {
-    "ID": "0309",
-    "Tanggal": "21 September 2025",
-    "Jenis": "Iqiyi Premium Apps",
-    "Paket": "1",
-    "Total": 10475,
-    "Link": "",
-    "Supply": 0,
-    "Untung": 10475,
-    "keterangan": "selesai",
-    "Durasi": "1 Bulan (Sharing)"
   }
 ]
