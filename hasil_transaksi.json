@@ -3667,5 +3667,65 @@
     "Untung": 3200,
     "keterangan": "selesai",
     "ID_Pesanan": "0303"
+  },
+  {
+    "ID": "0307",
+    "Tanggal": "21 September 2025",
+    "Jenis": "Youtube Premium Premium Apps",
+    "Paket": "1",
+    "Total": 11500,
+    "Link": "",
+    "Supply": 0,
+    "Untung": 11500,
+    "keterangan": "selesai",
+    "Durasi": "1 Bulan (Individu)"
+  },
+  {
+    "ID": "0308",
+    "Tanggal": "21 September 2025",
+    "Jenis": "Followers Instagram",
+    "Paket": "1500",
+    "Total": 70000,
+    "Link": "https://www.instagram.com/_donny01?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    "Supply": 51480,
+    "Untung": 18520,
+    "keterangan": "selesai",
+    "ID_Pesanan": "0307"
+  },
+  {
+    "ID": "0309",
+    "Tanggal": "21 September 2025",
+    "Jenis": "Iqiyi Premium Apps",
+    "Paket": "1",
+    "Total": 10475,
+    "Link": "",
+    "Supply": 0,
+    "Untung": 10475,
+    "keterangan": "selesai",
+    "Durasi": "1 Bulan (Sharing)"
+  },
+  {
+    "ID": "0310",
+    "Tanggal": "22 September 2025",
+    "Jenis": "Likes Tiktok",
+    "Paket": "1000",
+    "Total": 5366,
+    "Link": "https://vt.tiktok.com/ZSDuLMmW1/",
+    "Supply": 752,
+    "Untung": 4614,
+    "keterangan": "selesai",
+    "ID_Pesanan": "0308"
+  },
+  {
+    "ID": "0311",
+    "Tanggal": "22 September 2025",
+    "Jenis": "View",
+    "Paket": "30000",
+    "Total": 14634,
+    "Link": "https://vt.tiktok.com/ZSDuLMmW1/",
+    "Supply": 0,
+    "Untung": 14634,
+    "keterangan": "selesai",
+    "ID_Pesanan": "0308"
   }
 ]
