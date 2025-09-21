@@ -3666,5 +3666,17 @@
     "Supply": 0,
     "Untung": 11500,
     "keterangan": "selesai"
+  },
+  {
+    "ID": "0307",
+    "Tanggal": "21 September 2025",
+    "Jenis": "Followers Instagram",
+    "Paket": "1500",
+    "Total": 70000,
+    "Link": "https://www.instagram.com/_donny01?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    "Supply": 51480,
+    "Untung": 18520,
+    "keterangan": "proses",
+    "ID_Pesanan": "0307"
   }
 ]
