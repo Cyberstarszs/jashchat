@@ -3694,18 +3694,6 @@
   },
   {
     "ID": "0309",
-    "Tanggal": "21 September 2025",
-    "Jenis": "Iqiyi Premium Apps",
-    "Paket": "1",
-    "Total": 10475,
-    "Link": "",
-    "Supply": 0,
-    "Untung": 10475,
-    "keterangan": "selesai",
-    "Durasi": "1 Bulan (Sharing)"
-  },
-  {
-    "ID": "0310",
     "Tanggal": "22 September 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "1000",
@@ -3717,7 +3705,7 @@
     "ID_Pesanan": "0308"
   },
   {
-    "ID": "0311",
+    "ID": "0310",
     "Tanggal": "22 September 2025",
     "Jenis": "View",
     "Paket": "30000",
@@ -3729,7 +3717,7 @@
     "ID_Pesanan": "0308"
   },
   {
-    "ID": "0312",
+    "ID": "0311",
     "Tanggal": "22 September 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "1000",
@@ -3741,7 +3729,7 @@
     "ID_Pesanan": "0312"
   },
   {
-    "ID": "0313",
+    "ID": "0312",
     "Tanggal": "22 September 2025",
     "Jenis": "View",
     "Paket": "2000",
