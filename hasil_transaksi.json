@@ -3727,5 +3727,29 @@
     "Untung": 14634,
     "keterangan": "selesai",
     "ID_Pesanan": "0308"
+  },
+  {
+    "ID": "0312",
+    "Tanggal": "22 September 2025",
+    "Jenis": "Likes Tiktok",
+    "Paket": "1000",
+    "Total": 11847,
+    "Link": "https://vt.tiktok.com/ZSDuKe2aK/",
+    "Supply": 752,
+    "Untung": 11095,
+    "keterangan": "selesai",
+    "ID_Pesanan": "0312"
+  },
+  {
+    "ID": "0313",
+    "Tanggal": "22 September 2025",
+    "Jenis": "View",
+    "Paket": "2000",
+    "Total": 2153,
+    "Link": "https://vt.tiktok.com/ZSDuKe2aK/",
+    "Supply": 0,
+    "Untung": 2153,
+    "keterangan": "selesai",
+    "ID_Pesanan": "0312"
   }
 ]
