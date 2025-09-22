@@ -3799,5 +3799,28 @@
     "Untung": 2153,
     "keterangan": "selesai",
     "ID_Pesanan": "0317"
+  },
+  {
+    "ID": "0318",
+    "Tanggal": "22 September 2025",
+    "Jenis": "Views Tiktok",
+    "Paket": "20000",
+    "Total": 8000,
+    "Link": "https://www.tiktok.com/@nikenstore16/video/7551324327178702088?is_from_webapp=1&sender_device=pc&web_id=7475709236368573959",
+    "Supply": 5600,
+    "Untung": 2400,
+    "keterangan": "selesai"
+  },
+  {
+    "ID": "0319",
+    "Tanggal": "22 September 2025",
+    "Jenis": "Canva Pro Premium Apps",
+    "Paket": "3",
+    "Total": 7000,
+    "Link": "",
+    "Supply": 0,
+    "Untung": 7000,
+    "keterangan": "selesai",
+    "ID_Pesanan": "0317"
   }
 ]
