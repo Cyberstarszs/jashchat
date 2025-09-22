@@ -3671,18 +3671,6 @@
   {
     "ID": "0307",
     "Tanggal": "21 September 2025",
-    "Jenis": "Youtube Premium Premium Apps",
-    "Paket": "1",
-    "Total": 11500,
-    "Link": "",
-    "Supply": 0,
-    "Untung": 11500,
-    "keterangan": "selesai",
-    "Durasi": "1 Bulan (Individu)"
-  },
-  {
-    "ID": "0308",
-    "Tanggal": "21 September 2025",
     "Jenis": "Followers Instagram",
     "Paket": "1500",
     "Total": 70000,
@@ -3693,7 +3681,7 @@
     "ID_Pesanan": "0307"
   },
   {
-    "ID": "0309",
+    "ID": "0308",
     "Tanggal": "22 September 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "1000",
@@ -3705,7 +3693,7 @@
     "ID_Pesanan": "0308"
   },
   {
-    "ID": "0310",
+    "ID": "0309",
     "Tanggal": "22 September 2025",
     "Jenis": "View",
     "Paket": "30000",
@@ -3717,7 +3705,7 @@
     "ID_Pesanan": "0308"
   },
   {
-    "ID": "0311",
+    "ID": "0310",
     "Tanggal": "22 September 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "1000",
@@ -3729,7 +3717,7 @@
     "ID_Pesanan": "0312"
   },
   {
-    "ID": "0312",
+    "ID": "0311",
     "Tanggal": "22 September 2025",
     "Jenis": "View",
     "Paket": "2000",
