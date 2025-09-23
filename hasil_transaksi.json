@@ -3892,5 +3892,18 @@
     "Untung": 2284,
     "keterangan": "proses",
     "ID_Pesanan": "0324"
+  },
+  {
+    "ID": "0326",
+    "Tanggal": "23 September 2025",
+    "Jenis": "Capcut Pro Premium Apps",
+    "Paket": "1",
+    "Total": 13000,
+    "Link": "https://jashub.web.id/status",
+    "Supply": 0,
+    "Untung": 13000,
+    "keterangan": "selesai",
+    "ID_Pesanan": "0326",
+    "Durasi": "1 Bulan (Full Garansi)"
   }
 ]
