@@ -3868,5 +3868,17 @@
     "Supply": 28000,
     "Untung": -1000,
     "keterangan": "proses"
+  },
+  {
+    "ID": "0324",
+    "Tanggal": "23 September 2025",
+    "Jenis": "Likes Tiktok",
+    "Paket": "1000",
+    "Total": 11000,
+    "Link": "https://vt.tiktok.com/ZSDQYhoWb/",
+    "Supply": 752,
+    "Untung": 10248,
+    "keterangan": "proses",
+    "ID_Pesanan": "0324"
   }
 ]
