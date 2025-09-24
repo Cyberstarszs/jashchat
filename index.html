@@ -10,7 +10,7 @@
 <link rel=icon type=image/png href=favicon.png>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel=stylesheet>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
-<style>*{box-sizing:border-box;margin:0;padding:0}:root{--bg-primary:#f0f4f9;--bg-secondary:#ffffff;--text-primary:#1b1f23;--text-secondary:#444444;--accent-primary:#1a73e8;--accent-secondary:#0059c9;--card-bg:rgba(255, 255, 255, 0.95);--card-border:rgba(0, 0, 0, 0.1);--header-bg:rgba(255, 255, 255, 0.95);--footer-bg:#e8f0fe;--footer-text:#333333;--button-secondary-bg:rgba(0, 0, 0, 0.05);--button-secondary-border:rgba(0, 0, 0, 0.2);--button-secondary-hover:#1a73e8;--social-bg:rgba(0, 0, 0, 0.08);--social-color:#333333;--chat-bg:#fafafa;--chat-header-bg:linear-gradient(135deg, #1a73e8, #0059c9);--chat-bot-msg-bg:#f1f3f4;--chat-user-msg-bg:#1a73e8;--chat-input-bg:#fff;--chat-input-border:#ccc}[data-theme=dark]{--bg-primary:#0a0a0a;--bg-secondary:#111111;--text-primary:#f5f5f5;--text-secondary:#cccccc;--accent-primary:#1a73e8;--accent-secondary:#3399ff;--card-bg:rgba(255, 255, 255, 0.05);--card-border:rgba(255, 255, 255, 0.15);--header-bg:rgba(0, 0, 0, 0.85);--footer-bg:#0b0b0b;--footer-text:#aaaaaa;--button-secondary-bg:rgba(255, 255, 255, 0.1);--button-secondary-border:rgba(255, 255, 255, 0.3);--button-secondary-hover:#3399ff;--social-bg:rgba(255, 255, 255, 0.1);--social-color:#ffffff;--chat-bg:#1a1a1a;--chat-header-bg:linear-gradient(135deg, #1a73e8, #3399ff);--chat-bot-msg-bg:#2a2a2a;--chat-user-msg-bg:#1a73e8;--chat-input-bg:#222;--chat-input-border:#444}body{font-family:Poppins,sans-serif;color:var(--text-primary);background:var(--bg-primary);overflow-x:hidden;transition:background .3s ease,color .3s ease}.bg{position:fixed;inset:0;z-index:-2;background:var(--bg-secondary)}.bg img{width:100%;height:100%;object-fit:cover;filter:blur(15px) brightness(.4)}.vignette{position:fixed;inset:0;z-index:-1;background:radial-gradient(circle at center,rgba(26,115,232,.2)0%,rgba(0,0,0,.95)80%)}[data-theme=light] .vignette{background:radial-gradient(circle at center,rgba(26,115,232,.08)0%,rgba(255,255,255,.9)80%)}header{padding:22px 60px;display:flex;align-items:center;justify-content:space-between;background:var(--header-bg);backdrop-filter:blur(12px);position:sticky;top:0;z-index:10;border-bottom:1px solid var(--card-border);transition:background .3s ease,border-color .3s ease}header.scrolled{background:var(--header-bg)}.logo{display:flex;align-items:center;gap:10px;font-size:26px;font-weight:800}.logo img{height:40px;width:auto}.logo span{background:linear-gradient(90deg,var(--accent-primary),var(--accent-secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent}.header-controls{display:flex;align-items:center;gap:15px}.theme-toggle{background:0 0;border:none;cursor:pointer;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:var(--social-color);background:var(--social-bg);transition:.3s;font-size:18px}.theme-toggle:hover{background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));color:#fff}.socials{display:flex;gap:15px}.socials a{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:var(--social-color);background:var(--social-bg);transition:.3s;font-size:18px;text-decoration:none}.socials a:hover{background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));color:#fff;transform:scale(1.15)}.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer}.menu-toggle span{width:28px;height:3px;background:var(--text-primary);border-radius:3px;transition:.3s}@media(max-width:768px){header{padding:18px 25px}.header-controls{position:relative}.socials{position:absolute;top:70px;right:0;flex-direction:column;background:var(--card-bg);padding:18px;border-radius:12px;gap:12px;display:none;border:1px solid var(--card-border)}.socials.active{display:flex;animation:fadeIn .3s ease}.menu-toggle{display:flex}}@keyframes fadeIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}.menu-toggle.active span:first-child{transform:rotate(45deg) translate(5px,6px)}.menu-toggle.active span:nth-child(2){opacity:0}.menu-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px)}.hero{text-align:center;padding:80px 20px 40px}.hero .hero-box{max-width:800px;margin:0 auto;padding:28px 30px;border-radius:20px;background:var(--card-bg);border:1px solid var(--card-border);box-shadow:0 8px 28px rgba(0,0,0,.12);backdrop-filter:blur(14px);transition:transform .3s ease,box-shadow .3s ease}.hero .hero-box:hover{transform:translateY(-6px);box-shadow:0 12px 32px rgba(0,0,0,.18)}.hero .title{font-size:clamp(32px,5vw,64px);font-weight:800;background:linear-gradient(90deg,var(--accent-primary),var(--accent-secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:12px}.hero .subtitle{font-size:clamp(14px,2.5vw,20px);color:var(--text-secondary);opacity:.95}.cta-buttons{margin-top:28px;display:flex;flex-wrap:wrap;justify-content:center;gap:16px}.cta-buttons a{padding:12px 28px;border-radius:30px;font-size:15px;font-weight:600}.service-icons{display:flex;gap:18px;justify-content:center;margin:40px auto;flex-wrap:wrap}.service-icons button{background:var(--social-bg);border:none;padding:18px;border-radius:18px;cursor:pointer;font-size:28px;color:var(--text-primary);transition:.35s;display:flex;align-items:center;justify-content:center}.service-icons button:hover{transform:translateY(-5px) scale(1.05)}.service-icons button.active{box-shadow:0 0 25px rgba(26,115,232,.6)}.service-content{display:none;animation:fade .6s ease forwards}.service-content.active{display:block}@keyframes fade{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;padding:10px 20px 40px}.card{padding:22px;border-radius:18px;background:var(--card-bg);backdrop-filter:blur(15px);border:1px solid var(--card-border);transition:.4s;position:relative;overflow:hidden;text-align:center}.card:hover{transform:translateY(-12px) scale(1.02);box-shadow:0 0 35px rgba(26,115,232,.4)}.card i{font-size:44px;color:var(--accent-primary);margin-bottom:16px;display:block;text-align:center}.caption{font-size:20px;font-weight:700;margin-bottom:12px;color:var(--text-primary);text-align:center}.service-list{list-style:none;color:var(--text-secondary);font-size:14px;width:100%;margin-bottom:15px;text-align:left}.service-list li{margin:6px 0;display:flex;justify-content:space-between}.service-list span{color:var(--accent-primary);font-weight:600}.order-btn{display:inline-block;background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));color:#fff;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:600;transition:.3s;margin:0 auto}.order-btn:hover{filter:brightness(1.15)}.service-submenu{display:flex;gap:12px;justify-content:center;margin-bottom:20px;flex-wrap:wrap}.service-submenu button{background:var(--button-secondary-bg);border:none;padding:10px 20px;border-radius:8px;color:var(--text-primary);cursor:pointer;transition:.3s;font-weight:600}.service-submenu button.active{background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));color:#fff}.sub-content{border-radius:14px;background:var(--card-bg);border:1px solid var(--card-border);box-shadow:0 4px 14px rgba(0,0,0,.08);padding:16px 18px;transition:transform .3s ease,box-shadow .3s ease;text-align:center}.sub-content:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(0,0,0,.12)}.sub-content i{display:block;font-size:32px;margin:10px auto 8px;text-align:center;color:var(--accent-primary);background:var(--bg-secondary);border-radius:50%;padding:10px;width:60px;height:60px;line-height:36px;box-shadow:0 3px 10px rgba(189,142,142,.08)}.sub-content .caption{font-size:16px;font-weight:700;text-align:center;margin-bottom:8px;color:var(--text-primary)}.sub-content .service-list{margin:0;padding:0;list-style:none;font-size:13px;color:var(--text-secondary);text-align:left}.sub-content .service-list li{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed var(--card-border)}.sub-content .service-list li:last-child{border-bottom:none}.sub-content .service-list span{color:var(--accent-primary);font-weight:600;font-size:13px}.sub-content .order-btn{margin-top:12px;padding:8px 16px;font-size:13px;border-radius:8px;width:auto;display:block;margin-left:auto;margin-right:auto}@media(min-width:1024px){.service-content .sub-content{display:block!important}.service-submenu{display:none}.services-grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}}@media(max-width:1023px){.sub-content{margin-bottom:20px}}footer{background:var(--footer-bg);padding:60px 30px 30px;color:var(--footer-text);position:relative;transition:background .3s ease,color .3s ease}.footer-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px;margin-bottom:40px}.footer-col h3{color:var(--text-primary);margin-bottom:15px;font-size:18px;font-weight:700}.footer-col li,.footer-col p{font-size:14px;margin:6px 0;color:var(--footer-text)}.footer-col ul{list-style:none;padding:0}.footer-col ul li a{color:var(--footer-text);text-decoration:none;transition:.3s}.footer-col ul li a:hover{color:var(--accent-primary)}.footer-socials{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap}.footer-socials a{width:38px;height:38px;display:grid;place-items:center;background:var(--social-bg);border-radius:50%;color:var(--social-color);transition:.3s;font-size:16px}.footer-socials a:hover{background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));color:#fff;transform:scale(1.15)}.newsletter{display:flex;margin-top:10px}.newsletter input{flex:1;padding:10px;border:none;border-radius:6px 0 0 6px;outline:0;font-size:14px;background:var(--card-bg);color:var(--text-primary);border:1px solid var(--card-border)}.newsletter button{background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));border:none;padding:0 16px;border-radius:0 6px 6px 0;color:#fff;cursor:pointer;transition:.3s}.newsletter button:hover{filter:brightness(1.15)}.footer-bottom{text-align:center;font-size:13px;color:var(--footer-text);border-top:1px solid var(--card-border);padding-top:20px}.search-bar{max-width:500px;margin:20px auto 30px;position:relative;display:none}.search-bar.visible{display:block}.search-bar input{width:100%;padding:12px 45px 12px 15px;border-radius:30px;border:1px solid var(--card-border);background:var(--card-bg);color:var(--text-primary);font-size:15px;outline:0}.search-bar i{position:absolute;right:15px;top:50%;transform:translateY(-50%);color:var(--text-secondary)}.cta-buttons .explore{background:var(--button-secondary-bg);border:1px solid var(--button-secondary-border);color:var(--text-primary);transition:all .3s ease;box-shadow:0 4px 14px rgba(0,0,0,.08);text-decoration:none;display:inline-block}.cta-buttons .explore:hover{background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));border-color:transparent;color:#fff;transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.15);text-decoration:none}.search-hidden{display:none!important}@media (max-width:768px){.services-grid{grid-template-columns:1fr!important;gap:12px;padding:8px 10px 25px}.card,.sub-content{font-size:13px;padding:14px}.caption{font-size:15px}.order-btn{padding:8px 12px;font-size:13px}.search-bar{max-width:90%;margin:15px auto}.search-bar input{padding:10px 35px 10px 12px;font-size:14px}}@media (max-width:768px){.service-content .sub-content{display:none!important}.service-content .sub-content.active{display:block!important}}.no-results{padding:12px 16px;text-align:center;color:var(--text-secondary);font-size:14px;display:none}input,select{background:var(--input-bg)!important;color:var(--text-primary)!important}select option{background:var(--bg-primary)!important;color:var(--text-primary)!important}.faq-section{padding:50px 20px}.faq-wrapper{max-width:1100px;margin:0 auto}.faq-section h2{font-size:24px;margin-bottom:18px;font-weight:800;background:linear-gradient(90deg,var(--accent-primary),var(--accent-secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent}.accordion .item{border-radius:12px;margin-bottom:10px;overflow:hidden;border:1px solid var(--card-border);background:var(--card-bg)}.accordion-btn{width:100%;padding:16px;text-align:left;font-weight:700;display:flex;justify-content:space-between;align-items:center;background:0 0;border:none;cursor:pointer;color:var(--text-primary)}.accordion-btn .icon{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;font-weight:700}.panel{max-height:0;overflow:hidden;transition:max-height .28s ease;padding:0 16px;color:var(--text-secondary);font-size:14px}.panel p{padding:12px 0;margin:0}.modal-order{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:1000;background:rgba(0,0,0,.45)}.modal-order.open{display:flex}.modal-inner{width:100%;max-width:720px;background:var(--card-bg);border-radius:12px;padding:20px;box-shadow:0 20px 60px rgba(0,0,0,.3);border:1px solid var(--card-border);position:relative}.modal-inner .close{position:absolute;right:12px;top:8px;background:0 0;border:none;font-size:22px;cursor:pointer;color:var(--text-secondary)}.progress{margin-bottom:14px}.steps{display:flex;gap:8px;justify-content:space-between;margin-bottom:8px}.step{flex:1;padding:8px 10px;text-align:center;border-radius:8px;font-size:13px;background:var(--button-secondary-bg);color:var(--text-primary);font-weight:700}.step.active{background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));color:#fff;box-shadow:0 6px 18px rgba(0,0,0,.08)}.bar{height:6px;background:var(--button-secondary-bg);border-radius:6px;overflow:hidden}.bar-fill{height:100%;width:0;background:linear-gradient(90deg,var(--accent-primary),var(--accent-secondary));transition:width .35s ease}.step-content{display:none}.step-content.active{display:block}.modal-row{display:flex;gap:12px}.modal-row .col{flex:1}.modal-field{width:100%;padding:10px;border-radius:8px;border:1px solid var(--card-border);background:var(--bg-secondary);color:var(--text-primary);outline:0}.modal-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:14px}.btn{padding:10px 14px;border-radius:8px;border:none;cursor:pointer;font-weight:700}.btn.secondary{background:var(--button-secondary-bg);border:1px solid var(--button-secondary-border);color:var(--text-primary)}.btn.primary{background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));color:#fff}.order-success{text-align:center;padding:18px 12px}@media(max-width:560px){.modal-row{flex-direction:column}.modal-inner{padding:16px}.steps{gap:6px}}#chatbot-btn{position:fixed;bottom:80px;right:24px;width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));color:#fff;display:flex;align-items:center;justify-content:center;font-size:30px;cursor:pointer;box-shadow:0 8px 22px rgba(0,0,0,.25);z-index:9999;transition:transform .25s ease,box-shadow .25s ease,background .3s ease}#chatbot-btn:hover{transform:scale(1.08);box-shadow:0 10px 28px rgba(0,0,0,.35)}@media(max-width:768px){#chatbot-btn{bottom:70px;right:20px;width:58px;height:58px;font-size:26px}}@media(max-width:480px){#chatbot-btn{bottom:60px;right:18px;width:52px;height:52px;font-size:24px;box-shadow:0 6px 18px rgba(0,0,0,.3)}}#chatbot-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:9998;opacity:0;pointer-events:none;transition:opacity .3s ease}#chatbot-overlay.active{opacity:1;pointer-events:all}#chatbot-window{position:fixed;bottom:96px;right:24px;width:360px;max-width:calc(100% - 40px);max-height:520px;background:rgba(255,255,255,.85);border:1px solid var(--card-border);border-radius:22px;display:flex;flex-direction:column;box-shadow:0 12px 36px rgba(0,0,0,.35);overflow:hidden;z-index:9999;font-family:Poppins,sans-serif;color:var(--text-primary);backdrop-filter:blur(18px);transform:translateY(30px);opacity:0;pointer-events:none;transition:all .4s ease-in-out}#chatbot-window.open{transform:translateY(0);opacity:1;pointer-events:auto}#chatbot-header{background:var(--chat-header-bg);color:#fff;padding:14px;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:space-between}#chatbot-header .subtitle{font-weight:400;font-size:12px;opacity:.95}#chatbot-messages{flex:1;padding:14px;overflow-y:auto;font-size:14px;background:var(--chat-bg);transition:background .3s ease}.chat-msg{margin-bottom:12px;display:inline-block;clear:both;max-width:80%;word-wrap:break-word;padding:10px 14px;border-radius:12px;line-height:1.4}.chat-msg.bot{background:var(--chat-bot-msg-bg);color:var(--text-primary);float:left}.chat-msg.user{background:var(--chat-user-msg-bg);color:#fff;float:right;text-align:right}#chatbot-input{display:flex;padding:10px;gap:8px;border-top:1px solid var(--card-border);background:var(--chat-input-bg);transition:background .3s ease,border .3s ease}#chatbot-input input{flex:1;padding:10px 12px;border-radius:10px;border:1px solid var(--chat-input-border);outline:0;font-size:14px;background:var(--chat-input-bg);color:var(--text-primary);transition:background .3s ease,color .3s ease,border .3s ease}#chatbot-input button{background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));color:#fff;border:none;padding:8px 12px;border-radius:10px;cursor:pointer;font-size:16px;transition:filter .3s ease}#chatbot-input button:hover{filter:brightness(1.1)}@media(max-width:480px){#chatbot-window{left:15px;right:15px;bottom:10px;width:auto;max-height:85%;border-radius:20px}}.service-icons{position:relative}.service-tooltip{position:absolute;top:-40px;left:50%;transform:translateX(-50%);background:var(--accent-primary);color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;font-weight:600;opacity:0;transition:opacity .3s ease,transform .3s ease;pointer-events:none;z-index:20;white-space:nowrap;box-shadow:0 4px 12px rgba(0,0,0,.15)}.service-tooltip::after{content:'';position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:6px solid var(--accent-primary)}.service-tooltip.visible{opacity:1;transform:translateX(-50%) translateY(-10px)}.service-icons button{position:relative;overflow:hidden}.ripple{position:absolute;border-radius:50%;background-color:rgba(255,255,255,.4);transform:scale(0);animation:ripple .6s linear}@keyframes ripple{to{transform:scale(4);opacity:0}}@media (max-width:480px){.service-tooltip{max-width:150px;white-space:normal;text-align:center;padding:6px 10px;font-size:12px;transform:translateX(-50%) translateY(-10px);word-wrap:break-word}.service-tooltip::after{bottom:-5px;border-left:5px solid transparent;border-right:5px solid transparent;border-top:5px solid var(--accent-primary)}}@media (max-width:768px){.service-tooltip{max-width:180px;white-space:normal;text-align:center}}.footer-section{background:linear-gradient(135deg,var(--footer-bg),var(--bg-secondary));padding:60px 20px 20px;border-top:1px solid var(--card-border)}.footer-wrapper{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:40px}.footer-brand img{width:60px;margin-bottom:10px}.footer-brand h3{font-size:20px;font-weight:800;margin-bottom:10px;background:linear-gradient(90deg,var(--accent-primary),var(--accent-secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent}.footer-contact h3,.footer-links h3,.footer-newsletter h3{font-size:18px;font-weight:700;margin-bottom:15px;position:relative}.footer-contact h3::after,.footer-links h3::after,.footer-newsletter h3::after{content:"";position:absolute;bottom:-6px;left:0;width:40px;height:3px;border-radius:3px;background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary))}.footer-contact ul,.footer-links ul{list-style:none;padding:0}.footer-contact ul li,.footer-links ul li{margin:8px 0;font-size:14px;color:var(--footer-text)}.footer-links ul li a{color:var(--footer-text);text-decoration:none;transition:.3s}.footer-links ul li a:hover{color:var(--accent-primary);padding-left:5px}.footer-socials{display:flex;gap:12px;margin-top:12px}.footer-socials a{width:40px;height:40px;display:grid;place-items:center;border-radius:50%;background:var(--social-bg);color:var(--social-color);transition:.3s ease}.footer-socials a:hover{background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));color:#fff;transform:scale(1.15) rotate(6deg)}.newsletter{display:flex;margin-top:10px}.newsletter input{flex:1;padding:10px;border:1px solid var(--card-border);border-radius:8px 0 0 8px;outline:0;background:var(--card-bg);color:var(--text-primary)}.newsletter button{border:none;padding:0 18px;border-radius:0 8px 8px 0;background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));color:#fff;cursor:pointer;transition:.3s}.newsletter button:hover{filter:brightness(1.15)}.footer-bottom{text-align:center;font-size:13px;margin-top:40px;padding-top:15px;border-top:1px solid var(--card-border);color:var(--footer-text)}@media (max-width:768px){.footer-wrapper{text-align:center;grid-template-columns:1fr}.footer-contact h3::after,.footer-links h3::after,.footer-newsletter h3::after{left:50%;transform:translateX(-50%)}.footer-socials{justify-content:center}.newsletter{justify-content:center}}.orders-section{padding:50px 20px}.orders-wrapper{max-width:1200px;margin:auto}.orders-section h2{font-size:24px;margin-bottom:18px;font-weight:800;background:linear-gradient(90deg,var(--accent-primary),var(--accent-secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent}.table-container{overflow-x:auto}#orders-table{width:100%;border-collapse:collapse;background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;overflow:hidden}#orders-table td,#orders-table th{padding:12px 14px;text-align:left;border-bottom:1px solid var(--card-border);font-size:14px}#orders-table th{background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));color:#fff;font-weight:700}#orders-table tr:hover{background:rgba(26,115,232,.08)}@media(max-width:768px){#orders-table td,#orders-table th{font-size:12px;padding:8px}}.pagination{margin-top:15px;text-align:center;display:flex;justify-content:center;gap:10px}.pagination button{padding:6px 12px;border:1px solid var(--card-border);border-radius:6px;background:var(--button-secondary-bg);cursor:pointer;font-size:14px;font-weight:600;color:var(--text-primary)}.pagination button:hover{background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));color:#fff}.pagination span{align-self:center;font-size:14px;color:var(--text-secondary)}.search-container{margin-bottom:14px;text-align:left}.search-container input{padding:10px 14px;border:1px solid var(--card-border);border-radius:8px;width:280px;max-width:100%;font-size:14px;background:var(--card-bg);color:var(--text-primary);outline:0}@media(max-width:768px){.search-container{text-align:left}.search-container input{width:100%}}.hero .hero-flex{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:10px}.hero .subtitle{font-size:16px;color:var(--text-secondary);flex:1}.hero .stats-wrapper{display:flex;gap:16px;flex-shrink:0}.hero .stat-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:10px;padding:10px 14px;min-width:110px;text-align:center;box-shadow:0 2px 6px rgba(0,0,0,.05)}.hero .stat-card h3{font-size:20px;font-weight:700;background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}.hero .stat-card p{font-size:12px;color:var(--text-secondary);margin:0}@media(max-width:768px){.hero .hero-flex{flex-direction:column;align-items:flex-start}.hero .stats-wrapper{width:100%;justify-content:flex-start}.hero .stat-card{min-width:100px}}.hero{text-align:center;padding:60px 20px 30px}.hero .hero-box{max-width:720px;margin:0 auto;padding:24px 20px;border-radius:18px;background:var(--card-bg);border:1px solid var(--card-border);box-shadow:0 6px 20px rgba(0,0,0,.12)}.hero .title{font-size:clamp(26px, 6vw, 42px);font-weight:800;background:linear-gradient(90deg,var(--accent-primary),var(--accent-secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:10px}.hero .subtitle{font-size:clamp(14px, 3vw, 18px);color:var(--text-secondary);margin-bottom:20px}.hero .stats-wrapper{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}.hero .stat-card{flex:1 1 130px;max-width:160px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;padding:14px 10px;text-align:center;box-shadow:0 3px 10px rgba(0,0,0,.08);transition:transform .25s ease,box-shadow .25s ease}.hero .stat-card:hover{transform:translateY(-4px);box-shadow:0 6px 18px rgba(0,0,0,.12)}.hero .stat-card i{font-size:20px;color:var(--accent-primary);margin-bottom:6px}.hero .stat-card h3{font-size:20px;font-weight:700;margin-bottom:4px;background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent}.hero .stat-card p{font-size:13px;color:var(--text-secondary);margin:0}@media (max-width:600px){.hero{padding:40px 15px 20px}.hero .title{font-size:24px}.hero .subtitle{font-size:14px;text-align:center}.hero .stats-wrapper{flex-direction:row;justify-content:center}.hero .stat-card{flex:1 1 45%;max-width:none}}.status{font-weight:600;padding:4px 10px;border-radius:6px;font-size:13px;display:inline-block}.status.pending{background:#fff3cd;color:#856404;border:1px solid #ffeeba}.status.proses{background:#cce5ff;color:#004085;border:1px solid #b8daff}.status.selesai{background:#d4edda;color:#155724;border:1px solid #c3e6cb}</style>
+<style>*{box-sizing:border-box;margin:0;padding:0}:root{--bg-primary:#f0f4f9;--bg-secondary:#ffffff;--text-primary:#1b1f23;--text-secondary:#444444;--accent-primary:#1a73e8;--accent-secondary:#0059c9;--card-bg:rgba(255, 255, 255, 0.95);--card-border:rgba(0, 0, 0, 0.1);--header-bg:rgba(255, 255, 255, 0.95);--footer-bg:#e8f0fe;--footer-text:#333333;--button-secondary-bg:rgba(0, 0, 0, 0.05);--button-secondary-border:rgba(0, 0, 0, 0.2);--button-secondary-hover:#1a73e8;--social-bg:rgba(0, 0, 0, 0.08);--social-color:#333333;--chat-bg:#fafafa;--chat-header-bg:linear-gradient(135deg, #1a73e8, #0059c9);--chat-bot-msg-bg:#f1f3f4;--chat-user-msg-bg:#1a73e8;--chat-input-bg:#fff;--chat-input-border:#ccc}[data-theme=dark]{--bg-primary:#0a0a0a;--bg-secondary:#111111;--text-primary:#f5f5f5;--text-secondary:#cccccc;--accent-primary:#1a73e8;--accent-secondary:#3399ff;--card-bg:rgba(255, 255, 255, 0.05);--card-border:rgba(255, 255, 255, 0.15);--header-bg:rgba(0, 0, 0, 0.85);--footer-bg:#0b0b0b;--footer-text:#aaaaaa;--button-secondary-bg:rgba(255, 255, 255, 0.1);--button-secondary-border:rgba(255, 255, 255, 0.3);--button-secondary-hover:#3399ff;--social-bg:rgba(255, 255, 255, 0.1);--social-color:#ffffff;--chat-bg:#1a1a1a;--chat-header-bg:linear-gradient(135deg, #1a73e8, #3399ff);--chat-bot-msg-bg:#2a2a2a;--chat-user-msg-bg:#1a73e8;--chat-input-bg:#222;--chat-input-border:#444}body{font-family:Poppins,sans-serif;color:var(--text-primary);background:var(--bg-primary);overflow-x:hidden;transition:background .3s ease,color .3s ease}.bg{position:fixed;inset:0;z-index:-2;background:var(--bg-secondary)}.bg img{width:100%;height:100%;object-fit:cover;filter:blur(15px) brightness(.4)}.vignette{position:fixed;inset:0;z-index:-1;background:radial-gradient(circle at center,rgba(26,115,232,.2)0%,rgba(0,0,0,.95)80%)}[data-theme=light] .vignette{background:radial-gradient(circle at center,rgba(26,115,232,.08)0%,rgba(255,255,255,.9)80%)}header{padding:22px 60px;display:flex;align-items:center;justify-content:space-between;background:var(--header-bg);backdrop-filter:blur(12px);position:sticky;top:0;z-index:10;border-bottom:1px solid var(--card-border);transition:background .3s ease,border-color .3s ease}header.scrolled{background:var(--header-bg)}.logo{display:flex;align-items:center;gap:10px;font-size:26px;font-weight:800}.logo img{height:40px;width:auto}.logo span{background:linear-gradient(90deg,var(--accent-primary),var(--accent-secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent}.header-controls{display:flex;align-items:center;gap:15px}.theme-toggle{background:0 0;border:none;cursor:pointer;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:var(--social-color);background:var(--social-bg);transition:.3s;font-size:18px}.theme-toggle:hover{background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));color:#fff}.socials{display:flex;gap:15px}.socials a{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:var(--social-color);background:var(--social-bg);transition:.3s;font-size:18px;text-decoration:none}.socials a:hover{background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));color:#fff;transform:scale(1.15)}.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer}.menu-toggle span{width:28px;height:3px;background:var(--text-primary);border-radius:3px;transition:.3s}@media(max-width:768px){header{padding:18px 25px}.header-controls{position:relative}.socials{position:absolute;top:70px;right:0;flex-direction:column;background:var(--card-bg);padding:18px;border-radius:12px;gap:12px;display:none;border:1px solid var(--card-border)}.socials.active{display:flex;animation:fadeIn .3s ease}.menu-toggle{display:flex}}@keyframes fadeIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}.menu-toggle.active span:first-child{transform:rotate(45deg) translate(5px,6px)}.menu-toggle.active span:nth-child(2){opacity:0}.menu-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px)}.hero{text-align:center;padding:80px 20px 40px}.hero .hero-box{max-width:800px;margin:0 auto;padding:28px 30px;border-radius:20px;background:var(--card-bg);border:1px solid var(--card-border);box-shadow:0 8px 28px rgba(0,0,0,.12);backdrop-filter:blur(14px);transition:transform .3s ease,box-shadow .3s ease}.hero .hero-box:hover{transform:translateY(-6px);box-shadow:0 12px 32px rgba(0,0,0,.18)}.hero .title{font-size:clamp(32px,5vw,64px);font-weight:800;background:linear-gradient(90deg,var(--accent-primary),var(--accent-secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:12px}.hero .subtitle{font-size:clamp(14px,2.5vw,20px);color:var(--text-secondary);opacity:.95}.cta-buttons{margin-top:28px;display:flex;flex-wrap:wrap;justify-content:center;gap:16px}.cta-buttons a{padding:12px 28px;border-radius:30px;font-size:15px;font-weight:600}.service-icons{display:flex;gap:18px;justify-content:center;margin:40px auto;flex-wrap:wrap}.service-icons button{background:var(--social-bg);border:none;padding:18px;border-radius:18px;cursor:pointer;font-size:28px;color:var(--text-primary);transition:.35s;display:flex;align-items:center;justify-content:center}.service-icons button:hover{transform:translateY(-5px) scale(1.05)}.service-icons button.active{box-shadow:0 0 25px rgba(26,115,232,.6)}.service-content{display:none;animation:fade .6s ease forwards}.service-content.active{display:block}@keyframes fade{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;padding:10px 20px 40px}.card{padding:22px;border-radius:18px;background:var(--card-bg);backdrop-filter:blur(15px);border:1px solid var(--card-border);transition:.4s;position:relative;overflow:hidden;text-align:center}.card:hover{transform:translateY(-12px) scale(1.02);box-shadow:0 0 35px rgba(26,115,232,.4)}.card i{font-size:44px;color:var(--accent-primary);margin-bottom:16px;display:block;text-align:center}.caption{font-size:20px;font-weight:700;margin-bottom:12px;color:var(--text-primary);text-align:center}.service-list{list-style:none;color:var(--text-secondary);font-size:14px;width:100%;margin-bottom:15px;text-align:left}.service-list li{margin:6px 0;display:flex;justify-content:space-between}.service-list span{color:var(--accent-primary);font-weight:600}.order-btn{display:inline-block;background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));color:#fff;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:600;transition:.3s;margin:0 auto}.order-btn:hover{filter:brightness(1.15)}.service-submenu{display:flex;gap:12px;justify-content:center;margin-bottom:20px;flex-wrap:wrap}.service-submenu button{background:var(--button-secondary-bg);border:none;padding:10px 20px;border-radius:8px;color:var(--text-primary);cursor:pointer;transition:.3s;font-weight:600}.service-submenu button.active{background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));color:#fff}.sub-content{border-radius:14px;background:var(--card-bg);border:1px solid var(--card-border);box-shadow:0 4px 14px rgba(0,0,0,.08);padding:16px 18px;transition:transform .3s ease,box-shadow .3s ease;text-align:center}.sub-content:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(0,0,0,.12)}.sub-content i{display:block;font-size:32px;margin:10px auto 8px;text-align:center;color:var(--accent-primary);background:var(--bg-secondary);border-radius:50%;padding:10px;width:60px;height:60px;line-height:36px;box-shadow:0 3px 10px rgba(189,142,142,.08)}.sub-content .caption{font-size:16px;font-weight:700;text-align:center;margin-bottom:8px;color:var(--text-primary)}.sub-content .service-list{margin:0;padding:0;list-style:none;font-size:13px;color:var(--text-secondary);text-align:left}.sub-content .service-list li{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed var(--card-border)}.sub-content .service-list li:last-child{border-bottom:none}.sub-content .service-list span{color:var(--accent-primary);font-weight:600;font-size:13px}.sub-content .order-btn{margin-top:12px;padding:8px 16px;font-size:13px;border-radius:8px;width:auto;display:block;margin-left:auto;margin-right:auto}@media(min-width:1024px){.service-content .sub-content{display:block!important}.service-submenu{display:none}.services-grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}}@media(max-width:1023px){.sub-content{margin-bottom:20px}}footer{background:var(--footer-bg);padding:60px 30px 30px;color:var(--footer-text);position:relative;transition:background .3s ease,color .3s ease}.footer-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px;margin-bottom:40px}.footer-col h3{color:var(--text-primary);margin-bottom:15px;font-size:18px;font-weight:700}.footer-col li,.footer-col p{font-size:14px;margin:6px 0;color:var(--footer-text)}.footer-col ul{list-style:none;padding:0}.footer-col ul li a{color:var(--footer-text);text-decoration:none;transition:.3s}.footer-col ul li a:hover{color:var(--accent-primary)}.footer-socials{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap}.footer-socials a{width:38px;height:38px;display:grid;place-items:center;background:var(--social-bg);border-radius:50%;color:var(--social-color);transition:.3s;font-size:16px}.footer-socials a:hover{background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));color:#fff;transform:scale(1.15)}.newsletter{display:flex;margin-top:10px}.newsletter input{flex:1;padding:10px;border:none;border-radius:6px 0 0 6px;outline:0;font-size:14px;background:var(--card-bg);color:var(--text-primary);border:1px solid var(--card-border)}.newsletter button{background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));border:none;padding:0 16px;border-radius:0 6px 6px 0;color:#fff;cursor:pointer;transition:.3s}.newsletter button:hover{filter:brightness(1.15)}.footer-bottom{text-align:center;font-size:13px;color:var(--footer-text);border-top:1px solid var(--card-border);padding-top:20px}.search-bar{max-width:500px;margin:20px auto 30px;position:relative;display:none}.search-bar.visible{display:block}.search-bar input{width:100%;padding:12px 45px 12px 15px;border-radius:30px;border:1px solid var(--card-border);background:var(--card-bg);color:var(--text-primary);font-size:15px;outline:0}.search-bar i{position:absolute;right:15px;top:50%;transform:translateY(-50%);color:var(--text-secondary)}.cta-buttons .explore{background:var(--button-secondary-bg);border:1px solid var(--button-secondary-border);color:var(--text-primary);transition:all .3s ease;box-shadow:0 4px 14px rgba(0,0,0,.08);text-decoration:none;display:inline-block}.cta-buttons .explore:hover{background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));border-color:transparent;color:#fff;transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.15);text-decoration:none}.search-hidden{display:none!important}@media (max-width:768px){.services-grid{grid-template-columns:1fr!important;gap:12px;padding:8px 10px 25px}.card,.sub-content{font-size:13px;padding:14px}.caption{font-size:15px}.order-btn{padding:8px 12px;font-size:13px}.search-bar{max-width:90%;margin:15px auto}.search-bar input{padding:10px 35px 10px 12px;font-size:14px}}@media (max-width:768px){.service-content .sub-content{display:none!important}.service-content .sub-content.active{display:block!important}}.no-results{padding:12px 16px;text-align:center;color:var(--text-secondary);font-size:14px;display:none}input,select{background:var(--input-bg)!important;color:var(--text-primary)!important}select option{background:var(--bg-primary)!important;color:var(--text-primary)!important}.faq-section{padding:50px 20px}.faq-wrapper{max-width:1100px;margin:0 auto}.faq-section h2{font-size:24px;margin-bottom:18px;font-weight:800;background:linear-gradient(90deg,var(--accent-primary),var(--accent-secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent}.accordion .item{border-radius:12px;margin-bottom:10px;overflow:hidden;border:1px solid var(--card-border);background:var(--card-bg)}.accordion-btn{width:100%;padding:16px;text-align:left;font-weight:700;display:flex;justify-content:space-between;align-items:center;background:0 0;border:none;cursor:pointer;color:var(--text-primary)}.accordion-btn .icon{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;font-weight:700}.panel{max-height:0;overflow:hidden;transition:max-height .28s ease;padding:0 16px;color:var(--text-secondary);font-size:14px}.panel p{padding:12px 0;margin:0}.modal-order{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:1000;background:rgba(0,0,0,.45)}.modal-order.open{display:flex}.modal-inner{width:100%;max-width:720px;background:var(--card-bg);border-radius:12px;padding:20px;box-shadow:0 20px 60px rgba(0,0,0,.3);border:1px solid var(--card-border);position:relative}.modal-inner .close{position:absolute;right:12px;top:8px;background:0 0;border:none;font-size:22px;cursor:pointer;color:var(--text-secondary)}.progress{margin-bottom:14px}.steps{display:flex;gap:8px;justify-content:space-between;margin-bottom:8px}.step{flex:1;padding:8px 10px;text-align:center;border-radius:8px;font-size:13px;background:var(--button-secondary-bg);color:var(--text-primary);font-weight:700}.step.active{background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));color:#fff;box-shadow:0 6px 18px rgba(0,0,0,.08)}.bar{height:6px;background:var(--button-secondary-bg);border-radius:6px;overflow:hidden}.bar-fill{height:100%;width:0;background:linear-gradient(90deg,var(--accent-primary),var(--accent-secondary));transition:width .35s ease}.step-content{display:none}.step-content.active{display:block}.modal-row{display:flex;gap:12px}.modal-row .col{flex:1}.modal-field{width:100%;padding:10px;border-radius:8px;border:1px solid var(--card-border);background:var(--bg-secondary);color:var(--text-primary);outline:0}.modal-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:14px}.btn{padding:10px 14px;border-radius:8px;border:none;cursor:pointer;font-weight:700}.btn.secondary{background:var(--button-secondary-bg);border:1px solid var(--button-secondary-border);color:var(--text-primary)}.btn.primary{background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));color:#fff}.order-success{text-align:center;padding:18px 12px}@media(max-width:560px){.modal-row{flex-direction:column}.modal-inner{padding:16px}.steps{gap:6px}}#chatbot-btn{position:fixed;bottom:80px;right:24px;width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));color:#fff;display:flex;align-items:center;justify-content:center;font-size:30px;cursor:pointer;box-shadow:0 8px 22px rgba(0,0,0,.25);z-index:9999;transition:transform .25s ease,box-shadow .25s ease,background .3s ease}#chatbot-btn:hover{transform:scale(1.08);box-shadow:0 10px 28px rgba(0,0,0,.35)}@media(max-width:768px){#chatbot-btn{bottom:70px;right:20px;width:58px;height:58px;font-size:26px}}@media(max-width:480px){#chatbot-btn{bottom:60px;right:18px;width:52px;height:52px;font-size:24px;box-shadow:0 6px 18px rgba(0,0,0,.3)}}#chatbot-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:9998;opacity:0;pointer-events:none;transition:opacity .3s ease}#chatbot-overlay.active{opacity:1;pointer-events:all}#chatbot-window{position:fixed;bottom:96px;right:24px;width:360px;max-width:calc(100% - 40px);max-height:520px;background:rgba(255,255,255,.85);border:1px solid var(--card-border);border-radius:22px;display:flex;flex-direction:column;box-shadow:0 12px 36px rgba(0,0,0,.35);overflow:hidden;z-index:9999;font-family:Poppins,sans-serif;color:var(--text-primary);backdrop-filter:blur(18px);transform:translateY(30px);opacity:0;pointer-events:none;transition:all .4s ease-in-out}#chatbot-window.open{transform:translateY(0);opacity:1;pointer-events:auto}#chatbot-header{background:var(--chat-header-bg);color:#fff;padding:14px;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:space-between}#chatbot-header .subtitle{font-weight:400;font-size:12px;opacity:.95}#chatbot-messages{flex:1;padding:14px;overflow-y:auto;font-size:14px;background:var(--chat-bg);transition:background .3s ease}.chat-msg{margin-bottom:12px;display:inline-block;clear:both;max-width:80%;word-wrap:break-word;padding:10px 14px;border-radius:12px;line-height:1.4}.chat-msg.bot{background:var(--chat-bot-msg-bg);color:var(--text-primary);float:left}.chat-msg.user{background:var(--chat-user-msg-bg);color:#fff;float:right;text-align:right}#chatbot-input{display:flex;padding:10px;gap:8px;border-top:1px solid var(--card-border);background:var(--chat-input-bg);transition:background .3s ease,border .3s ease}#chatbot-input input{flex:1;padding:10px 12px;border-radius:10px;border:1px solid var(--chat-input-border);outline:0;font-size:14px;background:var(--chat-input-bg);color:var(--text-primary);transition:background .3s ease,color .3s ease,border .3s ease}#chatbot-input button{background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));color:#fff;border:none;padding:8px 12px;border-radius:10px;cursor:pointer;font-size:16px;transition:filter .3s ease}#chatbot-input button:hover{filter:brightness(1.1)}@media(max-width:480px){#chatbot-window{left:15px;right:15px;bottom:10px;width:auto;max-height:85%;border-radius:20px}}.service-icons{position:relative}.service-tooltip{position:absolute;top:-40px;left:50%;transform:translateX(-50%);background:var(--accent-primary);color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;font-weight:600;opacity:0;transition:opacity .3s ease,transform .3s ease;pointer-events:none;z-index:20;white-space:nowrap;box-shadow:0 4px 12px rgba(0,0,0,.15)}.service-tooltip::after{content:'';position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:6px solid var(--accent-primary)}.service-tooltip.visible{opacity:1;transform:translateX(-50%) translateY(-10px)}.service-icons button{position:relative;overflow:hidden}.ripple{position:absolute;border-radius:50%;background-color:rgba(255,255,255,.4);transform:scale(0);animation:ripple .6s linear}@keyframes ripple{to{transform:scale(4);opacity:0}}@media (max-width:480px){.service-tooltip{max-width:150px;white-space:normal;text-align:center;padding:6px 10px;font-size:12px;transform:translateX(-50%) translateY(-10px);word-wrap:break-word}.service-tooltip::after{bottom:-5px;border-left:5px solid transparent;border-right:5px solid transparent;border-top:5px solid var(--accent-primary)}}@media (max-width:768px){.service-tooltip{max-width:180px;white-space:normal;text-align:center}}.footer-section{background:linear-gradient(135deg,var(--footer-bg),var(--bg-secondary));padding:60px 20px 20px;border-top:1px solid var(--card-border)}.footer-wrapper{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:40px}.footer-brand img{width:60px;margin-bottom:10px}.footer-brand h3{font-size:20px;font-weight:800;margin-bottom:10px;background:linear-gradient(90deg,var(--accent-primary),var(--accent-secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent}.footer-contact h3,.footer-links h3,.footer-newsletter h3{font-size:18px;font-weight:700;margin-bottom:15px;position:relative}.footer-contact h3::after,.footer-links h3::after,.footer-newsletter h3::after{content:"";position:absolute;bottom:-6px;left:0;width:40px;height:3px;border-radius:3px;background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary))}.footer-contact ul,.footer-links ul{list-style:none;padding:0}.footer-contact ul li,.footer-links ul li{margin:8px 0;font-size:14px;color:var(--footer-text)}.footer-links ul li a{color:var(--footer-text);text-decoration:none;transition:.3s}.footer-links ul li a:hover{color:var(--accent-primary);padding-left:5px}.footer-socials{display:flex;gap:12px;margin-top:12px}.footer-socials a{width:40px;height:40px;display:grid;place-items:center;border-radius:50%;background:var(--social-bg);color:var(--social-color);transition:.3s ease}.footer-socials a:hover{background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));color:#fff;transform:scale(1.15) rotate(6deg)}.newsletter{display:flex;margin-top:10px}.newsletter input{flex:1;padding:10px;border:1px solid var(--card-border);border-radius:8px 0 0 8px;outline:0;background:var(--card-bg);color:var(--text-primary)}.newsletter button{border:none;padding:0 18px;border-radius:0 8px 8px 0;background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));color:#fff;cursor:pointer;transition:.3s}.newsletter button:hover{filter:brightness(1.15)}.footer-bottom{text-align:center;font-size:13px;margin-top:40px;padding-top:15px;border-top:1px solid var(--card-border);color:var(--footer-text)}@media (max-width:768px){.footer-wrapper{text-align:center;grid-template-columns:1fr}.footer-contact h3::after,.footer-links h3::after,.footer-newsletter h3::after{left:50%;transform:translateX(-50%)}.footer-socials{justify-content:center}.newsletter{justify-content:center}}.orders-section{padding:50px 20px}.orders-wrapper{max-width:1200px;margin:auto}.orders-section h2{font-size:24px;margin-bottom:18px;font-weight:800;background:linear-gradient(90deg,var(--accent-primary),var(--accent-secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent}.table-container{overflow-x:auto}#orders-table{width:100%;border-collapse:collapse;background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;overflow:hidden}#orders-table td,#orders-table th{padding:12px 14px;text-align:left;border-bottom:1px solid var(--card-border);font-size:14px}#orders-table th{background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));color:#fff;font-weight:700}#orders-table tr:hover{background:rgba(26,115,232,.08)}@media(max-width:768px){#orders-table td,#orders-table th{font-size:12px;padding:8px}}.pagination{margin-top:15px;text-align:center;display:flex;justify-content:center;gap:10px}.pagination button{padding:6px 12px;border:1px solid var(--card-border);border-radius:6px;background:var(--button-secondary-bg);cursor:pointer;font-size:14px;font-weight:600;color:var(--text-primary)}.pagination button:hover{background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));color:#fff}.pagination span{align-self:center;font-size:14px;color:var(--text-secondary)}.search-container{margin-bottom:14px;text-align:left}.search-container input{padding:10px 14px;border:1px solid var(--card-border);border-radius:8px;width:280px;max-width:100%;font-size:14px;background:var(--card-bg);color:var(--text-primary);outline:0}@media(max-width:768px){.search-container{text-align:left}.search-container input{width:100%}}.hero .hero-flex{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:10px}.hero .subtitle{font-size:16px;color:var(--text-secondary);flex:1}.hero .stats-wrapper{display:flex;gap:16px;flex-shrink:0}.hero .stat-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:10px;padding:10px 14px;min-width:110px;text-align:center;box-shadow:0 2px 6px rgba(0,0,0,.05)}.hero .stat-card h3{font-size:20px;font-weight:700;background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}.hero .stat-card p{font-size:12px;color:var(--text-secondary);margin:0}@media(max-width:768px){.hero .hero-flex{flex-direction:column;align-items:flex-start}.hero .stats-wrapper{width:100%;justify-content:flex-start}.hero .stat-card{min-width:100px}}.hero{text-align:center;padding:60px 20px 30px}.hero .hero-box{max-width:720px;margin:0 auto;padding:24px 20px;border-radius:18px;background:var(--card-bg);border:1px solid var(--card-border);box-shadow:0 6px 20px rgba(0,0,0,.12)}.hero .title{font-size:clamp(26px, 6vw, 42px);font-weight:800;background:linear-gradient(90deg,var(--accent-primary),var(--accent-secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:10px}.hero .subtitle{font-size:clamp(14px, 3vw, 18px);color:var(--text-secondary);margin-bottom:20px}.hero .stats-wrapper{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}.hero .stat-card{flex:1 1 130px;max-width:160px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;padding:14px 10px;text-align:center;box-shadow:0 3px 10px rgba(0,0,0,.08);transition:transform .25s ease,box-shadow .25s ease}.hero .stat-card:hover{transform:translateY(-4px);box-shadow:0 6px 18px rgba(0,0,0,.12)}.hero .stat-card i{font-size:20px;color:var(--accent-primary);margin-bottom:6px}.hero .stat-card h3{font-size:20px;font-weight:700;margin-bottom:4px;background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent}.hero .stat-card p{font-size:13px;color:var(--text-secondary);margin:0}@media (max-width:600px){.hero{padding:40px 15px 20px}.hero .title{font-size:24px}.hero .subtitle{font-size:14px;text-align:center}.hero .stats-wrapper{flex-direction:row;justify-content:center}.hero .stat-card{flex:1 1 45%;max-width:none}}.status{font-weight:600;padding:4px 10px;border-radius:6px;font-size:13px;display:inline-block}.status.pending{background:#fff3cd;color:#856404;border:1px solid #ffeeba}.status.proses{background:#cce5ff;color:#004085;border:1px solid #b8daff}.status.selesai{background:#d4edda;color:#155724;border:1px solid #c3e6cb}.app-description{text-align:left!important;font-size:14px;line-height:1.6;color:var(--text-secondary);margin-top:10px;padding:8px 12px;background:var(--bg-secondary);border:1px dashed var(--card-border);border-radius:8px}.app-description strong{color:var(--accent-primary);font-weight:600}@media (max-width:768px){.app-description{font-size:13px;padding:6px 10px}}.sub-content .app-description,.sub-content .app-description *,.sub-content p{display:block;width:100%;text-align:left!important;margin-left:0;margin-right:auto}</style>
 </head>
 <body>
 <div class=bg><img src=jashubs.jpg alt=background></div>
@@ -105,15 +105,15 @@
 <article class="card sub-content" id=ig-views>
 <i class="fab fa-instagram"></i><div class=caption>Tayangan Instagram</div>
 <ul class=service-list>
-<li>1.000 Views <span>Rp 2k</span></li>
-<li>2.000 Views <span>Rp 3k</span></li>
-<li>5.000 Views <span>Rp 4k</span></li>
-<li>10.000 Views <span>Rp 6k</span></li>
-<li>15.000 Views <span>Rp 7k</span></li>
-<li>20.000 Views <span>Rp 8k</span></li>
-<li>30.000 Views <span>Rp 9k</span></li>
-<li>50.000 Views <span>Rp 12k</span></li>
-<li>100.000 Views <span>Rp 15k</span></li>
+<li>1.000 Views <span>Rp 2.500</span></li>
+<li>2.000 Views <span>Rp 4.000</span></li>
+<li>5.000 Views <span>Rp 6.500</span></li>
+<li>10.000 Views <span>Rp 11.900</span></li>
+<li>15.000 Views <span>Rp 15.900</span></li>
+<li>20.000 Views <span>Rp 19.900</span></li>
+<li>30.000 Views <span>Rp 26.900</span></li>
+<li>50.000 Views <span>Rp 39.900</span></li>
+<li>100.000 Views <span>Rp 47.900</span></li>
 </ul>
 <a href=pesanan.html class=order-btn>Pesan Sekarang</a>
 </article>
@@ -158,15 +158,15 @@
 <article class="card sub-content" id=tt-views>
 <i class="fab fa-tiktok"></i><div class=caption>Tayangan TikTok</div>
 <ul class=service-list>
-<li>1.000 Views <span>Rp 2k</span></li>
-<li>2.000 Views <span>Rp 3k</span></li>
-<li>5.000 Views <span>Rp 4k</span></li>
-<li>10.000 Views <span>Rp 6k</span></li>
-<li>15.000 Views <span>Rp 7k</span></li>
-<li>20.000 Views <span>Rp 8k</span></li>
-<li>30.000 Views <span>Rp 9k</span></li>
-<li>50.000 Views <span>Rp 12k</span></li>
-<li>100.000 Views <span>Rp 15k</span></li>
+<li>1.000 Views <span>Rp 2.500</span></li>
+<li>2.000 Views <span>Rp 4.000</span></li>
+<li>5.000 Views <span>Rp 6.500</span></li>
+<li>10.000 Views <span>Rp 11.900</span></li>
+<li>15.000 Views <span>Rp 15.900</span></li>
+<li>20.000 Views <span>Rp 19.900</span></li>
+<li>30.000 Views <span>Rp 26.900</span></li>
+<li>50.000 Views <span>Rp 39.900</span></li>
+<li>100.000 Views <span>Rp 47.900</span></li>
 </ul>
 <a href=pesanan.html class=order-btn>Pesan Sekarang</a>
 </article>
@@ -259,352 +259,372 @@
 <div class=service-content id=apps>
 <div class=services-grid>
 <article class=card>
-<i class="fas fa-robot"></i>
-<div class=caption>ChatGPT</div>
-<ul class=service-list>
-<li>1 Bulan 5U (Sharing) <span>Rp 18k</span></li>
-<li>1 Minggu (Sharing) <span>Rp 22k</span></li>
-<li>1 Bulan 10U <span>Rp 34k</span></li>
-<li>1 Bulan 8U <span>Rp 40k</span></li>
-</ul>
-<a href=pesanan.html class=order-btn>Pesan Sekarang</a>
-</article>
-<article class=card>
-<i class="fab fa-youtube"></i>
-<div class=caption>YouTube Premium</div>
-<ul class=service-list>
-<li>1 Bulan (Sharing, 5 Pengguna) <span>Rp 18.000</span></li>
-<li>1 Minggu (Sharing, 1 Pengguna) <span>Rp 22.000</span></li>
-<li>1 Bulan (Sharing, 10 Pengguna) <span>Rp 34.000</span></li>
-<li>1 Bulan (Sharing, 8 Pengguna) <span>Rp 40.000</span></li>
-</ul>
-<a href=pesanan.html class=order-btn>Pesan Sekarang</a>
-</article>
-<article class=card>
 <i class="fas fa-paint-brush"></i>
 <div class=caption>Canva Pro</div>
 <ul class=service-list>
-<li>1 Bulan <span>Rp 3k</span></li>
-<li>3 Bulan <span>Rp 7k</span></li>
-<li>1 Tahun <span>Rp 15k</span></li>
-<li>EDU Lifetime <span>Rp 22.65k</span></li>
+<li>1 Bulan <span>Rp 5.500</span></li>
+<li>3 Bulan <span>Rp 7.000</span></li>
+<li>1 Tahun <span>Rp 12.000</span></li>
+<li>EDU Lifetime <span>Rp 22.650</span></li>
 </ul>
+<div class=app-description>
+<p><strong>Akun:</strong> Disediakan pembeli, diundang penjual.</p>
+<p><strong>Garansi:</strong> Full selama menaati peraturan.</p>
+<p><strong>Catatan:</strong> Paket Edu Lifetime hanya mencakup fitur student & teacher.</p>
+</div>
 <a href=pesanan.html class=order-btn>Pesan Sekarang</a>
 </article>
 <article class=card>
 <i class="fas fa-video"></i>
 <div class=caption>CapCut Pro</div>
 <ul class=service-list>
-<li>1 Minggu <span>Rp 10k</span></li>
-<li>1 Bulan (Garansi 7 hari) <span>Rp 15k</span></li>
-<li>1 Bulan (Full Garansi) <span>Rp 17k</span></li>
+<li>Share 1 Bulan <span>Rp 10.000</span></li>
+<li>Private 1 Minggu <span>Rp 9.000</span></li>
+<li>Private 1 Bulan <span>Rp 13.000</span></li>
 </ul>
+<div class=app-description>
+<p><strong>Akun:</strong> Dari penjual.</p>
+<p><strong>Durasi:</strong> 1 bulan (28-30 hari).</p>
+<p><strong>Aturan:</strong> Boleh dijual kembali (sharing maks 3 user).</p>
+<p><strong>Garansi:</strong> Full.</p>
+</div>
+<a href=pesanan.html class=order-btn>Pesan Sekarang</a>
+</article>
+<article class=card>
+<i class="fas fa-film"></i>
+<div class=caption>Netflix Premium 4K</div>
+<ul class=service-list>
+<li>1P1U (1 profile 1 user) 1 Bulan <span>Rp 25.500</span></li>
+<li>1P2U (1 profile 2 user) 1 Bulan <span>Rp 17.000</span></li>
+<li>Semiprivate 1 Bulan <span>Rp 29.500</span></li>
+<li>Private 1 Bulan <span>Rp 100.000</span></li>
+</ul>
+<div class=app-description>
+<p><strong>Akun:</strong> Dari penjual.</p>
+<p><strong>Aturan:</strong> Dilarang keras mengutak-atik akun. Melanggar akan menghanguskan garansi & denda 2x lipat.</p>
+<p><strong>Promo:</strong> Tersedia promo NETFLIX 1U1P seharga Rp 23.000.</p>
+</div>
 <a href=pesanan.html class=order-btn>Pesan Sekarang</a>
 </article>
 <article class=card>
 <i class="fab fa-spotify"></i>
 <div class=caption>Spotify Premium</div>
 <ul class=service-list>
-<li>1 Bulan <span>Rp 18k</span></li>
-<li>2 Bulan <span>Rp 22k</span></li>
+<li>Famplan 1 Bulan <span>Rp 18.000</span></li>
+<li>Famplan 2 Bulan <span>Rp 28.000</span></li>
+<li>Inplan 1 Bulan <span>Rp 20.000</span></li>
 </ul>
+<div class=app-description>
+<p><strong>Sistem Famplan:</strong> Invite via email, bisa diperpanjang.</p>
+<p><strong>Aturan Famplan:</strong> Hanya boleh 2x join per tahun.</p>
+<p><strong>Garansi:</strong> Full.</p>
+</div>
+<a href=pesanan.html class=order-btn>Pesan Sekarang</a>
+</article>
+<article class=card>
+<i class="fab fa-youtube"></i>
+<div class=caption>YouTube Premium</div>
+<ul class=service-list>
+<li>Famplan 1 Bulan <span>Rp 8.500</span></li>
+<li>Individu 1 Bulan <span>Rp 11.500</span></li>
+<li>Individu 3 Bulan <span>Rp 26.000</span></li>
+</ul>
+<div class=app-description>
+<p><strong>Fitur:</strong> Termasuk YouTube Music.</p>
+<p><strong>Perangkat:</strong> Mendukung semua device.</p>
+<p><strong>Garansi:</strong> 1x ganti.</p>
+</div>
 <a href=pesanan.html class=order-btn>Pesan Sekarang</a>
 </article>
 <article class=card>
 <i class="fas fa-tv"></i>
 <div class=caption>Vidio</div>
 <ul class=service-list>
-<li>1 Bulan (Sharing) <span>Rp 18.5k</span></li>
-<li>1 Bulan (Private All Device) <span>Rp 28k</span></li>
-<li>1 Tahun (Private TV Only) <span>Rp 11.73k</span></li>
+<li>Sharing 1 Bulan <span>Rp 23.000</span></li>
+<li>1 Bulan Mobile <span>Rp 16.000</span></li>
+<li>Private Mobile 1 Bulan <span>Rp 25.000</span></li>
+<li>Private All Device 1 Bulan <span>Rp 38.000</span></li>
+<li>Private TV Only 1 Tahun <span>Rp 11.725</span></li>
 </ul>
-<a href=pesanan.html class=order-btn>Pesan Sekarang</a>
-</article>
-<article class=card>
-<i class="fas fa-film"></i>
-<div class=caption>Netflix</div>
-<ul class=service-list>
-<li>1P1U - 1 Minggu <span>Rp 14.85k</span></li>
-<li>1P1U - 1 Bulan <span>Rp 25k</span></li>
-<li>1P2U - 1 Minggu <span>Rp 13.65k</span></li>
-<li>1P2U - 1 Bulan <span>Rp 20k</span></li>
-<li>Private - 1 Bulan <span>Rp 100k</span></li>
-</ul>
-<a href=pesanan.html class=order-btn>Pesan Sekarang</a>
-</article>
-<article class=card>
-<i class="fas fa-magic"></i>
-<div class=caption>Remini</div>
-<ul class=service-list>
-<li>1 Bulan (Web Sharing) <span>Rp 12.5k</span></li>
-<li>1 Tahun (App Android PRO) <span>Rp 38.75k</span></li>
-</ul>
-<a href=pesanan.html class=order-btn>Pesan Sekarang</a>
-</article>
-<article class=card>
-<i class="fas fa-star"></i>
-<div class=caption>Disney+ Hotstar</div>
-<ul class=service-list>
-<li>1 Minggu (Sharing) <span>Rp 16k</span></li>
-<li>1 Bulan (Sharing) <span>Rp 23k</span></li>
-<li>1 Bulan (Private) <span>Rp 65k</span></li>
-</ul>
-<a href=pesanan.html class=order-btn>Pesan Sekarang</a>
-</article>
-<article class=card>
-<i class="fas fa-dragon"></i>
-<div class=caption>IQIYI</div>
-<ul class=service-list>
-<li>1 Bulan (Sharing) <span>Rp 10.48k</span></li>
-<li>1 Bulan (Private) <span>Rp 31k</span></li>
-</ul>
-<a href=pesanan.html class=order-btn>Pesan Sekarang</a>
-</article>
-<article class=card>
-<i class="fas fa-video"></i>
-<div class=caption>Zoom Meeting Pro</div>
-<ul class=service-list>
-<li>14 Hari <span>Rp 11.25k</span></li>
-</ul>
-<a href=pesanan.html class=order-btn>Pesan Sekarang</a>
-</article>
-<article class=card>
-<i class="fas fa-play-circle"></i>
-<div class=caption>WeTV</div>
-<ul class=service-list>
-<li>1 Bulan (Sharing) <span>Rp 13k</span></li>
-<li>1 Bulan (Private) <span>Rp 32k</span></li>
-</ul>
-<a href=pesanan.html class=order-btn>Pesan Sekarang</a>
-</article>
-<article class=card>
-<i class="fas fa-camera"></i>
-<div class=caption>VSCO</div>
-<ul class=service-list>
-<li>1 Tahun <span>Rp 21.25k</span></li>
-</ul>
-<a href=pesanan.html class=order-btn>Pesan Sekarang</a>
-</article>
-<article class=card>
-<i class="fas fa-film"></i>
-<div class=caption>VIU Premium</div>
-<ul class=service-list>
-<li>1 Tahun (Anti Limit) <span>Rp 7k</span></li>
-<li>150 Akun <span>Rp 20k</span></li>
-</ul>
-<a href=pesanan.html class=order-btn>Pesan Sekarang</a>
-</article>
-<article class=card>
-<i class="fas fa-tv"></i>
-<div class=caption>Vision+</div>
-<ul class=service-list>
-<li>1 Bulan (Sharing) <span>Rp 11k</span></li>
-<li>1 Bulan (Code Redeem) <span>Rp 10.63k</span></li>
-<li>1 Bulan (Private) <span>Rp 13k</span></li>
-</ul>
-<a href=pesanan.html class=order-btn>Pesan Sekarang</a>
-</article>
-<article class=card>
-<i class="fas fa-tv"></i>
-<div class=caption>RCTI+</div>
-<ul class=service-list>
-<li>1 Bulan (Sharing) <span>Rp 17k</span></li>
-<li>1 Bulan (Private) <span>Rp 28k</span></li>
-</ul>
-<a href=pesanan.html class=order-btn>Pesan Sekarang</a>
-</article>
-<article class=card>
-<i class="fas fa-image"></i>
-<div class=caption>Picsart</div>
-<ul class=service-list>
-<li>1 Bulan (Private) <span>Rp 10k</span></li>
-</ul>
-<a href=pesanan.html class=order-btn>Pesan Sekarang</a>
-</article>
-<article class=card>
-<i class="fas fa-image"></i>
-<div class=caption>Meitu</div>
-<ul class=service-list>
-<li>1 Bulan (Sharing) <span>Rp 18k</span></li>
-<li>1 Bulan (Private) <span>Rp 33k</span></li>
-</ul>
-<a href=pesanan.html class=order-btn>Pesan Sekarang</a>
-</article>
-<article class=card>
-<i class="fas fa-film"></i>
-<div class=caption>HBO</div>
-<ul class=service-list>
-<li>1 Bulan (Sharing Max) <span>Rp 20k</span></li>
-<li>1 Bulan (Sharing GO) <span>Rp 16.25k</span></li>
-<li>1 Bulan (Private Max) <span>Rp 48k</span></li>
-</ul>
-<a href=pesanan.html class=order-btn>Pesan Sekarang</a>
-</article>
-<article class=card>
-<i class="fas fa-address-book"></i>
-<div class=caption>GetContact Premium</div>
-<ul class=service-list>
-<li>1 Bulan <span>Rp 13k</span></li>
-</ul>
+<div class=app-description>
+<p><strong>Plan:</strong> Platinum.</p>
+<p><strong>Akun:</strong> Dari penjual.</p>
+<p><strong>Garansi:</strong> Full selama menaati peraturan.</p>
+</div>
 <a href=pesanan.html class=order-btn>Pesan Sekarang</a>
 </article>
 <article class=card>
 <i class="fab fa-amazon"></i>
 <div class=caption>Amazon Prime Video</div>
 <ul class=service-list>
-<li>1 Bulan (Sharing) <span>Rp 12k</span></li>
-<li>1 Bulan (Private) <span>Rp 15k</span></li>
+<li>Sharing 1 Bulan <span>Rp 7.000</span></li>
+<li>Private 1 Bulan <span>Rp 13.500</span></li>
 </ul>
+<div class=app-description>
+<p><strong>Akun:</strong> Dari penjual.</p>
+<p><strong>Fitur Private:</strong> Bisa membuat 5 profil.</p>
+<p><strong>Garansi:</strong> Full jika mengikuti S&K.</p>
+</div>
 <a href=pesanan.html class=order-btn>Pesan Sekarang</a>
 </article>
 <article class=card>
 <i class="fas fa-music"></i>
 <div class=caption>Apple Music</div>
 <ul class=service-list>
-<li>1 Bulan (Famplan) <span>Rp 9.7k</span></li>
-<li>2 Bulan (Famplan) <span>Rp 12.98k</span></li>
-<li>3 Bulan (Famplan) <span>Rp 20.75k</span></li>
-<li>1 Bulan (Famhead) <span>Rp 14k</span></li>
+<li>Famplan 1 Bulan <span>Rp 9.700</span></li>
+<li>Famplan 2 Bulan <span>Rp 12.975</span></li>
+<li>Famplan 3 Bulan <span>Rp 20.750</span></li>
+<li>Famhead 1 Bulan <span>Rp 14.000</span></li>
 </ul>
+<div class=app-description>
+<p><strong>Sistem Famplan:</strong> Memerlukan Apple ID.</p>
+<p><strong>Fitur Famhead:</strong> Bisa mengundang 6 anggota.</p>
+</div>
 <a href=pesanan.html class=order-btn>Pesan Sekarang</a>
 </article>
 <article class=card>
 <i class="fas fa-play"></i>
-<div class=caption>BStation</div>
+<div class=caption>Bstation</div>
 <ul class=service-list>
-<li>1 Bulan <span>Rp 11.1k</span></li>
-<li>3 Bulan <span>Rp 14.9k</span></li>
-<li>1 Tahun <span>Rp 17.3k</span></li>
+<li>Sharing 1 Bulan <span>Rp 11.100</span></li>
+<li>Sharing 3 Bulan <span>Rp 14.900</span></li>
+<li>Sharing 1 Tahun <span>Rp 17.300</span></li>
 </ul>
+<div class=app-description>
+<p><strong>Akun:</strong> Dari penjual.</p>
+<p><strong>Tips:</strong> Jika terkena limit, unduh video terlebih dahulu.</p>
+<p><strong>Garansi:</strong> Full selama menaati peraturan.</p>
+</div>
+<a href=pesanan.html class=order-btn>Pesan Sekarang</a>
+</article>
+<article class=card>
+<i class="fas fa-robot"></i>
+<div class=caption>Chat GPT+</div>
+<ul class=service-list>
+<li>Invite Private 1 Bulan <span>Rp 28.000</span></li>
+<li>Private Team 1 Bulan (tanpa garansi) <span>Rp 58.000</span></li>
+<li>Private Team 1 Bulan (full garansi) <span>Rp 78.000</span></li>
+</ul>
+<div class=app-description>
+<p><strong>Akun:</strong> Dari penjual.</p>
+<p><strong>Sistem:</strong> Wajib sabar karena menggunakan sistem OTP.</p>
+<p><strong>Garansi:</strong> Full (untuk paket tertentu).</p>
+</div>
+<a href=pesanan.html class=order-btn>Pesan Sekarang</a>
+</article>
+<article class=card>
+<i class="fas fa-star"></i>
+<div class=caption>Disney+ Hotstar</div>
+<ul class=service-list>
+<li>Share 1 Minggu <span>Rp 16.000</span></li>
+<li>Share 1 Bulan <span>Rp 23.000</span></li>
+<li>Private 1 Bulan <span>Rp 65.000</span></li>
+</ul>
+<div class=app-description>
+<p><strong>Plan:</strong> Premium.</p>
+<p><strong>Aturan Sharing:</strong> Batas layar 3 user.</p>
+<p><strong>Garansi:</strong> 1x ganti (replace) atau sesuai aturan.</p>
+</div>
 <a href=pesanan.html class=order-btn>Pesan Sekarang</a>
 </article>
 <article class=card>
 <i class="fas fa-tv"></i>
 <div class=caption>Dramabox</div>
 <ul class=service-list>
-<li>1 Bulan <span>Rp 12.2k</span></li>
-<li>3 Bulan <span>Rp 23.5k</span></li>
+<li>Sharing 1 Bulan <span>Rp 12.200</span></li>
+<li>Sharing 3 Bulan <span>Rp 23.500</span></li>
 </ul>
+<div class=app-description>
+<p><strong>Akun:</strong> Dari penjual.</p>
+<p><strong>Garansi:</strong> Full selama menaati peraturan.</p>
+</div>
 <a href=pesanan.html class=order-btn>Pesan Sekarang</a>
 </article>
 <article class=card>
-<i class="fab fa-instagram"></i>
-<div class=caption>Instagram Followers</div>
+<i class="fas fa-users"></i>
+<div class=caption>Followers Sosmed</div>
 <ul class=service-list>
-<li>100 Followers <span>Rp 14.5k</span></li>
+<li>Instagram 100 Followers <span>Rp 14.500</span></li>
+<li>TikTok 100 Followers <span>Rp 14.500</span></li>
 </ul>
+<div class=app-description>
+<p><strong>Proses:</strong> Cepat, aman, dan tanpa drop.</p>
+<p><strong>Data:</strong> Membutuhkan username/link akun.</p>
+<p><strong>Harga:</strong> Berlaku kelipatan.</p>
+</div>
 <a href=pesanan.html class=order-btn>Pesan Sekarang</a>
 </article>
 <article class=card>
-<i class="fab fa-tiktok"></i>
-<div class=caption>TikTok Followers</div>
+<i class="fas fa-address-book"></i>
+<div class=caption>GetContact Premium</div>
 <ul class=service-list>
-<li>100 Followers <span>Rp 14.5k</span></li>
+<li>1 Bulan <span>Rp 13.000</span></li>
 </ul>
+<div class=app-description>
+<p><strong>Proses:</strong> Aktivasi/perpanjangan via OTP WA (stay 5 menit).</p>
+<p><strong>Syarat:</strong> No. GetContact harus sama dengan No. WA.</p>
+<p><strong>Durasi:</strong> 1 bulan (25-30 hari).</p>
+<p><strong>Garansi:</strong> Full.</p>
+</div>
 <a href=pesanan.html class=order-btn>Pesan Sekarang</a>
 </article>
 <article class=card>
-<i class="fas fa-adobe"></i>
-<div class=caption>Adobe Creative Cloud</div>
+<i class="fas fa-film"></i>
+<div class=caption>HBO</div>
 <ul class=service-list>
-<li><span>Chat admin</span></li>
+<li>Sharing Max 1 Bulan <span>Rp 20.000</span></li>
+<li>Sharing Go 1 Bulan <span>Rp 16.250</span></li>
+<li>Private Max 1 Bulan <span>Rp 48.000</span></li>
 </ul>
+<div class=app-description>
+<p><strong>Akun:</strong> Dari penjual.</p>
+<p><strong>Aturan:</strong> Wajib beli 2 slot untuk login di TV.</p>
+<p><strong>Garansi:</strong> Full selama menaati peraturan.</p>
+</div>
 <a href=pesanan.html class=order-btn>Pesan Sekarang</a>
 </article>
 <article class=card>
-<i class="fab fa-microsoft"></i>
-<div class=caption>Microsoft 365</div>
+<i class="fas fa-dragon"></i>
+<div class=caption>Iqiyi</div>
 <ul class=service-list>
-<li><span>Chat admin</span></li>
+<li>Sharing Premium 1 Bulan <span>Rp 10.475</span></li>
+<li>Private 1 Bulan <span>Rp 31.000</span></li>
 </ul>
+<div class=app-description>
+<p><strong>Akun:</strong> Dari penjual.</p>
+<p><strong>Garansi:</strong> Full selama menaati peraturan.</p>
+</div>
 <a href=pesanan.html class=order-btn>Pesan Sekarang</a>
 </article>
 <article class=card>
-<i class="fab fa-google"></i>
-<div class=caption>Google One</div>
+<i class="fas fa-image"></i>
+<div class=caption>Meitu</div>
 <ul class=service-list>
-<li><span>Chat admin</span></li>
+<li>Share 1 Bulan <span>Rp 18.000</span></li>
+<li>Private 1 Bulan <span>Rp 33.000</span></li>
 </ul>
+<div class=app-description>
+<p><strong>Akun:</strong> Dari penjual.</p>
+<p><strong>Garansi:</strong> Full.</p>
+</div>
 <a href=pesanan.html class=order-btn>Pesan Sekarang</a>
 </article>
 <article class=card>
-<i class="fas fa-file-alt"></i>
-<div class=caption>Turnitin</div>
+<i class="fas fa-image"></i>
+<div class=caption>PicsArt</div>
 <ul class=service-list>
-<li><span>Chat admin</span></li>
+<li>Private 1 Bulan <span>Rp 10.000</span></li>
 </ul>
+<div class=app-description>
+<p><strong>Akun:</strong> Dari penjual.</p>
+<p><strong>Garansi:</strong> Full.</p>
+</div>
 <a href=pesanan.html class=order-btn>Pesan Sekarang</a>
 </article>
 <article class=card>
-<i class="fas fa-keyboard"></i>
-<div class=caption>Grammarly Premium</div>
+<i class="fas fa-magic"></i>
+<div class=caption>Remini</div>
 <ul class=service-list>
-<li><span>Chat admin</span></li>
+<li>Sharing Web 1 Bulan (Android & iOS) <span>Rp 12.500</span></li>
+<li>Sharing App Android 1 Tahun (Pro) <span>Rp 38.750</span></li>
 </ul>
+<div class=app-description>
+<p><strong>Proses:</strong> Diundang melalui email.</p>
+<p><strong>Garansi:</strong> Full.</p>
+</div>
 <a href=pesanan.html class=order-btn>Pesan Sekarang</a>
 </article>
 <article class=card>
-<i class="fas fa-file-word"></i>
-<div class=caption>WPS Premium</div>
+<i class="fas fa-film"></i>
+<div class=caption>Viu Premium</div>
 <ul class=service-list>
-<li><span>Chat admin</span></li>
+<li>Anti Limit 1 Tahun <span>Rp 7.000</span></li>
+<li>150 Akun <span>Rp 20.000</span></li>
 </ul>
+<div class=app-description>
+<p><strong>Akun:</strong> Dari penjual.</p>
+</div>
 <a href=pesanan.html class=order-btn>Pesan Sekarang</a>
 </article>
 <article class=card>
-<i class="fab fa-windows"></i>
-<div class=caption>Windows 10/11 Pro</div>
+<i class="fas fa-camera"></i>
+<div class=caption>VSCO</div>
 <ul class=service-list>
-<li><span>Chat admin</span></li>
+<li>Plus 1 Tahun <span>Rp 21.250</span></li>
 </ul>
+<div class=app-description>
+<p><strong>Akun:</strong> Dari penjual.</p>
+<p><strong>Garansi:</strong> 6 bulan.</p>
+</div>
 <a href=pesanan.html class=order-btn>Pesan Sekarang</a>
 </article>
 <article class=card>
-<i class="fas fa-file-word"></i>
-<div class=caption>Office 2019/2021</div>
+<i class="fas fa-play-circle"></i>
+<div class=caption>Youku</div>
 <ul class=service-list>
-<li><span>Chat admin</span></li>
+<li>Share 1 Bulan <span>Rp 11.000</span></li>
+<li>Share 3 Bulan <span>Rp 12.000</span></li>
+<li>Share 1 Tahun <span>Rp 15.000</span></li>
 </ul>
+<div class=app-description>
+<p><strong>Akun:</strong> Dari penjual.</p>
+<p><strong>Garansi:</strong> Full jika mengikuti S&K.</p>
+</div>
 <a href=pesanan.html class=order-btn>Pesan Sekarang</a>
 </article>
 <article class=card>
 <i class="fas fa-video"></i>
-<div class=caption>CapCut Web Premium</div>
+<div class=caption>Zoom Meeting Pro</div>
 <ul class=service-list>
-<li><span>Chat admin</span></li>
+<li>14 Hari <span>Rp 11.250</span></li>
 </ul>
-<a href=pesanan.html class=order-btn>Pesan Sekarang</a>
-</article>
-<article class=card>
-<i class="fas fa-wave-square"></i>
-<div class=caption>Alight Motion Pro</div>
-<ul class=service-list>
-<li><span>Chat admin</span></li>
-</ul>
+<div class=app-description>
+<p><strong>Akun:</strong> Dari penjual.</p>
+<p><strong>Kapasitas:</strong> 100 peserta.</p>
+<p><strong>Perangkat:</strong> Mendukung semua device.</p>
+<p><strong>Garansi:</strong> Full.</p>
+</div>
 <a href=pesanan.html class=order-btn>Pesan Sekarang</a>
 </article>
 <article class=card>
 <i class="fas fa-camera-retro"></i>
-<div class=caption>Lightroom Premium</div>
+<div class=caption>Lightroom</div>
 <ul class=service-list>
-<li><span>Chat admin</span></li>
+<li>Sharing 1 Tahun <span>Rp 13.000</span></li>
 </ul>
+<div class=app-description>
+<p><strong>Akun:</strong> Dari penjual.</p>
+<p><strong>Bonus:</strong> Gratis preset dan tutorial.</p>
+<p><strong>Garansi:</strong> Full jika mengikuti S&K.</p>
+</div>
 <a href=pesanan.html class=order-btn>Pesan Sekarang</a>
 </article>
 <article class=card>
-<i class="fas fa-edit"></i>
-<div class=caption>Picsay Pro</div>
+<i class="fas fa-tv"></i>
+<div class=caption>Loklok</div>
 <ul class=service-list>
-<li><span>Chat admin</span></li>
+<li>Share Basic 1 Bulan <span>Rp 20.000</span></li>
+<li>Share Standart 1 Bulan <span>Rp 22.000</span></li>
+<li>Share VIP 20 Hari <span>Rp 13.000</span></li>
 </ul>
+<div class=app-description>
+<p><strong>Akun:</strong> Dari penjual.</p>
+<p><strong>Garansi:</strong> Full jika mengikuti S&K.</p>
+</div>
 <a href=pesanan.html class=order-btn>Pesan Sekarang</a>
 </article>
 <article class=card>
-<i class="fas fa-server"></i>
-<div class=caption>Hosting Domain</div>
+<i class="fas fa-paint-brush"></i>
+<div class=caption>Ibis Paint X</div>
 <ul class=service-list>
-<li><span>Chat admin</span></li>
+<li>1 Bulan <span>Rp 12.000</span></li>
+<li>1 Tahun <span>Rp 16.000</span></li>
 </ul>
+<div class=app-description>
+<p><strong>Perangkat:</strong> Hanya untuk Android.</p>
+<p><strong>Akun:</strong> Dari penjual.</p>
+<p><strong>Garansi:</strong> Full jika mengikuti S&K.</p>
+</div>
 <a href=pesanan.html class=order-btn>Pesan Sekarang</a>
 </article>
 </div>
