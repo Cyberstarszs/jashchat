@@ -3940,5 +3940,29 @@
     "Supply": 376,
     "Untung": 5624,
     "keterangan": "selesai"
+  },
+  {
+    "ID": "0330",
+    "Tanggal": "25 September 2025",
+    "Jenis": "Followers Tiktok",
+    "Paket": "750",
+    "Total": 40000,
+    "Link": "https://www.tiktok.com/@riski_egois?_t=ZS-900ovAdvEg5&_r=1",
+    "Supply": 14157,
+    "Untung": 25843,
+    "keterangan": "proses",
+    "ID_Pesanan": "0330"
+  },
+  {
+    "ID": "0331",
+    "Tanggal": "25 September 2025",
+    "Jenis": "Youtube Premium Premium Apps",
+    "Paket": "1",
+    "Total": 8000,
+    "Link": "https://jashub.web.id/status",
+    "Supply": 0,
+    "Untung": 8000,
+    "keterangan": "proses",
+    "ID_Pesanan": "0330"
   }
 ]
