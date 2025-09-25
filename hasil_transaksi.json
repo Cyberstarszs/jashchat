@@ -3988,5 +3988,40 @@
     "Untung": 2440,
     "keterangan": "proses",
     "ID_Pesanan": "0333"
+  },
+  {
+    "ID": "0334",
+    "Tanggal": "25 September 2025",
+    "Jenis": "Views Tiktok",
+    "Paket": "2000",
+    "Total": 3000,
+    "Link": "https://vt.tiktok.com/ZSDV7gwf5/",
+    "Supply": 560,
+    "Untung": 2440,
+    "keterangan": "selesai",
+    "ID_Pesanan": "0334"
+  },
+  {
+    "ID": "0335",
+    "Tanggal": "25 September 2025",
+    "Jenis": "Followers Tiktok",
+    "Paket": "3000",
+    "Total": 125000,
+    "Link": "https://www.tiktok.com/@dndam_m?_t=ZS-901LMEG1VI5&_r=1",
+    "Supply": 56628,
+    "Untung": 68372,
+    "keterangan": "selesai",
+    "ID_Pesanan": "0334"
+  },
+  {
+    "ID": "0336",
+    "Tanggal": "25 September 2025",
+    "Jenis": "Followers Tiktok",
+    "Paket": "100",
+    "Total": 7000,
+    "Link": "https://www.tiktok.com/@wahyu.af9?is_from_webapp=1&sender_device=pc",
+    "Supply": 1887,
+    "Untung": 5113,
+    "keterangan": "selesai"
   }
 ]
