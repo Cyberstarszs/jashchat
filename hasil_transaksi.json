@@ -3964,5 +3964,17 @@
     "Untung": 8000,
     "keterangan": "proses",
     "ID_Pesanan": "0330"
+  },
+  {
+    "ID": "0332",
+    "Tanggal": "25 September 2025",
+    "Jenis": "Likes Tiktok",
+    "Paket": "1000",
+    "Total": 11000,
+    "Link": "https://vt.tiktok.com/ZSDV89jQT/",
+    "Supply": 752,
+    "Untung": 10248,
+    "keterangan": "selesai",
+    "ID_Pesanan": "0332"
   }
 ]
