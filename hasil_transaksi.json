@@ -4057,5 +4057,17 @@
     "Supply": 560,
     "Untung": 3440,
     "keterangan": "proses"
+  },
+  {
+    "ID": "0340",
+    "Tanggal": "26 September 2025",
+    "Jenis": "Followers Instagram",
+    "Paket": "50",
+    "Total": 4000,
+    "Link": "https://jashub.web.id/status",
+    "Supply": 1716,
+    "Untung": 2284,
+    "keterangan": "selesai",
+    "ID_Pesanan": "0321"
   }
 ]
