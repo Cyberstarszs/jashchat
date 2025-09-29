@@ -4177,5 +4177,29 @@
     "Untung": 2850,
     "keterangan": "proses",
     "ID_Pesanan": "0348"
+  },
+  {
+    "ID": "0350",
+    "Tanggal": "29 September 2025",
+    "Jenis": "Followers Tiktok",
+    "Paket": "300",
+    "Total": 15000,
+    "Link": "https://www.tiktok.com/@arilb42?_t=ZS-907cgsJQkD9&_r=1",
+    "Supply": 5662,
+    "Untung": 9338,
+    "keterangan": "proses",
+    "ID_Pesanan": "0350"
+  },
+  {
+    "ID": "0351",
+    "Tanggal": "29 September 2025",
+    "Jenis": "Followers Tiktok",
+    "Paket": "500",
+    "Total": 27000,
+    "Link": "https://www.tiktok.com/@keyypamekasan?_t=ZS-907qPaoJ8dt&_r=1",
+    "Supply": 9438,
+    "Untung": 17562,
+    "keterangan": "proses",
+    "ID_Pesanan": "0350"
   }
 ]
