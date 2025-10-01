@@ -4213,5 +4213,29 @@
     "Untung": 5113,
     "keterangan": "proses",
     "ID_Pesanan": "0352"
+  },
+  {
+    "ID": "0353",
+    "Tanggal": "01 Oktober 2025",
+    "Jenis": "Followers Tiktok",
+    "Paket": "500",
+    "Total": 27000,
+    "Link": "https://www.tiktok.com/@anak__bawang_?_t=ZS-90Bb2oluY6b&_r=1",
+    "Supply": 9438,
+    "Untung": 17562,
+    "keterangan": "proses",
+    "ID_Pesanan": "0353"
+  },
+  {
+    "ID": "0354",
+    "Tanggal": "01 Oktober 2025",
+    "Jenis": "Followers Tiktok",
+    "Paket": "300",
+    "Total": 15000,
+    "Link": "https://www.tiktok.com/@kn383590qdb?is_from_webapp=1&sender_device=pc",
+    "Supply": 5662,
+    "Untung": 9338,
+    "keterangan": "proses",
+    "ID_Pesanan": "0353"
   }
 ]
