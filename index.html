@@ -1,120 +1,364 @@
 <!doctype html>
 <html lang=id>
 <head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Campus AI - Universitas Madura</title>
-<meta name="theme-color" content="#1a73e8">
-<meta name="msapplication-navbutton-color" content="#1a73e8">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<link rel="icon" type="image/png" href="favicon.png">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel=stylesheet>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
-<style>:root{--primary:#2563eb;--primary-light:#3b82f6;--primary-dark:#1e40af;--secondary:#8b5cf6;--accent:#06b6d4;--success:#10b981;--warning:#f59e0b;--error:#ef4444;--bg-dark:#0f172a;--bg-dark-lighter:#1e293b;--text-dark:#f1f5f9;--text-dark-secondary:#cbd5e1;--panel-dark:#1e293b;--border-dark:#334155;--card-dark:#334155;--bg-light:#ffffff;--bg-light-darker:#f8fafc;--text-light:#1e293b;--text-light-secondary:#64748b;--panel-light:#ffffff;--border-light:#e2e8f0;--card-light:#f1f5f9;--radius:16px;--radius-sm:8px;--shadow:0 10px 25px -5px rgba(0,0,0,0.1),0 8px 10px -6px rgba(0,0,0,0.1);--shadow-lg:0 20px 25px -5px rgba(0,0,0,0.1),0 10px 10px -5px rgba(0,0,0,0.04);--transition:.3s ease}*{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg-dark);color:var(--text-dark);font-family:Inter,sans-serif;margin:0;display:flex;flex-direction:column;min-height:100vh;transition:background var(--transition),color var(--transition);line-height:1.6}body.light{background:var(--bg-light);color:var(--text-light)}.app-container{display:flex;flex-direction:column;min-height:100vh}header{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;background:var(--panel-dark);box-shadow:var(--shadow);position:sticky;top:0;z-index:100;border-bottom:1px solid var(--border-dark)}body.light header{background:var(--panel-light);border-bottom:1px solid var(--border-light)}.logo{display:flex;align-items:center;gap:12px;font-weight:700;color:var(--primary-light)}.logo-icon{font-size:24px;color:var(--primary)}.logo-text{display:flex;flex-direction:column;line-height:1.2}.logo-subtitle{font-size:12px;color:var(--text-dark-secondary);font-weight:400}body.light .logo-subtitle{color:var(--text-light-secondary)}.header-actions{display:flex;gap:12px;align-items:center}.header-btn{padding:10px 16px;border-radius:var(--radius);background:var(--primary);color:#fff;font-weight:600;cursor:pointer;border:none;transition:background var(--transition),transform .1s;display:flex;align-items:center;gap:8px;font-size:14px}.header-btn:hover{background:var(--primary-dark);transform:translateY(-1px)}.header-btn:active{transform:translateY(0)}.header-btn.secondary{background:0 0;color:var(--text-dark);border:1px solid var(--border-dark)}body.light .header-btn.secondary{color:var(--text-light);border:1px solid var(--border-light)}.header-btn.secondary:hover{background:rgba(255,255,255,.1)}body.light .header-btn.secondary:hover{background:rgba(0,0,0,.05)}.container{display:flex;flex:1;gap:24px;padding:24px;flex-wrap:wrap;max-width:1600px;margin:0 auto;width:100%}.sidebar{flex:0 0 320px;background:var(--panel-dark);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:20px;overflow:hidden;transition:transform .3s ease;position:relative;border:1px solid var(--border-dark)}body.light .sidebar{background:var(--panel-light);border:1px solid var(--border-light)}.sidebar-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}.section-title{font-size:14px;font-weight:600;opacity:.85;margin-bottom:6px;color:var(--text-dark-secondary);text-transform:uppercase;letter-spacing:.5px}body.light .section-title{color:var(--text-light-secondary)}.small{font-size:12px;color:var(--text-dark-secondary);margin-top:4px}body.light .small{color:var(--text-light-secondary)}.history-list,.suggestions{display:flex;flex-direction:column;gap:8px}.history-item,.sugg-btn,.suggest-pill{background:rgba(255,255,255,.08);padding:12px;border-radius:var(--radius-sm);cursor:pointer;font-size:14px;color:#fff;border:none;text-align:left;transition:background var(--transition),transform .1s;display:flex;align-items:center;gap:8px}.history-item:hover,.sugg-btn:hover,.suggest-pill:hover{background:rgba(255,255,255,.2);transform:translateX(2px)}body.light .history-item,body.light .sugg-btn,body.light .suggest-pill{color:var(--text-light);background:var(--card-light)}body.light .history-item:hover,body.light .sugg-btn:hover,body.light .suggest-pill:hover{background:#e2e8f0}.history-item i{font-size:12px;opacity:.7}.suggest-row{display:flex;gap:8px;flex-wrap:wrap}.suggest-pill{padding:8px 12px;font-size:13px;white-space:nowrap}.main{flex:1;display:flex;flex-direction:column;background:var(--panel-dark);border-radius:var(--radius);box-shadow:var(--shadow);padding:0;overflow:hidden;min-width:0;border:1px solid var(--border-dark)}body.light .main{background:var(--panel-light);border:1px solid var(--border-light)}.chat-header{padding:16px 20px;border-bottom:1px solid var(--border-dark);display:flex;align-items:center;justify-content:space-between;background:var(--panel-dark)}body.light .chat-header{border-bottom:1px solid var(--border-light);background:var(--panel-light)}.chat-title{font-weight:600;font-size:16px;display:flex;align-items:center;gap:8px}.chat-actions{display:flex;gap:8px}.chat-action-btn{background:0 0;border:none;color:var(--text-dark-secondary);cursor:pointer;padding:6px;border-radius:6px;transition:background var(--transition)}.chat-action-btn:hover{background:rgba(255,255,255,.1);color:var(--text-dark)}body.light .chat-action-btn{color:var(--text-light-secondary)}body.light .chat-action-btn:hover{background:rgba(0,0,0,.05);color:var(--text-light)}.chat-window{flex:1;display:flex;flex-direction:column;height:0}.messages{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:16px;padding:20px;scroll-behavior:smooth}.msg{max-width:85%;padding:16px 20px;border-radius:var(--radius);font-size:15px;line-height:1.5;animation:fade .3s ease-in;position:relative}.msg.user{align-self:flex-end;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;border-bottom-right-radius:4px}.msg.bot{align-self:flex-start;background:var(--card-dark);color:var(--text-dark);border-bottom-left-radius:4px}body.light .msg.bot{background:var(--card-light);color:var(--text-light)}.msg-time{font-size:11px;opacity:.7;margin-top:4px;text-align:right}.msg-actions{position:absolute;top:8px;right:8px;display:flex;gap:4px;opacity:0;transition:opacity .2s}.msg:hover .msg-actions{opacity:1}.msg-action{background:rgba(0,0,0,.2);border:none;color:inherit;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:12px;transition:background .2s}.msg-action:hover{background:rgba(0,0,0,.3)}.typing-indicator{display:flex;align-items:center;gap:8px;padding:16px 20px;background:var(--card-dark);border-radius:var(--radius);align-self:flex-start;margin-bottom:8px;border-bottom-left-radius:4px;color:var(--text-dark-secondary);font-size:14px}body.light .typing-indicator{background:var(--card-light);color:var(--text-light-secondary)}.typing-dots{display:flex;gap:4px}.typing-dot{width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.6;animation:pulse 1.5s infinite ease-in-out}.typing-dot:nth-child(2){animation-delay:.2s}.typing-dot:nth-child(3){animation-delay:.4s}@keyframes pulse{0%,100%{opacity:.4;transform:scale(.8)}50%{opacity:1;transform:scale(1)}}@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}.input-area{display:flex;gap:12px;padding:16px 20px;border-top:1px solid var(--border-dark);background:var(--panel-dark);position:sticky;bottom:0}body.light .input-area{background:var(--panel-light);border-top:1px solid var(--border-light)}.input-wrapper{flex:1;position:relative}.input-area input{width:100%;padding:14px 16px;padding-right:40px;border-radius:var(--radius);border:1px solid var(--border-dark);background:var(--card-dark);color:inherit;font-family:inherit;font-size:15px;transition:border-color var(--transition),box-shadow var(--transition)}body.light .input-area input{border:1px solid var(--border-light);background:var(--card-light)}.input-area input:focus{outline:0;border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,.2)}.voice-btn{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:0 0;border:none;color:var(--text-dark-secondary);cursor:pointer;padding:4px;border-radius:4px;transition:color var(--transition)}.voice-btn:hover{color:var(--primary)}body.light .voice-btn{color:var(--text-light-secondary)}.send-btn{background:var(--primary);border:none;color:#fff;padding:0 20px;border-radius:var(--radius);font-weight:600;cursor:pointer;transition:background var(--transition),transform .1s;display:flex;align-items:center;gap:8px}.send-btn:hover{background:var(--primary-dark);transform:translateY(-1px)}.send-btn:active{transform:translateY(0)}.send-btn:disabled{background:var(--border-dark);cursor:not-allowed;transform:none}body.light .send-btn:disabled{background:var(--border-light)}.empty-state{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;text-align:center;color:var(--text-dark-secondary)}body.light .empty-state{color:var(--text-light-secondary)}.empty-icon{font-size:48px;margin-bottom:16px;opacity:.5}.empty-title{font-size:18px;font-weight:600;margin-bottom:8px;color:var(--text-dark)}body.light .empty-title{color:var(--text-light)}.empty-desc{font-size:14px;max-width:400px;margin-bottom:20px}.confidence-badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;margin-left:8px;background:rgba(255,255,255,.2)}body.light .confidence-badge{background:rgba(0,0,0,.1)}.high-confidence{background-color:var(--success);color:#fff}.medium-confidence{background-color:var(--warning);color:#fff}.low-confidence{background-color:var(--error);color:#fff}.suggested-questions{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;justify-content:center}.suggestion-chip{background:var(--card-dark);border:1px solid var(--border-dark);border-radius:16px;padding:6px 12px;font-size:13px;cursor:pointer;transition:background var(--transition)}.suggestion-chip:hover{background:var(--primary);color:#fff;border-color:var(--primary)}body.light .suggestion-chip{background:var(--card-light);border:1px solid var(--border-light)}.footer{padding:16px 24px;text-align:center;font-size:12px;color:var(--text-dark-secondary);border-top:1px solid var(--border-dark);background:var(--panel-dark)}body.light .footer{color:var(--text-light-secondary);border-top:1px solid var(--border-light);background:var(--panel-light)}.footer a{color:var(--primary);text-decoration:none}.footer a:hover{text-decoration:underline}@media (max-width:1024px){.container{flex-direction:column;padding:16px}.sidebar{flex:0 0 auto;width:100%;max-height:300px}}@media (max-width:768px){header{padding:12px 16px}.header-btn span{display:none}.header-btn{padding:10px}.logo-text{font-size:14px}.msg{max-width:90%;padding:12px 16px;font-size:14px}.input-area{padding:12px 16px}.input-area input{padding:12px 14px;padding-right:36px}}@media (max-width:480px){.container{padding:12px;gap:16px}.sidebar{border-radius:12px}.main{border-radius:12px}.messages{padding:16px;gap:12px}.msg{max-width:95%}.suggested-questions{flex-direction:column}.suggestion-chip{width:100%;text-align:center}}.sidebar.collapsed{transform:translateX(-100%)}.overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:99}.overlay.active{display:block}.theme-switch{position:relative;display:inline-block;width:48px;height:24px}.theme-switch input{opacity:0;width:0;height:0}.slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background-color:var(--card-dark);transition:.4s;border-radius:24px}body.light .slider{background-color:var(--card-light)}.slider:before{position:absolute;content:"";height:18px;width:18px;left:3px;bottom:3px;background-color:#fff;transition:.4s;border-radius:50%}input:checked+.slider{background-color:var(--primary)}input:checked+.slider:before{transform:translateX(24px)}.slider-icon{position:absolute;top:50%;transform:translateY(-50%);font-size:12px;color:#fff}.slider-icon.sun{left:6px}.slider-icon.moon{right:6px}.help-tooltip{position:relative;display:inline-block;cursor:help}.tooltip-text{visibility:hidden;width:200px;background-color:var(--panel-dark);color:var(--text-dark);text-align:center;border-radius:6px;padding:8px;position:absolute;z-index:1;bottom:125%;left:50%;transform:translateX(-50%);opacity:0;transition:opacity .3s;font-size:12px;box-shadow:var(--shadow);border:1px solid var(--border-dark)}body.light .tooltip-text{background-color:var(--panel-light);color:var(--text-light);border:1px solid var(--border-light)}.help-tooltip:hover .tooltip-text{visibility:visible;opacity:1}.rate-response{display:flex;gap:4px;margin-top:8px}.rate-btn{background:0 0;border:none;color:var(--text-dark-secondary);cursor:pointer;font-size:14px;padding:4px;transition:color .2s}.rate-btn:hover{color:var(--warning)}.rate-btn.active{color:var(--warning)}body.light .rate-btn{color:var(--text-light-secondary)}.source-info{font-size:12px;margin-top:8px;opacity:.7;font-style:italic}.usage-stats{display:flex;gap:16px;font-size:12px;margin-top:16px;padding-top:16px;border-top:1px solid var(--border-dark)}body.light .usage-stats{border-top:1px solid var(--border-light)}.stat-item{display:flex;align-items:center;gap:4px}.loading-bar{height:3px;width:100%;background:linear-gradient(90deg,var(--primary),var(--accent),var(--secondary));background-size:200% 100%;animation:loading 1.5s infinite linear;position:absolute;top:0;left:0;border-radius:var(--radius) var(--radius) 0 0}@keyframes loading{0%{background-position:200% 0}100%{background-position:-200% 0}}.quick-actions{display:flex;gap:8px;margin-top:12px}.quick-action-btn{padding:6px 12px;border-radius:var(--radius-sm);background:rgba(255,255,255,.1);border:none;color:var(--text-dark);font-size:12px;cursor:pointer;transition:background .2s;display:flex;align-items:center;gap:4px}.quick-action-btn:hover{background:rgba(255,255,255,.2)}body.light .quick-action-btn{background:rgba(0,0,0,.05);color:var(--text-light)}body.light .quick-action-btn:hover{background:rgba(0,0,0,.1)}@media (max-width:1024px){.sidebar{position:fixed;top:0;left:0;height:100%;max-height:none;width:280px;transform:translateX(-100%);z-index:1000}.sidebar.open{transform:translateX(0)}}.empty-state{max-height:40vh;overflow-y:auto;padding:20px}.sidebar{transform:translateX(-100%);position:fixed;top:0;left:0;height:100%;max-height:none;width:280px;z-index:1000;transition:transform .3s ease}.sidebar.open{transform:translateX(0)}.overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:999}.overlay.active{display:block}.empty-state{max-height:30vh;overflow-y:auto}.sidebar{transform:translateX(-100%);position:fixed;top:0;left:0;height:100%;width:280px;z-index:1000;transition:transform .3s ease;display:flex;flex-direction:column}.sidebar.open{transform:translateX(0)}.sidebar{overflow-y:auto;-webkit-overflow-scrolling:touch}</style>
+<meta charset=UTF-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Arofa Travel - Umrah Hemat, Hotel Dekat, Harga Bersahabat</title>
+<link href=https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css rel=stylesheet>
+<script src=https://cdn.jsdelivr.net/npm/scrollreveal></script>
+<script src=https://unpkg.com/lucide@latest></script>
+<link rel=preconnect href=https://fonts.googleapis.com>
+<link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel=stylesheet>
+<style>body{font-family:Poppins,sans-serif}.smooth-scroll{scroll-behavior:smooth}.shadow-custom{box-shadow:0 10px 30px rgba(0,0,0,.1)}.hover-lift{transition:transform .3s ease,box-shadow .3s ease}.hover-lift:hover{transform:translateY(-5px);box-shadow:0 15px 30px rgba(0,0,0,.15)}</style>
 </head>
-<body>
-<div class=app-container>
-<header>
-<div class=logo>
-<i class="fas fa-graduation-cap logo-icon"></i>
-<div class=logo-text>
-<span>Campus AI</span>
-<span class=logo-subtitle>Universitas Madura</span>
+<body class="bg-gray-50 text-gray-800 smooth-scroll">
+<header class="fixed top-0 w-full bg-green-900 bg-opacity-95 backdrop-blur-md shadow-md z-50">
+<div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3 text-white">
+<div class="flex items-center space-x-3">
+<img src=https://jaschat.web.id/logo.png alt="Logo Arofa Travel" class="h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg">
+<div>
+<h1 class="text-lg md:text-xl font-bold tracking-wide">PT. Arofa Naqiyya Wisata Hati</h1>
+<p class="text-xs text-green-200 hidden md:block">Travel Umrah Terpercaya</p>
 </div>
 </div>
-<div class=header-actions>
-<label class=theme-switch title="Toggle dark/light mode">
-<input type=checkbox id=theme-toggle>
-<span class=slider></span>
-<i class="fas fa-sun slider-icon sun"></i>
-<i class="fas fa-moon slider-icon moon"></i>
-</label>
-<button id=menu-toggle class="header-btn secondary" title="Toggle sidebar">
-<i class="fas fa-bars"></i>
-<span>Menu</span>
-</button>
-<button id=reset class=header-btn title="Start new conversation">
-<i class="fas fa-plus"></i>
-<span>Baru</span>
-</button>
+<nav class="hidden md:flex space-x-6 text-base font-medium">
+<a href=#home class="hover:text-yellow-300 transition duration-300">Beranda</a>
+<a href=#paket class="hover:text-yellow-300 transition duration-300">Paket</a>
+<a href=#gallery class="hover:text-yellow-300 transition duration-300">Galeri</a>
+<a href=#about class="hover:text-yellow-300 transition duration-300">Tentang</a>
+<a href=#kontak class="hover:text-yellow-300 transition duration-300">Kontak</a>
+</nav>
+<button id=menuBtn class="md:hidden text-2xl focus:outline-none">☰</button>
+</div>
+<div id=mobileMenu class="hidden md:hidden bg-green-800 px-6 pb-4 pt-2 space-y-4 text-white">
+<nav class="flex flex-col space-y-4 text-center">
+<a href=#home class="py-2 hover:text-yellow-300 transition duration-300">Beranda</a>
+<a href=#paket class="py-2 hover:text-yellow-300 transition duration-300">Paket</a>
+<a href=#gallery class="py-2 hover:text-yellow-300 transition duration-300">Galeri</a>
+<a href=#about class="py-2 hover:text-yellow-300 transition duration-300">Tentang</a>
+<a href=#kontak class="py-2 hover:text-yellow-300 transition duration-300">Kontak</a>
+</nav>
 </div>
 </header>
-<div class=container>
-<div class=overlay id=overlay></div>
-<aside class=sidebar id=sidebar>
-<div class=loading-bar id=sidebar-loader></div>
-<div class=sidebar-header>
+<section id=home class="min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 bg-cover bg-center bg-fixed text-white relative pt-24" style="background-image:url('https://jaschat.web.id/jemaah.jpg')">
+<div class="absolute inset-0 bg-black bg-opacity-50"></div>
+<div class="relative z-10 bg-black bg-opacity-60 p-8 md:p-12 rounded-2xl max-w-4xl w-full shadow-custom">
+<h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">Umrah Hemat, Hotel Dekat, Harga Bersahabat</h2>
+<p class="max-w-3xl mx-auto text-lg md:text-xl mb-8 leading-relaxed">
+Bersama <span class="font-semibold text-yellow-400">PT. Arofa Naqiyya Wisata Hati</span>, perjalanan Umrah Anda lebih nyaman, aman, dan penuh berkah dengan pelayanan terbaik dan bimbingan ibadah yang profesional.
+</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a href="https://www.instagram.com/arofa_travel?igsh=MTB5ZHY4b211N2kxeQ==" target=_blank class="bg-yellow-500 text-green-900 font-bold rounded-xl shadow-lg px-8 py-4 hover:bg-yellow-400 hover-lift transition duration-300 text-lg">Daftar Sekarang</a>
+<a href=#paket class="bg-transparent border-2 border-white text-white font-bold rounded-xl px-8 py-4 hover:bg-white hover:text-green-900 hover-lift transition duration-300 text-lg">Lihat Paket</a>
+</div>
+</div>
+<div class="mt-8 flex justify-center animate-bounce">
+<a href=#paket class=text-white>
+<i data-lucide=chevron-down class="w-10 h-10"></i>
+</a>
+</div>
+</section>
+<section id=paket class="py-20 px-4 sm:px-6 bg-gradient-to-b from-green-800 to-green-900 text-white">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h3 class="text-3xl md:text-4xl font-bold mb-4">Paket Umrah Pilihan</h3>
+<p class="max-w-2xl mx-auto text-lg text-green-100">Pilih paket perjalanan umrah sesuai dengan kebutuhan dan budget Anda. Semua paket sudah termasuk fasilitas terbaik untuk kenyamanan ibadah Anda.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-white text-gray-800 shadow-custom rounded-2xl overflow-hidden hover-lift">
+<div class="bg-green-700 py-4">
+<h4 class="text-2xl font-bold text-center text-white">Paket Hemat</h4>
+</div>
+<div class="p-6 space-y-5">
+<div class=text-center>
+<p class="text-yellow-600 text-xl font-bold">Rp 32.250.000</p>
+<p class="text-sm text-gray-600">13 Hari</p>
+</div>
+<div class=space-y-3>
+<div class="flex items-start">
+<i data-lucide=check-circle class="w-5 h-5 text-green-600 mt-1 mr-2 flex-shrink-0"></i>
+<p class=text-sm>Hotel Elaf Bait Makkah & Royal Madinah</p>
+</div>
+<div class="flex items-start">
+<i data-lucide=check-circle class="w-5 h-5 text-green-600 mt-1 mr-2 flex-shrink-0"></i>
+<p class=text-sm>Penerbangan langsung kelas ekonomi</p>
+</div>
+<div class="flex items-start">
+<i data-lucide=check-circle class="w-5 h-5 text-green-600 mt-1 mr-2 flex-shrink-0"></i>
+<p class=text-sm>Makan 3x sehari</p>
+</div>
+<div class="flex items-start">
+<i data-lucide=check-circle class="w-5 h-5 text-green-600 mt-1 mr-2 flex-shrink-0"></i>
+<p class=text-sm>Transportasi AC selama perjalanan</p>
+</div>
+</div>
+<a href="https://www.instagram.com/arofa_travel?igsh=MTB5ZHY4b211N2kxeQ==" target=_blank class="block w-full bg-green-700 text-white text-center font-semibold rounded-lg py-3 hover:bg-green-600 transition duration-300">Pilih Paket</a>
+</div>
+</div>
+<div class="bg-white text-gray-800 shadow-custom rounded-2xl overflow-hidden hover-lift transform scale-105 relative">
+<div class="absolute top-0 right-0 bg-yellow-500 text-green-900 text-xs font-bold px-4 py-1 rounded-bl-lg">POPULER</div>
+<div class="bg-green-800 py-4">
+<h4 class="text-2xl font-bold text-center text-white">Paket Hebat</h4>
+</div>
+<div class="p-6 space-y-5">
+<div class=text-center>
+<p class="text-yellow-600 text-xl font-bold">Rp 33.750.000</p>
+<p class="text-sm text-gray-600">13 Hari</p>
+</div>
+<div class=space-y-3>
+<div class="flex items-start">
+<i data-lucide=check-circle class="w-5 h-5 text-green-600 mt-1 mr-2 flex-shrink-0"></i>
+<p class=text-sm>Hotel Olayan Ajyad Makkah & Royal Madinah</p>
+</div>
+<div class="flex items-start">
+<i data-lucide=check-circle class="w-5 h-5 text-green-600 mt-1 mr-2 flex-shrink-0"></i>
+<p class=text-sm>Penerbangan langsung kelas ekonomi</p>
+</div>
+<div class="flex items-start">
+<i data-lucide=check-circle class="w-5 h-5 text-green-600 mt-1 mr-2 flex-shrink-0"></i>
+<p class=text-sm>Makan 3x sehari dengan menu bervariasi</p>
+</div>
+<div class="flex items-start">
+<i data-lucide=check-circle class="w-5 h-5 text-green-600 mt-1 mr-2 flex-shrink-0"></i>
+<p class=text-sm>Transportasi AC eksklusif</p>
+</div>
+<div class="flex items-start">
+<i data-lucide=check-circle class="w-5 h-5 text-green-600 mt-1 mr-2 flex-shrink-0"></i>
+<p class=text-sm>Zamzam 5 liter</p>
+</div>
+</div>
+<a href="https://www.instagram.com/arofa_travel?igsh=MTB5ZHY4b211N2kxeQ==" target=_blank class="block w-full bg-green-800 text-white text-center font-semibold rounded-lg py-3 hover:bg-green-700 transition duration-300">Pilih Paket</a>
+</div>
+</div>
+<div class="bg-white text-gray-800 shadow-custom rounded-2xl overflow-hidden hover-lift">
+<div class="bg-green-700 py-4">
+<h4 class="text-2xl font-bold text-center text-white">Paket Spesial</h4>
+</div>
+<div class="p-6 space-y-5">
+<div class=text-center>
+<p class="text-yellow-600 text-xl font-bold">Rp 31.900.000</p>
+<p class="text-sm text-gray-600">13 Hari</p>
+</div>
+<div class=space-y-3>
+<div class="flex items-start">
+<i data-lucide=check-circle class="w-5 h-5 text-green-600 mt-1 mr-2 flex-shrink-0"></i>
+<p class=text-sm>Hotel Elaf Bait & Royal Madinah dengan Pembimbing</p>
+</div>
+<div class="flex items-start">
+<i data-lucide=check-circle class="w-5 h-5 text-green-600 mt-1 mr-2 flex-shrink-0"></i>
+<p class=text-sm>Penerbangan langsung kelas ekonomi</p>
+</div>
+<div class="flex items-start">
+<i data-lucide=check-circle class="w-5 h-5 text-green-600 mt-1 mr-2 flex-shrink-0"></i>
+<p class=text-sm>Makan 3x sehari</p>
+</div>
+<div class="flex items-start">
+<i data-lucide=check-circle class="w-5 h-5 text-green-600 mt-1 mr-2 flex-shrink-0"></i>
+<p class=text-sm>Bimbingan ibadah intensif</p>
+</div>
+<div class="flex items-start">
+<i data-lucide=check-circle class="w-5 h-5 text-green-600 mt-1 mr-2 flex-shrink-0"></i>
+<p class=text-sm>Transportasi AC selama perjalanan</p>
+</div>
+</div>
+<a href="https://www.instagram.com/arofa_travel?igsh=MTB5ZHY4b211N2kxeQ==" target=_blank class="block w-full bg-green-700 text-white text-center font-semibold rounded-lg py-3 hover:bg-green-600 transition duration-300">Pilih Paket</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id=gallery class="py-20 px-4 sm:px-6 bg-gray-50">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h3 class="text-3xl md:text-4xl font-bold mb-4 text-green-900">Galeri Perjalanan</h3>
+<p class="max-w-2xl mx-auto text-lg text-gray-600">Momen berharga jemaah umrah bersama Arofa Travel yang penuh kenangan dan keberkahan.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="overflow-hidden rounded-2xl shadow-custom bg-white hover-lift group">
+<div class=overflow-hidden>
+<img src=jemaah1.jpg alt="Poster Promosi Arofa Travel" class="w-full h-64 object-cover group-hover:scale-110 transform transition duration-700">
+</div>
+<div class=p-5>
+<p class="text-green-900 font-semibold text-lg">Poster Promosi Arofa Travel</p>
+<p class="text-gray-600 text-sm mt-2">Inilah momen sakral, di bawah terik matahari Makkah, di mana setiap langkah adalah ibadah. Para jemaah pria AROFA Travel terlihat mengenakan kain Ihram berwarna putih yang melambangkan kesucian dan kesetaraan di hadapan Allah SWT. Dengan panduan dari pembimbing yang berpengalaman, kami memastikan setiap jemaah dapat melaksanakan rukun utama Tawaf (mengelilingi Ka'bah) dengan tertib, penuh kekhusyukan, dan sesuai syariat. Pelayanan prima dan kenyamanan ibadah adalah fokus kami, dibuktikan dengan keseragaman branding AROFA Travel pada atribut mereka. Mari bergabung dan rasakan kedamaian spiritual yang tak tergantikan!.</p>
+</div>
+</div>
+<div class="overflow-hidden rounded-2xl shadow-custom bg-white hover-lift group">
+<div class=overflow-hidden>
+<img src=jemaah2.jpg alt="Jemaah Umrah" class="w-full h-64 object-cover group-hover:scale-110 transform transition duration-700">
+</div>
+<div class=p-5>
+<p class="text-green-900 font-semibold text-lg">Jemaah Umrah Bersama Arofa</p>
+<p class="text-gray-600 text-sm mt-2">Tidak ada lokasi yang lebih istimewa untuk memanjatkan doa selain di area suci Masjidil Haram. Foto ini menangkap momen intim dan mendalam, di mana jemaah AROFA Travel berusaha mendekat ke Ka'bah (Baitullah). Mereka terlihat khusyuk mengangkat tangan dan hati—membawa segala harapan, permohonan, dan rasa syukur. Dengan bimbingan dan pendampingan yang intensif, kami memfasilitasi jemaah agar dapat merasakan kedekatan spiritual maksimal dan memanfaatkan setiap detik di Tanah Suci untuk berkomunikasi langsung dengan Pencipta.</p>
+</div>
+</div>
+<div class="overflow-hidden rounded-2xl shadow-custom bg-white hover-lift group">
+<div class=overflow-hidden>
+<img src=jemaah3.jpg alt="Kegiatan Travel" class="w-full h-64 object-cover group-hover:scale-110 transform transition duration-700">
+</div>
+<div class=p-5>
+<p class="text-green-900 font-semibold text-lg">Kegiatan Perjalanan Travel</p>
+<p class="text-gray-600 text-sm mt-2">Setelah menunaikan seluruh rangkaian ibadah Umrah dengan lancar dan mabrur, momen kebersamaan ini menjadi penutup yang indah. Dengan latar belakang Ka'bah yang agung dan arsitektur Masjidil Haram yang memukau, seluruh rombongan jemaah AROFA Travel berkumpul untuk mengabadikan memori suci ini. Foto ini melambangkan suksesnya perjalanan spiritual yang diwarnai oleh senyum kebahagiaan, rasa syukur, dan ikatan kekeluargaan yang terjalin selama perjalanan. Kami bangga dapat menjadi mitra perjalanan Anda menuju keberkahan.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id=about class="py-20 px-4 sm:px-6 bg-white">
+<div class="max-w-5xl mx-auto">
+<div class="text-center mb-16">
+<h3 class="text-3xl md:text-4xl font-bold mb-4 text-green-900">Tentang Arofa Travel</h3>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-10">
+<div class="md:w-1/3 flex justify-center">
+<div class="bg-green-100 p-6 rounded-2xl shadow-custom">
+<img src=https://jaschat.web.id/logo.png alt="Logo Arofa Travel">
+</div>
+</div>
+<div class=md:w-2/3>
+<p class="text-lg leading-relaxed mb-6">PT. Arofa Naqiyya Wisata Hati adalah mitra perjalanan spiritual terpercaya Anda. Sebagai biro perjalanan resmi yang berfokus pada Umrah dan Haji Khusus, kami berkomitmen memberikan pengalaman ibadah terbaik. Didukung pengalaman yang solid, pelayanan ramah, fasilitas modern, dan bimbingan ibadah terstruktur oleh ahli, kami siap mendampingi setiap langkah Anda, memastikan perjalanan menuju Baitullah berjalan lancar, nyaman, dan mabrur.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+<div class="flex items-start">
+<i data-lucide=check-circle class="w-6 h-6 text-green-600 flex-shrink-0 mt-1 mr-3"></i>
+<span class=font-medium>Pesawat Terbang Langsung (Padang-Madinah)</span>
+</div>
+<div class="flex items-start">
+<i data-lucide=check-circle class="w-6 h-6 text-green-600 flex-shrink-0 mt-1 mr-3"></i>
+<span class=font-medium>Manasik Dekat & Intensif Setiap Minggu</span>
+</div>
+<div class="flex items-start">
+<i data-lucide=check-circle class="w-6 h-6 text-green-600 flex-shrink-0 mt-1 mr-3"></i>
+<span class=font-medium>Hotel Sangat Dekat (Hanya ± 25 Meter dari Masjid)</span>
+</div>
+<div class="flex items-start">
+<i data-lucide=check-circle class="w-6 h-6 text-green-600 flex-shrink-0 mt-1 mr-3"></i>
+<span class=font-medium>Pengurusan Semua Berkas Keberangkatan Sampai Tuntas</span>
+</div>
+<div class="flex items-start">
+<i data-lucide=check-circle class="w-6 h-6 text-green-600 flex-shrink-0 mt-1 mr-3"></i>
+<span class=font-medium>Setiap Keberangkatan Didampingi Petugas Lokal dari Sijunjung</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id=kontak class="py-20 px-4 sm:px-6 bg-gradient-to-br from-green-800 to-green-900 text-white">
+<div class="max-w-5xl mx-auto">
+<div class="text-center mb-16">
+<h3 class="text-3xl md:text-4xl font-bold mb-4">Hubungi Kami</h3>
+<p class="max-w-2xl mx-auto text-lg text-green-100">Untuk informasi lebih lanjut dan pendaftaran, silakan hubungi kontak berikut atau kunjungi kantor kami.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-10">
+<div class=space-y-6>
 <div>
-<div class=section-title>Riwayat Percakapan</div>
-<div class=small>Klik untuk melanjutkan percakapan</div>
-</div>
-<div class=controls>
-<button id=clear-history class="header-btn secondary" title="Clear history">
-<i class="fas fa-trash"></i>
-</button>
-</div>
-</div>
-<div class=history-list id=history-list></div>
+<h4 class="text-xl font-bold mb-4 text-yellow-300">Informasi Kontak</h4>
+<div class=space-y-4>
+<div class="flex items-start">
+<i data-lucide=map-pin class="w-6 h-6 text-yellow-300 mt-1 mr-3"></i>
 <div>
-<div class=section-title>Pertanyaan Populer</div>
-<div class=suggestions id=popular-list></div>
+<p class=font-semibold>Kantor Pusat</p>
+<p>Jl. Imam Bonjol No. 42, Sijunjung</p>
+</div>
+</div>
+<div class="flex items-start">
+<i data-lucide=map-pin class="w-6 h-6 text-yellow-300 mt-1 mr-3"></i>
+<div>
+<p class=font-semibold>Kantor Operasional</p>
+<p>Jl. M. Yamin, SH., Muaro Gambok, Sijunjung</p>
+</div>
+</div>
+<div class="flex items-start">
+<i data-lucide=phone class="w-6 h-6 text-yellow-300 mt-1 mr-3"></i>
+<div>
+<p class=font-semibold>Telepon</p>
+<p>0812-3456-7890</p>
+</div>
+</div>
+<div class="flex items-start">
+<i data-lucide=mail class="w-6 h-6 text-yellow-300 mt-1 mr-3"></i>
+<div>
+<p class=font-semibold>Email</p>
+<p>ptarofatravel@gmail.com</p>
+</div>
+</div>
+</div>
 </div>
 <div>
-<div class=section-title>Saran Cepat</div>
-<div class=suggest-row id=quick-suggestions></div>
-</div>
-<div class=usage-stats>
-<div class=stat-item>
-<i class="fas fa-database"></i>
-<span id=kb-count>0</span> data
-</div>
-<div class=stat-item>
-<i class="fas fa-message"></i>
-<span id=chat-count>0</span> pesan
-</div>
-</div>
-</aside>
-<main class=main>
-<div class=chat-header>
-<div class=chat-title>
-<i class="fas fa-robot"></i>
-<span>Asisten AI Universitas Madura</span>
-</div>
-<div class=chat-actions>
-<button class=chat-action-btn id=export-chat title="Export conversation">
-<i class="fas fa-download"></i>
-</button>
-<button class=chat-action-btn id=settings-btn title=Settings>
-<i class="fas fa-cog"></i>
-</button>
+<h4 class="text-xl font-bold mb-4 text-yellow-300">Ikuti Kami</h4>
+<div class="flex space-x-4">
+<a href="https://www.instagram.com/arofa_travel?igsh=MTB5ZHY4b211N2kxeQ==" target=_blank class="bg-green-700 p-3 rounded-full hover:bg-green-600 transition duration-300">
+<i data-lucide=instagram class="w-6 h-6"></i>
+</a>
+<a href="https://www.tiktok.com/@arofatravelofficial?_t=ZS-90Ktuac8I6i&_r=1" target=_blank class="bg-green-700 p-3 rounded-full hover:bg-green-600 transition duration-300">
+<i data-lucide=music class="w-6 h-6"></i>
+</a>
+<a href=https://www.facebook.com/share/178xPQraT3/ target=_blank class="bg-green-700 p-3 rounded-full hover:bg-green-600 transition duration-300">
+<i data-lucide=facebook class="w-6 h-6"></i>
+</a>
+<a href=https://wa.me/qr/EKRCO2G2B75DC1 target=_blank class="bg-green-700 p-3 rounded-full hover:bg-green-600 transition duration-300">
+<i data-lucide=phone class="w-6 h-6"></i>
+</a>
 </div>
 </div>
-<div class=chat-window>
-<div class=messages id=messages>
-<div class=empty-state id=empty-state>
-<i class="fas fa-comments empty-icon"></i>
-<div class=empty-title>Selamat datang di Campus AI</div>
-<div class=empty-desc>Saya asisten virtual Universitas Madura. Silakan tanyakan tentang kampus, program studi, atau informasi lainnya.</div>
-<div class=suggested-questions id=welcome-suggestions></div>
+</div>
+<div class="bg-white text-gray-800 rounded-2xl p-6 shadow-custom">
+<h4 class="text-xl font-bold mb-4 text-green-900">Kirim Pesan</h4>
+<form class=space-y-4>
+<div>
+<label for=name class="block text-sm font-medium mb-1">Nama Lengkap</label>
+<input id=name class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
+</div>
+<div>
+<label for=email class="block text-sm font-medium mb-1">Email</label>
+<input type=email id=email class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
+</div>
+<div>
+<label for=message class="block text-sm font-medium mb-1">Pesan</label>
+<textarea id=message rows=4 class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"></textarea>
+</div>
+<button type=submit class="w-full bg-green-700 text-white font-semibold py-3 rounded-lg hover:bg-green-600 transition duration-300">Kirim Pesan</button>
+</form>
 </div>
 </div>
-<div class=input-area role=group aria-label="Chat input">
-<div class=input-wrapper>
-<input id=chat-input placeholder="Tanyakan tentang Universitas Madura..." autocomplete=off>
-<button class=voice-btn id=voice-btn title="Voice input">
-<i class="fas fa-microphone"></i>
-</button>
 </div>
-<button id=send class=send-btn>
-<i class="fas fa-paper-plane"></i>
-<span>Kirim</span>
-</button>
+</section>
+<footer class="bg-green-900 text-white py-10">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="grid md:grid-cols-3 gap-8 mb-8">
+<div>
+<div class="flex items-center space-x-3 mb-4">
+<img src=https://jaschat.web.id/logo.png alt="Logo Arofa Travel" class="h-12 w-12 rounded-full shadow-lg">
+<h2 class="text-xl font-bold">PT. Arofa Naqiyya Wisata Hati</h2>
+</div>
+<p class=text-green-200>Biro perjalanan umrah terpercaya dengan pelayanan terbaik untuk pengalaman ibadah yang tak terlupakan.</p>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-4">Tautan Cepat</h3>
+<ul class=space-y-2>
+<li><a href=#home class="text-green-200 hover:text-yellow-300 transition duration-300">Beranda</a></li>
+<li><a href=#paket class="text-green-200 hover:text-yellow-300 transition duration-300">Paket Umrah</a></li>
+<li><a href=#gallery class="text-green-200 hover:text-yellow-300 transition duration-300">Galeri</a></li>
+<li><a href=#about class="text-green-200 hover:text-yellow-300 transition duration-300">Tentang Kami</a></li>
+<li><a href=#kontak class="text-green-200 hover:text-yellow-300 transition duration-300">Kontak</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-4">Kantor Kami</h3>
+<div class="space-y-2 text-green-200">
+<p>📍 Jl. Imam Bonjol No. 42, Sijunjung</p>
+<p>📍 Jl. M. Yamin, SH., Muaro Gambok, Sijunjung</p>
+<p>📞 0812-3456-7890</p>
+<p>✉️ info@arofatravel.com</p>
 </div>
 </div>
-</main>
+</div>
+<div class="pt-8 border-t border-green-800 text-center text-sm text-green-300">
+<p>© 2025 PT. Arofa Naqiyya Wisata Hati. All Rights Reserved.</p>
 </div>
 </div>
-<script>let kb=[],history=[],currentSession=[],isListening=!1,recognition=null;const messagesEl=document.getElementById("messages"),inputEl=document.getElementById("chat-input"),sendBtn=document.getElementById("send"),historyList=document.getElementById("history-list"),popularList=document.getElementById("popular-list"),quickSuggestions=document.getElementById("quick-suggestions"),welcomeSuggestions=document.getElementById("welcome-suggestions"),emptyState=document.getElementById("empty-state"),sidebar=document.getElementById("sidebar"),menuBtn=document.getElementById("menu-toggle"),overlay=document.getElementById("overlay"),themeToggle=document.getElementById("theme-toggle"),clearHistoryBtn=document.getElementById("clear-history"),resetBtn=document.getElementById("reset"),voiceBtn=document.getElementById("voice-btn"),exportBtn=document.getElementById("export-chat"),kbCountEl=document.getElementById("kb-count"),chatCountEl=document.getElementById("chat-count");function init(){loadKB(),loadHistory(),setupEventListeners(),applySavedTheme(),showWelcomeMessage()}function normalize(e){return e.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^\w\s\u00C0-\u024F'-]/g," ").replace(/\s+/g," ").trim()}function tokenize(e){const t=normalize(e).split(" ").filter(Boolean),n=new Set(["yang","dan","di","ke","dari","ini","itu","saya","kamu","kami","mereka","ada","adalah","atau","pada","untuk","dengan","tentang","dalam","oleh","karena","jika","akan","sebuah","the","a","an","is","am","are","was","were","be","being","been","have","has","had","do","does","did","apa","siapa","bagaimana","kapan","dimana","mengapa"]);return t.filter((e=>!n.has(e)&&e.length>1))}function calculateSimilarity(e,t){const n=new Set(tokenize(e)),s=new Set(tokenize(t));if(0===n.size||0===s.size)return 0;const o=new Set([...n].filter((e=>s.has(e)))),i=new Set([...n,...s]);return.7*(o.size/i.size)+.3*stringSimilarity(e,t)}function stringSimilarity(e,t){const n=e.length>t.length?e:t,s=e.length<=t.length?e:t;if(0===n.length)return 1;const o=levenshteinDistance(n,s);return(n.length-o)/parseFloat(n.length)}function levenshteinDistance(e,t){const n=Array(t.length+1).fill(null).map((()=>Array(e.length+1).fill(null)));for(let t=0;t<=e.length;t++)n[0][t]=t;for(let e=0;e<=t.length;e++)n[e][0]=e;for(let s=1;s<=t.length;s++)for(let o=1;o<=e.length;o++){const i=e[o-1]===t[s-1]?0:1;n[s][o]=Math.min(n[s][o-1]+1,n[s-1][o]+1,n[s-1][o-1]+i)}return n[t.length][e.length]}function findBestMatches(e,t=5){const n=[],s=normalize(e);for(const e of kb){let t=0,o="";for(const n of e.examples){const e=calculateSimilarity(s,normalize(n));e>t&&(t=e,o=n)}t>.2&&n.push({score:t,answer:e.answer,example:o,source:e.source||"knowledge base"})}n.sort(((e,t)=>t.score-e.score));const o=[],i=new Set;for(const e of n)if(!i.has(e.answer)&&(i.add(e.answer),o.push(e),o.length>=t))break;return o}function showMessage(e,t,n={}){const s=document.createElement("div");if(s.className=`msg ${t}`,n.html)s.innerHTML=e;else{const t=document.createElement("div");t.textContent=e,s.appendChild(t)}const o=document.createElement("div");if(o.className="msg-time",o.textContent=(new Date).toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"}),s.appendChild(o),"bot"===t){const t=document.createElement("div");t.className="msg-actions";const o=document.createElement("button");o.className="msg-action",o.innerHTML='<i class="fas fa-copy"></i>',o.title="Salin jawaban",o.onclick=()=>copyToClipboard(e),t.appendChild(o);const i=document.createElement("button");if(i.className="msg-action",i.innerHTML='<i class="fas fa-volume-up"></i>',i.title="Dengarkan jawaban",i.onclick=()=>speakText(e),t.appendChild(i),s.appendChild(t),n.confidence){const e=document.createElement("span");e.className=`confidence-badge ${getConfidenceClass(n.confidence)}`,e.textContent=`${Math.round(100*n.confidence)}%`,s.querySelector("div").appendChild(e)}if(n.source){const e=document.createElement("div");e.className="source-info",e.textContent=`Sumber: ${n.source}`,s.appendChild(e)}const a=document.createElement("div");a.className="rate-response",a.innerHTML='\n      <span class="small">Beri nilai: </span>\n      <button class="rate-btn" data-rating="1"><i class="fas fa-star"></i></button>\n      <button class="rate-btn" data-rating="2"><i class="fas fa-star"></i></button>\n      <button class="rate-btn" data-rating="3"><i class="fas fa-star"></i></button>\n      <button class="rate-btn" data-rating="4"><i class="fas fa-star"></i></button>\n      <button class="rate-btn" data-rating="5"><i class="fas fa-star"></i></button>\n    ',s.appendChild(a)}messagesEl.appendChild(s),messagesEl.scrollTop=messagesEl.scrollHeight,emptyState.style.display="none",updateChatCount()}function showTyping(){const e=document.createElement("div");e.className="typing-indicator",e.id="typing-indicator",e.innerHTML='\n    <div class="typing-dots">\n      <div class="typing-dot"></div>\n      <div class="typing-dot"></div>\n      <div class="typing-dot"></div>\n    </div>\n    <div>Campus AI sedang mengetik...</div>\n  ',messagesEl.appendChild(e),messagesEl.scrollTop=messagesEl.scrollHeight}function removeTyping(){const e=document.getElementById("typing-indicator");e&&e.remove()}function loadKB(){fetch("data.json").then((e=>{if(!e.ok)throw new Error("Failed to load knowledge base");return e.json()})).then((e=>{kb=e.map((e=>({examples:e.examples||[],answer:e.answer||"",source:e.source||"knowledge base"}))),kbCountEl.textContent=kb.length,populateSuggestions(),createWelcomeSuggestions()})).catch((e=>{console.error("Error loading knowledge base:",e),popularList.innerHTML='<div class="small">Gagal memuat basis pengetahuan</div>'}))}function populateSuggestions(){popularList.innerHTML="",quickSuggestions.innerHTML="";const e=[],t=new Set;for(const n of kb){for(const s of n.examples)if(!t.has(s)&&(t.add(s),e.push({ex:s,ans:n.answer}),e.length>=10))break;if(e.length>=10)break}for(const t of e.slice(0,5)){const e=document.createElement("button");e.className="sugg-btn",e.innerHTML=`<i class="fas fa-comment"></i> ${t.ex}`,e.onclick=()=>send(t.ex),popularList.appendChild(e)}for(const t of e.slice(5,10)){const e=document.createElement("button");e.className="suggest-pill",e.textContent=t.ex,e.onclick=()=>send(t.ex),quickSuggestions.appendChild(e)}}function createWelcomeSuggestions(){welcomeSuggestions.innerHTML="";const e=["Siapa Rektor Universitas Madura?","Apa saja program studi di UNIRA?","Bagaimana visi misi Universitas Madura?","Apa akreditasi UNIRA?"];for(const t of e){const e=document.createElement("div");e.className="suggestion-chip",e.textContent=t,e.onclick=()=>send(t),welcomeSuggestions.appendChild(e)}}function showWelcomeMessage(){showMessage("Halo! Saya Campus AI, asisten virtual Universitas Madura. Saya siap menjawab pertanyaan Anda tentang kampus, program studi, fakultas, dan informasi lainnya.","bot")}function updateHistoryList(){if(historyList.innerHTML="",0!==history.length)for(let e=history.length-1;e>=0;e--){const t=document.createElement("div");t.className="history-item",t.innerHTML=`<i class="fas fa-history"></i> ${history[e].user}`,t.onclick=()=>{inputEl.value=history[e].user,inputEl.focus(),window.innerWidth<=1024&&(sidebar.classList.remove("open"),overlay.classList.remove("active"))},historyList.appendChild(t)}else historyList.innerHTML='<div class="small">Belum ada riwayat percakapan</div>'}function remember(e,t){history.push({user:e,bot:t,timestamp:(new Date).toISOString()}),history.length>50&&history.shift(),saveHistory(),updateHistoryList()}function answerQuery(e){const t=findBestMatches(e,3);if(t.length>0&&t[0].score>=.7)return{type:"answer",text:t[0].answer,confidence:t[0].score,source:t[0].source};if(t.length>0){const e=t.map((e=>({q:e.example,score:e.score})));return{type:"suggest",text:t[0].answer,suggestions:e,confidence:t[0].score,source:t[0].source}}return{type:"unknown",text:"Maaf, saya belum memiliki informasi yang cukup untuk pertanyaan tersebut. Coba tanyakan hal lain atau pilih dari pertanyaan populer di sidebar."}}function send(e){const t=e.trim();t&&(currentSession.push({type:"user",content:t,timestamp:(new Date).toISOString()}),showMessage(t,"user"),inputEl.value="",sendBtn.disabled=!0,showTyping(),setTimeout((()=>{const e=answerQuery(t);if(removeTyping(),currentSession.push({type:"bot",content:e.text,confidence:e.confidence,timestamp:(new Date).toISOString()}),"answer"===e.type)showMessage(e.text,"bot",{confidence:e.confidence,source:e.source}),remember(t,e.text);else if("suggest"===e.type){let n=e.text;e.confidence<.7?n+='<div style="margin-top:8px" class="small">Saya tidak yakin sepenuhnya, mungkin maksud Anda:</div>':n+='<div style="margin-top:8px" class="small">Pertanyaan terkait:</div>';let s='<div style="margin-top:6px;display:flex;gap:8px;flex-wrap:wrap">';for(const t of e.suggestions)s+=`<button class="suggest-pill" onclick="send('${escapeHtml(t.q)}')">${escapeHtml(t.q)}</button>`;s+="</div>",showMessage(n+s,"bot",{html:!0,confidence:e.confidence,source:e.source}),remember(t,e.text)}else showMessage(e.text,"bot"),remember(t,e.text);sendBtn.disabled=!1}),800+400*Math.random()))}function escapeHtml(e){const t=document.createElement("div");return t.textContent=e,t.innerHTML}function copyToClipboard(e){navigator.clipboard.writeText(e).then((()=>{showNotification("Teks disalin ke clipboard")})).catch((e=>{console.error("Failed to copy: ",e)}))}function speakText(e){if("speechSynthesis"in window){const t=new SpeechSynthesisUtterance(e);t.lang="id-ID",t.rate=.9,speechSynthesis.speak(t)}else showNotification("Browser tidak mendukung text-to-speech")}function showNotification(e){const t=document.createElement("div");t.style.cssText="\n    position: fixed;\n    bottom: 20px;\n    right: 20px;\n    background: var(--primary);\n    color: white;\n    padding: 12px 16px;\n    border-radius: 8px;\n    box-shadow: 0 4px 12px rgba(0,0,0,0.15);\n    z-index: 1000;\n    font-size: 14px;\n    animation: fadeIn 0.3s, fadeOut 0.3s 2.7s forwards;\n  ",t.textContent=e,document.body.appendChild(t),setTimeout((()=>{document.body.contains(t)&&document.body.removeChild(t)}),3e3)}function getConfidenceClass(e){return e>=.8?"high-confidence":e>=.5?"medium-confidence":"low-confidence"}function updateChatCount(){const e=document.querySelectorAll(".msg").length;chatCountEl.textContent=e}function saveHistory(){localStorage.setItem("chatHistory",JSON.stringify(history)),localStorage.setItem("chatSession",JSON.stringify(currentSession))}function loadHistory(){const e=localStorage.getItem("chatHistory"),t=localStorage.getItem("chatSession");if(e&&(history=JSON.parse(e),updateHistoryList()),t){currentSession=JSON.parse(t);for(const e of currentSession)"user"===e.type?showMessage(e.content,"user"):showMessage(e.content,"bot",{confidence:e.confidence,source:e.source})}}function exportChat(){let e="Percakapan dengan Campus AI - Universitas Madura\n";e+=`Ekspor pada: ${(new Date).toLocaleString("id-ID")}\n\n`;for(const t of currentSession){const n="user"===t.type?"Anda":"Campus AI";e+=`[${new Date(t.timestamp).toLocaleTimeString("id-ID")}] ${n}: ${t.content}\n\n`}const t=new Blob([e],{type:"text/plain"}),n=URL.createObjectURL(t),s=document.createElement("a");s.href=n,s.download=`chat-export-${(new Date).toISOString().slice(0,10)}.txt`,document.body.appendChild(s),s.click(),document.body.removeChild(s),URL.revokeObjectURL(n)}function setupVoiceRecognition(){"webkitSpeechRecognition"in window||"SpeechRecognition"in window?(recognition=new(window.SpeechRecognition||window.webkitSpeechRecognition),recognition.continuous=!1,recognition.interimResults=!1,recognition.lang="id-ID",recognition.onstart=()=>{isListening=!0,voiceBtn.innerHTML='<i class="fas fa-microphone-slash"></i>',voiceBtn.style.color="var(--error)",showNotification("Mendengarkan...")},recognition.onresult=e=>{const t=e.results[0][0].transcript;inputEl.value=t,isListening=!1,voiceBtn.innerHTML='<i class="fas fa-microphone"></i>',voiceBtn.style.color=""},recognition.onerror=e=>{console.error("Speech recognition error",e.error),isListening=!1,voiceBtn.innerHTML='<i class="fas fa-microphone"></i>',voiceBtn.style.color="",showNotification("Error pengenalan suara: "+e.error)},recognition.onend=()=>{isListening=!1,voiceBtn.innerHTML='<i class="fas fa-microphone"></i>',voiceBtn.style.color=""},voiceBtn.onclick=()=>{isListening?recognition.stop():recognition.start()}):voiceBtn.style.display="none"}function toggleTheme(){const e=document.body.classList.toggle("light");localStorage.setItem("theme",e?"light":"dark")}function applySavedTheme(){"light"===localStorage.getItem("theme")?(document.body.classList.add("light"),themeToggle.checked=!0):(document.body.classList.remove("light"),themeToggle.checked=!1)}function setupEventListeners(){sendBtn.addEventListener("click",(()=>send(inputEl.value))),inputEl.addEventListener("keydown",(e=>{"Enter"!==e.key||e.shiftKey||(e.preventDefault(),send(inputEl.value))})),inputEl.addEventListener("input",(()=>{sendBtn.disabled=""===inputEl.value.trim()})),resetBtn.addEventListener("click",(()=>{messagesEl.innerHTML="",currentSession=[],saveHistory(),emptyState.style.display="flex",showWelcomeMessage()})),clearHistoryBtn.addEventListener("click",(()=>{history=[],updateHistoryList(),saveHistory()})),menuBtn.addEventListener("click",(()=>{sidebar.classList.toggle("open"),overlay.classList.toggle("active")})),overlay.addEventListener("click",(()=>{sidebar.classList.remove("open"),overlay.classList.remove("active")})),themeToggle.addEventListener("change",toggleTheme),exportBtn.addEventListener("click",exportChat),setupVoiceRecognition()}function init(){loadKB(),loadHistory(),setupEventListeners(),applySavedTheme(),showWelcomeMessage(),inputEl.scrollIntoView({behavior:"smooth",block:"center"})}function init(){loadKB(),loadHistory(),setupEventListeners(),applySavedTheme(),showWelcomeMessage(),setTimeout((()=>{inputEl.scrollIntoView({behavior:"smooth",block:"end"})}),100)}document.addEventListener("DOMContentLoaded",init)</script>
+</footer>
+<script>lucide.createIcons();const menuBtn=document.getElementById("menuBtn"),mobileMenu=document.getElementById("mobileMenu");let menuOpen=!1;menuBtn.addEventListener("click",(()=>{menuOpen=!menuOpen,mobileMenu.classList.toggle("hidden"),menuBtn.innerHTML=menuOpen?'<i data-lucide="x" class="w-6 h-6"></i>':'<i data-lucide="menu" class="w-6 h-6"></i>',lucide.createIcons()})),document.querySelectorAll('a[href^="#"]').forEach((e=>{e.addEventListener("click",(function(e){e.preventDefault();const n=this.getAttribute("href");if("#"===n)return;const t=document.querySelector(n);if(t){const e=document.querySelector("header").offsetHeight,n=t.getBoundingClientRect().top+window.pageYOffset-e;window.scrollTo({top:n,behavior:"smooth"}),menuOpen&&(mobileMenu.classList.add("hidden"),menuBtn.innerHTML='<i data-lucide="menu" class="w-6 h-6"></i>',menuOpen=!1,lucide.createIcons())}}))})),ScrollReveal().reveal("h2, h3, h4, p, a, img, .hover-lift",{delay:200,distance:"30px",origin:"bottom",interval:100,duration:800,easing:"ease-in-out",reset:!1})</script>
 </body>
 </html>
-
