@@ -4010,7 +4010,7 @@
     "Link": "https://www.tiktok.com/@dndam_m?_t=ZS-901LMEG1VI5&_r=1",
     "Supply": 56628,
     "Untung": 68372,
-    "keterangan": "selesai",
+    "keterangan": "proses",
     "ID_Pesanan": "0334"
   },
   {
@@ -4026,6 +4026,17 @@
   },
   {
     "ID": "0337",
+    "Tanggal": "25 September 2025",
+    "Jenis": "Canva Pro Premium Apps",
+    "Paket": "1",
+    "Total": 3500,
+    "Link": "https://jashub.web.id/status",
+    "Supply": 0,
+    "Untung": 3500,
+    "keterangan": "proses"
+  },
+  {
+    "ID": "0338",
     "Tanggal": "26 September 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "300",
@@ -4037,7 +4048,7 @@
     "ID_Pesanan": "0337"
   },
   {
-    "ID": "0338",
+    "ID": "0339",
     "Tanggal": "26 September 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "400",
@@ -4048,7 +4059,7 @@
     "keterangan": "proses"
   },
   {
-    "ID": "0339",
+    "ID": "0340",
     "Tanggal": "26 September 2025",
     "Jenis": "Views Tiktok",
     "Paket": "2000",
@@ -4059,7 +4070,7 @@
     "keterangan": "proses"
   },
   {
-    "ID": "0340",
+    "ID": "0341",
     "Tanggal": "26 September 2025",
     "Jenis": "Followers Instagram",
     "Paket": "50",
@@ -4071,7 +4082,7 @@
     "ID_Pesanan": "0321"
   },
   {
-    "ID": "0341",
+    "ID": "0342",
     "Tanggal": "26 September 2025",
     "Jenis": "Followers Instagram",
     "Paket": "100",
@@ -4083,7 +4094,7 @@
     "ID_Pesanan": "0321"
   },
   {
-    "ID": "0342",
+    "ID": "0343",
     "Tanggal": "27 September 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "200",
@@ -4095,7 +4106,7 @@
     "ID_Pesanan": "0342"
   },
   {
-    "ID": "0343",
+    "ID": "0344",
     "Tanggal": "27 September 2025",
     "Jenis": "Views Tiktok",
     "Paket": "1000",
@@ -4107,7 +4118,7 @@
     "ID_Pesanan": "0342"
   },
   {
-    "ID": "0344",
+    "ID": "0345",
     "Tanggal": "28 September 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "150",
@@ -4119,7 +4130,7 @@
     "ID_Pesanan": "0344"
   },
   {
-    "ID": "0345",
+    "ID": "0346",
     "Tanggal": "28 September 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "150",
@@ -4131,7 +4142,7 @@
     "ID_Pesanan": "0345"
   },
   {
-    "ID": "0346",
+    "ID": "0347",
     "Tanggal": "28 September 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "200",
@@ -4143,7 +4154,7 @@
     "ID_Pesanan": "0345"
   },
   {
-    "ID": "0347",
+    "ID": "0348",
     "Tanggal": "28 September 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "400",
@@ -4155,7 +4166,7 @@
     "ID_Pesanan": "0345"
   },
   {
-    "ID": "0348",
+    "ID": "0349",
     "Tanggal": "28 September 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "400",
@@ -4163,11 +4174,11 @@
     "Link": "https://vt.tiktok.com/ZSDtMMo82/",
     "Supply": 300,
     "Untung": 4700,
-    "keterangan": "proses",
+    "keterangan": "selesai",
     "ID_Pesanan": "0348"
   },
   {
-    "ID": "0349",
+    "ID": "0350",
     "Tanggal": "28 September 2025",
     "Jenis": "Likes Tiktok",
     "Paket": "200",
@@ -4175,11 +4186,11 @@
     "Link": "https://vt.tiktok.com/ZSDth58CT/",
     "Supply": 150,
     "Untung": 2850,
-    "keterangan": "proses",
+    "keterangan": "selesai",
     "ID_Pesanan": "0348"
   },
   {
-    "ID": "0350",
+    "ID": "0351",
     "Tanggal": "29 September 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "300",
@@ -4191,7 +4202,7 @@
     "ID_Pesanan": "0350"
   },
   {
-    "ID": "0351",
+    "ID": "0352",
     "Tanggal": "29 September 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "500",
@@ -4203,7 +4214,7 @@
     "ID_Pesanan": "0350"
   },
   {
-    "ID": "0352",
+    "ID": "0353",
     "Tanggal": "29 September 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "100",
@@ -4215,7 +4226,7 @@
     "ID_Pesanan": "0352"
   },
   {
-    "ID": "0353",
+    "ID": "0354",
     "Tanggal": "01 Oktober 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "500",
@@ -4227,7 +4238,7 @@
     "ID_Pesanan": "0353"
   },
   {
-    "ID": "0354",
+    "ID": "0355",
     "Tanggal": "01 Oktober 2025",
     "Jenis": "Followers Tiktok",
     "Paket": "300",
@@ -4237,5 +4248,17 @@
     "Untung": 9338,
     "keterangan": "selesai",
     "ID_Pesanan": "0353"
+  },
+  {
+    "ID": "0356",
+    "Tanggal": "20 Oktober 2025",
+    "Jenis": "Canva Edu Lifetime",
+    "Paket": "1",
+    "Total": 6000,
+    "Link": "",
+    "Supply": 0,
+    "Untung": 6000,
+    "keterangan": "pending",
+    "ID_Pesanan": "9416"
   }
 ]
